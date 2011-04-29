@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<EasyView Name="ReGrpListView" Description="ser.acl.group" Class="EasyView" Tab="" TemplateEngine="Smarty" TemplateFile="view.tpl">
+   <FormReferences>
+   		<Reference Name="ser.acl.group.form.ReGrpListForm"/>
+   </FormReferences>
+   <FormReferenceLibs>
+   		<Reference Name="ser.acl.group.form.ReGrpListForm"/>
+   		<Reference Name="ser.acl.group.form.ReGrpEditForm"/>
+   		<Reference Name="ser.acl.group.form.ReGrpCopyForm"/>
+   		<Reference Name="ser.acl.group.form.ReGrpNewForm"/>
+   		<Reference Name="ser.acl.group.form.ReGrpDetailForm"/>
+   </FormReferenceLibs>    
+</EasyView>

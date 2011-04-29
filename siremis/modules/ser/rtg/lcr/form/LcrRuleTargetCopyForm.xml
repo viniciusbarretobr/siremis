@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EasyForm Name="LcrRuleTargetCopyForm" Class="EasyForm" FormType="Edit" jsClass="jbForm" Title="Copy Lcr Rule Target" Description="" BizDataObj="ser.rtg.lcr.do.LcrRuleTargetDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
+    <DataPanel>
+        <Element Name="fld_Id" Class="Hidden" FieldName="Id" Label="Id" AllowURLParam="Y"/>	
+		<Element Name="fld_lcr_id" Class="InputText" FieldName="lcr_id" Label="Lcr Id"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_rule_id" Class="InputText" FieldName="rule_id" Label="Rule Id"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_gw_id" Class="InputText" FieldName="gw_id" Label="Gw Id"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+    	<Element Name="fld_priority" Class="InputText" FieldName="priority" Label="Priority"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>    
+		<Element Name="fld_weight" Class="InputText" FieldName="weight" Label="Weight"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+    </DataPanel>
+    <ActionPanel>
+        <Element Name="btn_save" Class="Button" Text="Save" CssClass="button_gray_m">
+            <EventHandler Name="save_onclick" EventLogMsg="" Event="onclick" Function="InsertRecord()" RedirectPage="form=ser.rtg.lcr.form.LcrRuleTargetDetailForm&amp;fld:Id={@ser.rtg.lcr.do.LcrRuleTargetDO:Field[Id].Value}"  ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
+        </Element>
+        <Element Name="btn_cancel" Class="Button" Text="Cancel" CssClass="button_gray_m">
+            <EventHandler Name="cancel_onclick" Event="onclick" Function="SwitchForm(ser.rtg.lcr.form.LcrRuleTargetListForm)"  ShortcutKey="Escape" ContextMenu="Cancel"/>
+        </Element>
+    </ActionPanel> 
+    <NavPanel>
+    </NavPanel> 
+    <SearchPanel>
+    </SearchPanel>
+</EasyForm>

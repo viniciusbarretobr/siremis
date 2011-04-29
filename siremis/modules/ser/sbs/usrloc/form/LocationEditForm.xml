@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EasyForm Name="LocationEditForm" Class="EasyForm" FormType="Edit" jsClass="jbForm" Title="Edit Location" Description="" BizDataObj="ser.sbs.usrloc.do.LocationDO" DefaultForm="Y" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
+    <DataPanel>
+		<Element Name="fld_Id" Class="Hidden" FieldName="Id" Label="Id" AllowURLParam="Y" Translatable="N" OnEventLog="N" CssClass="input" CssErrorClass="input_error"/>
+		<Element Name="fld_username" Class="InputText" FieldName="username" Label="Username"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_domain" Class="InputText" FieldName="domain" Label="Domain"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_contact" Class="InputText" FieldName="contact" Label="Contact"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_received" Class="InputText" FieldName="received" Label="Received"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_path" Class="InputText" FieldName="path" Label="Path"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_expires" Class="InputDatetime" DateFormat="%Y-%m-%d %H:%M:%S" FieldName="expires" Label="Expires" DefaultValue="2020-05-28 21:32:15" Sortable="Y" AllowURLParam="N" Translatable="N" OnEventLog="N"  CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_q" Class="InputText" FieldName="q" Label="Q"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_callid" Class="InputText" FieldName="callid" Label="Callid"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_cseq" Class="InputText" FieldName="cseq" Label="Cseq"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_last_modified" Class="InputDatetime" DateFormat="%Y-%m-%d %H:%M:%S" FieldName="last_modified" Label="Last Modified" DefaultValue="1900-01-01 00:00:00" Sortable="Y" AllowURLParam="N" Translatable="N" OnEventLog="N"  CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_flags" Class="InputText" FieldName="flags" Label="Flags"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_cflags" Class="InputText" FieldName="cflags" Label="Cflags"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_user_agent" Class="InputText" FieldName="user_agent" Label="User Agent"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_socket" Class="InputText" FieldName="socket" Label="Socket"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_methods" Class="InputText" FieldName="methods" Label="Methods"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+    </DataPanel>
+    <ActionPanel>
+        <Element Name="btn_save" Class="Button" Text="Save" CssClass="button_gray_m">
+            <EventHandler Name="save_onclick" Event="onclick" EventLogMsg=""  Function="UpdateRecord()" RedirectPage="form=ser.sbs.usrloc.form.LocationDetailForm&amp;fld:Id={@ser.sbs.usrloc.do.LocationDO:Field[Id].Value}" ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
+        </Element>
+        <Element Name="btn_cancel" Class="Button" Text="Cancel" CssClass="button_gray_m">
+            <EventHandler Name="btn_cancel_onclick" Event="onclick" Function="SwitchForm(ser.sbs.usrloc.form.LocationListForm)"  ShortcutKey="Escape" ContextMenu="Cancel" />
+        </Element>
+    </ActionPanel> 
+    <NavPanel>
+    </NavPanel> 
+    <SearchPanel>
+    </SearchPanel>
+</EasyForm>

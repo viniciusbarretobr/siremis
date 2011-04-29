@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<EasyView Name="AddressListView" Description="ser.acl.permissions" Class="EasyView" Tab="" TemplateEngine="Smarty" TemplateFile="view.tpl">
+   <FormReferences>
+   		<Reference Name="ser.acl.permissions.form.AddressListForm"/>
+   </FormReferences>
+   <FormReferenceLibs>
+   		<Reference Name="ser.acl.permissions.form.AddressListForm"/>
+   		<Reference Name="ser.acl.permissions.form.AddressEditForm"/>
+   		<Reference Name="ser.acl.permissions.form.AddressCopyForm"/>
+   		<Reference Name="ser.acl.permissions.form.AddressNewForm"/>
+   		<Reference Name="ser.acl.permissions.form.AddressDetailForm"/>
+   </FormReferenceLibs>    
+</EasyView>

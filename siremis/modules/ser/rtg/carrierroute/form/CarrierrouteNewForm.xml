@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EasyForm Name="CarrierrouteNewForm" Class="EasyForm" FormType="New" jsClass="jbForm" Title="New Carrierroute" Description="" BizDataObj="ser.rtg.carrierroute.do.CarrierrouteDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
+    <DataPanel>
+        <Element Name="fld_carrier" Class="InputText" FieldName="carrier" Label="Carrier"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_domain" Class="InputText" FieldName="domain" Label="Domain"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_scan_prefix" Class="InputText" FieldName="scan_prefix" Label="Scan Prefix"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_flags" Class="InputText" FieldName="flags" Label="Flags"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_mask" Class="InputText" FieldName="mask" Label="Mask"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_prob" Class="InputText" FieldName="prob" Label="Prob"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_strip" Class="InputText" FieldName="strip" Label="Strip"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_rewrite_host" Class="InputText" FieldName="rewrite_host" Label="Rewrite Host"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_rewrite_prefix" Class="InputText" FieldName="rewrite_prefix" Label="Rewrite Prefix"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_rewrite_suffix" Class="InputText" FieldName="rewrite_suffix" Label="Rewrite Suffix"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_description" Class="InputText" FieldName="description" Label="Description"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        </DataPanel>
+    <ActionPanel>
+        <Element Name="btn_save" Class="Button" Text="Save" CssClass="button_gray_m">
+            <EventHandler Name="save_onclick" EventLogMsg="" Event="onclick" Function="InsertRecord()" RedirectPage="form=ser.rtg.carrierroute.form.CarrierrouteDetailForm&amp;fld:Id={@ser.rtg.carrierroute.do.CarrierrouteDO:Field[Id].Value}"  ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
+        </Element>
+        <Element Name="btn_cancel" Class="Button" Text="Cancel" CssClass="button_gray_m">
+            <EventHandler Name="cancel_onclick" Event="onclick" Function="SwitchForm(ser.rtg.carrierroute.form.CarrierrouteListForm)"  ShortcutKey="Escape" ContextMenu="Cancel"/>
+        </Element>
+    </ActionPanel> 
+    <NavPanel>
+    </NavPanel> 
+    <SearchPanel>
+    </SearchPanel>
+</EasyForm>

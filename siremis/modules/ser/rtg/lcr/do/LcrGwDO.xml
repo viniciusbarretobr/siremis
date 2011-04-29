@@ -1,0 +1,22 @@
+<?xml version="1.0" standalone="no"?>
+<BizDataObj Name="LcrGwDO" Description="" Class="BizDataObj" DBName="Serdb" Table="lcr_gw" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="lcr_id,ip_addr,port,hostname;" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+	<BizFieldList>
+        <BizField Name="Id" Column="id"     Type="Number"/>
+        <BizField Name="lcr_id" Column="lcr_id"    Required="Y" Type="Text"/>
+        <BizField Name="gw_name" Column="gw_name" Length="128"   Required="N" Type="Text"/>
+        <BizField Name="ip_addr" Column="ip_addr" Length="15"   Required="N" Type="Text"/>
+        <BizField Name="hostname" Column="hostname" Length="64"   Required="N" Type="Text"/>
+        <BizField Name="port" Column="port"    Required="N" Type="Text"/>
+        <BizField Name="params" Column="params" Length="64"   Required="N" Type="Text"/>
+        <BizField Name="uri_scheme" Column="uri_scheme"    Required="N" Type="Number"/>
+        <BizField Name="transport" Column="transport"    Required="N" Type="Number"/>
+        <BizField Name="strip" Column="strip"    Required="N" Type="Number"/>
+        <BizField Name="tag" Column="tag" Length="16"   Required="N" Type="Text"/>
+        <BizField Name="flags" Column="flags"    Required="Y" Type="Number"/>
+        <BizField Name="defunct" Column="defunct"    Required="N" Type="Number"/>
+	</BizFieldList>
+    <TableJoins>
+    </TableJoins>
+    <ObjReferences>
+    </ObjReferences>
+</BizDataObj>

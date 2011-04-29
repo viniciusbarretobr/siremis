@@ -1,0 +1,24 @@
+Options FollowSymLinks
+
+<IfModule mod_rewrite.c>
+	# Tell PHP that the mod_rewrite module is ENABLED.
+	SetEnv HTTP_MOD_REWRITE On
+
+	RewriteEngine On
+	RewriteBase   /%%URLBASE%%/
+
+	RewriteCond  %{SCRIPT_FILENAME}  !-f
+	RewriteCond  %{SCRIPT_FILENAME}  !-d
+	RewriteCond  %{REQUEST_URI}  !\.
+	RewriteRule ^(.*)$ index.php?$1
+</IfModule>
+
+<FilesMatch ".xml$">
+    Order deny,allow
+    Deny from all
+</FilesMatch>
+
+<FilesMatch ".inc$">
+    Order deny,allow
+    Deny from all
+</FilesMatch>

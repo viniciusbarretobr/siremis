@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EasyForm Name="WatchersEditForm" Class="EasyForm" FormType="Edit" jsClass="jbForm" Title="Edit Watchers" Description="" BizDataObj="ser.prs.presence.do.WatchersDO" DefaultForm="Y" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
+    <DataPanel>
+		<Element Name="fld_Id" Class="Hidden" FieldName="Id" Label="Id" AllowURLParam="Y" Translatable="N" OnEventLog="N" CssClass="input" CssErrorClass="input_error"/>
+		<Element Name="fld_presentity_uri" Class="InputText" FieldName="presentity_uri" Label="Presentity Uri"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_watcher_username" Class="InputText" FieldName="watcher_username" Label="Watcher Username"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_watcher_domain" Class="InputText" FieldName="watcher_domain" Label="Watcher Domain"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_event" Class="InputText" FieldName="event" Label="Event"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_status" Class="InputText" FieldName="status" Label="Status"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_reason" Class="InputText" FieldName="reason" Label="Reason"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_inserted_time" Class="InputText" FieldName="inserted_time" Label="Inserted Time"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+    </DataPanel>
+    <ActionPanel>
+        <Element Name="btn_save" Class="Button" Text="Save" CssClass="button_gray_m">
+            <EventHandler Name="save_onclick" Event="onclick" EventLogMsg=""  Function="UpdateRecord()" RedirectPage="form=ser.prs.presence.form.WatchersDetailForm&amp;fld:Id={@ser.prs.presence.do.WatchersDO:Field[Id].Value}" ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
+        </Element>
+        <Element Name="btn_cancel" Class="Button" Text="Cancel" CssClass="button_gray_m">
+            <EventHandler Name="btn_cancel_onclick" Event="onclick" Function="SwitchForm(ser.prs.presence.form.WatchersListForm)"  ShortcutKey="Escape" ContextMenu="Cancel" />
+        </Element>
+    </ActionPanel> 
+    <NavPanel>
+    </NavPanel> 
+    <SearchPanel>
+    </SearchPanel>
+</EasyForm>

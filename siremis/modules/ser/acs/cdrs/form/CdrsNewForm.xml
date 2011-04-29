@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EasyForm Name="CdrsNewForm" Class="EasyForm" FormType="New" jsClass="jbForm" Title="New Cdrs" Description="" BizDataObj="ser.acs.cdrs.do.CdrsDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
+    <DataPanel>
+        <Element Name="fld_src_username" Class="InputText" FieldName="src_username" Label="Src Username"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_src_domain" Class="InputText" FieldName="src_domain" Label="Src Domain"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_dst_username" Class="InputText" FieldName="dst_username" Label="Dst Username"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_dst_domain" Class="InputText" FieldName="dst_domain" Label="Dst Domain"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+    			<Element Name="fld_call_start_time" Class="InputDatetime" DateFormat="%Y-%m-%d %H:%M:%S" FieldName="call_start_time" Label="Call Start Time" DefaultValue="0000-00-00 00:00:00" Sortable="Y" AllowURLParam="N" Translatable="N" OnEventLog="N"  CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_duration" Class="InputText" FieldName="duration" Label="Duration"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_sip_call_id" Class="InputText" FieldName="sip_call_id" Label="Sip Call Id"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_sip_from_tag" Class="InputText" FieldName="sip_from_tag" Label="Sip From Tag"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_sip_to_tag" Class="InputText" FieldName="sip_to_tag" Label="Sip To Tag"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_src_ip" Class="InputText" FieldName="src_ip" Label="Src Ip"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_cost" Class="InputText" FieldName="cost" Label="Cost"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+    			<Element Name="fld_created" Class="InputDatetime" DateFormat="%Y-%m-%d %H:%M:%S" FieldName="created" Label="Created"  Sortable="Y" AllowURLParam="N" Translatable="N" OnEventLog="N"  CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        </DataPanel>
+    <ActionPanel>
+        <Element Name="btn_save" Class="Button" Text="Save" CssClass="button_gray_m">
+            <EventHandler Name="save_onclick" EventLogMsg="" Event="onclick" Function="InsertRecord()" RedirectPage="form=ser.acs.cdrs.form.CdrsDetailForm&amp;fld:Id={@ser.acs.cdrs.do.CdrsDO:Field[Id].Value}"  ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
+        </Element>
+        <Element Name="btn_cancel" Class="Button" Text="Cancel" CssClass="button_gray_m">
+            <EventHandler Name="cancel_onclick" Event="onclick" Function="SwitchForm(ser.acs.cdrs.form.CdrsListForm)"  ShortcutKey="Escape" ContextMenu="Cancel"/>
+        </Element>
+    </ActionPanel> 
+    <NavPanel>
+    </NavPanel> 
+    <SearchPanel>
+    </SearchPanel>
+</EasyForm>

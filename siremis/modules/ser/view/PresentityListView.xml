@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<EasyView Name="PresentityListView" Description="ser.prs.presence" Class="EasyView" Tab="" TemplateEngine="Smarty" TemplateFile="view.tpl">
+   <FormReferences>
+   		<Reference Name="ser.prs.presence.form.PresentityListForm"/>
+   </FormReferences>
+   <FormReferenceLibs>
+   		<Reference Name="ser.prs.presence.form.PresentityListForm"/>
+   		<Reference Name="ser.prs.presence.form.PresentityEditForm"/>
+   		<Reference Name="ser.prs.presence.form.PresentityCopyForm"/>
+   		<Reference Name="ser.prs.presence.form.PresentityNewForm"/>
+   		<Reference Name="ser.prs.presence.form.PresentityDetailForm"/>
+   </FormReferenceLibs>    
+</EasyView>

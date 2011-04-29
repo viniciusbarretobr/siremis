@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EasyForm Name="FscmdsForm" Class="FscmdsForm" FormType="Edit" jsClass="jbForm" Title="FSwitch Commands"
+		Description="" BizDataObj="" TemplateEngine="Smarty" TemplateFile="view.tpl" >
+    <DataPanel>
+    </DataPanel>
+    <ActionPanel>
+    </ActionPanel> 
+    <NavPanel>
+    </NavPanel> 
+    <SearchPanel>
+    </SearchPanel>
+</EasyForm>

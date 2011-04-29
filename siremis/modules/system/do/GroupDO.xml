@@ -1,0 +1,12 @@
+<?xml version="1.0" standalone="no"?>
+<BizDataObj Name="GroupDO" Description="" Class="BizDataObj" DBName="Default" Table="group" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+	<BizFieldList>
+        <BizField Name="Id" Column="id"     Type="Number"/>
+        <BizField Name="name" Column="name" Length="64"   Required="Y" Type="Text"/>
+        <BizField Name="description" Column="description" Length="255"   Required="N" Type="Text"/>
+	</BizFieldList>
+    <TableJoins>
+    </TableJoins>
+    <ObjReferences>
+    </ObjReferences>
+</BizDataObj>

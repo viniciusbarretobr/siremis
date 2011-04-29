@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EasyForm Name="PdtNewForm" Class="EasyForm" FormType="New" jsClass="jbForm" Title="New Pdt" Description="" BizDataObj="ser.rtg.pdt.do.PdtDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
+    <DataPanel>
+        <Element Name="fld_sdomain" Class="InputText" FieldName="sdomain" Label="Sdomain"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_prefix" Class="InputText" FieldName="prefix" Label="Prefix"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_domain" Class="InputText" FieldName="domain" Label="Domain"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        </DataPanel>
+    <ActionPanel>
+        <Element Name="btn_save" Class="Button" Text="Save" CssClass="button_gray_m">
+            <EventHandler Name="save_onclick" EventLogMsg="" Event="onclick" Function="InsertRecord()" RedirectPage="form=ser.rtg.pdt.form.PdtDetailForm&amp;fld:Id={@ser.rtg.pdt.do.PdtDO:Field[Id].Value}"  ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
+        </Element>
+        <Element Name="btn_cancel" Class="Button" Text="Cancel" CssClass="button_gray_m">
+            <EventHandler Name="cancel_onclick" Event="onclick" Function="SwitchForm(ser.rtg.pdt.form.PdtListForm)"  ShortcutKey="Escape" ContextMenu="Cancel"/>
+        </Element>
+    </ActionPanel> 
+    <NavPanel>
+    </NavPanel> 
+    <SearchPanel>
+    </SearchPanel>
+</EasyForm>

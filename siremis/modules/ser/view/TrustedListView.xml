@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<EasyView Name="TrustedListView" Description="ser.acl.permissions" Class="EasyView" Tab="" TemplateEngine="Smarty" TemplateFile="view.tpl">
+   <FormReferences>
+   		<Reference Name="ser.acl.permissions.form.TrustedListForm"/>
+   </FormReferences>
+   <FormReferenceLibs>
+   		<Reference Name="ser.acl.permissions.form.TrustedListForm"/>
+   		<Reference Name="ser.acl.permissions.form.TrustedEditForm"/>
+   		<Reference Name="ser.acl.permissions.form.TrustedCopyForm"/>
+   		<Reference Name="ser.acl.permissions.form.TrustedNewForm"/>
+   		<Reference Name="ser.acl.permissions.form.TrustedDetailForm"/>
+   </FormReferenceLibs>    
+</EasyView>

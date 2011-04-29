@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EasyForm Name="UserblacklistNewForm" Class="EasyForm" FormType="New" jsClass="jbForm" Title="New Userblacklist" Description="" BizDataObj="ser.sbs.userblacklist.do.UserblacklistDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
+    <DataPanel>
+        <Element Name="fld_username" Class="InputText" FieldName="username" Label="Username"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_domain" Class="InputText" FieldName="domain" Label="Domain"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_prefix" Class="InputText" FieldName="prefix" Label="Prefix"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+    			<Element Name="fld_whitelist" Class="Checkbox" SelectFrom="1" FieldName="whitelist" Label="Whitelist"  Sortable="Y" AllowURLParam="N" Translatable="N" OnEventLog="N"  />    
+        </DataPanel>
+    <ActionPanel>
+        <Element Name="btn_save" Class="Button" Text="Save" CssClass="button_gray_m">
+            <EventHandler Name="save_onclick" EventLogMsg="" Event="onclick" Function="InsertRecord()" RedirectPage="form=ser.sbs.userblacklist.form.UserblacklistDetailForm&amp;fld:Id={@ser.sbs.userblacklist.do.UserblacklistDO:Field[Id].Value}"  ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
+        </Element>
+        <Element Name="btn_cancel" Class="Button" Text="Cancel" CssClass="button_gray_m">
+            <EventHandler Name="cancel_onclick" Event="onclick" Function="SwitchForm(ser.sbs.userblacklist.form.UserblacklistListForm)"  ShortcutKey="Escape" ContextMenu="Cancel"/>
+        </Element>
+    </ActionPanel> 
+    <NavPanel>
+    </NavPanel> 
+    <SearchPanel>
+    </SearchPanel>
+</EasyForm>

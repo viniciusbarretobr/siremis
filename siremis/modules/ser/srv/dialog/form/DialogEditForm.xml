@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EasyForm Name="DialogEditForm" Class="EasyForm" FormType="Edit" jsClass="jbForm" Title="Edit Dialog" Description="" BizDataObj="ser.srv.dialog.do.DialogDO" DefaultForm="Y" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
+    <DataPanel>
+		<Element Name="fld_Id" Class="Hidden" FieldName="Id" Label="Id" AllowURLParam="Y" Translatable="N" OnEventLog="N" CssClass="input" CssErrorClass="input_error"/>
+		<Element Name="fld_hash_entry" Class="InputText" FieldName="hash_entry" Label="Hash Entry"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_hash_id" Class="InputText" FieldName="hash_id" Label="Hash Id"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_callid" Class="InputText" FieldName="callid" Label="Callid"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_from_uri" Class="InputText" FieldName="from_uri" Label="From Uri"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_from_tag" Class="InputText" FieldName="from_tag" Label="From Tag"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_to_uri" Class="InputText" FieldName="to_uri" Label="To Uri"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_to_tag" Class="InputText" FieldName="to_tag" Label="To Tag"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_caller_cseq" Class="InputText" FieldName="caller_cseq" Label="Caller Cseq"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_callee_cseq" Class="InputText" FieldName="callee_cseq" Label="Callee Cseq"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_caller_route_set" Class="InputText" FieldName="caller_route_set" Label="Caller Route Set"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_callee_route_set" Class="InputText" FieldName="callee_route_set" Label="Callee Route Set"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_caller_contact" Class="InputText" FieldName="caller_contact" Label="Caller Contact"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_callee_contact" Class="InputText" FieldName="callee_contact" Label="Callee Contact"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_caller_sock" Class="InputText" FieldName="caller_sock" Label="Caller Sock"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_callee_sock" Class="InputText" FieldName="callee_sock" Label="Callee Sock"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_state" Class="InputText" FieldName="state" Label="State"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_start_time" Class="InputText" FieldName="start_time" Label="Start Time"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_timeout" Class="InputText" FieldName="timeout" Label="Timeout"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_sflags" Class="InputText" FieldName="sflags" Label="Sflags"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_toroute_name" Class="InputText" FieldName="toroute_name" Label="Toroute"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_req_uri" Class="InputText" FieldName="req_uri" Label="Req Uri"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+    </DataPanel>
+    <ActionPanel>
+        <Element Name="btn_save" Class="Button" Text="Save" CssClass="button_gray_m">
+            <EventHandler Name="save_onclick" Event="onclick" EventLogMsg=""  Function="UpdateRecord()" RedirectPage="form=ser.srv.dialog.form.DialogDetailForm&amp;fld:Id={@ser.srv.dialog.do.DialogDO:Field[Id].Value}" ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
+        </Element>
+        <Element Name="btn_cancel" Class="Button" Text="Cancel" CssClass="button_gray_m">
+            <EventHandler Name="btn_cancel_onclick" Event="onclick" Function="SwitchForm(ser.srv.dialog.form.DialogListForm)"  ShortcutKey="Escape" ContextMenu="Cancel" />
+        </Element>
+    </ActionPanel> 
+    <NavPanel>
+    </NavPanel> 
+    <SearchPanel>
+    </SearchPanel>
+</EasyForm>

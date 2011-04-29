@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EasyForm Name="PresentityDetailForm" Class="EasyForm" FormType="" jsClass="jbForm" Title="Presentity Detail" Description="" BizDataObj="ser.prs.presence.do.PresentityDO" TemplateEngine="Smarty" TemplateFile="detail_elementset.tpl" EventName="" MessageFile="">
+    <DataPanel>
+		<Element Name="fld_Id" ElementSet="General" Hidden="Y" Class="LabelText" FieldName="Id" Label="Id" AllowURLParam="Y"/>
+		<Element Name="fld_username" ElementSet="General" Class="LabelText" FieldName="username" Label="Username" AllowURLParam="N"
+		    Link="{@home:url}/ser/subscriber_list/fld:username={@:Elem[fld_username].Value}"/>
+       	<Element Name="fld_domain" ElementSet="General" Class="LabelText" FieldName="domain" Label="Domain" AllowURLParam="N"/>
+       	<Element Name="fld_event" ElementSet="General" Class="LabelText" FieldName="event" Label="Event" AllowURLParam="N"/>
+       	<Element Name="fld_etag" ElementSet="General" Class="LabelText" FieldName="etag" Label="Etag" AllowURLParam="N"/>
+       	<Element Name="fld_expires" ElementSet="General" Class="LabelText" FieldName="expires" Label="Expires" AllowURLParam="N"/>
+       	<Element Name="fld_received_time" ElementSet="General" Class="LabelText" FieldName="received_time" Label="Received Time" AllowURLParam="N"/>
+	<Element Name="fld_body" ElementSet="General" Class="CKEditor"  mode="notoolbar"  Config="resize_maxWidth:640,resize_minWidth:640,resize_minHeight:300" width="640" height="300" FieldName="body" Label="Body"  Sortable="Y" AllowURLParam="N" Translatable="N" OnEventLog="N"  />            
+       	<Element Name="fld_sender" ElementSet="General" Class="LabelText" FieldName="sender" Label="Sender" AllowURLParam="N"/>
+    </DataPanel>
+    <ActionPanel>       
+        <Element Name="btn_new" Class="Button" Text="Add" CssClass="button_gray_add" Description="new record (Insert)">
+			<EventHandler Name="btn_new_onclick" Event="onclick" Function="SwitchForm(ser.prs.presence.form.PresentityNewForm)"  ShortcutKey="Insert" ContextMenu="New" />
+        </Element>          
+        <Element Name="btn_edit" Class="Button" Text="Edit" CssClass="button_gray_m" Description="edit record (Ctrl+E)">
+			<EventHandler Name="btn_new_onclick" Event="onclick" Function="SwitchForm(ser.prs.presence.form.PresentityEditForm,{@:Elem[fld_Id].Value})"  ShortcutKey="Ctrl+E" ContextMenu="Edit" />
+        </Element>
+		<Element Name="btn_copy" Class="Button" Text="Copy" CssClass="button_gray_m" Description="copy record (Ctrl+C)">
+            <EventHandler Name="onclick" Event="onclick" EventLogMsg="" Function="CopyRecord({@:Elem[fld_Id].Value})" RedirectPage="form=ser.prs.presence.form.PresentityCopyForm&amp;fld:Id={@:Elem[fld_Id].Value}" ShortcutKey="Ctrl+C" ContextMenu="Copy"/>
+        </Element> 
+        <Element Name="btn_delete" Class="Button" Text="Delete" CssClass="button_gray_m" Description="delete record (Delete)">
+            <EventHandler Name="del_onclick" Event="onclick" EventLogMsg="" Function="DeleteRecord({@:Elem[fld_Id].Value})"  RedirectPage="form=ser.prs.presence.form.PresentityListForm" ShortcutKey="Ctrl+Delete" ContextMenu="Delete" />
+        </Element>
+        <Element Name="btn_cancel" Class="Button" Text="Back" CssClass="button_gray_m">
+            <EventHandler Name="btn_cancel_onclick" Event="onclick" Function="SwitchForm(ser.prs.presence.form.PresentityListForm)"  ShortcutKey="Escape" ContextMenu="Cancel" />
+        </Element>         
+    </ActionPanel> 
+    <NavPanel>
+    </NavPanel> 
+    <SearchPanel>
+    </SearchPanel>
+</EasyForm>

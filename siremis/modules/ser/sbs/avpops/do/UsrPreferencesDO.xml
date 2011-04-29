@@ -1,0 +1,17 @@
+<?xml version="1.0" standalone="no"?>
+<BizDataObj Name="UsrPreferencesDO" Description="" Class="BizDataObj" DBName="Serdb" Table="usr_preferences" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+	<BizFieldList>
+        <BizField Name="Id" Column="id" Type="Number"/>
+        <BizField Name="uuid" Column="uuid" Type="Text" Required="N"/>
+        <BizField Name="username" Column="username" Type="Text" Required="N"/>
+        <BizField Name="domain" Column="domain" Type="Text" Required="N"/>
+        <BizField Name="attribute" Column="attribute" Length="32" Required="Y" Type="Text"/>
+        <BizField Name="type" Column="type" Required="Y" Type="Number"/>
+        <BizField Name="value" Column="value" Length="128" Required="Y" Type="Text"/>
+        <BizField Name="last_modified" Column="last_modified" DefaultValue="1900-01-01 00:00:01" Required="Y" Type="Datetime"/>
+	</BizFieldList>
+    <TableJoins>
+    </TableJoins>
+    <ObjReferences>
+    </ObjReferences>
+</BizDataObj>

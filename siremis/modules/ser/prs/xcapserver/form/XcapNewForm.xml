@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EasyForm Name="XcapNewForm" Class="EasyForm" FormType="New" jsClass="jbForm" Title="New Xcap" Description="" BizDataObj="ser.prs.xcapserver.do.XcapDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
+    <DataPanel>
+        <Element Name="fld_username" Class="InputText" FieldName="username" Label="Username"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_domain" Class="InputText" FieldName="domain" Label="Domain"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_doc" Class="InputText" FieldName="doc" Label="Doc"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_doc_type" Class="InputText" FieldName="doc_type" Label="Doc Type"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_etag" Class="InputText" FieldName="etag" Label="Etag"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_source" Class="InputText" FieldName="source" Label="Source"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_doc_uri" Class="InputText" FieldName="doc_uri" Label="Doc Uri"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_port" Class="InputText" FieldName="port" Label="Port"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        </DataPanel>
+    <ActionPanel>
+        <Element Name="btn_save" Class="Button" Text="Save" CssClass="button_gray_m">
+            <EventHandler Name="save_onclick" EventLogMsg="" Event="onclick" Function="InsertRecord()" RedirectPage="form=ser.prs.xcapserver.form.XcapDetailForm&amp;fld:Id={@ser.prs.xcapserver.do.XcapDO:Field[Id].Value}"  ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
+        </Element>
+        <Element Name="btn_cancel" Class="Button" Text="Cancel" CssClass="button_gray_m">
+            <EventHandler Name="cancel_onclick" Event="onclick" Function="SwitchForm(ser.prs.xcapserver.form.XcapListForm)"  ShortcutKey="Escape" ContextMenu="Cancel"/>
+        </Element>
+    </ActionPanel> 
+    <NavPanel>
+    </NavPanel> 
+    <SearchPanel>
+    </SearchPanel>
+</EasyForm>

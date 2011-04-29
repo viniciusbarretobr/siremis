@@ -1,0 +1,12 @@
+<?xml version="1.0" standalone="no"?>
+<BizDataObj Name="DomainPickDO" Description="" Class="BizDataObj" DBName="Serdb" Table="domain" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="domain;" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+	<BizFieldList>
+        <BizField Name="Id" Column="id"     Type="Number"/>
+        <BizField Name="domain" Column="domain" Length="64"   Required="Y" Type="Text"/>
+        <BizField Name="last_modified" Column="last_modified"  DefaultValue="1900-01-01 00:00:01"  Required="Y" Type="Datetime"/>
+	</BizFieldList>
+    <TableJoins>
+    </TableJoins>
+    <ObjReferences>
+    </ObjReferences>
+</BizDataObj>

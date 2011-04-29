@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EasyForm Name="SiloDetailForm" Class="EasyForm" FormType="" jsClass="jbForm" Title="Silo Detail" Description="" BizDataObj="ser.sbs.msilo.do.SiloDO" TemplateEngine="Smarty" TemplateFile="detail_elementset.tpl" EventName="" MessageFile="">
+    <DataPanel>
+		<Element Name="fld_Id" ElementSet="General" Hidden="Y" Class="LabelText" FieldName="Id" Label="Id" AllowURLParam="Y"/>
+       	<Element Name="fld_src_addr" ElementSet="General" Class="LabelText" FieldName="src_addr" Label="Src Addr" AllowURLParam="N"/>
+       	<Element Name="fld_dst_addr" ElementSet="General" Class="LabelText" FieldName="dst_addr" Label="Dst Addr" AllowURLParam="N"/>
+       	<Element Name="fld_username" ElementSet="General" Class="LabelText" FieldName="username" Label="Username" AllowURLParam="N"/>
+       	<Element Name="fld_domain" ElementSet="General" Class="LabelText" FieldName="domain" Label="Domain" AllowURLParam="N"/>
+       	<Element Name="fld_inc_time" ElementSet="General" Class="LabelText" FieldName="inc_time" Label="Inc Time" AllowURLParam="N"/>
+       	<Element Name="fld_exp_time" ElementSet="General" Class="LabelText" FieldName="exp_time" Label="Exp Time" AllowURLParam="N"/>
+       	<Element Name="fld_snd_time" ElementSet="General" Class="LabelText" FieldName="snd_time" Label="Snd Time" AllowURLParam="N"/>
+       	<Element Name="fld_ctype" ElementSet="General" Class="LabelText" FieldName="ctype" Label="Ctype" AllowURLParam="N"/>
+       	<Element Name="fld_body" ElementSet="General" Class="LabelText" FieldName="body" Label="Body" AllowURLParam="N"/>
+    </DataPanel>
+    <ActionPanel>       
+        <Element Name="btn_new" Class="Button" Text="Add" CssClass="button_gray_add" Description="new record (Insert)">
+			<EventHandler Name="btn_new_onclick" Event="onclick" Function="SwitchForm(ser.sbs.msilo.form.SiloNewForm)"  ShortcutKey="Insert" ContextMenu="New" />
+        </Element>          
+        <Element Name="btn_edit" Class="Button" Text="Edit" CssClass="button_gray_m" Description="edit record (Ctrl+E)">
+			<EventHandler Name="btn_new_onclick" Event="onclick" Function="SwitchForm(ser.sbs.msilo.form.SiloEditForm,{@:Elem[fld_Id].Value})"  ShortcutKey="Ctrl+E" ContextMenu="Edit" />
+        </Element>
+		<Element Name="btn_copy" Class="Button" Text="Copy" CssClass="button_gray_m" Description="copy record (Ctrl+C)">
+            <EventHandler Name="onclick" Event="onclick" EventLogMsg="" Function="CopyRecord({@:Elem[fld_Id].Value})" RedirectPage="form=ser.sbs.msilo.form.SiloCopyForm&amp;fld:Id={@:Elem[fld_Id].Value}" ShortcutKey="Ctrl+C" ContextMenu="Copy"/>
+        </Element> 
+        <Element Name="btn_delete" Class="Button" Text="Delete" CssClass="button_gray_m" Description="delete record (Delete)">
+            <EventHandler Name="del_onclick" Event="onclick" EventLogMsg="" Function="DeleteRecord({@:Elem[fld_Id].Value})"  RedirectPage="form=ser.sbs.msilo.form.SiloListForm" ShortcutKey="Ctrl+Delete" ContextMenu="Delete" />
+        </Element>
+        <Element Name="btn_cancel" Class="Button" Text="Back" CssClass="button_gray_m">
+            <EventHandler Name="btn_cancel_onclick" Event="onclick" Function="SwitchForm(ser.sbs.msilo.form.SiloListForm)"  ShortcutKey="Escape" ContextMenu="Cancel" />
+        </Element>         
+    </ActionPanel> 
+    <NavPanel>
+    </NavPanel> 
+    <SearchPanel>
+    </SearchPanel>
+</EasyForm>

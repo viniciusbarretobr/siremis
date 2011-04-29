@@ -1,0 +1,38 @@
+	<div id="header">
+		<div id="header_left"></div>
+		<div id="header_right">
+			<div id="user_actions">
+				<div style="height:10px;"></div>
+				<!-- user actions start -->
+				<ul>
+					<li><a class="icon_myaccount" href="{$app_index}/user/accountEdit" >{t}My Account{/t}</a></li>
+					<li><a class="icon_help" href="{$app_index}/pages/help.html" >{t}Help{/t}</a></li>
+					<li><a class="icon_logout" href="{$app_index}/user/logout" >{t}Logout{/t}</a></li>												
+				</ul>
+				<!-- user actions end -->					
+			</div>
+			<div id="menu">	
+				<!-- top menu start -->
+				{php}
+				$temp = Bizsystem::GetObject('menu.widget.MainTabMenu')->render();
+				unset($temp);
+				echo Bizsystem::GetObject('menu.widget.MainTabMenu')->render();
+				{/php}
+				<!-- top menu end -->								
+			</div>
+			
+		</div>
+	</div>	
+	<div id="header_navi">
+		<div id="navi">
+		{php}echo Bizsystem::GetObject('menu.widget.BreadcrumbMenu')->render();{/php}
+		</div>
+		<div id="current_user_info">
+		{php}
+		$profile = BizSystem::getUserProfile();
+		$this->assign('profile', $profile);
+		{/php}
+		{$profile.username} &lt;{$profile.email}&gt;
+		{include file="system_appbuilder_btn.tpl.html"}
+		</div>			
+	</div>

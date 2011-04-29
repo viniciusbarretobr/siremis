@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<EasyView Name="CarrierNameListView" Description="ser.rtg.carrierroute" Class="EasyView" Tab="" TemplateEngine="Smarty" TemplateFile="view.tpl">
+   <FormReferences>
+   		<Reference Name="ser.rtg.carrierroute.form.CarrierNameListForm"/>
+   </FormReferences>
+   <FormReferenceLibs>
+   		<Reference Name="ser.rtg.carrierroute.form.CarrierNameListForm"/>
+   		<Reference Name="ser.rtg.carrierroute.form.CarrierNameEditForm"/>
+   		<Reference Name="ser.rtg.carrierroute.form.CarrierNameCopyForm"/>
+   		<Reference Name="ser.rtg.carrierroute.form.CarrierNameNewForm"/>
+   		<Reference Name="ser.rtg.carrierroute.form.CarrierNameDetailForm"/>
+   </FormReferenceLibs>    
+</EasyView>

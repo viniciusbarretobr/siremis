@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EasyForm Name="XrcmdsForm" Class="XrcmdsForm" FormType="Edit" jsClass="jbForm" Title="MI Commands"
+		Description="" BizDataObj="" TemplateEngine="Smarty" TemplateFile="view.tpl" >
+    <DataPanel>
+    </DataPanel>
+    <ActionPanel>
+    </ActionPanel> 
+    <NavPanel>
+    </NavPanel> 
+    <SearchPanel>
+    </SearchPanel>
+</EasyForm>

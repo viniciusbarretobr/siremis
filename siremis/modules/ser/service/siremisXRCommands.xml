@@ -1,0 +1,12 @@
+<?xml version="1.0" standalone="no"?>
+<PluginService Name="siremisXRCommands" Package="asipto" Class="siremisXRCommands">
+    <XRConfig name="XRConfig" mode="rich">
+		<RSocket name="rsocket" path="/RPC2"
+			address="127.0.0.1" port="5060"
+			timeout="3"/>
+        <XRCommands>
+            <cmd name="help" title="List commands" command="system.listMethods"/>
+            <cmd name="uptime" title="Uptime" command="core.uptime"/>
+        </XRCommands>
+    </XRConfig>
+</PluginService>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EasyForm Name="AddressCopyForm" Class="EasyForm" FormType="Edit" jsClass="jbForm" Title="Copy Address" Description="" BizDataObj="ser.acl.permissions.do.AddressDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
+    <DataPanel>
+        <Element Name="fld_Id" Class="Hidden" FieldName="Id" Label="Id" AllowURLParam="Y"/>	
+		<Element Name="fld_grp" Class="InputText" FieldName="grp" Label="Grp"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_ip_addr" Class="InputText" FieldName="ip_addr" Label="Ip Addr"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_mask" Class="InputText" FieldName="mask" Label="Mask"  DefaultValue="32" AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_port" Class="InputText" FieldName="port" Label="Port"  DefaultValue="0" AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_tag" Class="InputText" FieldName="tag" Label="Tag"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+    </DataPanel>
+    <ActionPanel>
+        <Element Name="btn_save" Class="Button" Text="Save" CssClass="button_gray_m">
+            <EventHandler Name="save_onclick" EventLogMsg="" Event="onclick" Function="InsertRecord()" RedirectPage="form=ser.acl.permissions.form.AddressDetailForm&amp;fld:Id={@ser.acl.permissions.do.AddressDO:Field[Id].Value}"  ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
+        </Element>
+        <Element Name="btn_cancel" Class="Button" Text="Cancel" CssClass="button_gray_m">
+            <EventHandler Name="cancel_onclick" Event="onclick" Function="SwitchForm(ser.acl.permissions.form.AddressListForm)"  ShortcutKey="Escape" ContextMenu="Cancel"/>
+        </Element>
+    </ActionPanel> 
+    <NavPanel>
+    </NavPanel> 
+    <SearchPanel>
+    </SearchPanel>
+</EasyForm>

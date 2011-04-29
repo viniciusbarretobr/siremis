@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EasyForm Name="GrpSearchForm" Class="ser.common.form.EasySearchForm" FormType="Search" jsClass="jbForm" Title="Search Grp" Description="" BizDataObj="ser.acl.group.do.GrpDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
+    <DataPanel>
+        <Element Name="fld_username" Class="InputText" FieldName="username" Label="Username"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_domain" Class="InputText" FieldName="domain" Label="Domain"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_grp" Class="InputText" FieldName="grp" Label="Grp"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+    			<Element Name="fld_last_modified" Class="InputDatetime" DateFormat="%Y-%m-%d %H:%M:%S" FieldName="last_modified" Label="Last Modified" Sortable="Y" AllowURLParam="N" Translatable="N" OnEventLog="N"  CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        </DataPanel>
+    <ActionPanel>
+        <Element Name="btn_search" Class="Button" Text="Search" CssClass="button_gray_m">
+			<EventHandler Name="search_onclick" EventLogMsg="" Event="onclick" Function="SwitchSearchForm(ser.acl.group.form.GrpListForm)" RedirectPage=""  ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
+        </Element>
+        <Element Name="btn_cancel" Class="Button" Text="Cancel" CssClass="button_gray_m">
+            <EventHandler Name="cancel_onclick" Event="onclick" Function="SwitchForm(ser.acl.group.form.GrpListForm)"  ShortcutKey="Escape" ContextMenu="Cancel"/>
+        </Element>
+    </ActionPanel> 
+    <NavPanel>
+    </NavPanel> 
+    <SearchPanel>
+    </SearchPanel>
+</EasyForm>

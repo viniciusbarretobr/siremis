@@ -1,0 +1,128 @@
+SIREMIS Project
+Web Management Interface for SIP Routing Engines
+     (Kamailio and SER)
+- http://siremis.asipto.com
+
+Release changelogs
+
++++ SIREMIS v2.0.1 :: 2011-XX-XX
+
+* fixed LCR input field types
+* detect eval() errors
+* set default dispatcher flags to 0
+* set default permissions address port to 0
+* set input text for permissions fields considered checkbox
+
++++ SIREMIS v2.0.0 :: 2010-11-01
+
+* updated to work with Kamailio (OpenSER) 3.1.0
+* major refactoring of web interface
+  * better accessibility
+  * simplified menu structure
+  * new look
+  * dashboard with the map of all available tools
+* developed on top of Cubi and PHPOpenBiz v2.4
+* web installation wizard
+* added new modules: xcap, dialog, new lcr
+* usage of separate database for siremis itself
+* managment of users that can login to siremis
+* management of menu can be done from web interface
+* building Apache conf and htaccess file can be done by Makefie
+* charts to monitor location transport layers
+
++++ SIREMIS v1.0.1 :: 2010-09-14
+
+* default init page is home.php instead of login.php
+* fixed missing lcr_id column for LCR GW table
+
++++ SIREMIS v1.0.0 :: 2010-01-18
+
+* updated to work with Kamailio (OpenSER) 3.0.0
+  * updated Least Cost Routing GW form
+  * updated Least Cost Routing LCR form
+* upgraded openbiz to latest 2.3 branch
+* upgraded Zend framework to 1.9.7
+* upgraded Phpmailer to 5.1
+* upgraded Smarty to 1.6.26
+* upgraded OFC to 2.0 Lug Wyrm Charmer
+* created Makefile
+* added misc dir to hold for now the patch for openbiz
+* added patch to work with kamailio (openser) 1.5.x
+* added user location statistics charts
+  * stats for user agents
+  * stats for supported SIP methods
+  * stats for aor, contacts and nat
+* added support for sip_trace
+  * highlight first line and headers
+  * group per call-id
+* updates of generic charts
+  * time x axis has hour:min labels
+  * updated for new area class
+  * support for area, line and line_dot (default line) charts
+  * default dot style set to size 3
+* added support for presence server
+  * watchers, active watchers and presentity
+* redirect to 'bin' with javascript and offer link
+* auto generate (update) ha1 and ha1b values for subscriber table
+
++++ SIREMIS v0.9.4 :: 2009-10-01
+
+* fixed metadata/Config.xml sample where "Default' connection was missing
+  resulting in JSON error
+
++++ SIREMIS v0.9.3 :: 2009-07-27
+
+* communication with SIP-Router.org and SIP Express Router (SER) via
+  XMLRPC (RPC command interface)
+* communication with FreeSwitch via event socket
+* support to print rich html formatting of MI, XMLRPC and FreeSwitch
+  command response (config option)
+* stand-alone PHP classes for MI, XMLRPC and FS Event Socket, alowing
+  further development easier
+* output of commands can be filtered for nicer display (e.g, see FS
+  help, xmlrpc MI commands)
+* MI, XMLRPC and FS Event Socket groupped under Cmds Panel tab
+* updated phpopenbiz core
+* fix for re groups db table 
+* link referencing on username between group view, db aliases view and
+subscriber view
+* more options to sort the views
+* auto-suggestion for group name when adding a new record
+
+
++++ SIREMIS v0.9.2 :: 2009-02-19
+
+* carrierroute module management
+	- management of carrierroute table
+	- management of carrierfailureroute table
+	- management of carrier_name table
+	- management of carrier_domain table
+
+
++++ SIREMIS v0.9.1 :: 2009-02-11
+
+* send MI commands to Kamailio (OpenSER) via UDP
+* display the output of a MI command
+* ability to predefine MI commands that can be selected from a drop-down menu
+* create graphic charts from statistic data
+* one or more charts per page
+* one or more graphics per chart
+* no new coding required, only configuration changes required to add new charts
+* drop-down selection for user AVP type
+
+
++++ SIREMIS v0.9.0 :: 2009-01-21
+
+* initial public release
+* main features:
+	- provides system and database administration tools for Kamailio (OpenSER)
+	- subscriber, database aliases and speed dial management
+	- location table view
+	- dispatcher, prefix-domain translation and least cost routing (lcr) management
+	- access control lists (user groups) and permissions management
+	- accounting records, missed calls and call data records view
+	- hash table, dial plan table and user preferences table management
+	- offline message storage view
+	- communication with Kamailio (OpenSER) via MI UDP sockets
+	- create and display charts from statistic data stored by Kamailio (OpenSER)
+

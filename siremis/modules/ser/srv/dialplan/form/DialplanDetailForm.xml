@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EasyForm Name="DialplanDetailForm" Class="EasyForm" FormType="" jsClass="jbForm" Title="Dialplan Detail" Description="" BizDataObj="ser.srv.dialplan.do.DialplanDO" TemplateEngine="Smarty" TemplateFile="detail_elementset.tpl" EventName="" MessageFile="">
+    <DataPanel>
+		<Element Name="fld_Id" ElementSet="General" Hidden="Y" Class="LabelText" FieldName="Id" Label="Id" AllowURLParam="Y"/>
+       	<Element Name="fld_dpid" ElementSet="General" Class="LabelText" FieldName="dpid" Label="Dpid" AllowURLParam="N"/>
+       	<Element Name="fld_pr" ElementSet="General" Class="LabelText" FieldName="pr" Label="Pr" AllowURLParam="N"/>
+       	<Element Name="fld_match_op" ElementSet="General" Class="LabelText" FieldName="match_op" Label="Match Op" AllowURLParam="N"/>
+       	<Element Name="fld_match_exp" ElementSet="General" Class="LabelText" FieldName="match_exp" Label="Match Exp" AllowURLParam="N"/>
+       	<Element Name="fld_match_len" ElementSet="General" Class="LabelText" FieldName="match_len" Label="Match Len" AllowURLParam="N"/>
+       	<Element Name="fld_subst_exp" ElementSet="General" Class="LabelText" FieldName="subst_exp" Label="Subst Exp" AllowURLParam="N"/>
+       	<Element Name="fld_repl_exp" ElementSet="General" Class="LabelText" FieldName="repl_exp" Label="Repl Exp" AllowURLParam="N"/>
+       	<Element Name="fld_attrs" ElementSet="General" Class="LabelText" FieldName="attrs" Label="Attrs" AllowURLParam="N"/>
+    </DataPanel>
+    <ActionPanel>       
+        <Element Name="btn_new" Class="Button" Text="Add" CssClass="button_gray_add" Description="new record (Insert)">
+			<EventHandler Name="btn_new_onclick" Event="onclick" Function="SwitchForm(ser.srv.dialplan.form.DialplanNewForm)"  ShortcutKey="Insert" ContextMenu="New" />
+        </Element>          
+        <Element Name="btn_edit" Class="Button" Text="Edit" CssClass="button_gray_m" Description="edit record (Ctrl+E)">
+			<EventHandler Name="btn_new_onclick" Event="onclick" Function="SwitchForm(ser.srv.dialplan.form.DialplanEditForm,{@:Elem[fld_Id].Value})"  ShortcutKey="Ctrl+E" ContextMenu="Edit" />
+        </Element>
+		<Element Name="btn_copy" Class="Button" Text="Copy" CssClass="button_gray_m" Description="copy record (Ctrl+C)">
+            <EventHandler Name="onclick" Event="onclick" EventLogMsg="" Function="CopyRecord({@:Elem[fld_Id].Value})" RedirectPage="form=ser.srv.dialplan.form.DialplanCopyForm&amp;fld:Id={@:Elem[fld_Id].Value}" ShortcutKey="Ctrl+C" ContextMenu="Copy"/>
+        </Element> 
+        <Element Name="btn_delete" Class="Button" Text="Delete" CssClass="button_gray_m" Description="delete record (Delete)">
+            <EventHandler Name="del_onclick" Event="onclick" EventLogMsg="" Function="DeleteRecord({@:Elem[fld_Id].Value})"  RedirectPage="form=ser.srv.dialplan.form.DialplanListForm" ShortcutKey="Ctrl+Delete" ContextMenu="Delete" />
+        </Element>
+        <Element Name="btn_cancel" Class="Button" Text="Back" CssClass="button_gray_m">
+            <EventHandler Name="btn_cancel_onclick" Event="onclick" Function="SwitchForm(ser.srv.dialplan.form.DialplanListForm)"  ShortcutKey="Escape" ContextMenu="Cancel" />
+        </Element>         
+    </ActionPanel> 
+    <NavPanel>
+    </NavPanel> 
+    <SearchPanel>
+    </SearchPanel>
+</EasyForm>

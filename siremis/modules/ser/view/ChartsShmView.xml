@@ -1,0 +1,6 @@
+<?xml version="1.0" standalone="no"?>
+<EasyView Name="ChartsShmView" Description="Charts" class="EasyView" Tab="" TemplateEngine="Smarty" TemplateFile="view.tpl">
+    <FormReferences>
+        <Reference Name="ser.cms.form.ChartsForm"/>
+    </FormReferences>
+</EasyView>

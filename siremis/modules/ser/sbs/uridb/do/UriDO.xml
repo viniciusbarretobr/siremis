@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="no"?>
+<BizDataObj Name="UriDO" Description="" Class="BizDataObj" DBName="Serdb" Table="uri" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="username,domain,uri_user;" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+	<BizFieldList>
+        <BizField Name="Id" Column="id"     Type="Number"/>
+        <BizField Name="username" Column="username" Length="64"   Required="Y" Type="Text"/>
+        <BizField Name="domain" Column="domain" Length="64"   Required="Y" Type="Text"/>
+        <BizField Name="uri_user" Column="uri_user" Length="64"   Required="Y" Type="Text"/>
+        <BizField Name="last_modified" Column="last_modified"  DefaultValue="1900-01-01 00:00:01"  Required="Y" Type="Datetime"/>
+	</BizFieldList>
+    <TableJoins>
+    </TableJoins>
+    <ObjReferences>
+    </ObjReferences>
+</BizDataObj>

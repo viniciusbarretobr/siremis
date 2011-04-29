@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EasyForm Name="MissedCallsCopyForm" Class="EasyForm" FormType="Edit" jsClass="jbForm" Title="Copy Missed Calls" Description="" BizDataObj="ser.acs.acc.do.MissedCallsDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
+    <DataPanel>
+        <Element Name="fld_Id" Class="Hidden" FieldName="Id" Label="Id" AllowURLParam="Y"/>	
+		<Element Name="fld_method" Class="InputText" FieldName="method" Label="Method"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_from_tag" Class="InputText" FieldName="from_tag" Label="From Tag"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_to_tag" Class="InputText" FieldName="to_tag" Label="To Tag"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_callid" Class="InputText" FieldName="callid" Label="Callid"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_sip_code" Class="InputText" FieldName="sip_code" Label="Sip Code"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_sip_reason" Class="InputText" FieldName="sip_reason" Label="Sip Reason"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_time" Class="InputDatetime" DateFormat="%Y-%m-%d %H:%M:%S" FieldName="time" Label="Time" DefaultValue="0000-00-00 00:00:00" Sortable="Y" AllowURLParam="N" Translatable="N" OnEventLog="N"  CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_src_ip" Class="InputText" FieldName="src_ip" Label="Src Ip"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_dst_user" Class="InputText" FieldName="dst_user" Label="Dst User"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_dst_domain" Class="InputText" FieldName="dst_domain" Label="Dst Domain"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_src_user" Class="InputText" FieldName="src_user" Label="Src User"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_src_domain" Class="InputText" FieldName="src_domain" Label="Src Domain"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_cdr_id" Class="InputText" FieldName="cdr_id" Label="Cdr Id"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+    </DataPanel>
+    <ActionPanel>
+        <Element Name="btn_save" Class="Button" Text="Save" CssClass="button_gray_m">
+            <EventHandler Name="save_onclick" EventLogMsg="" Event="onclick" Function="InsertRecord()" RedirectPage="form=ser.acs.acc.form.MissedCallsDetailForm&amp;fld:Id={@ser.acs.acc.do.MissedCallsDO:Field[Id].Value}"  ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
+        </Element>
+        <Element Name="btn_cancel" Class="Button" Text="Cancel" CssClass="button_gray_m">
+            <EventHandler Name="cancel_onclick" Event="onclick" Function="SwitchForm(ser.acs.acc.form.MissedCallsListForm)"  ShortcutKey="Escape" ContextMenu="Cancel"/>
+        </Element>
+    </ActionPanel> 
+    <NavPanel>
+    </NavPanel> 
+    <SearchPanel>
+    </SearchPanel>
+</EasyForm>

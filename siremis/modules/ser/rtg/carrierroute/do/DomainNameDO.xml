@@ -1,0 +1,11 @@
+<?xml version="1.0" standalone="no"?>
+<BizDataObj Name="DomainNameDO" Description="" Class="BizDataObj" DBName="Serdb" Table="domain_name" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+	<BizFieldList>
+        <BizField Name="Id" Column="id"     Type="Number"/>
+        <BizField Name="domain" Column="domain" Length="64"   Required="N" Type="Text"/>
+	</BizFieldList>
+    <TableJoins>
+    </TableJoins>
+    <ObjReferences>
+    </ObjReferences>
+</BizDataObj>

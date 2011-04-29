@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="no"?>
+<BizDataObj Name="TrustedDO" Description="" Class="BizDataObj" DBName="Serdb" Table="trusted" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+	<BizFieldList>
+        <BizField Name="Id" Column="id"     Type="Number"/>
+        <BizField Name="src_ip" Column="src_ip" Length="50"   Required="Y" Type="Text"/>
+        <BizField Name="proto" Column="proto" Length="4"   Required="Y" Type="Text"/>
+        <BizField Name="from_pattern" Column="from_pattern" Length="64"   Required="N" Type="Text"/>
+        <BizField Name="tag" Column="tag" Length="64"   Required="N" Type="Text"/>
+	</BizFieldList>
+    <TableJoins>
+    </TableJoins>
+    <ObjReferences>
+    </ObjReferences>
+</BizDataObj>

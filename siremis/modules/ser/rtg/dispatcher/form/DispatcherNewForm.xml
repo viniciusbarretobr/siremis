@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EasyForm Name="DispatcherNewForm" Class="EasyForm" FormType="New" jsClass="jbForm" Title="New Dispatcher" Description="" BizDataObj="ser.rtg.dispatcher.do.DispatcherDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
+    <DataPanel>
+        <Element Name="fld_setid" Class="InputText" FieldName="setid" Label="Set ID" DefaultValue="1" Required="Y" CssClass="input_text"/>
+        <Element Name="fld_destination" Class="InputText" FieldName="destination" Label="Destination" AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_flags" Class="InputText" FieldName="flags" Label="Flags" Required="Y" DefaultValue="0" CssClass="input_text"/>
+        <Element Name="fld_priority" Class="InputText" FieldName="priority" Label="Priority" DefaultValue="0" CssClass="input_text"/>
+        <Element Name="fld_attrs" Class="InputText" FieldName="attrs" Label="Attrs" Required="N" CssClass="input_text"/>
+        <Element Name="fld_description" Class="InputText" FieldName="description" Label="Description" Required="N" CssClass="input_text"/>
+        </DataPanel>
+    <ActionPanel>
+        <Element Name="btn_save" Class="Button" Text="Save" CssClass="button_gray_m">
+            <EventHandler Name="save_onclick" EventLogMsg="" Event="onclick" Function="InsertRecord()" RedirectPage="form=ser.rtg.dispatcher.form.DispatcherDetailForm&amp;fld:Id={@ser.rtg.dispatcher.do.DispatcherDO:Field[Id].Value}" ShortcutKey="Ctrl+Enter" ContextMenu="Save"/>
+        </Element>
+        <Element Name="btn_cancel" Class="Button" Text="Cancel" CssClass="button_gray_m">
+            <EventHandler Name="cancel_onclick" Event="onclick" Function="SwitchForm(ser.rtg.dispatcher.form.DispatcherListForm)" ShortcutKey="Escape" ContextMenu="Cancel"/>
+        </Element>
+    </ActionPanel> 
+    <NavPanel>
+    </NavPanel> 
+    <SearchPanel>
+    </SearchPanel>
+</EasyForm>

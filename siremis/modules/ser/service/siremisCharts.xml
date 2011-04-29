@@ -1,0 +1,76 @@
+<?xml version="1.0" standalone="no"?>
+<PluginService Name="siremisCharts" Package="asipto" Class="siremisCharts">
+  <ChartGroup name="tm">
+	  <Chart name="tm" table="statistics" title="TM Stats" bgcolor="#FFF8C6"
+			order="reverse" orderby="ORDER BY id DESC" limit="LIMIT 120">
+		<XAxis>
+			<Item name="time_stamp" data="time_stamp" title="timestamp" type="timestamp"/>
+		</XAxis>
+		<YAxis>
+			<Item name="tm_active" data="tm_active" title="Active Transactions" type="dataset"/>
+		</YAxis>
+    </Chart>
+	  <Chart name="tm200okload" table="statistics" title="TM 2xx Trans Load" bgcolor="#C3FDB8"
+			order="reverse" orderby="ORDER BY id DESC" limit="LIMIT 120">
+		<XAxis>
+			<Item name="time_stamp" data="time_stamp" title="timestamp" type="timestamp"/>
+		</XAxis>
+		<YAxis>
+			<Item name="2xx_trans_diff" data="2xx_trans_diff" title="2xx trans" type="dataset" color="#FBB917" />
+		</YAxis>
+    </Chart>
+  </ChartGroup>
+  <ChartGroup name="shm">
+	  <Chart name="shm" table="statistics" title="Shared Memory" bgcolor="#40E046" type="area"
+			order="reverse" orderby="ORDER BY id DESC" limit="LIMIT 120">
+		<XAxis>
+			<Item name="time_stamp" data="time_stamp" title="timestamp" type="timestamp"/>
+		</XAxis>
+		<YAxis>
+			<Item name="shm_used_size" data="shm_used_size" title="Used Size" type="dataset" color="#DFC329"/>
+			<Item name="shm_real_used_size" data="shm_real_used_size" title="Real Used Size" type="dataset" color="#5E4785"/>
+		</YAxis>
+    </Chart>
+	<Chart name="shmused" table="statistics" title="Used Shared Memory" bgcolor="#B0E0E6" type="area"
+			order="reverse" orderby="ORDER BY id DESC" limit="LIMIT 120">
+		<XAxis>
+			<Item name="time_stamp" data="time_stamp" title="timestamp" type="timestamp"/>
+		</XAxis>
+		<YAxis>
+			<Item name="shm_max_used_size" data="shm_max_used_size" title="Max Used Size" type="dataset" color="#6363AC"/>
+		</YAxis>
+    </Chart>
+  </ChartGroup>
+  <ChartGroup name="usrloc">
+	  <Chart name="usrloc" table="statistics" title="Location" type="area" order="reverse"
+			orderby="ORDER BY id DESC" limit="LIMIT 120">
+		<XAxis>
+			<Item name="time_stamp" data="time_stamp" title="timestamp" type="timestamp"/>
+		</XAxis>
+		<YAxis>
+			<Item name="ul_users" data="ul_users" title="users" type="dataset" color="#D02020"/>
+			<Item name="ul_contacts" data="ul_contacts" title="contacts" type="dataset" color="#DFC329"/>
+		</YAxis>
+    </Chart>
+  </ChartGroup>
+  <ChartGroup name="load">
+	  <Chart name="rreqload" table="statistics" title="Rcv Reqs" type="area" bgcolor="#FFFFCC"
+			order="reverse" orderby="ORDER BY id DESC" limit="LIMIT 120">
+		<XAxis>
+			<Item name="time_stamp" data="time_stamp" title="timestamp" type="timestamp"/>
+		</XAxis>
+		<YAxis>
+			<Item name="rcv_req_diff" data="rcv_req_diff" title="Rcv Reqs Load" type="dataset" color="#990000" />
+		</YAxis>
+    </Chart>
+	  <Chart name="freqload" table="statistics" title="Rcv Reqs" bgcolor="#66CC99"
+			order="reverse" orderby="ORDER BY id DESC" limit="LIMIT 120">
+		<XAxis>
+			<Item name="time_stamp" data="time_stamp" title="timestamp" type="timestamp"/>
+		</XAxis>
+		<YAxis>
+			<Item name="fwd_req_diff" data="fwd_req_diff" title="Fwd Reqs Load" type="dataset" color="#330099" />
+		</YAxis>
+    </Chart>
+  </ChartGroup>
+</PluginService>

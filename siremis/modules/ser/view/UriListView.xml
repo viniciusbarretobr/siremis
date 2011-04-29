@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<EasyView Name="UriListView" Description="ser.sbs.uridb" Class="EasyView" Tab="" TemplateEngine="Smarty" TemplateFile="view.tpl">
+   <FormReferences>
+   		<Reference Name="ser.sbs.uridb.form.UriListForm"/>
+   </FormReferences>
+   <FormReferenceLibs>
+   		<Reference Name="ser.sbs.uridb.form.UriListForm"/>
+   		<Reference Name="ser.sbs.uridb.form.UriEditForm"/>
+   		<Reference Name="ser.sbs.uridb.form.UriCopyForm"/>
+   		<Reference Name="ser.sbs.uridb.form.UriNewForm"/>
+   		<Reference Name="ser.sbs.uridb.form.UriDetailForm"/>
+   </FormReferenceLibs>    
+</EasyView>

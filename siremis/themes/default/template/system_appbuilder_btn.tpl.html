@@ -1,0 +1,9 @@
+{if $smarty.const.APPBUILDER}
+    {if $form.name}
+	<a class="appbuilder_btn_form_edit appbuilder_btn" title="Edit Application Form"  href="javascript:;" style="float:right;" onclick="Openbiz.Window.openPopup(Openbiz.appUrl+'/bin/metaedit.php?metaobj='+'{$form.name}',1024,680);"></a>
+	{/if}
+	
+	{if $view.name}
+	<a class="appbuilder_btn_view_edit appbuilder_btn" title="Edit Application View" href="javascript:;" style="float:right;margin-left:5px; margin-top:6px;" onclick="Openbiz.Window.openPopup(Openbiz.appUrl+'/bin/metaedit.php?metaobj='+'{$view.name}',1024,680);"></a>
+	{/if}
+{/if}

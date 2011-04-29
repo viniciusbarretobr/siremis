@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EasyForm Name="AddressSearchForm" Class="ser.common.form.EasySearchForm" FormType="Search" jsClass="jbForm" Title="Search Address" Description="" BizDataObj="ser.acl.permissions.do.AddressDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
+    <DataPanel>
+        <Element Name="fld_grp" Class="InputText" FieldName="grp" Label="Grp"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_ip_addr" Class="InputText" FieldName="ip_addr" Label="Ip Addr"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+	<Element Name="fld_mask" Class="InputText" FieldName="mask" Label="Mask"  DefaultValue="32" AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_port" Class="InputText" FieldName="port" Label="Port"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_tag" Class="InputText" FieldName="tag" Label="Tag"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        </DataPanel>
+    <ActionPanel>
+        <Element Name="btn_search" Class="Button" Text="Search" CssClass="button_gray_m">
+			<EventHandler Name="search_onclick" EventLogMsg="" Event="onclick" Function="SwitchSearchForm(ser.acl.permissions.form.AddressListForm)" RedirectPage=""  ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
+        </Element>
+        <Element Name="btn_cancel" Class="Button" Text="Cancel" CssClass="button_gray_m">
+            <EventHandler Name="cancel_onclick" Event="onclick" Function="SwitchForm(ser.acl.permissions.form.AddressListForm)"  ShortcutKey="Escape" ContextMenu="Cancel"/>
+        </Element>
+    </ActionPanel> 
+    <NavPanel>
+    </NavPanel> 
+    <SearchPanel>
+    </SearchPanel>
+</EasyForm>

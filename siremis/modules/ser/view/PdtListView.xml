@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<EasyView Name="PdtListView" Description="ser.rtg.pdt" Class="EasyView" Tab="" TemplateEngine="Smarty" TemplateFile="view.tpl">
+   <FormReferences>
+   		<Reference Name="ser.rtg.pdt.form.PdtListForm"/>
+   </FormReferences>
+   <FormReferenceLibs>
+   		<Reference Name="ser.rtg.pdt.form.PdtListForm"/>
+   		<Reference Name="ser.rtg.pdt.form.PdtEditForm"/>
+   		<Reference Name="ser.rtg.pdt.form.PdtCopyForm"/>
+   		<Reference Name="ser.rtg.pdt.form.PdtNewForm"/>
+   		<Reference Name="ser.rtg.pdt.form.PdtDetailForm"/>
+   </FormReferenceLibs>    
+</EasyView>

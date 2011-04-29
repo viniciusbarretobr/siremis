@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<EasyView Name="LcrGwListView" Description="ser.rtg.lcr" Class="EasyView" Tab="" TemplateEngine="Smarty" TemplateFile="view.tpl">
+   <FormReferences>
+   		<Reference Name="ser.rtg.lcr.form.LcrGwListForm"/>
+   </FormReferences>
+   <FormReferenceLibs>
+   		<Reference Name="ser.rtg.lcr.form.LcrGwListForm"/>
+   		<Reference Name="ser.rtg.lcr.form.LcrGwEditForm"/>
+   		<Reference Name="ser.rtg.lcr.form.LcrGwCopyForm"/>
+   		<Reference Name="ser.rtg.lcr.form.LcrGwNewForm"/>
+   		<Reference Name="ser.rtg.lcr.form.LcrGwDetailForm"/>
+   </FormReferenceLibs>    
+</EasyView>

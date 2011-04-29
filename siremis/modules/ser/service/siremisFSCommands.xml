@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="no"?>
+<PluginService Name="siremisFSCommands" Package="asipto" Class="siremisFSCommands">
+    <FSConfig name="FSConfig" mode="rich">
+		<RSocket name="rsocket"
+			address="127.0.0.1" port="8021"
+			password="ClueCon"
+			timeout="3" stimeout="0.2"/>
+        <FSCommands>
+            <cmd name="status" title="Server status" command="status"/>
+            <cmd name="help" title="List commands" command="help"/>
+            <cmd name="showchannels" title="Show channels" command="show channels"/>
+        </FSCommands>
+    </FSConfig>
+</PluginService>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EasyForm Name="CarrierfailurerouteSearchForm" Class="ser.common.form.EasySearchForm" FormType="Search" jsClass="jbForm" Title="Search Carrierfailureroute" Description="" BizDataObj="ser.rtg.carrierroute.do.CarrierfailurerouteDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
+    <DataPanel>
+        <Element Name="fld_carrier" Class="InputText" FieldName="carrier" Label="Carrier"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_domain" Class="InputText" FieldName="domain" Label="Domain"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_scan_prefix" Class="InputText" FieldName="scan_prefix" Label="Scan Prefix"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_host_name" Class="InputText" FieldName="host_name" Label="Host Name"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_reply_code" Class="InputText" FieldName="reply_code" Label="Reply Code"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_flags" Class="InputText" FieldName="flags" Label="Flags"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_mask" Class="InputText" FieldName="mask" Label="Mask"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_next_domain" Class="InputText" FieldName="next_domain" Label="Next Domain"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_description" Class="InputText" FieldName="description" Label="Description"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        </DataPanel>
+    <ActionPanel>
+        <Element Name="btn_search" Class="Button" Text="Search" CssClass="button_gray_m">
+			<EventHandler Name="search_onclick" EventLogMsg="" Event="onclick" Function="SwitchSearchForm(ser.rtg.carrierroute.form.CarrierfailurerouteListForm)" RedirectPage=""  ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
+        </Element>
+        <Element Name="btn_cancel" Class="Button" Text="Cancel" CssClass="button_gray_m">
+            <EventHandler Name="cancel_onclick" Event="onclick" Function="SwitchForm(ser.rtg.carrierroute.form.CarrierfailurerouteListForm)"  ShortcutKey="Escape" ContextMenu="Cancel"/>
+        </Element>
+    </ActionPanel> 
+    <NavPanel>
+    </NavPanel> 
+    <SearchPanel>
+    </SearchPanel>
+</EasyForm>

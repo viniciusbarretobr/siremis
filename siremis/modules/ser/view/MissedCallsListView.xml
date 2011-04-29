@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<EasyView Name="MissedCallsListView" Description="ser.acs.acc" Class="EasyView" Tab="" TemplateEngine="Smarty" TemplateFile="view.tpl">
+   <FormReferences>
+   		<Reference Name="ser.acs.acc.form.MissedCallsListForm"/>
+   </FormReferences>
+   <FormReferenceLibs>
+   		<Reference Name="ser.acs.acc.form.MissedCallsListForm"/>
+   		<Reference Name="ser.acs.acc.form.MissedCallsEditForm"/>
+   		<Reference Name="ser.acs.acc.form.MissedCallsCopyForm"/>
+   		<Reference Name="ser.acs.acc.form.MissedCallsNewForm"/>
+   		<Reference Name="ser.acs.acc.form.MissedCallsDetailForm"/>
+   </FormReferenceLibs>    
+</EasyView>

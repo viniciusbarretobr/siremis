@@ -1,0 +1,18 @@
+<?xml version="1.0" standalone="no"?>
+<BizDataObj Name="PresentityDO" Description="" Class="ser.prs.presence.do.PresentityDO" DBName="Serdb" Table="presentity" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="username,domain,event,etag;" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+	<BizFieldList>
+        <BizField Name="Id" Column="id"     Type="Number"/>
+        <BizField Name="username" Column="username" Length="64"   Required="Y" Type="Text"/>
+        <BizField Name="domain" Column="domain" Length="64"   Required="Y" Type="Text"/>
+        <BizField Name="event" Column="event" Length="64"   Required="Y" Type="Text"/>
+        <BizField Name="etag" Column="etag" Length="64"   Required="Y" Type="Text"/>
+        <BizField Name="expires" Column="expires"    Required="Y" Type="Number"/>
+        <BizField Name="received_time" Column="received_time"    Required="Y" Type="Number"/>
+        <BizField Name="body" Column="body"    Required="Y" Type="Text"/>
+        <BizField Name="sender" Column="sender" Length="128"   Required="Y" Type="Text"/>
+	</BizFieldList>
+    <TableJoins>
+    </TableJoins>
+    <ObjReferences>
+    </ObjReferences>
+</BizDataObj>

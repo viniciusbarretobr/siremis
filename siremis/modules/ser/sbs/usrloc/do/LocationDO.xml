@@ -1,0 +1,25 @@
+<?xml version="1.0" standalone="no"?>
+<BizDataObj Name="LocationDO" Description="" Class="BizDataObj" DBName="Serdb" Table="location" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="username,domain,contact;" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+	<BizFieldList>
+        <BizField Name="Id" Column="id"     Type="Number"/>
+        <BizField Name="username" Column="username" Length="64"   Required="Y" Type="Text"/>
+        <BizField Name="domain" Column="domain" Length="128"   Required="Y" Type="Text"/>
+        <BizField Name="contact" Column="contact" Length="255"   Required="Y" Type="Text"/>
+        <BizField Name="received" Column="received" Length="255"   Required="N" Type="Text"/>
+        <BizField Name="path" Column="path" Length="255"   Required="N" Type="Text"/>
+        <BizField Name="expires" Column="expires"  DefaultValue="2020-05-28 21:32:15"  Required="Y" Type="Datetime"/>
+        <BizField Name="q" Column="q"  DefaultValue="1.00"  Required="Y" Type="Number"/>
+        <BizField Name="callid" Column="callid" Length="255" DefaultValue="Default-Call-ID"  Required="Y" Type="Text"/>
+        <BizField Name="cseq" Column="cseq"  DefaultValue="13"  Required="Y" Type="Number"/>
+        <BizField Name="last_modified" Column="last_modified"  DefaultValue="1900-01-01 00:00:00"  Required="Y" Type="Datetime"/>
+        <BizField Name="flags" Column="flags"    Required="Y" Type="Number"/>
+        <BizField Name="cflags" Column="cflags"    Required="Y" Type="Number"/>
+        <BizField Name="user_agent" Column="user_agent" Length="255"   Required="Y" Type="Text"/>
+        <BizField Name="socket" Column="socket" Length="128"   Required="N" Type="Text"/>
+        <BizField Name="methods" Column="methods"    Required="N" Type="Number"/>
+	</BizFieldList>
+    <TableJoins>
+    </TableJoins>
+    <ObjReferences>
+    </ObjReferences>
+</BizDataObj>

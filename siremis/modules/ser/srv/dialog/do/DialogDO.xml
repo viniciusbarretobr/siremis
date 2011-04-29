@@ -1,0 +1,31 @@
+<?xml version="1.0" standalone="no"?>
+<BizDataObj Name="DialogDO" Description="" Class="BizDataObj" DBName="Serdb" Table="dialog" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+	<BizFieldList>
+        <BizField Name="Id" Column="id"     Type="Number"/>
+        <BizField Name="hash_entry" Column="hash_entry"    Required="Y" Type="Number"/>
+        <BizField Name="hash_id" Column="hash_id"    Required="Y" Type="Number"/>
+        <BizField Name="callid" Column="callid" Length="255"   Required="Y" Type="Text"/>
+        <BizField Name="from_uri" Column="from_uri" Length="128"   Required="Y" Type="Text"/>
+        <BizField Name="from_tag" Column="from_tag" Length="64"   Required="Y" Type="Text"/>
+        <BizField Name="to_uri" Column="to_uri" Length="128"   Required="Y" Type="Text"/>
+        <BizField Name="to_tag" Column="to_tag" Length="64"   Required="Y" Type="Text"/>
+        <BizField Name="caller_cseq" Column="caller_cseq" Length="7"   Required="Y" Type="Text"/>
+        <BizField Name="callee_cseq" Column="callee_cseq" Length="7"   Required="Y" Type="Text"/>
+        <BizField Name="caller_route_set" Column="caller_route_set" Length="512"   Required="N" Type="Text"/>
+        <BizField Name="callee_route_set" Column="callee_route_set" Length="512"   Required="N" Type="Text"/>
+        <BizField Name="caller_contact" Column="caller_contact" Length="128"   Required="Y" Type="Text"/>
+        <BizField Name="callee_contact" Column="callee_contact" Length="128"   Required="Y" Type="Text"/>
+        <BizField Name="caller_sock" Column="caller_sock" Length="64"   Required="Y" Type="Text"/>
+        <BizField Name="callee_sock" Column="callee_sock" Length="64"   Required="Y" Type="Text"/>
+        <BizField Name="state" Column="state"    Required="Y" Type="Number"/>
+        <BizField Name="start_time" Column="start_time"    Required="Y" Type="Number"/>
+        <BizField Name="timeout" Column="timeout"    Required="Y" Type="Number"/>
+        <BizField Name="sflags" Column="sflags"    Required="Y" Type="Number"/>
+        <BizField Name="toroute_name" Column="toroute_name"    Required="Y" Type="Text"/>
+        <BizField Name="req_uri" Column="req_uri" Length="128"   Required="Y" Type="Text"/>
+	</BizFieldList>
+    <TableJoins>
+    </TableJoins>
+    <ObjReferences>
+    </ObjReferences>
+</BizDataObj>

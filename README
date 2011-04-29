@@ -1,0 +1,38 @@
+SIREMIS - Web Management Interface for Kamailio (OpenSER) and SIP-Router.org
+============================================================================
+v2.0.0, Nov 01, 2010
+Web: http://siremis.asipto.com/
+
+Project Management:
+
+    * Elena-Ramona Modroiu - http://www.asipto.com
+
+Licensing:
+
+    * code and modules developed by ASIPTO are released under GPLv3: http://www.gnu.org/licenses/gpl-3.0.html
+    * for the licenses of the content of the PHPOpenBiz and Cubi frameworks included in SIREMIS tarball visit PHPOpenBiz.org site
+    * OFC library used to build charts is licensed under GPL2
+
+Install:
+
+    * http://siremis.asipto.com/install/
+
+Mailing list:
+
+    * use Kamailio (OpenSER) mailing lists to ask questions about SIREMIS
+    * Kamailio Users Mailing List: <users@lists.kamailio.org>
+    * Kamailio Devel Mailing List: <sr-dev@lists.sip-router.org>
+
+IRC Channel:
+
+    * #kamailio on irc.freenode.net
+
+Sourceforge Project:
+
+    * http://sourceforge.net/projects/siremis/
+
+Paid support or development extensions for SIREMIS:
+
+    * ASIPTO - http://www.asipto.com
+    * email: <office@asipto.com>
+

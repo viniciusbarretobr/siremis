@@ -1,0 +1,15 @@
+<?xml version="1.0" standalone="no"?>
+<BizDataObj Name="LcrRuleTargetDO" Description="" Class="BizDataObj" DBName="Serdb" Table="lcr_rule_target" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="rule_id,gw_id;" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+	<BizFieldList>
+        <BizField Name="Id" Column="id"     Type="Number"/>
+        <BizField Name="lcr_id" Column="lcr_id"    Required="Y" Type="Text"/>
+        <BizField Name="rule_id" Column="rule_id"    Required="Y" Type="Number"/>
+        <BizField Name="gw_id" Column="gw_id"    Required="Y" Type="Number"/>
+        <BizField Name="priority" Column="priority"    Required="Y" Type="Number"/>
+        <BizField Name="weight" Column="weight"  DefaultValue="1"  Required="Y" Type="Number"/>
+	</BizFieldList>
+    <TableJoins>
+    </TableJoins>
+    <ObjReferences>
+    </ObjReferences>
+</BizDataObj>

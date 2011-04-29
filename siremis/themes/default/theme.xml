@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metafile version="1.5"  client="site" >
+	<name>Siremis Blue</name>
+	<preview>theme_screenshot.png</preview>
+	<icon>theme_icon.gif</icon>
+	<version>2.0</version>
+	<creationDate>2010-09-20</creationDate>
+	<author>Siremis</author>
+	<authorEmail>team@siremis</authorEmail>
+	<authorUrl></authorUrl>
+	<copyright>Copyright (C) 2005 - 2010 Open Source Matters. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<description>Siremis default theme in light blue style, based on Cubi default theme.</description>
+</metafile>

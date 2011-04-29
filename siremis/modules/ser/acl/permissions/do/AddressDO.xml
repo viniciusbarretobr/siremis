@@ -1,0 +1,15 @@
+<?xml version="1.0" standalone="no"?>
+<BizDataObj Name="AddressDO" Description="" Class="BizDataObj" DBName="Serdb" Table="address" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+	<BizFieldList>
+        <BizField Name="Id" Column="id"     Type="Number"/>
+        <BizField Name="grp" Column="grp"  DefaultValue="1"  Required="Y" Type="Text"/>
+        <BizField Name="ip_addr" Column="ip_addr" Length="15"   Required="Y" Type="Text"/>
+        <BizField Name="mask" Column="mask"  DefaultValue="32"  Required="Y" Type="Number"/>
+        <BizField Name="port" Column="port"    Required="Y" Type="Text"/>
+        <BizField Name="tag" Column="tag" Length="64"   Required="N" Type="Text"/>
+	</BizFieldList>
+    <TableJoins>
+    </TableJoins>
+    <ObjReferences>
+    </ObjReferences>
+</BizDataObj>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EasyForm Name="DialogDetailForm" Class="EasyForm" FormType="" jsClass="jbForm" Title="Dialog Detail" Description="" BizDataObj="ser.srv.dialog.do.DialogDO" TemplateEngine="Smarty" TemplateFile="detail_elementset.tpl" EventName="" MessageFile="">
+    <DataPanel>
+		<Element Name="fld_Id" ElementSet="General" Hidden="Y" Class="LabelText" FieldName="Id" Label="Id" AllowURLParam="Y"/>
+       	<Element Name="fld_hash_entry" ElementSet="General" Class="LabelText" FieldName="hash_entry" Label="Hash Entry" AllowURLParam="N"/>
+       	<Element Name="fld_hash_id" ElementSet="General" Class="LabelText" FieldName="hash_id" Label="Hash Id" AllowURLParam="N"/>
+       	<Element Name="fld_callid" ElementSet="General" Class="LabelText" FieldName="callid" Label="Callid" AllowURLParam="N"/>
+       	<Element Name="fld_from_uri" ElementSet="General" Class="LabelText" FieldName="from_uri" Label="From Uri" AllowURLParam="N"/>
+       	<Element Name="fld_from_tag" ElementSet="General" Class="LabelText" FieldName="from_tag" Label="From Tag" AllowURLParam="N"/>
+       	<Element Name="fld_to_uri" ElementSet="General" Class="LabelText" FieldName="to_uri" Label="To Uri" AllowURLParam="N"/>
+       	<Element Name="fld_to_tag" ElementSet="General" Class="LabelText" FieldName="to_tag" Label="To Tag" AllowURLParam="N"/>
+       	<Element Name="fld_caller_cseq" ElementSet="General" Class="LabelText" FieldName="caller_cseq" Label="Caller Cseq" AllowURLParam="N"/>
+       	<Element Name="fld_callee_cseq" ElementSet="General" Class="LabelText" FieldName="callee_cseq" Label="Callee Cseq" AllowURLParam="N"/>
+       	<Element Name="fld_caller_route_set" ElementSet="General" Class="LabelText" FieldName="caller_route_set" Label="Caller Route Set" AllowURLParam="N"/>
+       	<Element Name="fld_callee_route_set" ElementSet="General" Class="LabelText" FieldName="callee_route_set" Label="Callee Route Set" AllowURLParam="N"/>
+       	<Element Name="fld_caller_contact" ElementSet="General" Class="LabelText" FieldName="caller_contact" Label="Caller Contact" AllowURLParam="N"/>
+       	<Element Name="fld_callee_contact" ElementSet="General" Class="LabelText" FieldName="callee_contact" Label="Callee Contact" AllowURLParam="N"/>
+       	<Element Name="fld_caller_sock" ElementSet="General" Class="LabelText" FieldName="caller_sock" Label="Caller Sock" AllowURLParam="N"/>
+       	<Element Name="fld_callee_sock" ElementSet="General" Class="LabelText" FieldName="callee_sock" Label="Callee Sock" AllowURLParam="N"/>
+       	<Element Name="fld_state" ElementSet="General" Class="LabelText" FieldName="state" Label="State" AllowURLParam="N"/>
+       	<Element Name="fld_start_time" ElementSet="General" Class="LabelText" FieldName="start_time" Label="Start Time" AllowURLParam="N"/>
+       	<Element Name="fld_timeout" ElementSet="General" Class="LabelText" FieldName="timeout" Label="Timeout" AllowURLParam="N"/>
+       	<Element Name="fld_sflags" ElementSet="General" Class="LabelText" FieldName="sflags" Label="Sflags" AllowURLParam="N"/>
+       	<Element Name="fld_toroute_name" ElementSet="General" Class="LabelText" FieldName="toroute_name" Label="Toroute" AllowURLParam="N"/>
+       	<Element Name="fld_req_uri" ElementSet="General" Class="LabelText" FieldName="req_uri" Label="Req Uri" AllowURLParam="N"/>
+    </DataPanel>
+    <ActionPanel>       
+        <Element Name="btn_new" Class="Button" Text="Add" CssClass="button_gray_add" Description="new record (Insert)">
+			<EventHandler Name="btn_new_onclick" Event="onclick" Function="SwitchForm(ser.srv.dialog.form.DialogNewForm)"  ShortcutKey="Insert" ContextMenu="New" />
+        </Element>          
+        <Element Name="btn_edit" Class="Button" Text="Edit" CssClass="button_gray_m" Description="edit record (Ctrl+E)">
+			<EventHandler Name="btn_new_onclick" Event="onclick" Function="SwitchForm(ser.srv.dialog.form.DialogEditForm,{@:Elem[fld_Id].Value})"  ShortcutKey="Ctrl+E" ContextMenu="Edit" />
+        </Element>
+		<Element Name="btn_copy" Class="Button" Text="Copy" CssClass="button_gray_m" Description="copy record (Ctrl+C)">
+            <EventHandler Name="onclick" Event="onclick" EventLogMsg="" Function="CopyRecord({@:Elem[fld_Id].Value})" RedirectPage="form=ser.srv.dialog.form.DialogCopyForm&amp;fld:Id={@:Elem[fld_Id].Value}" ShortcutKey="Ctrl+C" ContextMenu="Copy"/>
+        </Element> 
+        <Element Name="btn_delete" Class="Button" Text="Delete" CssClass="button_gray_m" Description="delete record (Delete)">
+            <EventHandler Name="del_onclick" Event="onclick" EventLogMsg="" Function="DeleteRecord({@:Elem[fld_Id].Value})"  RedirectPage="form=ser.srv.dialog.form.DialogListForm" ShortcutKey="Ctrl+Delete" ContextMenu="Delete" />
+        </Element>
+        <Element Name="btn_cancel" Class="Button" Text="Back" CssClass="button_gray_m">
+            <EventHandler Name="btn_cancel_onclick" Event="onclick" Function="SwitchForm(ser.srv.dialog.form.DialogListForm)"  ShortcutKey="Escape" ContextMenu="Cancel" />
+        </Element>         
+    </ActionPanel> 
+    <NavPanel>
+    </NavPanel> 
+    <SearchPanel>
+    </SearchPanel>
+</EasyForm>

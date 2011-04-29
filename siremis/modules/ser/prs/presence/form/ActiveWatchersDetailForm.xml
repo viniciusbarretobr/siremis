@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EasyForm Name="ActiveWatchersDetailForm" Class="EasyForm" FormType="" jsClass="jbForm" Title="Active Watchers Detail" Description="" BizDataObj="ser.prs.presence.do.ActiveWatchersDO" TemplateEngine="Smarty" TemplateFile="detail_elementset.tpl" EventName="" MessageFile="">
+    <DataPanel>
+		<Element Name="fld_Id" ElementSet="General" Hidden="Y" Class="LabelText" FieldName="Id" Label="Id" AllowURLParam="Y"/>
+       	<Element Name="fld_presentity_uri" ElementSet="General" Class="LabelText" FieldName="presentity_uri" Label="Presentity Uri" AllowURLParam="N"/>
+       	<Element Name="fld_watcher_username" ElementSet="General" Class="LabelText" FieldName="watcher_username" Label="Watcher Username" AllowURLParam="N"/>
+       	<Element Name="fld_watcher_domain" ElementSet="General" Class="LabelText" FieldName="watcher_domain" Label="Watcher Domain" AllowURLParam="N"/>
+       	<Element Name="fld_to_user" ElementSet="General" Class="LabelText" FieldName="to_user" Label="To User" AllowURLParam="N"/>
+       	<Element Name="fld_to_domain" ElementSet="General" Class="LabelText" FieldName="to_domain" Label="To Domain" AllowURLParam="N"/>
+       	<Element Name="fld_event" ElementSet="General" Class="LabelText" FieldName="event" Label="Event" AllowURLParam="N"/>
+       	<Element Name="fld_event_id" ElementSet="General" Class="LabelText" FieldName="event_id" Label="Event Id" AllowURLParam="N"/>
+       	<Element Name="fld_to_tag" ElementSet="General" Class="LabelText" FieldName="to_tag" Label="To Tag" AllowURLParam="N"/>
+       	<Element Name="fld_from_tag" ElementSet="General" Class="LabelText" FieldName="from_tag" Label="From Tag" AllowURLParam="N"/>
+       	<Element Name="fld_callid" ElementSet="General" Class="LabelText" FieldName="callid" Label="Callid" AllowURLParam="N"/>
+       	<Element Name="fld_local_cseq" ElementSet="General" Class="LabelText" FieldName="local_cseq" Label="Local Cseq" AllowURLParam="N"/>
+       	<Element Name="fld_remote_cseq" ElementSet="General" Class="LabelText" FieldName="remote_cseq" Label="Remote Cseq" AllowURLParam="N"/>
+       	<Element Name="fld_contact" ElementSet="General" Class="LabelText" FieldName="contact" Label="Contact" AllowURLParam="N"/>
+       	<Element Name="fld_record_route" ElementSet="General" Class="LabelText" FieldName="record_route" Label="Record Route" AllowURLParam="N"/>
+       	<Element Name="fld_expires" ElementSet="General" Class="LabelText" FieldName="expires" Label="Expires" AllowURLParam="N"/>
+       	<Element Name="fld_status" ElementSet="General" Class="LabelText" FieldName="status" Label="Status" AllowURLParam="N"/>
+       	<Element Name="fld_reason" ElementSet="General" Class="LabelText" FieldName="reason" Label="Reason" AllowURLParam="N"/>
+       	<Element Name="fld_version" ElementSet="General" Class="LabelText" FieldName="version" Label="Version" AllowURLParam="N"/>
+       	<Element Name="fld_socket_info" ElementSet="General" Class="LabelText" FieldName="socket_info" Label="Socket Info" AllowURLParam="N"/>
+       	<Element Name="fld_local_contact" ElementSet="General" Class="LabelText" FieldName="local_contact" Label="Local Contact" AllowURLParam="N"/>
+    </DataPanel>
+    <ActionPanel>       
+        <Element Name="btn_new" Class="Button" Text="Add" CssClass="button_gray_add" Description="new record (Insert)">
+			<EventHandler Name="btn_new_onclick" Event="onclick" Function="SwitchForm(ser.prs.presence.form.ActiveWatchersNewForm)"  ShortcutKey="Insert" ContextMenu="New" />
+        </Element>          
+        <Element Name="btn_edit" Class="Button" Text="Edit" CssClass="button_gray_m" Description="edit record (Ctrl+E)">
+			<EventHandler Name="btn_new_onclick" Event="onclick" Function="SwitchForm(ser.prs.presence.form.ActiveWatchersEditForm,{@:Elem[fld_Id].Value})"  ShortcutKey="Ctrl+E" ContextMenu="Edit" />
+        </Element>
+		<Element Name="btn_copy" Class="Button" Text="Copy" CssClass="button_gray_m" Description="copy record (Ctrl+C)">
+            <EventHandler Name="onclick" Event="onclick" EventLogMsg="" Function="CopyRecord({@:Elem[fld_Id].Value})" RedirectPage="form=ser.prs.presence.form.ActiveWatchersCopyForm&amp;fld:Id={@:Elem[fld_Id].Value}" ShortcutKey="Ctrl+C" ContextMenu="Copy"/>
+        </Element> 
+        <Element Name="btn_delete" Class="Button" Text="Delete" CssClass="button_gray_m" Description="delete record (Delete)">
+            <EventHandler Name="del_onclick" Event="onclick" EventLogMsg="" Function="DeleteRecord({@:Elem[fld_Id].Value})"  RedirectPage="form=ser.prs.presence.form.ActiveWatchersListForm" ShortcutKey="Ctrl+Delete" ContextMenu="Delete" />
+        </Element>
+        <Element Name="btn_cancel" Class="Button" Text="Back" CssClass="button_gray_m">
+            <EventHandler Name="btn_cancel_onclick" Event="onclick" Function="SwitchForm(ser.prs.presence.form.ActiveWatchersListForm)"  ShortcutKey="Escape" ContextMenu="Cancel" />
+        </Element>         
+    </ActionPanel> 
+    <NavPanel>
+    </NavPanel> 
+    <SearchPanel>
+    </SearchPanel>
+</EasyForm>

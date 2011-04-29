@@ -1,0 +1,39 @@
+.rteImage {
+   background:#EFEDDE;
+   border:1px solid #EFEDDE;
+}
+
+.rteImageRaised,.rteImage:hover {
+   background:#cddbf3;
+   border:1px solid #6e9ce6;
+}
+
+.rteImageLowered,.rteImage:active {
+   background:#C1D2EE;
+   border:1px solid #316ac5;
+}
+
+.rteVertSep {
+	margin: 0 4px 0 4px;
+}
+
+.rteBack {
+	background: #EFEDDE;
+	border-bottom: 1px solid silver;
+	letter-spacing: 0;
+	padding: 1;
+}
+
+.rteBack tbody tr td, .rteBack tr td {
+	background: #EFEDDE;
+	padding: 1;
+}
+
+.rteDiv {
+	display: block;
+	position: relative;
+}
+
+select.combo {
+   font-size: 8pt;
+}

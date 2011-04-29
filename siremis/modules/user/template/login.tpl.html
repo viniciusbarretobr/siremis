@@ -1,0 +1,63 @@
+<form id="{$form.name}" name="{$form.name}">
+	<div class="cubi_logo_large"></div>
+	<div class="v_line"></div>
+	<div class="login_form">
+		<div style="height:55px;"></div>
+		<div style="height:75px;">
+		<img src="{$app_url}/images/login_banner.gif" />
+		</div>
+		<p class="input_row">
+			<label style="width:60px;">{$dataPanel.username.label}</label>
+			<span style="width:200px; display:block;float:left;">{$dataPanel.username.element}</span>
+			{if $errors.username}
+			<span class="input_error_msg">{$errors.username}</span>
+			{/if}			
+		</p>
+		
+		<p class="input_row">
+			<label style="width:60px;">{$dataPanel.password.label}</label>
+			<span style="width:200px; display:block;float:left;">{$dataPanel.password.element}</span>
+			{if $errors.password}
+			<span class="input_error_msg">{$errors.password}</span>
+			{/if}		
+		</p>
+		<p class="input_row">
+			<label style="width:60px;">{$dataPanel.antispam.label}</label>
+			<span style="width:200px; display:block;float:left;">{$dataPanel.antispam.element}</span>
+			{if $errors.antispam}
+			<span class="input_error_msg">{$errors.antispam}</span>
+			{/if}		
+		</p>
+		<p class="input_row">
+			<label style="width:60px;">{$dataPanel.session_timeout.label}</label>
+			<span style="width:200px; display:block;float:left;">{$dataPanel.session_timeout.element}</span>
+			{if $errors.session_timeout}
+			<span class="input_error_msg">{$errors.session_timeout}</span>
+			{/if}		
+		</p>		
+    		    		
+		<p class="input_row">
+			<span onclick="document.getElementById('login_indicator').className='show'">
+			{foreach item=elem from=$actionPanel}
+			{$elem.element}
+			{/foreach}
+			</span>
+			
+			{if $errors.login_status}
+				<span id="login_indicator" class="show">
+				{$errors.login_status}
+				</span>
+			{else}
+				<span id="login_indicator" class="hidden">
+				{t}Processing login...{/t}
+				</span>
+			{/if}	
+			
+		</p>
+		
+	</div>
+
+
+</form>
+
+

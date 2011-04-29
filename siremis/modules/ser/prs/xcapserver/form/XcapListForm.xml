@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EasyForm Name="XcapListForm" Class="EasyForm" FormType="List" jsClass="jbForm" Title="Xcap Management" Description="" BizDataObj="ser.prs.xcapserver.do.XcapDO" PageSize="10" DefaultForm="Y" TemplateEngine="Smarty" TemplateFile="grid.tpl" EventName="" MessageFile="">
+    <DataPanel>
+        <Element Name="row_selections" Class="RowCheckbox" Label="" FieldName="Id"/>
+        <Element Name="fld_Id" Class="ColumnText" FieldName="Id" Label="Id" Sortable="Y" AllowURLParam="N" Link="javascript:">         
+         	<EventHandler Name="fld_Id_onclick" Event="onclick" Function="SwitchForm(ser.prs.xcapserver.form.XcapDetailForm,{@:Elem[fld_Id].Value})"/>
+        </Element>
+                <Element Name="fld_username" Class="ColumnText" FieldName="username" Label="Username" Sortable="Y" Link="javascript:">
+         		<EventHandler Name="fld_username_onclick" Event="onclick" Function="SwitchForm(ser.prs.xcapserver.form.XcapDetailForm,{@:Elem[fld_Id].Value})"/>
+        </Element>
+                <Element Name="fld_domain" Class="ColumnText" FieldName="domain" Label="Domain" Sortable="Y"/>
+                <Element Name="fld_doc" Class="ColumnText" FieldName="doc" Label="Doc" Sortable="Y" Hidden="Y"/>
+                <Element Name="fld_doc_type" Class="ColumnText" FieldName="doc_type" Label="Doc Type" Sortable="Y"/>
+                <Element Name="fld_etag" Class="ColumnText" FieldName="etag" Label="Etag" Sortable="Y" Hidden="Y"/>
+                <Element Name="fld_source" Class="ColumnText" FieldName="source" Label="Source" Sortable="Y" Hidden="Y"/>
+                <Element Name="fld_doc_uri" Class="ColumnText" FieldName="doc_uri" Label="Doc Uri" Sortable="Y"/>
+                <Element Name="fld_port" Class="ColumnText" FieldName="port" Label="Port" Sortable="Y" Hidden="Y"/>
+    </DataPanel>
+    <ActionPanel>
+        <Element Name="lnk_new" Class="Button" Text="Add" CssClass="button_gray_add" Description="new record (Insert)">
+            <EventHandler Name="lnk_new_onclick" Event="onclick" EventLogMsg="" Function="SwitchForm(ser.prs.xcapserver.form.XcapNewForm)" ShortcutKey="Insert" ContextMenu="New"/>
+        </Element>
+        <Element Name="btn_edit" Class="Button" Text="Edit" CssClass="button_gray_m" Description="edit record (Ctrl+E)">
+            <EventHandler Name="btn_edit_onclick" Event="onclick" EventLogMsg="" Function="EditRecord()" RedirectPage="form=ser.prs.xcapserver.form.XcapEditForm&amp;fld:Id={@:Elem[fld_Id].Value}" ShortcutKey="Ctrl+E" ContextMenu="Edit"/>
+        </Element>
+        <Element Name="btn_copy" Class="Button" Text="Copy" CssClass="button_gray_m" Description="copy record (Ctrl+C)">
+            <EventHandler Name="btn_copy_onclick" Event="onclick" EventLogMsg="" Function="CopyRecord()" RedirectPage="form=ser.prs.xcapserver.form.XcapCopyForm&amp;fld:Id={@:Elem[fld_Id].Value}" ShortcutKey="Ctrl+C" ContextMenu="Copy"/>
+        </Element>
+        <Element Name="btn_delete" Class="Button" Text="Delete" CssClass="button_gray_m">
+            <EventHandler Name="del_onclick" Event="onclick" EventLogMsg="" Function="DeleteRecord()" ShortcutKey="Ctrl+Delete" ContextMenu="Delete"/>
+        </Element>
+        <Element Name="btn_excel" Class="Button" Text="Export" CssClass="button_gray_m">
+            <EventHandler Name="exc_onclick" Event="onclick" EventLogMsg="" Function="CallService(excelService,renderCSV)" FunctionType="Popup" ShortcutKey="Ctrl+Shift+X" ContextMenu="Export"/>
+        </Element>
+        <Element Name="btn_search" Class="Button" Text="Search" CssClass="button_gray_m" Description="Search record">
+            <EventHandler Name="btn_search_onclick" Event="onclick" EventLogMsg="" Function="SwitchForm(ser.prs.xcapserver.form.XcapSearchForm)" ShortcutKey="Ctrl+Shift+S" ContextMenu="Search"/>
+        </Element>
+    </ActionPanel> 
+    <NavPanel>
+  		<Element Name="page_selector" Class="PageSelector" Text="{@:m_CurrentPage}" Label="Go to Page" CssClass="input_select" cssFocusClass="input_select_focus">
+            <EventHandler Name="btn_page_selector_onchange" Event="onchange" Function="GotoSelectedPage(page_selector)"/>
+        </Element>
+        <Element Name="pagesize_selector" Class="PagesizeSelector" Text="{@:m_Range}" Label="Show Rows" CssClass="input_select" cssFocusClass="input_select_focus">
+            <EventHandler Name="btn_pagesize_selector_onchange" Event="onchange" Function="SetPageSize(pagesize_selector)"/>
+        </Element>      
+        <Element Name="btn_first" Class="Button" Enabled="{(@:m_CurrentPage == 1)?'N':'Y'}" Text="" CssClass="button_gray_navi {(@:m_CurrentPage == 1)?'first_gray':'first'}">
+            <EventHandler Name="first_onclick" Event="onclick" Function="GotoPage(1)"/>
+        </Element>
+        <Element Name="btn_prev" Class="Button" Enabled="{(@:m_CurrentPage == 1)?'N':'Y'}" Text="" CssClass="button_gray_navi {(@:m_CurrentPage == 1)?'prev_gray':'prev'}">
+            <EventHandler Name="prev_onclick" Event="onclick" Function="GotoPage({@:m_CurrentPage - 1})" ShortcutKey="Ctrl+Shift+Left"/>
+        </Element>
+        <Element Name="txt_page" Class="LabelText" Text="{'@:m_CurrentPage of @:m_TotalPages '}">
+        </Element>
+        <Element Name="btn_next" Class="Button" Enabled="{(@:m_CurrentPage == @:m_TotalPages )?'N':'Y'}" Text="" CssClass="button_gray_navi {(@:m_CurrentPage == @:m_TotalPages)?'next_gray':'next'}">
+            <EventHandler Name="next_onclick" Event="onclick" Function="GotoPage({@:m_CurrentPage + 1})" ShortcutKey="Ctrl+Shift+Right"/>
+        </Element>
+        <Element Name="btn_last" Class="Button" Enabled="{(@:m_CurrentPage == @:m_TotalPages )?'N':'Y'}" Text="" CssClass="button_gray_navi {(@:m_CurrentPage == @:m_TotalPages)?'last_gray':'last'}">
+            <EventHandler Name="last_onclick" Event="onclick" Function="GotoPage({@:m_TotalPages})"/>
+        </Element>
+    </NavPanel> 
+    <SearchPanel>
+			<Element Name="qry_username" Class="AutoSuggest" SelectFrom="ser.prs.xcapserver.do.XcapDO[username],[username] like '%{@:Elem[qry_username].Value}%' GROUP BY [username]" FuzzySearch="Y" FieldName="username" Label="" cssFocusClass="input_text_search_focus" CssClass="input_text_search"/>
+        <Element Name="btn_dosearch" Class="Button" text="Go" CssClass="button_gray">
+            <EventHandler Name="search_onclick" Event="onclick" Function="RunSearch()" ShortcutKey="Enter"/>
+        </Element>	
+    </SearchPanel>
+</EasyForm>

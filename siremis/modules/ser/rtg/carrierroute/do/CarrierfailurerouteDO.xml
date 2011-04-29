@@ -1,0 +1,19 @@
+<?xml version="1.0" standalone="no"?>
+<BizDataObj Name="CarrierfailurerouteDO" Description="" Class="BizDataObj" DBName="Serdb" Table="carrierfailureroute" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+	<BizFieldList>
+        <BizField Name="Id" Column="id"     Type="Number"/>
+        <BizField Name="carrier" Column="carrier"    Required="Y" Type="Number"/>
+        <BizField Name="domain" Column="domain"    Required="Y" Type="Number"/>
+        <BizField Name="scan_prefix" Column="scan_prefix" Length="64"   Required="Y" Type="Text"/>
+        <BizField Name="host_name" Column="host_name" Length="128"   Required="Y" Type="Text"/>
+        <BizField Name="reply_code" Column="reply_code" Length="3"   Required="Y" Type="Text"/>
+        <BizField Name="flags" Column="flags"    Required="Y" Type="Number"/>
+        <BizField Name="mask" Column="mask"    Required="Y" Type="Number"/>
+        <BizField Name="next_domain" Column="next_domain"    Required="Y" Type="Number"/>
+        <BizField Name="description" Column="description" Length="255"   Required="N" Type="Text"/>
+	</BizFieldList>
+    <TableJoins>
+    </TableJoins>
+    <ObjReferences>
+    </ObjReferences>
+</BizDataObj>

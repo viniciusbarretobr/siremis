@@ -1,0 +1,25 @@
+<?xml version="1.0" standalone="no"?>
+<Selection>
+
+	<SipTraceDirection Value="in" Text="in"/>
+	<SipTraceDirection Value="out" Text="out"/>
+
+	<avpDBType Value="0" Text="0 - String Name - String Value"/>
+	<avpDBType Value="1" Text="1 - String Name - Integer Value"/>
+	<avpDBType Value="2" Text="2 - Integer Name - String Value"/>
+	<avpDBType Value="3" Text="3 - Integer Name - String Value"/>
+
+	<dialplanMatchOp Value="0" Text="0 - Equal"/>
+	<dialplanMatchOp Value="1" Text="1 - RegExp"/>
+
+	<lcrGwTransport Value="0" Text="0 - NONE"/>
+	<lcrGwTransport Value="1" Text="1 - UDP"/>
+	<lcrGwTransport Value="2" Text="2 - TCP"/>
+	<lcrGwTransport Value="3" Text="3 - TLS"/>
+	<lcrGwTransport Value="4" Text="4 - SCTP"/>
+
+	<lcrGwURIScheme Value="0" Text="0 - NONE"/>
+	<lcrGwURIScheme Value="1" Text="1 - SIP"/>
+	<lcrGwURIScheme Value="2" Text="2 - SIPS"/>
+
+</Selection>

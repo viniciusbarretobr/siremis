@@ -1,0 +1,20 @@
+<?xml version="1.0" standalone="no"?>
+<BizDataObj Name="SipTraceDetailXDO" Description="" Class="SipTraceDO" DBName="Serdb" Table="sip_trace" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+	<BizFieldList>
+        <BizField Name="Id" Column="id"     Type="Number"/>
+        <BizField Name="time_stamp" Column="time_stamp"  DefaultValue="1900-01-01 00:00:01"  Required="Y" Type="Datetime"/>
+        <BizField Name="callid" Column="callid" Length="255"   Required="Y" Type="Text"/>
+        <BizField Name="traced_user" Column="traced_user" Length="128"   Required="Y" Type="Text"/>
+        <BizField Name="msg" Column="msg"    Required="Y" Type="Text"/>
+        <BizField Name="method" Column="method" Length="50"   Required="Y" Type="Text"/>
+        <BizField Name="status" Column="status" Length="128"   Required="Y" Type="Text"/>
+        <BizField Name="fromip" Column="fromip" Length="50"   Required="Y" Type="Text"/>
+        <BizField Name="toip" Column="toip" Length="50"   Required="Y" Type="Text"/>
+        <BizField Name="fromtag" Column="fromtag" Length="64"   Required="Y" Type="Text"/>
+        <BizField Name="direction" Column="direction" Length="4"   Required="Y" Type="Text"/>
+	</BizFieldList>
+    <TableJoins>
+    </TableJoins>
+    <ObjReferences>
+    </ObjReferences>
+</BizDataObj>

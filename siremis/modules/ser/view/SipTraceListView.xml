@@ -1,0 +1,15 @@
+<?xml version="1.0" standalone="no"?>
+<EasyView Name="SipTraceListView" Description="ser.srv.siptrace" Class="EasyView" Tab="" TemplateEngine="Smarty" TemplateFile="view.tpl">
+   <FormReferences>
+   		<Reference Name="ser.srv.siptrace.form.SipTraceSearchForm"/>
+   		<Reference Name="ser.srv.siptrace.form.SipTraceListForm" SubForms="ser.srv.siptrace.form.SipTraceDetailXForm"/>
+   		<Reference Name="ser.srv.siptrace.form.SipTraceDetailXForm"/>
+   </FormReferences>
+   <FormReferenceLibs>
+   		<Reference Name="ser.srv.siptrace.form.SipTraceListForm"/>
+   		<Reference Name="ser.srv.siptrace.form.SipTraceEditForm"/>
+   		<Reference Name="ser.srv.siptrace.form.SipTraceCopyForm"/>
+   		<Reference Name="ser.srv.siptrace.form.SipTraceNewForm"/>
+   		<Reference Name="ser.srv.siptrace.form.SipTraceDetailForm"/>
+   </FormReferenceLibs>    
+</EasyView>

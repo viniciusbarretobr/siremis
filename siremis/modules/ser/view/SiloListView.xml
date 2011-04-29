@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<EasyView Name="SiloListView" Description="ser.sbs.msilo" Class="EasyView" Tab="" TemplateEngine="Smarty" TemplateFile="view.tpl">
+   <FormReferences>
+   		<Reference Name="ser.sbs.msilo.form.SiloListForm"/>
+   </FormReferences>
+   <FormReferenceLibs>
+   		<Reference Name="ser.sbs.msilo.form.SiloListForm"/>
+   		<Reference Name="ser.sbs.msilo.form.SiloEditForm"/>
+   		<Reference Name="ser.sbs.msilo.form.SiloCopyForm"/>
+   		<Reference Name="ser.sbs.msilo.form.SiloNewForm"/>
+   		<Reference Name="ser.sbs.msilo.form.SiloDetailForm"/>
+   </FormReferenceLibs>    
+</EasyView>

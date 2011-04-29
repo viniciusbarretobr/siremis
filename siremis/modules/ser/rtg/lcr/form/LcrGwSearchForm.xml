@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EasyForm Name="LcrGwSearchForm" Class="ser.common.form.EasySearchForm" FormType="Search" jsClass="jbForm" Title="Search Lcr Gw" Description="" BizDataObj="ser.rtg.lcr.do.LcrGwDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
+    <DataPanel>
+        <Element Name="fld_lcr_id" Class="InputText" FieldName="lcr_id" Label="Lcr Id"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_gw_name" Class="InputText" FieldName="gw_name" Label="Gw Name"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_ip_addr" Class="InputText" FieldName="ip_addr" Label="Ip Addr"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_hostname" Class="InputText" FieldName="hostname" Label="Hostname"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_port" Class="InputText" FieldName="port" Label="Port"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_params" Class="InputText" FieldName="params" Label="Params"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_uri_scheme" Class="Listbox" FieldName="uri_scheme" Label="Uri Scheme" AllowURLParam="N" SelectFrom="ser.common.select.values(lcrGwURIScheme)"/>
+		<Element Name="fld_transport" Class="Listbox" FieldName="transport" Label="Transport" AllowURLParam="N" SelectFrom="ser.common.select.values(lcrGwTransport)"/>
+		<Element Name="fld_strip" Class="InputText" FieldName="strip" Label="Strip"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_tag" Class="InputText" FieldName="tag" Label="Tag"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_flags" Class="InputText" FieldName="flags" Label="Flags"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_defunct" Class="InputText" FieldName="defunct" Label="Defunct"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        </DataPanel>
+    <ActionPanel>
+        <Element Name="btn_search" Class="Button" Text="Search" CssClass="button_gray_m">
+			<EventHandler Name="search_onclick" EventLogMsg="" Event="onclick" Function="SwitchSearchForm(ser.rtg.lcr.form.LcrGwListForm)" RedirectPage=""  ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
+        </Element>
+        <Element Name="btn_cancel" Class="Button" Text="Cancel" CssClass="button_gray_m">
+            <EventHandler Name="cancel_onclick" Event="onclick" Function="SwitchForm(ser.rtg.lcr.form.LcrGwListForm)"  ShortcutKey="Escape" ContextMenu="Cancel"/>
+        </Element>
+    </ActionPanel> 
+    <NavPanel>
+    </NavPanel> 
+    <SearchPanel>
+    </SearchPanel>
+</EasyForm>

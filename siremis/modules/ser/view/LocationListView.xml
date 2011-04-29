@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<EasyView Name="LocationListView" Description="ser.sbs.usrloc" Class="EasyView" Tab="" TemplateEngine="Smarty" TemplateFile="view.tpl">
+   <FormReferences>
+   		<Reference Name="ser.sbs.usrloc.form.LocationListForm"/>
+   </FormReferences>
+   <FormReferenceLibs>
+   		<Reference Name="ser.sbs.usrloc.form.LocationListForm"/>
+   		<Reference Name="ser.sbs.usrloc.form.LocationEditForm"/>
+   		<Reference Name="ser.sbs.usrloc.form.LocationCopyForm"/>
+   		<Reference Name="ser.sbs.usrloc.form.LocationNewForm"/>
+   		<Reference Name="ser.sbs.usrloc.form.LocationDetailForm"/>
+   </FormReferenceLibs>    
+</EasyView>

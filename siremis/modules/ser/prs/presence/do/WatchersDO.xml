@@ -1,0 +1,17 @@
+<?xml version="1.0" standalone="no"?>
+<BizDataObj Name="WatchersDO" Description="" Class="BizDataObj" DBName="Serdb" Table="watchers" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="presentity_uri,watcher_username,watcher_domain,event;" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+	<BizFieldList>
+        <BizField Name="Id" Column="id"     Type="Number"/>
+        <BizField Name="presentity_uri" Column="presentity_uri" Length="128"   Required="Y" Type="Text"/>
+        <BizField Name="watcher_username" Column="watcher_username" Length="64"   Required="Y" Type="Text"/>
+        <BizField Name="watcher_domain" Column="watcher_domain" Length="64"   Required="Y" Type="Text"/>
+        <BizField Name="event" Column="event" Length="64" DefaultValue="presence"  Required="Y" Type="Text"/>
+        <BizField Name="status" Column="status"    Required="Y" Type="Number"/>
+        <BizField Name="reason" Column="reason" Length="64"   Required="N" Type="Text"/>
+        <BizField Name="inserted_time" Column="inserted_time"    Required="Y" Type="Number"/>
+	</BizFieldList>
+    <TableJoins>
+    </TableJoins>
+    <ObjReferences>
+    </ObjReferences>
+</BizDataObj>

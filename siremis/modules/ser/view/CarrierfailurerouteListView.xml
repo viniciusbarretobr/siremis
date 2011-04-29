@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<EasyView Name="CarrierfailurerouteListView" Description="ser.rtg.carrierroute" Class="EasyView" Tab="" TemplateEngine="Smarty" TemplateFile="view.tpl">
+   <FormReferences>
+   		<Reference Name="ser.rtg.carrierroute.form.CarrierfailurerouteListForm"/>
+   </FormReferences>
+   <FormReferenceLibs>
+   		<Reference Name="ser.rtg.carrierroute.form.CarrierfailurerouteListForm"/>
+   		<Reference Name="ser.rtg.carrierroute.form.CarrierfailurerouteEditForm"/>
+   		<Reference Name="ser.rtg.carrierroute.form.CarrierfailurerouteCopyForm"/>
+   		<Reference Name="ser.rtg.carrierroute.form.CarrierfailurerouteNewForm"/>
+   		<Reference Name="ser.rtg.carrierroute.form.CarrierfailurerouteDetailForm"/>
+   </FormReferenceLibs>    
+</EasyView>

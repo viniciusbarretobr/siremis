@@ -1,0 +1,18 @@
+<?xml version="1.0" standalone="no"?>
+<BizDataObj Name="DialplanDO" Description="" Class="BizDataObj" DBName="Serdb" Table="dialplan" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+	<BizFieldList>
+        <BizField Name="Id" Column="id" Type="Number"/>
+        <BizField Name="dpid" Column="dpid" Required="Y" Type="Number"/>
+        <BizField Name="pr" Column="pr" Required="Y" Type="Number"/>
+        <BizField Name="match_op" Column="match_op" Required="Y" Type="Number"/>
+        <BizField Name="match_exp" Column="match_exp" Length="64" Required="Y" Type="Text"/>
+        <BizField Name="match_len" Column="match_len" Required="Y" Type="Number"/>
+        <BizField Name="subst_exp" Column="subst_exp" Type="Text" Required="N"/>
+        <BizField Name="repl_exp" Column="repl_exp" Type="Text" Required="N"/>
+        <BizField Name="attrs" Column="attrs" Type="Text" Required="N"/>
+	</BizFieldList>
+    <TableJoins>
+    </TableJoins>
+    <ObjReferences>
+    </ObjReferences>
+</BizDataObj>

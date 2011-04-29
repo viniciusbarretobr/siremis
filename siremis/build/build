@@ -1,0 +1,6 @@
+#!/bin/sh
+# cubi builder script. Usage: build app_name
+
+set PHING_HOME=../bin/phing
+
+../bin/phing/bin/phing -buildfile %1.xml %2

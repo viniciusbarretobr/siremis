@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<EasyView Name="DispatcherListView" Description="ser.rtg.dispatcher" Class="EasyView" Tab="" TemplateEngine="Smarty" TemplateFile="view.tpl">
+   <FormReferences>
+   		<Reference Name="ser.rtg.dispatcher.form.DispatcherListForm"/>
+   </FormReferences>
+   <FormReferenceLibs>
+   		<Reference Name="ser.rtg.dispatcher.form.DispatcherListForm"/>
+   		<Reference Name="ser.rtg.dispatcher.form.DispatcherEditForm"/>
+   		<Reference Name="ser.rtg.dispatcher.form.DispatcherCopyForm"/>
+   		<Reference Name="ser.rtg.dispatcher.form.DispatcherNewForm"/>
+   		<Reference Name="ser.rtg.dispatcher.form.DispatcherDetailForm"/>
+   </FormReferenceLibs>    
+</EasyView>
