@@ -14,6 +14,11 @@ prepare:
 	@echo "updating app.inc file..."
 	@sed -e "s#/%%URLBASE%%#/$(URLBASE)#g" \
 				< ./misc/templates/app.inc > ./siremis/bin/app.inc
+	@echot "creating folders..."
+	@mkdir -p siremis/files/cache
+	@mkdir -p siremis/files/cache/data
+	@mkdir -p siremis/files/cache/metadata
+	@mkdir -p siremis/themes/default/template/cpl
 	@echo "done"
 
 apache-conf:
