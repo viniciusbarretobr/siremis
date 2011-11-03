@@ -1,14 +1,10 @@
 <?PHP
 include_once(OPENBIZ_BIN.'data/BizDataObj.php');
 
-class PresentityDO extends BizDataObj
+class SiloDO extends BizDataObj
 {
-    var $fields = array('expires','received_time');
-    /**
-     * Fetches SQL result rows as a sequential array according the query rules set before.
-     *
-     * @return array array of records
-     */
+	var $fields = array('inc_time','exp_time','snd_time');
+
     public function fetch()
     {
         $resultRecords = array();
@@ -17,20 +13,6 @@ class PresentityDO extends BizDataObj
 		{
             while ($recArray = $this->_fetch_record($resultSet))
 			{
-				$bodyfields = array('body','body_detail');
-				if(isset($recArray[$bodyfields[0]]))
-				{
-					$tmp = $recArray[$bodyfields[0]];
-					$tmp = str_replace("<", "&lt;", $tmp);
-					$tmp = str_replace(">", "&gt;", $tmp);
-					$recArray[$bodyfields[0]] = $tmp;
-					$tmp = preg_replace('#([A-Z]+ sip:[^ ]+ SIP/2.0)%%#i', '<font color=#336600>${1}</font>%%', $tmp, -1);
-					$tmp = preg_replace('#(SIP/2.0 [1-6][0-9][0-9] [^%]+)%%#i', '<font color=#336600>${1}</font>%%', $tmp, -1);
-					$tmp = preg_replace('#%%([^ :%]+): (.+)%%#im', '%%<font color=red>$1</font>: $2%%', $tmp, -1, $count);
-					while($count>0)
-						$tmp = preg_replace('#%%([^ :%<]+): (.+)%%#im', '%%<font color=red>$1</font>: $2%%', $tmp, -1, $count);
-					$recArray[$bodyfields[1]] = "<pre>" . $tmp . "</pre>";
-				}
 				foreach($this->fields as $field)
 				{
 					if(isset($recArray[$field]))
@@ -48,6 +30,7 @@ class PresentityDO extends BizDataObj
         return $resultRecords;
     }
 
+	
 	public function updateRecord($recArr, $oldRecord=null)
 	{
 		foreach($this->fields as $field)

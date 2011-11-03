@@ -279,6 +279,7 @@
 	background-image: url(../images/input_textarea.gif);
 	background-repeat:no-repeat;
 	background-position:0px 0px;
+	background-size:300% 100%;
 	border-width:0px;	
 	height:160px;
 	width:634px;	
@@ -297,6 +298,7 @@
 	background-image: url(../images/input_textarea.gif);
 	background-repeat:no-repeat;
 	background-position:-1302px 0px;
+	background-size:300% 100%;
 	border-width:0px;
 	height:160px;
 	width:634px;	
@@ -316,6 +318,7 @@
 	background-image: url(../images/input_textarea.gif);
 	background-repeat:no-repeat;
 	background-position:center 0px;
+	background-size:300% 100%;
 	border-width:0px;
 	height:160px;
 	width:634px;	
@@ -1177,7 +1180,7 @@ margin-right:3px;
 }
 .ajax_indicator{
 padding-top:10px;
-width:230px;
+width:180px;
 height:20px;
 float:left;
 padding-left:20px;

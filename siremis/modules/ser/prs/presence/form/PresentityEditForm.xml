@@ -6,9 +6,9 @@
 		<Element Name="fld_domain" Class="InputText" FieldName="domain" Label="Domain"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
 		<Element Name="fld_event" Class="InputText" FieldName="event" Label="Event"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
 		<Element Name="fld_etag" Class="InputText" FieldName="etag" Label="Etag"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
-		<Element Name="fld_expires" Class="InputText" FieldName="expires" Label="Expires"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
-		<Element Name="fld_received_time" Class="InputText" FieldName="received_time" Label="Received Time"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
-		<Element Name="fld_body" Class="InputText" FieldName="body" Label="Body"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_expires" Class="InputDatetime" FieldName="expires" Label="Expires" DefaultValue="1970-01-01 00:00:00" Sortable="Y" AllowURLParam="N" Translatable="N" OnEventLog="N"  CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_received_time" Class="InputDatetime" FieldName="received_time" Label="Received Time" DefaultValue="1970-01-01 00:00:00" Sortable="Y" AllowURLParam="N" Translatable="N" OnEventLog="N"  CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_body" Class="Textarea" FieldName="body" Label="Body" AllowURLParam="N" CssClass="input_textarea" CssErrorClass="input_textarea_error" CssFocusClass="input_textarea_focus"/>
 		<Element Name="fld_sender" Class="InputText" FieldName="sender" Label="Sender"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
     </DataPanel>
     <ActionPanel>

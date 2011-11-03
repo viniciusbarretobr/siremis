@@ -8,7 +8,7 @@
 		<Element Name="fld_event" Class="InputText" FieldName="event" Label="Event"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
 		<Element Name="fld_status" Class="InputText" FieldName="status" Label="Status"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
 		<Element Name="fld_reason" Class="InputText" FieldName="reason" Label="Reason"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
-		<Element Name="fld_inserted_time" Class="InputText" FieldName="inserted_time" Label="Inserted Time"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_inserted_time" Class="InputDatetime" FieldName="inserted_time" Label="Inserted Time" DefaultValue="1970-01-01 00:00:00" Sortable="Y" AllowURLParam="N" Translatable="N" OnEventLog="N"  CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
     </DataPanel>
     <ActionPanel>
         <Element Name="btn_save" Class="Button" Text="Save" CssClass="button_gray_m">

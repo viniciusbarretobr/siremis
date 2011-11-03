@@ -9,7 +9,7 @@
        	<Element Name="fld_source" ElementSet="General" Class="LabelText" FieldName="source" Label="Source" AllowURLParam="N"/>
        	<Element Name="fld_doc_uri" ElementSet="General" Class="LabelText" FieldName="doc_uri" Label="Doc Uri" AllowURLParam="N"/>
        	<Element Name="fld_port" ElementSet="General" Class="LabelText" FieldName="port" Label="Port" AllowURLParam="N"/>
-        <Element Name="fld_doc" ElementSet="General" Class="CKEditor"  mode="notoolbar"  Config="resize_maxWidth:640,resize_minWidth:640,resize_minHeight:300" width="640" height="300" FieldName="doc" Label="Document"  Sortable="Y" AllowURLParam="N" Translatable="N" OnEventLog="N"  />            
+        <Element Name="fld_docdetail" ElementSet="General" Class="LabelText" FieldName="docdetail" Label="Document" AllowURLParam="N"/>
     </DataPanel>
     <ActionPanel>       
         <Element Name="btn_new" Class="Button" Text="Add" CssClass="button_gray_add" Description="new record (Insert)">

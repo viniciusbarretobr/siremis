@@ -9,7 +9,7 @@
        	<Element Name="fld_etag" ElementSet="General" Class="LabelText" FieldName="etag" Label="Etag" AllowURLParam="N"/>
        	<Element Name="fld_expires" ElementSet="General" Class="LabelText" FieldName="expires" Label="Expires" AllowURLParam="N"/>
        	<Element Name="fld_received_time" ElementSet="General" Class="LabelText" FieldName="received_time" Label="Received Time" AllowURLParam="N"/>
-	<Element Name="fld_body" ElementSet="General" Class="CKEditor"  mode="notoolbar"  Config="resize_maxWidth:640,resize_minWidth:640,resize_minHeight:300" width="640" height="300" FieldName="body" Label="Body"  Sortable="Y" AllowURLParam="N" Translatable="N" OnEventLog="N"  />            
+		<Element Name="fld_body_detail" ElementSet="General" Class="LabelText" FieldName="body_detail" Label="Body" AllowURLParam="N" />            
        	<Element Name="fld_sender" ElementSet="General" Class="LabelText" FieldName="sender" Label="Sender" AllowURLParam="N"/>
     </DataPanel>
     <ActionPanel>       

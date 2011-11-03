@@ -15,7 +15,7 @@
        	<Element Name="fld_local_cseq" ElementSet="General" Class="LabelText" FieldName="local_cseq" Label="Local Cseq" AllowURLParam="N"/>
        	<Element Name="fld_remote_cseq" ElementSet="General" Class="LabelText" FieldName="remote_cseq" Label="Remote Cseq" AllowURLParam="N"/>
        	<Element Name="fld_contact" ElementSet="General" Class="LabelText" FieldName="contact" Label="Contact" AllowURLParam="N"/>
-       	<Element Name="fld_record_route" ElementSet="General" Class="LabelText" FieldName="record_route" Label="Record Route" AllowURLParam="N"/>
+       	<Element Name="fld_record_route_detail" ElementSet="General" Class="LabelText" FieldName="record_route_detail" Label="Record Route" AllowURLParam="N"/>
        	<Element Name="fld_expires" ElementSet="General" Class="LabelText" FieldName="expires" Label="Expires" AllowURLParam="N"/>
        	<Element Name="fld_status" ElementSet="General" Class="LabelText" FieldName="status" Label="Status" AllowURLParam="N"/>
        	<Element Name="fld_reason" ElementSet="General" Class="LabelText" FieldName="reason" Label="Reason" AllowURLParam="N"/>
