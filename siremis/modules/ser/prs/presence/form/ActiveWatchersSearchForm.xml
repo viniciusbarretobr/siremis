@@ -14,8 +14,8 @@
         <Element Name="fld_local_cseq" Class="InputText" FieldName="local_cseq" Label="Local Cseq"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
         <Element Name="fld_remote_cseq" Class="InputText" FieldName="remote_cseq" Label="Remote Cseq"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
         <Element Name="fld_contact" Class="InputText" FieldName="contact" Label="Contact"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
-    			<Element Name="fld_record_route" Class="CKEditor"  mode="adv"  Config="resize_maxWidth:640,resize_minWidth:640,resize_minHeight:300" width="640" height="300" FieldName="record_route" Label="Record Route" Sortable="Y" AllowURLParam="N" Translatable="N" OnEventLog="N"  />            
-        <Element Name="fld_expires" Class="InputText" FieldName="expires" Label="Expires"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+    			<Element Name="fld_record_route" Class="Textarea" FieldName="record_route" Label="Record Route"   AllowURLParam="N" CssClass="input_textarea" CssErrorClass="input_textarea_error" CssFocusClass="input_textarea_focus"/>
+		<Element Name="fld_expires" Class="InputDatetime" FieldName="expires" Label="Expires" Sortable="Y" AllowURLParam="N" Translatable="N" OnEventLog="N"  CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
         <Element Name="fld_status" Class="InputText" FieldName="status" Label="Status"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
         <Element Name="fld_reason" Class="InputText" FieldName="reason" Label="Reason"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
         <Element Name="fld_version" Class="InputText" FieldName="version" Label="Version"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
