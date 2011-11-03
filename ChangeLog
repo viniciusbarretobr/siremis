@@ -12,6 +12,14 @@ Release changelogs
 * set default dispatcher flags to 0
 * set default permissions address port to 0
 * set input text for permissions fields considered checkbox
+* updates to user roles and redirections
+* added new RLS pages
+* enhancements to dispatcher pages
+* user interface element changes
+* added new PUA pages
+* updated access restrictions of pages
+* added new field to SIPTrace view pages
+* fix install error when siremis cannot access the kamailio database
 
 +++ SIREMIS v2.0.0 :: 2010-11-01
 
