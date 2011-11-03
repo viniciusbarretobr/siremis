@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EasyForm Name="RlsPresentitySearchForm" Class="ser.common.form.EasySearchForm" FormType="Search" jsClass="jbForm" Title="Search RLS Presentity" Description="" BizDataObj="ser.prs.presence.do.RlsPresentityDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
+    <DataPanel>
+        <Element Name="fld_rlsubs_did" Class="InputText" FieldName="rlsubs_did" Label="Rlsubs did"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_resource_uri" Class="InputText" FieldName="resource_uri" Label="Resource URI"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_content_type" Class="InputText" FieldName="content_type" Label="Content Type"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_presence_state" Class="Textarea" FieldName="presence_state" Label="Presence State" AllowURLParam="N" CssClass="input_textarea" CssErrorClass="input_textarea_error" CssFocusClass="input_textarea_focus"/>
+		<Element Name="fld_expires" Class="InputDatetime" FieldName="expires" Label="Expires" Sortable="Y" AllowURLParam="N" Translatable="N" OnEventLog="N"  CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_updated" Class="InputDatetime" FieldName="updated" Label="Updated" Sortable="Y" AllowURLParam="N" Translatable="N" OnEventLog="N"  CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_auth_state" Class="InputText" FieldName="auth_state" Label="Auth State"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_reason" Class="InputText" FieldName="reason" Label="Reason"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        </DataPanel>
+    <ActionPanel>
+        <Element Name="btn_search" Class="Button" Text="Search" CssClass="button_gray_m">
+			<EventHandler Name="search_onclick" EventLogMsg="" Event="onclick" Function="SwitchSearchForm(ser.prs.presence.form.RlsPresentityListForm)" RedirectPage=""  ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
+        </Element>
+        <Element Name="btn_cancel" Class="Button" Text="Cancel" CssClass="button_gray_m">
+            <EventHandler Name="cancel_onclick" Event="onclick" Function="SwitchForm(ser.prs.presence.form.RlsPresentityListForm)"  ShortcutKey="Escape" ContextMenu="Cancel"/>
+        </Element>
+    </ActionPanel> 
+    <NavPanel>
+    </NavPanel> 
+    <SearchPanel>
+    </SearchPanel>
+</EasyForm>

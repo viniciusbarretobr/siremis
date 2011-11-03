@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<EasyView Name="RlsPresentityListView" Description="ser.prs.presence" Class="EasyView" Tab="" TemplateEngine="Smarty" TemplateFile="view.tpl">
+   <FormReferences>
+   		<Reference Name="ser.prs.presence.form.RlsPresentityListForm"/>
+   </FormReferences>
+   <FormReferenceLibs>
+   		<Reference Name="ser.prs.presence.form.RlsPresentityListForm"/>
+   		<Reference Name="ser.prs.presence.form.RlsPresentityEditForm"/>
+   		<Reference Name="ser.prs.presence.form.RlsPresentityCopyForm"/>
+   		<Reference Name="ser.prs.presence.form.RlsPresentityNewForm"/>
+   		<Reference Name="ser.prs.presence.form.RlsPresentityDetailForm"/>
+   </FormReferenceLibs>    
+</EasyView>
