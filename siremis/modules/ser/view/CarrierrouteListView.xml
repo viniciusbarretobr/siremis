@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no"?>
-<EasyView Name="CarrierrouteListView" Description="ser.rtg.carrierroute" Class="EasyView" Tab="" TemplateEngine="Smarty" TemplateFile="view.tpl">
+<EasyView Name="CarrierrouteListView" Description="ser.rtg.carrierroute" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SuperNode.Administer_SuperNode" TemplateFile="view.tpl">
    <FormReferences>
    		<Reference Name="ser.rtg.carrierroute.form.CarrierrouteListForm"/>
    </FormReferences>

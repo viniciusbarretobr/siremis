@@ -1,5 +1,10 @@
 <?xml version="1.0" standalone="no"?>
 <Module Name="ser" Description="ser module" Version="0.1" OpenbizVersion="2.4">
+	<ACL>
+		<Resource Name="SuperNode">
+			<Action Name="Administer_SuperNode" Description="Can manage ser settings"/>
+		</Resource>
+	</ACL>
     <Menu>
 		<MenuItem Name="System.Ser" Title="SER Menu" Description="SER Management" URL="/ser/ser_default" IconImage="spacer.gif" IconCssClass="" Order="25">			
 			<MenuItem Name="System.Ser.Sbs" Title="Subscriber Services" Parent="System.Ser" Order="10">
