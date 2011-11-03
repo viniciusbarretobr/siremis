@@ -9,7 +9,7 @@
          		<EventHandler Name="fld_setid_onclick" Event="onclick" Function="SwitchForm(ser.rtg.dispatcher.form.DispatcherDetailForm,{@:Elem[fld_Id].Value})"   />
         </Element>
                 <Element Name="fld_destination" Class="ColumnText" FieldName="destination" Label="Destination"  Sortable="Y"/>
-                <Element Name="fld_flags" Class="ColumnText" FieldName="flags" Label="Flags"  Sortable="Y"/>
+                <Element Name="fld_flags_text_label" Class="ColumnText" FieldName="flags_text_label" Label="Flags"  Sortable="Y"/>
                 <Element Name="fld_priority" Class="ColumnText" FieldName="priority" Label="Priority"  Sortable="Y"/>
                 <Element Name="fld_attrs" Class="ColumnText" FieldName="attrs" Label="Attrs"  Sortable="Y"/>
                 <Element Name="fld_description" Class="ColumnText" FieldName="description" Label="Description"  Sortable="Y"/>

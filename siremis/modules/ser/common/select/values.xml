@@ -22,4 +22,9 @@
 	<lcrGwURIScheme Value="1" Text="1 - SIP"/>
 	<lcrGwURIScheme Value="2" Text="2 - SIPS"/>
 
+	<dispatcherAttrs Value="" Text="-- none --"/>
+	<dispatcherAttrs Value="weight" Text="weight"/>
+	
+	<dispatcherFlags Value="1" Text="Inactive"/>
+	<dispatcherFlags Value="2" Text="Probing"/>
 </Selection>
