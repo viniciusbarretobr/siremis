@@ -77,12 +77,14 @@
 					URL="{@home:url}/ser/watchers_list" Order="20"/>
 				<MenuItem Name="System.Ser.Prs.Presentity" Title="Presentity List" Description=""
 					URL="{@home:url}/ser/presentity_list" Order="30"/>
+				<MenuItem Name="System.Ser.Prs.Pua" Title="PUA List" Description=""
+					URL="{@home:url}/ser/pua_list" Order="40"/>
 				<MenuItem Name="System.Ser.Prs.RlsWatchers" Title="RLS Watchers List" Description=""
-					URL="{@home:url}/ser/rls_watchers_list" Order="40"/>
+					URL="{@home:url}/ser/rls_watchers_list" Order="50"/>
 				<MenuItem Name="System.Ser.Prs.RlsPresentity" Title="RLS Presentity List" Description=""
-					URL="{@home:url}/ser/rls_presentity_list" Order="50"/>				
+					URL="{@home:url}/ser/rls_presentity_list" Order="60"/>				
 				<MenuItem Name="System.Ser.Prs.Xcap" Title="XCAP List" Description=""
-					URL="{@home:url}/ser/xcap_list" Order="60"/>
+					URL="{@home:url}/ser/xcap_list" Order="70"/>
 			</MenuItem>	
 			<MenuItem Name="System.Ser.Cms" Title="Command Services" Parent="System.Ser" Order="70">
 				<MenuItem Name="System.Ser.Cms.Micmds" Title="MI Commands" Description=""
