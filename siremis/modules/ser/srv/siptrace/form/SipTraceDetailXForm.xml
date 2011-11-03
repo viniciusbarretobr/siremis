@@ -11,6 +11,7 @@
        	<Element Name="fld_toip" ElementSet="General" Class="LabelText" FieldName="toip" Label="Toip" AllowURLParam="N"/>
        	<Element Name="fld_fromtag" ElementSet="General" Class="LabelText" FieldName="fromtag" Label="Fromtag" AllowURLParam="N"/>
        	<Element Name="fld_time_stamp" ElementSet="General" Class="LabelText" FieldName="time_stamp" Label="Time Stamp" AllowURLParam="N"/>
+	<Element Name="fld_time_us" ElementSet="General" Class="LabelText" FieldName="time_us" Label="Time us" AllowURLParam="N"/>
        	<Element Name="fld_direction" ElementSet="General" Class="LabelText" FieldName="direction" Label="Direction" AllowURLParam="N"/>
     </DataPanel>
     <ActionPanel>       

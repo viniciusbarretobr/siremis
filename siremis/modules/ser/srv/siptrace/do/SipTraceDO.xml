@@ -3,6 +3,7 @@
 	<BizFieldList>
         <BizField Name="Id" Column="id" Type="Number"/>
         <BizField Name="time_stamp" Column="time_stamp" DefaultValue="1900-01-01 00:00:01" Required="Y" Type="Datetime"/>
+	<BizField Name="time_us" Column="time_us" Required="Y" Type="Number"/>
         <BizField Name="callid" Column="callid" Length="255" Required="Y" Type="Text"/>
         <BizField Name="traced_user" Column="traced_user" Length="128" Required="Y" Type="Text"/>
         <BizField Name="msg" Column="msg" Required="Y" Type="Text"/>

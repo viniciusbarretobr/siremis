@@ -3,6 +3,7 @@
     <DataPanel>
 		<Element Name="fld_Id" ElementSet="General" Hidden="Y" Class="LabelText" FieldName="Id" Label="Id" AllowURLParam="Y"/>
        	<Element Name="fld_time_stamp" ElementSet="General" Class="LabelText" FieldName="time_stamp" Label="Time Stamp" AllowURLParam="N"/>
+	<Element Name="fld_time_us" ElementSet="General" Class="LabelText" FieldName="time_us" Label="Time us" AllowURLParam="N"/>
        	<Element Name="fld_callid" ElementSet="General" Class="LabelText" FieldName="callid" Label="Callid" AllowURLParam="N"/>
        	<Element Name="fld_traced_user" ElementSet="General" Class="LabelText" FieldName="traced_user" Label="Traced User" AllowURLParam="N"/>
        	<Element Name="fld_msg_detail" ElementSet="General" Class="LabelText" FieldName="msg_detail" Label="Msg" AllowURLParam="N"/>
