@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<EasyView Name="PuaListView" Description="ser.prs.presence" Class="EasyView" Tab="" TemplateEngine="Smarty" TemplateFile="view.tpl">
+   <FormReferences>
+   		<Reference Name="ser.prs.presence.form.PuaListForm"/>
+   </FormReferences>
+   <FormReferenceLibs>
+   		<Reference Name="ser.prs.presence.form.PuaListForm"/>
+   		<Reference Name="ser.prs.presence.form.PuaEditForm"/>
+   		<Reference Name="ser.prs.presence.form.PuaCopyForm"/>
+   		<Reference Name="ser.prs.presence.form.PuaNewForm"/>
+   		<Reference Name="ser.prs.presence.form.PuaDetailForm"/>
+   </FormReferenceLibs>    
+</EasyView>
