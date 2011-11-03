@@ -106,8 +106,8 @@ CREATE TABLE `role` (
 /*Data for the table `role` */
 
 insert  into `role`(`id`,`name`,`description`,`status`,`startpage`) values (1,'Administrator','System administrator',1,'/system/general_default');
-insert  into `role`(`id`,`name`,`description`,`status`,`startpage`) values (2,'Guest','Guest users are unregistered users',1,'/system/general_default');
-insert  into `role`(`id`,`name`,`description`,`status`,`startpage`) values (3,'Member','General registered users',1,'/system/general_default');
+insert  into `role`(`id`,`name`,`description`,`status`,`startpage`) values (2,'Member','General registered users',1,'/ser/ser_default');
+insert  into `role`(`id`,`name`,`description`,`status`,`startpage`) values (3,'Guest','Guest users are unregistered users',1,'/ser/ser_default');
 
 /*Table structure for table `user` */
 
