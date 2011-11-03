@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no"?>
-<EasyView Name="GroupListView" Description="system" Class="EasyView" Tab="" TemplateEngine="Smarty" TemplateFile="system_view.tpl.html">
+<EasyView Name="GroupListView" Description="system" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="Group.Administer_Groups" TemplateFile="system_view.tpl.html">
    <FormReferences>
    		<Reference Name="system.form.GroupListForm"/>
    </FormReferences>

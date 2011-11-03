@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no"?>
-<EasyView Name="MenuTreeView" Description="Menu Management" Class="EasyView" Tab="" TemplateEngine="Smarty" TemplateFile="view.tpl">
+<EasyView Name="MenuTreeView" Description="Menu Management" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="Menu.Administer_Menu" TemplateFile="view.tpl">
    <FormReferences>
    		<Reference Name="menu.form.MenuTreeForm"/>
    </FormReferences>

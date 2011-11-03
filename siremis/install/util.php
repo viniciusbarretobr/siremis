@@ -155,8 +155,9 @@ function fillDB()
 	}
 
    	giveActionAccess("", 1);	// admin to access all actions
-	giveActionAccess("module='user'", 2);
    	
+	giveActionAccess("module='user' OR module='ser'", 2);
+	giveActionAccess("module='ser'", 3);
 
 	return true;
 }

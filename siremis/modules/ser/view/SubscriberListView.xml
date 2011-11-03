@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no"?>
-<EasyView Name="SubscriberListView" Description="ser.sbs.authdb" Class="EasyView" Tab="" TemplateEngine="Smarty" TemplateFile="view_tabs.tpl">
+<EasyView Name="SubscriberListView" Description="ser.sbs.authdb" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SuperNode.Administer_SuperNode" TemplateFile="view_tabs.tpl">
    <FormReferences>
 		<Reference Name="ser.sbs.authdb.form.SubscriberListForm"
 				SubForms="ser.sbs.aliasdb.form.DbaliasesListForm;ser.sbs.usrloc.form.LocationListForm" Description="Subscribers"/>

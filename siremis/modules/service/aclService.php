@@ -22,8 +22,8 @@ class aclService
     // return ALLOW, DENY, ALLOW_OWNER
     public static function allowAccess($res_action)
     {
-    	if (aclService::$_accessMatrix)
-			return aclService::$_accessMatrix;
+    	//if (aclService::$_accessMatrix)
+		//	return aclService::$_accessMatrix;
 		
 		// get the access matrix from session
         aclService::$_accessMatrix = BizSystem::sessionContext()->getVar("_ACCESS_MATRIX");

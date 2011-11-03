@@ -44,20 +44,32 @@ $url=$match[1];
 $urlArr = array();
 if($url)
 {
-	$urlArr = preg_split("/\//si",$url);
-	if(preg_match("/^[a-z_]*$/si",$urlArr[1])){
-		// http://localhost/?/ModuleName/FormName/
-		$module_name 	= $urlArr[0];
-		$view_name		= getViewName($urlArr[1]);
-	}
-	elseif(preg_match("/^[a-z_]*$/si",$urlArr[0]))
-	{
-		// http://localhost/?/FormName/
+	$profile = BizSystem::getUserProfile();
+	if(!$profile){
+		if('index.php/' . $url != $DEFAULT_URL){
+			header("Location: " . APP_INDEX . '/' . $DEFAULT_URL);
+		}
 		$module_name 	= $DEFAULT_MODULE;
-		$view_name		= getViewName($urlArr[0]);
+		$view_name		= $DEFAULT_VIEW;
+
 	}
-	if (empty($urlArr[count($urlArr)-1]))
-		unset($urlArr[count($urlArr)-1]);
+	else
+	{
+		$urlArr = preg_split("/\//si",$url);
+		if(preg_match("/^[a-z_]*$/si",$urlArr[1])){
+			// http://localhost/?/ModuleName/FormName/
+			$module_name 	= $urlArr[0];
+			$view_name		= getViewName($urlArr[1]);
+		}
+		elseif(preg_match("/^[a-z_]*$/si",$urlArr[0]))
+		{
+			// http://localhost/?/FormName/
+			$module_name 	= $DEFAULT_MODULE;
+			$view_name		= getViewName($urlArr[0]);
+		}
+		if (empty($urlArr[count($urlArr)-1]))
+			unset($urlArr[count($urlArr)-1]);
+	}
 }	
 else
 {

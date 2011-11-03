@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no"?>
-<EasyView Name="ManageView" Description="Cache Management " Class="EasyView" Tab="" TemplateEngine="Smarty" TemplateFile="view.tpl">
+<EasyView Name="ManageView" Description="Cache Management " Class="EasyView" Tab="" TemplateEngine="Smarty" Access="cache.admin" TemplateFile="view.tpl">
    <FormReferences>
    		<Reference Name="cache.form.CacheListForm"/>
    </FormReferences>
