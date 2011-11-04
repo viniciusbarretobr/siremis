@@ -1,5 +1,6 @@
 <?PHP
 include_once(OPENBIZ_BIN.'data/BizDataObj.php');
+include_once(OPENBIZ_BIN.'../../siremis/modules/ser/common/form/SERUtils.php');
 
 class XcapDO extends BizDataObj
 {
@@ -14,22 +15,14 @@ class XcapDO extends BizDataObj
         $resultSet = $this->_run_search($this->m_Limit);  // regular search or page search
         if ($resultSet !== null)
 		{
-			$docfield = array('doc','docdetail');
+			$docfields = array('doc','docdetail');
             while ($recArray = $this->_fetch_record($resultSet))
 			{
-				if(isset($recArray[$docfield[0]]))
+				if(isset($recArray[$docfields[0]]))
 				{
-					$tmp = $recArray[$docfield[0]];
-					$tmp = str_replace("<", "&lt;", $tmp);
-					$tmp = str_replace(">", "&gt;", $tmp);
-					$recArray[$docfield[0]] = $tmp;
-					$tmp = preg_replace('#([A-Z]+ sip:[^ ]+ SIP/2.0)%%#i', '<font color=#336600>${1}</font>%%', $tmp, -1);
-					$tmp = preg_replace('#(SIP/2.0 [1-6][0-9][0-9] [^%]+)%%#i', '<font color=#336600>${1}</font>%%', $tmp, -1);
-					$tmp = preg_replace('#%%([^ :%]+): (.+)%%#im', '%%<font color=red>$1</font>: $2%%', $tmp, -1, $count);
-					while($count>0)
-						$tmp = preg_replace('#%%([^ :%<]+): (.+)%%#im', '%%<font color=red>$1</font>: $2%%', $tmp, -1, $count);
-					$recArray[$docfield[1]] = "<pre>" . $tmp . "</pre>";
-
+					$rlist = serDataToHtmlArray($recArray[$docfields[0]]); 
+					$recArray[$docfields[0]] = $rlist[0];
+					$recArray[$docfields[1]] = $rlist[1];
 				}
                 $resultRecords[] = $recArray;
             }
