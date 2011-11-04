@@ -3,7 +3,7 @@
    <DataPanel>
       <Element Name="username" FieldName="fld_username" Label="Username" Class="InputText" required="Y" HTMLATTR="maxlength='25'"/>
       <Element Name="password" FieldName="fld_password" Label="Password" Class="Password" required="Y" HTMLATTR="maxlength='25'"/>
-      <Element Name="antispam" FieldName="" AntiSpamImage="{@home:base_url}/bin/antispam_image.php" Length="6" SpamLevel="2" Label="Anti Spam" Class="Antispam" required="Y" />          
+      <Element Name="antispam" FieldName="" AntiSpamImage="{@home:base_url}/bin/antispam_image.php" Length="5" SpamLevel="2" Label="Anti Spam" Class="Antispam" Required="N" />          
 	  <Element Name="session_timeout" FieldName="" DefaultValue="0" Label="Cookies" Class="Listbox" SelectFrom="common.lov.SessionTimeLOV(Session)"  />      
       <element Name="forget_pass" label="" Class="LabelText" CssClass="link" text="Forget Password ?" link="{@home:url}/user/forget_pass"/>    
       <element Name="register_new" label="" Class="LabelText" CssClass="link_highlight" text="Register new account" link="{@home:url}/user/register"/>

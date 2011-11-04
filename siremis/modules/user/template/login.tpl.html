@@ -21,6 +21,7 @@
 			<span class="input_error_msg">{$errors.password}</span>
 			{/if}		
 		</p>
+		{if $dataPanel.antispam.required == 'Y'}
 		<p class="input_row">
 			<label style="width:60px;">{$dataPanel.antispam.label}</label>
 			<span style="width:200px; display:block;float:left;">{$dataPanel.antispam.element}</span>
@@ -28,6 +29,7 @@
 			<span class="input_error_msg">{$errors.antispam}</span>
 			{/if}		
 		</p>
+		{/if}
 		<p class="input_row">
 			<label style="width:60px;">{$dataPanel.session_timeout.label}</label>
 			<span style="width:200px; display:block;float:left;">{$dataPanel.session_timeout.element}</span>
