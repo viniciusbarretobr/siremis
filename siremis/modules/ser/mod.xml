@@ -1,8 +1,8 @@
 <?xml version="1.0" standalone="no"?>
-<Module Name="ser" Description="ser module" Version="0.1" OpenbizVersion="2.4">
+<Module Name="ser" Description="SER module" Version="0.1" OpenbizVersion="2.4">
 	<ACL>
-		<Resource Name="SuperNode">
-			<Action Name="Administer_SuperNode" Description="Can manage ser settings"/>
+		<Resource Name="SERAdmin">
+			<Action Name="Administer_Modules" Description="Can manage SER settings"/>
 		</Resource>
 	</ACL>
     <Menu>
