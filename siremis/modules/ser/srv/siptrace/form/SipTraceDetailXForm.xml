@@ -5,7 +5,7 @@
        	<Element Name="fld_method" ElementSet="General" Class="LabelText" FieldName="method" Label="Method" AllowURLParam="N"/>
        	<Element Name="fld_status" ElementSet="General" Class="LabelText" FieldName="status" Label="Status" AllowURLParam="N"/>
        	<Element Name="fld_callid" ElementSet="General" Class="LabelText" FieldName="callid" Label="Callid" AllowURLParam="N"/>
-		<Element Name="fld_msg_detail" ElementSet="General" Class="LabelText" FieldName="msg_detail" Label="Msg" AllowURLParam="N"/>            
+		<Element Name="fld_msg_detail" ElementSet="General" Class="CKEditor"  mode="notoolbar"  Config="resize_maxWidth:640,resize_minWidth:640,resize_minHeight:300" width="640" height="300" FieldName="msg_detail" Label="Msg"  Sortable="Y" AllowURLParam="N" Translatable="N" OnEventLog="N"  />
        	<Element Name="fld_traced_user" ElementSet="General" Class="LabelText" FieldName="traced_user" Label="Traced User" AllowURLParam="N"/>
        	<Element Name="fld_fromip" ElementSet="General" Class="LabelText" FieldName="fromip" Label="Fromip" AllowURLParam="N"/>
        	<Element Name="fld_toip" ElementSet="General" Class="LabelText" FieldName="toip" Label="Toip" AllowURLParam="N"/>

@@ -1,5 +1,6 @@
 <?PHP
 include_once(OPENBIZ_BIN.'data/BizDataObj.php');
+include_once(OPENBIZ_BIN.'../../siremis/modules/ser/common/libs/SERUtils.php');
 
 class SipTraceDO extends BizDataObj
 {
@@ -19,16 +20,10 @@ class SipTraceDO extends BizDataObj
 				$msgfields = array('msg','msg_detail');
 				if(isset($recArray[$msgfields[0]]))
 				{
-					$tmp = $recArray[$msgfields[0]];
-					$tmp = str_replace("<", "&lt;", $tmp);
-					$tmp = str_replace(">", "&gt;", $tmp);
-					$recArray[$msgfields[0]] = $tmp;
-					$tmp = preg_replace('#([A-Z]+ sip:[^ ]+ SIP/2.0)%%#i', '<font color=#336600>${1}</font>%%', $tmp, -1);
-					$tmp = preg_replace('#(SIP/2.0 [1-6][0-9][0-9] [^%]+)%%#i', '<font color=#336600>${1}</font>%%', $tmp, -1);
-					$tmp = preg_replace('#%%([^ :%]+): (.+)%%#im', '%%<font color=red>$1</font>: $2%%', $tmp, -1, $count);
-					while($count>0)
-						$tmp = preg_replace('#%%([^ :%<]+): (.+)%%#im', '%%<font color=red>$1</font>: $2%%', $tmp, -1, $count);
-					$recArray[$msgfields[1]] = "<pre>" . $tmp . "</pre>";
+					$rlist = serDataToHtmlArray($recArray[$msgfields[0]]); 
+					$recArray[$msgfields[0]] = $rlist[0];
+					$recArray[$msgfields[1]] = $rlist[1];
+
 				}
                 $resultRecords[] = $recArray;
             }
