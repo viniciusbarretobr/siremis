@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no"?>
-<EasyView Name="PdtListView" Description="ser.rtg.pdt" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SuperNode.Administer_SuperNode" TemplateFile="view.tpl">
+<EasyView Name="PdtListView" Description="ser.rtg.pdt" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SERAdmin.Administer_Modules" TemplateFile="view.tpl">
    <FormReferences>
    		<Reference Name="ser.rtg.pdt.form.PdtListForm"/>
    </FormReferences>

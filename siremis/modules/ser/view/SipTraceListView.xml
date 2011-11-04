@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no"?>
-<EasyView Name="SipTraceListView" Description="ser.srv.siptrace" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SuperNode.Administer_SuperNode" TemplateFile="view.tpl">
+<EasyView Name="SipTraceListView" Description="ser.srv.siptrace" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SERAdmin.Administer_Modules" TemplateFile="view.tpl">
    <FormReferences>
    		<Reference Name="ser.srv.siptrace.form.SipTraceSearchForm"/>
    		<Reference Name="ser.srv.siptrace.form.SipTraceListForm" SubForms="ser.srv.siptrace.form.SipTraceDetailXForm"/>

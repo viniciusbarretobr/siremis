@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no"?>
-<EasyView Name="ActiveWatchersListView" Description="ser.prs.presence" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SuperNode.Administer_SuperNode" TemplateFile="view.tpl">
+<EasyView Name="ActiveWatchersListView" Description="ser.prs.presence" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SERAdmin.Administer_Modules" TemplateFile="view.tpl">
    <FormReferences>
    		<Reference Name="ser.prs.presence.form.ActiveWatchersListForm"/>
    </FormReferences>
