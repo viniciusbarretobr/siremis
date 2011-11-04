@@ -1,6 +1,6 @@
 <?PHP
 include_once(OPENBIZ_BIN.'data/BizDataObj.php');
-include_once(OPENBIZ_BIN.'../../siremis/modules/ser/common/form/SERUtils.php');
+include_once(OPENBIZ_BIN.'../../siremis/modules/ser/common/libs/SERUtils.php');
 
 class PresentityDO extends BizDataObj
 {
