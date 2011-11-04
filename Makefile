@@ -3,6 +3,9 @@
 URLBASE ?= siremis
 BASEDIR=`pwd`
 SIREMISDIR=$(BASEDIR)/siremis
+VERSION=2.1.0
+
+# cooltext (dn:com/st:glowingsteel/fg:brandname/fn:hopt)
 
 all: prepare
 
