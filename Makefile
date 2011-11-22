@@ -1,11 +1,16 @@
 # Makefile for SIREMIS
 
-URLBASE ?= siremis
+# make variables
+NAME ?= siremis
+URLBASE ?= $(NAME)
 BASEDIR=`pwd`
-SIREMISDIR=$(BASEDIR)/siremis
+SIREMISDIR=$(BASEDIR)/$(NAME)
 VERSION=3.2.0
 
-# cooltext (dn:com/st:glowingsteel/fg:brandname/fn:hotp)
+# tools
+TAR ?= tar
+
+# cooltext (dn:com/st:glowingsteel/fg:brandname/fn:hopt)
 
 all: prepare
 
@@ -73,4 +78,28 @@ cleanwiz:
 	rm -rf siremis/install
 
 cleantopkg: distclean cleansvn cleansiremis cleanbin
+
+.PHONY: tar
+tar:
+	rm -rf tmp
+	mkdir -p tmp/$(NAME)-$(VERSION)
+	$(TAR) --exclude=tmp/* --exclude=tmp -cf - . \
+		| $(TAR) -x --directory=tmp/$(NAME)-$(VERSION)
+	make -C tmp/$(NAME)-$(VERSION) cleantopkg
+	$(TAR) -C tmp/ \
+		--exclude=.git* \
+		--exclude=.svn* \
+		--exclude=.cvs* \
+		--exclude=CVS* \
+		--exclude=*.gz \
+		--exclude=*.tgz \
+		--exclude=*.bz2 \
+		--exclude=*.tar \
+		--exclude=*.patch \
+		--exclude=.\#* \
+		--exclude=*.swp \
+		--exclude=*.swo \
+		-czvf "$(NAME)-$(VERSION).tgz" "$(NAME)-$(VERSION)"
+	mv "$(NAME)-$(VERSION).tgz" ../
+	rm -rf tmp
 
