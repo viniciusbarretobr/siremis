@@ -77,7 +77,21 @@ cleanwiz:
 	@echo "removing web installation wizard files..."
 	rm -rf siremis/install
 
-cleantopkg: distclean cleansvn cleansiremis cleanbin
+toolsx:
+	@echo "preparing toolsx meta bin directory.."
+	rm -f siremis/bin/toolsx
+	cp -a misc/bin/toolsx siremis/bin/
+
+cleantoolsx:
+	@echo "removing toolsx meta bin directory.."
+	rm -rf siremis/bin/toolsx
+
+resetchmod:
+	@echo "reseting file permisions..."
+	find . ! -type d -exec chmod 644 {} \;
+	find . -type d -exec chmod 755 {} \;
+
+cleantopkg: distclean cleansvn cleansiremis cleanbin cleantoolsx
 
 .PHONY: tar
 tar:
