@@ -5,8 +5,9 @@ Web Management Interface for SIP Routing Engines
 
 Release changelogs
 
-+++ SIREMIS v2.0.1 :: 2011-XX-XX
++++ SIREMIS v2.1.0 :: 2011-11-23
 
+* compatible with Kamailio v3.1.x
 * fixed LCR input field types
 * detect eval() errors
 * set default dispatcher flags to 0
@@ -15,11 +16,11 @@ Release changelogs
 * updates to user roles and redirections
 * added new RLS pages
 * enhancements to dispatcher pages
-* user interface element changes
+* user interface element changes (ckeditor usage)
 * added new PUA pages
 * updated access restrictions of pages
-* added new field to SIPTrace view pages
 * fix install error when siremis cannot access the kamailio database
+* added make tar option to generate the tarball
 
 +++ SIREMIS v2.0.0 :: 2010-11-01
 
