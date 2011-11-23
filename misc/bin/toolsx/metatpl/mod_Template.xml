@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="no"?>
+<Module Name="{$module_name}" Description="{$module_name} module" Version="0.1" OpenbizVersion="2.4">
+	<ACL>
+		<Resource Name="{$module|replace:'.':'_'}">
+			<Action Name="Access_{$module|capitalize|replace:'.':''}" Description="Access {$module|capitalize|replace:'.':''}"/>
+		</Resource>
+	</ACL>
+    <Menu>
+		<MenuItem Name="{$module|capitalize|replace:'.':''}" Title="{$module|capitalize|replace:'.':''}" Parent="" Order="10">
+			<MenuItem Name="{$module|capitalize|replace:'.':''}.List" Title="{$module|capitalize|replace:'.':''} List" Description=""  URL="{literal}{@home:url}{/literal}/{$module|replace:'.':'/'}/{$listview_uri}" Order="10"/>
+		</MenuItem>	
+    </Menu>
+    <Dependency>
+    	<Module Name="system"/>
+    </Dependency>
+</Module>
