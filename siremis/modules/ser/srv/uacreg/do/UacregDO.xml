@@ -1,0 +1,20 @@
+<?xml version="1.0" standalone="no"?>
+<BizDataObj Name="UacregDO" Description="" Class="BizDataObj" DBName="Serdb" Table="uacreg" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="l_uuid;" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+	<BizFieldList>
+        <BizField Name="Id" Column="id"     Type="Number"/>
+        <BizField Name="l_uuid" Column="l_uuid" Length="64"   Required="Y" Type="Text"/>
+        <BizField Name="l_username" Column="l_username" Length="64"   Required="Y" Type="Text"/>
+        <BizField Name="l_domain" Column="l_domain" Length="128"   Required="Y" Type="Text"/>
+        <BizField Name="r_username" Column="r_username" Length="64"   Required="Y" Type="Text"/>
+        <BizField Name="r_domain" Column="r_domain" Length="128"   Required="Y" Type="Text"/>
+        <BizField Name="realm" Column="realm" Length="64"   Required="Y" Type="Text"/>
+        <BizField Name="auth_username" Column="auth_username" Length="64"   Required="Y" Type="Text"/>
+        <BizField Name="auth_password" Column="auth_password" Length="64"   Required="Y" Type="Text"/>
+        <BizField Name="auth_proxy" Column="auth_proxy" Length="64"   Required="Y" Type="Text"/>
+        <BizField Name="expires" Column="expires"    Required="Y" Type="Number"/>
+	</BizFieldList>
+    <TableJoins>
+    </TableJoins>
+    <ObjReferences>
+    </ObjReferences>
+</BizDataObj>
