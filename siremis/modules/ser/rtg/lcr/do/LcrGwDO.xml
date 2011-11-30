@@ -11,7 +11,8 @@
         <BizField Name="uri_scheme" Column="uri_scheme"    Required="N" Type="Number"/>
         <BizField Name="transport" Column="transport"    Required="N" Type="Number"/>
         <BizField Name="strip" Column="strip"    Required="N" Type="Number"/>
-        <BizField Name="tag" Column="tag" Length="16"   Required="N" Type="Text"/>
+        <BizField Name="prefix" Column="prefix" Length="16"   Required="N" Type="Text"/>
+        <BizField Name="tag" Column="tag" Length="64"   Required="N" Type="Text"/>
         <BizField Name="flags" Column="flags"    Required="Y" Type="Number"/>
         <BizField Name="defunct" Column="defunct"    Required="N" Type="Number"/>
 	</BizFieldList>

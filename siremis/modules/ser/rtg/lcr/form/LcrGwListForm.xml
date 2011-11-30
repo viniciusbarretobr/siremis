@@ -16,6 +16,7 @@
                 <Element Name="fld_uri_scheme" Class="ColumnText" FieldName="uri_scheme" Label="Uri Scheme"  Sortable="Y"/>
                 <Element Name="fld_transport" Class="ColumnText" FieldName="transport" Label="Transport"  Sortable="Y"/>
                 <Element Name="fld_strip" Class="ColumnText" FieldName="strip" Label="Strip"  Sortable="Y"/>
+                <Element Name="fld_prefix" Class="ColumnText" FieldName="prefix" Label="Prefix"  Sortable="Y"/>
                 <Element Name="fld_tag" Class="ColumnText" FieldName="tag" Label="Tag"  Sortable="Y"/>
                 <Element Name="fld_flags" Class="ColumnText" FieldName="flags" Label="Flags"  Sortable="Y"/>
                 <Element Name="fld_defunct" Class="ColumnText" FieldName="defunct" Label="Defunct"  Sortable="Y"/>

@@ -11,6 +11,7 @@
 		<Element Name="fld_uri_scheme" Class="Listbox" FieldName="uri_scheme" Label="Uri Scheme" AllowURLParam="N" SelectFrom="ser.common.select.values(lcrGwURIScheme)"/>
 		<Element Name="fld_transport" Class="Listbox" FieldName="transport" Label="Transport" AllowURLParam="N" SelectFrom="ser.common.select.values(lcrGwTransport)"/>
 		<Element Name="fld_strip" Class="InputText" FieldName="strip" Label="Strip"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_prefix" Class="InputText" FieldName="prefix" Label="Prefix"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
 		<Element Name="fld_tag" Class="InputText" FieldName="tag" Label="Tag"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
 		<Element Name="fld_flags" Class="InputText" FieldName="flags" Label="Flags"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
 		<Element Name="fld_defunct" Class="InputText" FieldName="defunct" Label="Defunct"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>

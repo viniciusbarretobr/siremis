@@ -11,6 +11,7 @@
        	<Element Name="fld_uri_scheme" ElementSet="General" Class="LabelText" FieldName="uri_scheme" Label="Uri Scheme" AllowURLParam="N"/>
        	<Element Name="fld_transport" ElementSet="General" Class="LabelText" FieldName="transport" Label="Transport" AllowURLParam="N"/>
        	<Element Name="fld_strip" ElementSet="General" Class="LabelText" FieldName="strip" Label="Strip" AllowURLParam="N"/>
+       	<Element Name="fld_prefix" ElementSet="General" Class="LabelText" FieldName="prefix" Label="Prefix" AllowURLParam="N"/>
        	<Element Name="fld_tag" ElementSet="General" Class="LabelText" FieldName="tag" Label="Tag" AllowURLParam="N"/>
        	<Element Name="fld_flags" ElementSet="General" Class="LabelText" FieldName="flags" Label="Flags" AllowURLParam="N"/>
        	<Element Name="fld_defunct" ElementSet="General" Class="LabelText" FieldName="defunct" Label="Defunct" AllowURLParam="N"/>
