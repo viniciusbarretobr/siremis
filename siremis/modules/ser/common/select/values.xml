@@ -24,7 +24,12 @@
 
 	<dispatcherAttrs Value="" Text="-- none --"/>
 	<dispatcherAttrs Value="weight" Text="weight"/>
+	<dispatcherAttrs Value="duid" Text="duid"/>
+	<dispatcherAttrs Value="maxload" Text="maxload"/>
 	
-	<dispatcherFlags Value="1" Text="Inactive"/>
-	<dispatcherFlags Value="2" Text="Probing"/>
+	<dispatcherFlags Value="0" Text="Active - No Probing"/>
+	<dispatcherFlags Value="8" Text="Active - Probing"/>
+	<dispatcherFlags Value="1" Text="Inactive - No Probing"/>
+	<dispatcherFlags Value="9" Text="Inactive - Probing"/>
+	<dispatcherFlags Value="4" Text="Disabled - No Probing"/>
 </Selection>
