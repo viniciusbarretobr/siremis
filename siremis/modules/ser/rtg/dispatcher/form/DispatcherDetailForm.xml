@@ -4,7 +4,7 @@
 		<Element Name="fld_Id" ElementSet="General" Hidden="Y" Class="LabelText" FieldName="Id" Label="Id" AllowURLParam="Y"/>
        	<Element Name="fld_setid" ElementSet="General" Class="LabelText" FieldName="setid" Label="Setid" AllowURLParam="N"/>
        	<Element Name="fld_destination" ElementSet="General" Class="LabelText" FieldName="destination" Label="Destination" AllowURLParam="N"/>
-       	<Element Name="fld_flags_text_label" ElementSet="General" Class="LabelText" FieldName="flags_text_label" Label="Destination Flags" AllowURLParam="N"/>
+       	<Element Name="fld_flags" ElementSet="General" Class="LabelText" FieldName="flags" Label="Flags" AllowURLParam="N"/>
        	<Element Name="fld_priority" ElementSet="General" Class="LabelText" FieldName="priority" Label="Priority" AllowURLParam="N"/>
        	<Element Name="fld_attrs" ElementSet="General" Class="LabelText" FieldName="attrs" Label="Attrs" AllowURLParam="N"/>
        	<Element Name="fld_description" ElementSet="General" Class="LabelText" FieldName="description" Label="Description" AllowURLParam="N"/>

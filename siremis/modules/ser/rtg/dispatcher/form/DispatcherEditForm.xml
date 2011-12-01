@@ -4,11 +4,9 @@
 		<Element Name="fld_Id" Class="Hidden" FieldName="Id" Label="Id" AllowURLParam="Y" Translatable="N" OnEventLog="N" CssClass="input" CssErrorClass="input_error"/>
 		<Element Name="fld_setid" Class="InputText" FieldName="setid" Label="Setid"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
 		<Element Name="fld_destination" Class="InputText" FieldName="destination" Label="Destination"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
-		<Element Name="fld_flags" Class="Checkbox" FieldName="flags" Label="Destination Flags"  AllowURLParam="N" SelectFrom="ser.common.select.values(dispatcherFlags)"/>
-		<Element Name="fld_flags_other" Class="InputText" FieldName="flags_other" Label="Destination Flags" Hidden="Y" AllowURLParam="N"/>
-		<Element Name="fld_priority" Class="InputText" FieldName="priority" Label="Priority"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
-		<Element Name="fld_attrs" Class="ser.common.form.ListboxInputText" FieldName="attrs" Label="Attrs"  AllowURLParam="N" CssClass="input_text_s" CssErrorClass="input_text_s_error" CssFocusClass="input_text_s_focus" SelectFrom="ser.common.select.values(dispatcherAttrs)"/>
-		<Element Name="fld_attrs_other" Class="InputText" FieldName="attrs_other" Label="Attrs"  Hidden="Y" AllowURLParam="N"/>
+        <Element Name="fld_flags" Class="Listbox" FieldName="flags" Label="Flags"  AllowURLParam="N"  DefaultValue="0" SelectFrom="ser.common.select.values(dispatcherFlags)"/>
+		<Element Name="fld_priority" Class="InputText" FieldName="priority" Label="Priority"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"  DefaultValue="0"/>
+		<Element Name="fld_attrs" Class="InputText" FieldName="attrs" Label="Attrs"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
 		<Element Name="fld_description" Class="InputText" FieldName="description" Label="Description"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
     </DataPanel>
     <ActionPanel>

@@ -1,13 +1,13 @@
 <?xml version="1.0" standalone="no"?>
-<BizDataObj Name="DispatcherDO" Description="" Class="ser.rtg.dispatcher.do.DispatcherDO" DBName="Serdb" Table="dispatcher" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+<BizDataObj Name="DispatcherDO" Description="" Class="BizDataObj" DBName="Serdb" Table="dispatcher" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
 	<BizFieldList>
-        <BizField Name="Id" Column="id" Type="Number"/>
-        <BizField Name="setid" Column="setid" Required="Y" Type="Number"/>
-        <BizField Name="destination" Column="destination" Length="192" Required="Y" Type="Text"/>
-        <BizField Name="flags" Column="flags" Type="Number" Required="N"/>
-        <BizField Name="priority" Column="priority" Type="Number" Required="N"/>
-        <BizField Name="attrs" Column="attrs" Type="Text" Required="N"/>
-        <BizField Name="description" Column="description" Type="Text" Required="N"/>
+        <BizField Name="Id" Column="id"     Type="Number"/>
+        <BizField Name="setid" Column="setid"    Required="Y" Type="Number"/>
+        <BizField Name="destination" Column="destination" Length="192"   Required="Y" Type="Text"/>
+        <BizField Name="flags" Column="flags"    Required="N" Type="Number"/>
+        <BizField Name="priority" Column="priority"    Required="N" Type="Number"/>
+        <BizField Name="attrs" Column="attrs" Length="128"   Required="N" Type="Text"/>
+        <BizField Name="description" Column="description" Length="64"   Required="N" Type="Text"/>
 	</BizFieldList>
     <TableJoins>
     </TableJoins>

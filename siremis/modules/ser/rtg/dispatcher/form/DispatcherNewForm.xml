@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EasyForm Name="DispatcherNewForm" Class="EasyForm" FormType="New" jsClass="jbForm" Title="New Dispatcher" Description="" BizDataObj="ser.rtg.dispatcher.do.DispatcherDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
     <DataPanel>
-        <Element Name="fld_setid" Class="InputText" FieldName="setid" Label="Set ID" DefaultValue="1" Required="Y" CssClass="input_text"/>
-        <Element Name="fld_destination" Class="InputText" FieldName="destination" Label="Destination" AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
-		<Element Name="fld_flags" Class="Checkbox" FieldName="flags" Label="Destination Flags"  AllowURLParam="N" SelectFrom="ser.common.select.values(dispatcherFlags)"/>
-        <Element Name="fld_priority" Class="InputText" FieldName="priority" Label="Priority" DefaultValue="0" CssClass="input_text"/>
-		<Element Name="fld_attrs" Class="ser.common.form.ListboxInputText" FieldName="attrs" Label="Attrs"  AllowURLParam="N" CssClass="input_text_s" CssErrorClass="input_text_s_error" CssFocusClass="input_text_s_focus" SelectFrom="ser.common.select.values(dispatcherAttrs)"/>
-		<Element Name="fld_attrs_other" Class="InputText" FieldName="attrs_other" Label="Attrs"  Hidden="Y" AllowURLParam="N"/>
-        <Element Name="fld_description" Class="InputText" FieldName="description" Label="Description" Required="N" CssClass="input_text"/>
+        <Element Name="fld_setid" Class="InputText" FieldName="setid" Label="Setid"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus" DefaultValue="1"/>
+        <Element Name="fld_destination" Class="InputText" FieldName="destination" Label="Destination"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus" HTMLAttr="title='Full SIP URI (e.g., sip:127.0.0.1:5060;trasport=sctp)'" />
+		<Element Name="txt_destination" Class="LabelText" Label="* Hint" Text="Destination must be a valid SIP address, starting with 'sip' (e.g., sip:127.0.0.1)"/>
+        <Element Name="fld_flags" Class="Listbox" FieldName="flags" Label="Flags"  AllowURLParam="N"  DefaultValue="0" SelectFrom="ser.common.select.values(dispatcherFlags)"/>
+        <Element Name="fld_priority" Class="InputText" FieldName="priority" Label="Priority"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus" DefaultValue="0"/>
+        <Element Name="fld_attrs" Class="InputText" FieldName="attrs" Label="Attrs"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus" HTMLAttr="title='List of attributes, format: name1=value1;name2=value2;...'"/>
+		<Element Name="txt_attrs" Class="LabelText" Label="* Hint" Text="List of attributes, format: name1=value1;name2=value2;... Predefined attributes are weight, duid and maxload."/>
+        <Element Name="fld_description" Class="InputText" FieldName="description" Label="Description"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
         </DataPanel>
     <ActionPanel>
         <Element Name="btn_save" Class="Button" Text="Save" CssClass="button_gray_m">
-            <EventHandler Name="save_onclick" EventLogMsg="" Event="onclick" Function="InsertRecord()" RedirectPage="form=ser.rtg.dispatcher.form.DispatcherDetailForm&amp;fld:Id={@ser.rtg.dispatcher.do.DispatcherDO:Field[Id].Value}" ShortcutKey="Ctrl+Enter" ContextMenu="Save"/>
+            <EventHandler Name="save_onclick" EventLogMsg="" Event="onclick" Function="InsertRecord()" RedirectPage="form=ser.rtg.dispatcher.form.DispatcherDetailForm&amp;fld:Id={@ser.rtg.dispatcher.do.DispatcherDO:Field[Id].Value}"  ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
         </Element>
         <Element Name="btn_cancel" Class="Button" Text="Cancel" CssClass="button_gray_m">
-            <EventHandler Name="cancel_onclick" Event="onclick" Function="SwitchForm(ser.rtg.dispatcher.form.DispatcherListForm)" ShortcutKey="Escape" ContextMenu="Cancel"/>
+            <EventHandler Name="cancel_onclick" Event="onclick" Function="SwitchForm(ser.rtg.dispatcher.form.DispatcherListForm)"  ShortcutKey="Escape" ContextMenu="Cancel"/>
         </Element>
     </ActionPanel> 
     <NavPanel>
