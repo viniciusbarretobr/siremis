@@ -122,6 +122,10 @@ CREATE TABLE `statistics` (
   `shm_free_used_size` int(10) unsigned NOT NULL default '0',
   `ul_users` int(10) unsigned NOT NULL default '0',
   `ul_contacts` int(10) unsigned NOT NULL default '0',
+  `tm_active` int(10) unsigned NOT NULL default '0',
+  `rcv_req_diff` int(10) unsigned NOT NULL default '0',
+  `fwd_req_diff` int(10) unsigned NOT NULL default '0',
+  `2xx_trans_diff` int(10) unsigned NOT NULL default '0',
   PRIMARY KEY  (`id`)
 );
 
