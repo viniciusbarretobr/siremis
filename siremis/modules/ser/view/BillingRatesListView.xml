@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<EasyView Name="BillingRatesListView" Description="ser.acs.billing" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SERAdmin.Administer_Modules" TemplateFile="view.tpl">
+   <FormReferences>
+   		<Reference Name="ser.acs.billing.form.BillingRatesListForm"/>
+   </FormReferences>
+   <FormReferenceLibs>
+   		<Reference Name="ser.acs.billing.form.BillingRatesListForm"/>
+   		<Reference Name="ser.acs.billing.form.BillingRatesEditForm"/>
+   		<Reference Name="ser.acs.billing.form.BillingRatesCopyForm"/>
+   		<Reference Name="ser.acs.billing.form.BillingRatesNewForm"/>
+   		<Reference Name="ser.acs.billing.form.BillingRatesDetailForm"/>
+   </FormReferenceLibs>    
+</EasyView>

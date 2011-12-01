@@ -76,6 +76,8 @@
 					URL="{@home:url}/ser/missed_calls_list" Order="20"/>
 				<MenuItem Name="System.Ser.Acs.Cdrs" Title="CDR List" Description=""
 					URL="{@home:url}/ser/cdrs_list" Order="30"/>
+				<MenuItem Name="System.Ser.Acs.BillingRates" Title="Billing Rates List" Description=""
+					URL="{@home:url}/ser/billing_rates_list" Order="40"/>
 			</MenuItem>	
 			<MenuItem Name="System.Ser.Prs" Title="Presence Services" Parent="System.Ser" Order="60">
 				<MenuItem Name="System.Ser.Prs.ActiveWatchers" Title="Active Watchers List" Description=""
