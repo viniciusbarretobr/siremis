@@ -79,7 +79,7 @@ cleanwiz:
 
 toolsx:
 	@echo "preparing toolsx meta bin directory.."
-	rm -f siremis/bin/toolsx
+	rm -rf siremis/bin/toolsx
 	cp -a misc/bin/toolsx siremis/bin/
 
 cleantoolsx:
