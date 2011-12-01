@@ -6,6 +6,7 @@
         <BizField Name="src_domain" Column="src_domain" Length="128"   Required="Y" Type="Text"/>
         <BizField Name="dst_username" Column="dst_username" Length="64"   Required="Y" Type="Text"/>
         <BizField Name="dst_domain" Column="dst_domain" Length="128"   Required="Y" Type="Text"/>
+        <BizField Name="dst_ousername" Column="dst_ousername" Length="64"   Required="Y" Type="Text"/>
         <BizField Name="call_start_time" Column="call_start_time"  DefaultValue="0000-00-00 00:00:00"  Required="Y" Type="Datetime"/>
         <BizField Name="duration" Column="duration"    Required="Y" Type="Number"/>
         <BizField Name="sip_call_id" Column="sip_call_id" Length="128"   Required="Y" Type="Text"/>
