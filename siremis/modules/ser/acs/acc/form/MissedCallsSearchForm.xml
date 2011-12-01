@@ -11,6 +11,7 @@
         <Element Name="fld_src_ip" Class="InputText" FieldName="src_ip" Label="Src Ip"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
         <Element Name="fld_dst_user" Class="InputText" FieldName="dst_user" Label="Dst User"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
         <Element Name="fld_dst_domain" Class="InputText" FieldName="dst_domain" Label="Dst Domain"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_dst_ouser" Class="InputText" FieldName="dst_ouser" Label="Orig Dst User"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
         <Element Name="fld_src_user" Class="InputText" FieldName="src_user" Label="Src User"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
         <Element Name="fld_src_domain" Class="InputText" FieldName="src_domain" Label="Src Domain"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
         <Element Name="fld_cdr_id" Class="InputText" FieldName="cdr_id" Label="Cdr Id"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>

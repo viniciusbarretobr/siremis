@@ -12,6 +12,7 @@
         <BizField Name="src_ip" Column="src_ip" Length="64"   Required="Y" Type="Text"/>
         <BizField Name="dst_user" Column="dst_user" Length="64"   Required="Y" Type="Text"/>
         <BizField Name="dst_domain" Column="dst_domain" Length="128"   Required="Y" Type="Text"/>
+        <BizField Name="dst_ouser" Column="dst_ouser" Length="64"   Required="Y" Type="Text"/>
         <BizField Name="src_user" Column="src_user" Length="64"   Required="Y" Type="Text"/>
         <BizField Name="src_domain" Column="src_domain" Length="128"   Required="Y" Type="Text"/>
         <BizField Name="cdr_id" Column="cdr_id"    Required="Y" Type="Number"/>

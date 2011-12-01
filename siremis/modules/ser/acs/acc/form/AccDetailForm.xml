@@ -12,6 +12,7 @@
        	<Element Name="fld_src_ip" ElementSet="General" Class="LabelText" FieldName="src_ip" Label="Src Ip" AllowURLParam="N"/>
        	<Element Name="fld_dst_user" ElementSet="General" Class="LabelText" FieldName="dst_user" Label="Dst User" AllowURLParam="N"/>
        	<Element Name="fld_dst_domain" ElementSet="General" Class="LabelText" FieldName="dst_domain" Label="Dst Domain" AllowURLParam="N"/>
+       	<Element Name="fld_dst_ouser" ElementSet="General" Class="LabelText" FieldName="dst_ouser" Label="Orig Dst User" AllowURLParam="N"/>
        	<Element Name="fld_src_user" ElementSet="General" Class="LabelText" FieldName="src_user" Label="Src User" AllowURLParam="N"/>
        	<Element Name="fld_src_domain" ElementSet="General" Class="LabelText" FieldName="src_domain" Label="Src Domain" AllowURLParam="N"/>
        	<Element Name="fld_cdr_id" ElementSet="General" Class="LabelText" FieldName="cdr_id" Label="Cdr Id" AllowURLParam="N"/>

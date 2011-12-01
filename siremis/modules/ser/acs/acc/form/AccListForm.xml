@@ -17,6 +17,7 @@
                 <Element Name="fld_src_ip" Class="ColumnText" FieldName="src_ip" Label="Src Ip" Sortable="Y" Hidden="Y"/>
                 <Element Name="fld_dst_user" Class="ColumnText" FieldName="dst_user" Label="Dst User" Sortable="Y"/>
                 <Element Name="fld_dst_domain" Class="ColumnText" FieldName="dst_domain" Label="Dst Domain" Sortable="Y"/>
+                <Element Name="fld_dst_ouser" Class="ColumnText" FieldName="dst_ouser" Label="Orig Dst User" Sortable="Y"/>
                 <Element Name="fld_src_user" Class="ColumnText" FieldName="src_user" Label="Src User" Sortable="Y"/>
                 <Element Name="fld_src_domain" Class="ColumnText" FieldName="src_domain" Label="Src Domain" Sortable="Y" Hidden="Y"/>
                 <Element Name="fld_cdr_id" Class="ColumnText" FieldName="cdr_id" Label="Cdr Id" Sortable="Y" Hidden="Y"/>
