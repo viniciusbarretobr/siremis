@@ -120,6 +120,8 @@ BEGIN
   UNTIL done END REPEAT;
 END
 
+%%
+
 CREATE PROCEDURE `kamailio_rating`(`rgroup` varchar(64))
 BEGIN
   DECLARE done, rate_record, vx_cost INT DEFAULT 0;
