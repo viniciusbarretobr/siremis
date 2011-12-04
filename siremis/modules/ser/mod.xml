@@ -34,10 +34,12 @@
 					URL="{@home:url}/ser/dialplan_list" Order="30"/>
 				<MenuItem Name="System.Ser.Srv.Dialog.List" Title="Dialog List" Description=""
 					URL="{@home:url}/ser/dialog_list" Order="40"/>
+				<MenuItem Name="System.Ser.Srv.DialogVars.List" Title="Dialog Vars List" Description=""
+					URL="{@home:url}/ser/dialog_vars_list" Order="50"/>
 				<MenuItem Name="System.Ser.Srv.SipTrace.List" Title="SIP Trace List" Description=""
-					URL="{@home:url}/ser/sip_trace_list" Order="50"/>
+					URL="{@home:url}/ser/sip_trace_list" Order="60"/>
 				<MenuItem Name="System.Ser.Srv.UACReg.List" Title="UACReg List" Description=""
-					URL="{@home:url}/ser/uacreg_list" Order="60"/>
+					URL="{@home:url}/ser/uacreg_list" Order="70"/>
 			</MenuItem>	
 			<MenuItem Name="System.Ser.Acl" Title="ACL Services" Parent="System.Ser" Order="30">
 				<MenuItem Name="System.Ser.Acl.Grp.List" Title="Group List" Description=""

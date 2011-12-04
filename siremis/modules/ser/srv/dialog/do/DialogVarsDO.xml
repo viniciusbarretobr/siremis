@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="no"?>
+<BizDataObj Name="DialogVarsDO" Description="" Class="BizDataObj" DBName="Serdb" Table="dialog_vars" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+	<BizFieldList>
+        <BizField Name="Id" Column="id"     Type="Number"/>
+        <BizField Name="hash_entry" Column="hash_entry"    Required="Y" Type="Number"/>
+        <BizField Name="hash_id" Column="hash_id"    Required="Y" Type="Number"/>
+        <BizField Name="dialog_key" Column="dialog_key" Length="128"   Required="Y" Type="Text"/>
+        <BizField Name="dialog_value" Column="dialog_value" Length="512"   Required="Y" Type="Text"/>
+	</BizFieldList>
+    <TableJoins>
+    </TableJoins>
+    <ObjReferences>
+    </ObjReferences>
+</BizDataObj>
