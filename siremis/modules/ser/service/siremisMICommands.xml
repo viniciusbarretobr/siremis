@@ -8,6 +8,12 @@
 			<cmd name="uptime" title="Show Uptime" command="uptime"/>
 			<cmd name="getstatsall" title="Get All Statistics" command="get_statistics all"/>
 			<cmd name="which" title="Get All MI Commands" command="which"/>
+			<cmd name="dslist" title="List Dispatcher Records" command="ds_list"/>
+			<cmd name="dsreload" title="Reload Dispatcher Records" command="ds_reload"/>
+			<cmd name="pdtlist" title="List PDT Records" command="pdt_list"/>
+			<cmd name="pdtreload" title="Reload PDT Records" command="pdt_reload"/>
+			<cmd name="uldump" title="List Location Records" command="ul_dump"/>
+			<cmd name="uldumpbrief" title="Brief of Location Records" command="ul_dump brief"/>
 		</MICommands>
 	</MIConfig>
 </PluginService>
