@@ -1,0 +1,6 @@
+<?xml version="1.0" standalone="no"?>
+<EasyView Name="ChartsStatsAccView" Description="Charts" class="EasyView" Tab="" TemplateEngine="Smarty" Access="SERAdmin.Administer_Modules" TemplateFile="view.tpl">
+    <FormReferences>
+        <Reference Name="ser.cms.form.ChartsStatsAccForm"/>
+    </FormReferences>
+</EasyView>

@@ -118,6 +118,8 @@
 					URL="{@home:url}/ser/charts_uls/cg=usrloc" Order="40"/>
 				<MenuItem Name="System.Ser.ChartsStatsUls" Title="UsrLoc Stats" Description=""
 					URL="{@home:url}/ser/charts_stats_uls" Order="60"/>
+				<MenuItem Name="System.Ser.ChartsStatsAcc" Title="Acc Stats" Description=""
+					URL="{@home:url}/ser/charts_stats_acc" Order="70"/>
 			</MenuItem>	
 		</MenuItem>	
     </Menu>
