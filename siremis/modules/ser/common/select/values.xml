@@ -36,4 +36,9 @@
 	<userblacklistValue Value="0" Text="0 - Blacklist"/>
 	<userblacklistValue Value="1" Text="1 - Whitelist"/>
 
+	<htableKType Value="0" Text="0 - Single Key"/>
+	<htableKType Value="1" Text="1 - Array Key"/>
+	<htableVType Value="0" Text="0 - String Value"/>
+	<htableVType Value="1" Text="1 - Integer Value"/>
+
 </Selection>

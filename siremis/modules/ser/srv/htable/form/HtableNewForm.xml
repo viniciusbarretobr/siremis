@@ -2,8 +2,8 @@
 <EasyForm Name="HtableNewForm" Class="EasyForm" FormType="New" jsClass="jbForm" Title="New Htable" Description="" BizDataObj="ser.srv.htable.do.HtableDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
     <DataPanel>
         <Element Name="fld_key_name" Class="InputText" FieldName="key_name" Label="Key Name"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
-        <Element Name="fld_key_type" Class="InputText" FieldName="key_type" Label="Key Type"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
-        <Element Name="fld_value_type" Class="InputText" FieldName="value_type" Label="Value Type"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_key_type" Class="Listbox" FieldName="key_type" Label="Key Type"  AllowURLParam="N"  DefaultValue="0" SelectFrom="ser.common.select.values(htableKType)"/>
+        <Element Name="fld_value_type" Class="Listbox" FieldName="value_type" Label="Value Type"  AllowURLParam="N"  DefaultValue="0" SelectFrom="ser.common.select.values(htableVType)"/>
         <Element Name="fld_key_value" Class="InputText" FieldName="key_value" Label="Key Value"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
         </DataPanel>
     <ActionPanel>
