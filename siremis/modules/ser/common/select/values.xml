@@ -26,10 +26,14 @@
 	<dispatcherAttrs Value="weight" Text="weight"/>
 	<dispatcherAttrs Value="duid" Text="duid"/>
 	<dispatcherAttrs Value="maxload" Text="maxload"/>
-	
+
 	<dispatcherFlags Value="0" Text="0 - Active - No Probing"/>
 	<dispatcherFlags Value="8" Text="8 - Active - Probing"/>
 	<dispatcherFlags Value="1" Text="1 - Inactive - No Probing"/>
 	<dispatcherFlags Value="9" Text="9 - Inactive - Probing"/>
 	<dispatcherFlags Value="4" Text="4 - Disabled - No Probing"/>
+
+	<userblacklistValue Value="0" Text="0 - Blacklist"/>
+	<userblacklistValue Value="1" Text="1 - Whitelist"/>
+
 </Selection>
