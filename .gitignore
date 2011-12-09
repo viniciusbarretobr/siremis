@@ -18,3 +18,7 @@ TAGS
 *~
 # Emacs file locks
 .#*
+# tmp files
+siremis/session/sess_*
+siremis/log/*.log
+siremis/install.lock
