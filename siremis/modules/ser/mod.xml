@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no"?>
-<Module Name="ser" Description="SER module" Version="0.1" OpenbizVersion="2.4">
+<Module Name="ser" Description="SER module" Version="0.2" OpenbizVersion="2.4">
 	<ACL>
 		<Resource Name="SERAdmin">
 			<Action Name="Administer_Modules" Description="Can manage SER settings"/>
@@ -20,10 +20,12 @@
 					URL="{@home:url}/ser/uri_list" Order="60"/>
 				<MenuItem Name="System.Ser.Sbs.Location.List" Title="Location List" Description=""
 					URL="{@home:url}/ser/location_list" Order="70"/>
-				<MenuItem Name="System.Ser.Sbs.Userblacklist.List" Title="User Black List" Description=""
-					URL="{@home:url}/ser/userblacklist_list" Order="80"/>
 				<MenuItem Name="System.Ser.Sbs.Msilo.List" Title="Messages List" Description=""
-					URL="{@home:url}/ser/silo_list" Order="90"/>
+					URL="{@home:url}/ser/silo_list" Order="80"/>
+				<MenuItem Name="System.Ser.Sbs.Userblacklist.List" Title="User Black List" Description=""
+					URL="{@home:url}/ser/userblacklist_list" Order="90"/>
+				<MenuItem Name="System.Ser.Sbs.Globalblacklist.List" Title="Global Black List" Description=""
+					URL="{@home:url}/ser/globalblacklist_list" Order="100"/>
 			</MenuItem>	
 			<MenuItem Name="System.Ser.Srv" Title="Server Services" Parent="System.Ser" Order="20">
 				<MenuItem Name="System.Ser.Srv.Domain.List" Title="Domain List" Description=""
