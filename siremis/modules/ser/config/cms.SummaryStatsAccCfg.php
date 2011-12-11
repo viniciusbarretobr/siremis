@@ -1,7 +1,7 @@
 <?php
 
 /**
- * INVITE-BYE intervals for ACC Summary
+ * Intervals for ACC Summary
  * - array of: (start hours ago, end hours ago, description)
  */
 $cfg_summary_acc_intervals = array (
@@ -15,4 +15,10 @@ $cfg_summary_acc_intervals = array (
 				array (1, 0, 'Last Hour')
 			);
 
+$cfg_summary_acc_ranks = 5;
+
+$cfg_summary_acc_categories = array (
+				array ('src_user', 'Top Caller'),
+				array ('dst_user', 'Top Callee')
+			);
 ?>

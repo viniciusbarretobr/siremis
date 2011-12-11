@@ -15,7 +15,7 @@ class SummaryStatsAccForm extends EasyForm
 		$db = $g_BizSystem->GetDBConnection("Serdb");
 
 		$acc_records = array();
-		$acc_records['statstype'] = array();
+		$acc_records['statstime'] = array();
 		$acc_records['invite'] = array();
 		$acc_records['bye'] = array();
 		$acc_records['invite200'] = array();
@@ -24,11 +24,20 @@ class SummaryStatsAccForm extends EasyForm
 		$acc_records['inviteXYZ'] = array();
 		$acc_records['all'] = array();
 
+		$top_records = array();
+		$top_records['statstime'] = array();
+
+		foreach ($cfg_summary_acc_categories as $key => $fetchInfo)
+		{
+			$top_records[$fetchInfo[0]] = array();
+		}
+
 		$idx = 0;
 
 		foreach ($cfg_summary_acc_intervals as $i => $fetchInterval)
 		{
 
+			/* --- stats per sip requests */
 			if($fetchInterval[1]==0) {
 				$sql = "SELECT method, sip_code FROM acc WHERE"
 					. "	(method='INVITE' OR method='BYE') AND (DATE_SUB(NOW(), INTERVAL "
@@ -47,7 +56,7 @@ class SummaryStatsAccForm extends EasyForm
 				exit;
 			}
 
-			$acc_records['statstype'][$idx] = $fetchInterval[2];
+			$acc_records['statstime'][$idx] = $fetchInterval[2];
 			$acc_records['invite'][$idx]  = 0;
 			$acc_records['bye'][$idx]     = 0;
 			$acc_records['invite200'][$idx] = 0;
@@ -56,7 +65,6 @@ class SummaryStatsAccForm extends EasyForm
 			$acc_records['inviteXYZ'][$idx] = 0;
 	
 			$yidx = 0;
-			$ousr = 0;
 			while(($row = $resultSet->fetch()))
 			{
 				$r_method   = $row[0];
@@ -83,6 +91,43 @@ class SummaryStatsAccForm extends EasyForm
 				$yidx = $yidx + 1;
 			}
 			$acc_records['all'][$idx] = $yidx;
+
+			/* --- stats per categories - top */
+
+			foreach ($cfg_summary_acc_categories as $key => $fetchInfo)
+			{
+				if($fetchInterval[1]==0) {
+					$sql = "SELECT " . $fetchInfo[0] . ", count(*) FROM acc WHERE"
+						. "	(method='INVITE' AND sip_code='200') AND (DATE_SUB(NOW(), INTERVAL "
+						.$fetchInterval[0]. " HOUR) <= time)"
+						. " GROUP BY " . $fetchInfo[0] . " ORDER BY count(*) DESC LIMIT "
+						. $cfg_summary_acc_ranks;
+					//echo $sql;
+				} else {
+					$sql = "SELECT " . $fetchInfo[0] . ", count(*) FROM acc WHERE"
+						. "	(method='INVITE' AND sip_code='200') AND (DATE_SUB(NOW(), INTERVAL "
+						.$fetchInterval[0]. " HOUR) <= time AND DATE_SUB(NOW(), INTERVAL "
+						.$fetchInterval[1]. " HOUR) > time)"
+						. " GROUP BY " . $fetchInfo[0] . " ORDER BY count(*) DESC LIMIT "
+						. $cfg_summary_acc_ranks;
+				}
+				$resultSet = $db->query($sql);
+				if ($resultSet === false) {
+					$err = $db->ErrorMsg();
+					echo $err;
+					exit;
+				}
+				$top_records['statstime'][$idx] = $fetchInterval[2];
+				$top_records[$fetchInfo[0]][$idx] = array();
+				for($k = 0; $k < $cfg_summary_acc_ranks; $k++)
+				{
+					$top_records[$fetchInfo[0]][$idx][$k] = "---";
+					if(($row = $resultSet->fetch()))
+					{
+						$top_records[$fetchInfo[0]][$idx][$k] = $row[0] . " (" . $row[1] . ")";
+					}
+				}
+			}
 			$idx++;
 		}
 
@@ -118,7 +163,7 @@ class SummaryStatsAccForm extends EasyForm
 			$sHTML .= 
 				'
 				<tr>
-					<td>' . $acc_records['statstype'][$i] . '</td>
+					<td>' . $acc_records['statstime'][$i] . '</td>
 					<td align="center">' . $acc_records['invite'][$i] . '</td>
 					<td align="center">' . $acc_records['invite200'][$i] . '</td>
 					<td align="center">' . $acc_records['invite404'][$i] . '</td>
@@ -128,6 +173,56 @@ class SummaryStatsAccForm extends EasyForm
 					<td align="center">' . $acc_records['all'][$i] . '</td>
 				</tr>
 				';
+		}
+		$sHTML .= 
+			'
+			</table>
+			';
+		$sHTML .= 
+			'
+			<br />
+			<br />
+			<br />
+			<table border="0" cellpadding="0" cellspacing="0" class="form_table">
+			<tr>
+				<th>Period</th>
+				<th>Type</th>
+				';
+
+			for($k = 0; $k < $cfg_summary_acc_ranks; $k++)
+			{
+				$sHTML .= 
+						'
+						<th>#' . ($k+1) . '</th>
+						';
+			}
+			$sHTML .= 
+				'
+			</tr>
+			';
+		for($i=0; $i < $idx; $i++)
+		{
+			foreach ($cfg_summary_acc_categories as $key => $fetchInfo)
+			{
+				$sHTML .= 
+					'
+					<tr>
+						<td>' . $top_records['statstime'][$i] . '</td>
+						<td align="center">' . $fetchInfo[1] . '</td>
+					';
+
+				for($k = 0; $k < $cfg_summary_acc_ranks; $k++)
+				{
+					$sHTML .= 
+						'
+						<td align="center">' . $top_records[$fetchInfo[0]][$i][$k] . '</td>
+						';
+				}
+				$sHTML .= 
+					'
+					</tr>
+					';
+			}
 		}
 		$sHTML .= 
 			'
