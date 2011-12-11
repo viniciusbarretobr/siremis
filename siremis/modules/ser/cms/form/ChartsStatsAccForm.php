@@ -1,7 +1,6 @@
 <?php
 include_once (MODULE_PATH.'/ser/service/siremisCharts.php');
 include_once (MODULE_PATH.'/ser/service/asipto/charts/charts-lib.php');
-include_once (MODULE_PATH.'/ser/config/cms.ChartsStatsAccCfg.php');
 
 class ChartsStatsAccForm extends EasyForm 
 { 
@@ -11,7 +10,9 @@ class ChartsStatsAccForm extends EasyForm
 	{
 		global $g_BizSystem;
 
-		$fetchInterval = 24;
+		include_once (MODULE_PATH.'/ser/config/cms.ChartsStatsAccCfg.php');
+
+		$fetchInterval = $cfg_stats_acc_fetch_interval;
 
 		$sql = "SELECT method, sip_code, time, UNIX_TIMESTAMP(time) as tstamp FROM acc WHERE DATE_SUB(NOW(), INTERVAL " .$fetchInterval. " HOUR) <= time";
 		$db = $g_BizSystem->GetDBConnection("Serdb");
