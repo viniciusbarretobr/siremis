@@ -1,6 +1,7 @@
 <?php
 include_once (MODULE_PATH.'/ser/service/siremisCharts.php');
 include_once (MODULE_PATH.'/ser/service/asipto/charts/charts-lib.php');
+include_once (MODULE_PATH.'/ser/config/cms.ChartsStatsAccCfg.php');
 
 class ChartsStatsAccForm extends EasyForm 
 { 
@@ -150,37 +151,56 @@ class ChartsStatsAccForm extends EasyForm
 		$line[$i]->set_values( $acc_records['bye'] );
 		$mtsobj->add_element( $line[$i] );
 		$i++;
-		$line[$i] = new line();
-		$line[$i]->set_default_dot_style($dot_style);
-		$line[$i]->set_colour( $chart_colors[($clr++) % $chart_colors_size] );
-		$line[$i]->set_key( "MESSAGE" , 10 );
-		$line[$i]->set_values( $acc_records['message'] );
-		$mtsobj->add_element( $line[$i] );
-		$i++;
-		$line[$i] = new line();
-		$line[$i]->set_default_dot_style($dot_style);
-		$line[$i]->set_colour( $chart_colors[($clr++) % $chart_colors_size] );
-		$line[$i]->set_key( "OTHER" , 10 );
-		$line[$i]->set_values( $acc_records['other'] );
-		$mtsobj->add_element( $line[$i] );
+		if($cfg_stats_acc_message)
+		{
+			$line[$i] = new line();
+			$line[$i]->set_default_dot_style($dot_style);
+			$line[$i]->set_colour( $chart_colors[($clr++) % $chart_colors_size] );
+			$line[$i]->set_key( "MESSAGE" , 10 );
+			$line[$i]->set_values( $acc_records['message'] );
+			$mtsobj->add_element( $line[$i] );
+			$i++;
+		}
+		if($cfg_stats_acc_other)
+		{
+			$line[$i] = new line();
+			$line[$i]->set_default_dot_style($dot_style);
+			$line[$i]->set_colour( $chart_colors[($clr++) % $chart_colors_size] );
+			$line[$i]->set_key( "OTHER" , 10 );
+			$line[$i]->set_values( $acc_records['other'] );
+			$mtsobj->add_element( $line[$i] );
+			$i++;
+		}
 
 		$val = max($acc_records['invite']);
 		if($ymax<$val) $ymax = $val;
 		$val = max($acc_records['bye']);
 		if($ymax<$val) $ymax = $val;
-		$val = max($acc_records['message']);
-		if($ymax<$val) $ymax = $val;
-		$val = max($acc_records['other']);
-		if($ymax<$val) $ymax = $val;
+		if($cfg_stats_acc_message)
+		{
+			$val = max($acc_records['message']);
+			if($ymax<$val) $ymax = $val;
+		}
+		if($cfg_stats_acc_other)
+		{
+			$val = max($acc_records['other']);
+			if($ymax<$val) $ymax = $val;
+		}
 
 		$val = min($acc_records['invite']);
 		if($ymin>$val) $ymin = $val;
 		$val = min($acc_records['bye']);
 		if($ymin>$val) $ymin = $val;
-		$val = min($acc_records['message']);
-		if($ymin>$val) $ymin = $val;
-		$val = min($acc_records['other']);
-		if($ymin>$val) $ymin = $val;
+		if($cfg_stats_acc_message)
+		{
+			$val = min($acc_records['message']);
+			if($ymin>$val) $ymin = $val;
+		}
+		if($cfg_stats_acc_other)
+		{
+			$val = min($acc_records['other']);
+			if($ymin>$val) $ymin = $val;
+		}
 
 		if($ymax>10)
 		{
