@@ -2,7 +2,7 @@
 <EasyForm Name="UserblacklistNewForm" Class="EasyForm" FormType="New" jsClass="jbForm" Title="New Userblacklist" Description="" BizDataObj="ser.sbs.userblacklist.do.UserblacklistDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
     <DataPanel>
         <Element Name="fld_username" Class="InputText" FieldName="username" Label="Username"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
-        <Element Name="fld_domain" Class="InputText" FieldName="domain" Label="Domain"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_domain" Class="Listbox" FieldName="domain" Label="Domain" SelectFrom="ser.srv.domain.do.DomainDO[domain]"/>
         <Element Name="fld_prefix" Class="InputText" FieldName="prefix" Label="Prefix"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
         <Element Name="fld_whitelist" Class="Listbox" FieldName="whitelist" Label="Whitelist"  AllowURLParam="N"  DefaultValue="0" SelectFrom="ser.common.select.values(userblacklistValue)"/>
         </DataPanel>
