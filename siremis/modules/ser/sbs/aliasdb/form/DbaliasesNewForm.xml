@@ -3,7 +3,7 @@
     <DataPanel>
         <Element Name="fld_alias_username" Class="InputText" FieldName="alias_username" Label="Alias Username" AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
         <Element Name="fld_alias_domain" Class="Listbox" FieldName="alias_domain" Label="Alias Domain" SelectFrom="ser.srv.domain.do.DomainDO[domain]"/>
-        <Element Name="fld_username" Class="InputText" FieldName="username" Label="Username" AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_username" Class="InputPicker" FieldName="username" Label="Username" ValuePicker="ser.sbs.authdb.form.SubscriberPickForm" PickerMap="fld_username:fld_username" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
 		<Element Name="fld_domain" Class="InputPicker" FieldName="domain" Label="Domain" ValuePicker="ser.srv.domain.form.DomainPickForm" PickerMap="fld_domain:fld_domain"/>
         </DataPanel>
     <ActionPanel>
