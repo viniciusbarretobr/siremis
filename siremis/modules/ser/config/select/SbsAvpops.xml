@@ -1,0 +1,9 @@
+<?xml version="1.0" standalone="no"?>
+<Selection>
+
+	<AttrName Value="callfwd_permanent" Text="CallFwd - Permanent"/>
+	<AttrName Value="callfwd_noanswer" Text="CallFwd - On No Answer"/>
+	<AttrName Value="callfwd_notfound" Text="CallFwd - On Not Found"/>
+	<AttrName Value="callfwd_busy" Text="CallFwd - On Busy"/>
+
+</Selection>
