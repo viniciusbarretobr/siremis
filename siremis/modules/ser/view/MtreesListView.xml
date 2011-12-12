@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<EasyView Name="MtreesListView" Description="ser.srv.mtree" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SERAdmin.Administer_Modules" TemplateFile="view.tpl">
+   <FormReferences>
+   		<Reference Name="ser.srv.mtree.form.MtreesListForm"/>
+   </FormReferences>
+   <FormReferenceLibs>
+   		<Reference Name="ser.srv.mtree.form.MtreesListForm"/>
+   		<Reference Name="ser.srv.mtree.form.MtreesEditForm"/>
+   		<Reference Name="ser.srv.mtree.form.MtreesCopyForm"/>
+   		<Reference Name="ser.srv.mtree.form.MtreesNewForm"/>
+   		<Reference Name="ser.srv.mtree.form.MtreesDetailForm"/>
+   </FormReferenceLibs>    
+</EasyView>

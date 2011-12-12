@@ -42,6 +42,10 @@
 					URL="{@home:url}/ser/sip_trace_list" Order="60"/>
 				<MenuItem Name="System.Ser.Srv.UACReg.List" Title="UACReg List" Description=""
 					URL="{@home:url}/ser/uacreg_list" Order="70"/>
+				<MenuItem Name="System.Ser.Srv.Mtrees.List" Title="Mtrees List" Description=""
+					URL="{@home:url}/ser/mtrees_list" Order="80"/>
+				<MenuItem Name="System.Ser.Srv.Mtree.List" Title="Mtree List" Description=""
+					URL="{@home:url}/ser/mtree_list" Order="90"/>
 			</MenuItem>	
 			<MenuItem Name="System.Ser.Acl" Title="ACL Services" Parent="System.Ser" Order="30">
 				<MenuItem Name="System.Ser.Acl.Grp.List" Title="Group List" Description=""
