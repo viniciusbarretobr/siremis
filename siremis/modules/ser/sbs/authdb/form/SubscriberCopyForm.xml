@@ -6,8 +6,8 @@
 		<Element Name="fld_domain" Class="InputText" FieldName="domain" Label="Domain"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
 		<Element Name="fld_password" Class="InputText" FieldName="password" Label="Password"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
 		<Element Name="fld_email_address" Class="InputText" FieldName="email_address" Label="Email Address"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
-		<Element Name="fld_ha1" Class="InputText" FieldName="ha1" Label="ha1"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
-		<Element Name="fld_ha1b" Class="InputText" FieldName="ha1b" Label="ha1b"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_ha1" Class="InputText" FieldName="ha1" Label="ha1"  AllowURLParam="N" Hidden="Y" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_ha1b" Class="InputText" FieldName="ha1b" Label="ha1b"  AllowURLParam="N" Hidden="Y" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
 		<Element Name="fld_rpid" Class="InputText" FieldName="rpid" Label="Rpid"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
     </DataPanel>
     <ActionPanel>
