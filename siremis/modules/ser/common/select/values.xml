@@ -22,6 +22,12 @@
 	<lcrGwURIScheme Value="1" Text="1 - SIP"/>
 	<lcrGwURIScheme Value="2" Text="2 - SIPS"/>
 
+	<lcrGwRuleEnabled Value="0" Text="0 - NO"/>
+	<lcrGwRuleEnabled Value="1" Text="1 - YES"/>
+
+	<lcrGwRuleStopper Value="0" Text="0 - NO"/>
+	<lcrGwRuleStopper Value="1" Text="1 - YES"/>
+
 	<dispatcherAttrs Value="" Text="-- none --"/>
 	<dispatcherAttrs Value="weight" Text="weight"/>
 	<dispatcherAttrs Value="duid" Text="duid"/>
