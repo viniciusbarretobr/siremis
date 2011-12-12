@@ -2,7 +2,7 @@
 <EasyForm Name="UsrPreferencesNewForm" Class="EasyForm" FormType="New" jsClass="jbForm" Title="New Usr Preferences" Description="" BizDataObj="ser.sbs.avpops.do.UsrPreferencesDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
     <DataPanel>
         <Element Name="fld_uuid" Class="InputText" FieldName="uuid" Label="Uuid" CssClass="input_text"/>
-        <Element Name="fld_username" Class="InputText" FieldName="username" Label="Username" CssClass="input_text"/>
+		<Element Name="fld_username" Class="InputPicker" FieldName="username" Label="Username" ValuePicker="ser.sbs.authdb.form.SubscriberPickForm" PickerMap="fld_username:fld_username" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
         <Element Name="fld_domain" Class="Listbox" FieldName="domain" Label="Domain" SelectFrom="ser.srv.domain.do.DomainDO[domain]"/>
         <Element Name="fld_attribute" Class="EditCombobox" SelectFrom="ser.config.select.SbsAvpops(AttrName)" FieldName="attribute" Label="Attribute" AllowURLParam="N"/>
         <Element Name="fld_type" Class="Listbox" FieldName="type" Label="Type" AllowURLParam="N" SelectFrom="ser.common.select.values(avpDBType)"/>
