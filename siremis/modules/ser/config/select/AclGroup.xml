@@ -1,0 +1,8 @@
+<?xml version="1.0" standalone="no"?>
+<Selection>
+
+	<GroupValue Value="suspended" Text="suspended"/>
+	<GroupValue Value="voip" Text="voip"/>
+	<GroupValue Value="pstn" Text="pstb"/>
+
+</Selection>
