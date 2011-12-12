@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EasyForm Name="GrpNewForm" Class="EasyForm" FormType="New" jsClass="jbForm" Title="New Grp" Description="" BizDataObj="ser.acl.group.do.GrpDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
     <DataPanel>
-        <Element Name="fld_username" Class="InputText" FieldName="username" Label="Username"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_username" Class="InputPicker" FieldName="username" Label="Username" ValuePicker="ser.sbs.authdb.form.SubscriberPickForm" PickerMap="fld_username:fld_username" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
         <Element Name="fld_domain" Class="Listbox" FieldName="domain" Label="Domain" SelectFrom="ser.srv.domain.do.DomainDO[domain]"/>
-        <Element Name="fld_grp" Class="InputText" FieldName="grp" Label="Group"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_grp" Class="InputText" FieldName="grp" Label="Group"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
     			<Element Name="fld_last_modified" Class="InputDatetime" DateFormat="%Y-%m-%d %H:%M:%S" FieldName="last_modified" Label="Last Modified" DefaultValue="1900-01-01 00:00:01" Sortable="Y" AllowURLParam="N" Translatable="N" OnEventLog="N"  CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
         </DataPanel>
     <ActionPanel>
