@@ -78,18 +78,27 @@ cleanwiz:
 	rm -rf siremis/install
 
 toolsx:
-	@echo "preparing toolsx meta bin directory.."
+	@echo "preparing toolsx meta bin directory..."
 	rm -rf siremis/bin/toolsx
 	cp -a misc/bin/toolsx siremis/bin/
 
 cleantoolsx:
-	@echo "removing toolsx meta bin directory.."
+	@echo "removing toolsx meta bin directory..."
 	rm -rf siremis/bin/toolsx
 
 resetchmod:
 	@echo "reseting file permisions..."
 	find . ! -type d -exec chmod 644 {} \;
 	find . -type d -exec chmod 755 {} \;
+
+locks:
+	@echo "preparing install lock..."
+	touch siremis/install.lock
+
+cleanlocks:
+	@echo "removing install lock..."
+	rm -rf siremis/install.lock
+
 
 cleantopkg: distclean cleansvn cleansiremis cleanbin cleantoolsx
 
