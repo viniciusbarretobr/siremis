@@ -91,7 +91,7 @@ BEGIN
   DECLARE v_inv_time, v_bye_time DATETIME;
   DECLARE inv_cursor CURSOR FOR SELECT src_user, src_domain, dst_user,
      dst_domain, dst_ouser, time, callid,from_tag, to_tag, src_ip
-     FROM openser.acc
+     FROM acc
      where method='INVITE' and cdr_id='0';
   DECLARE CONTINUE HANDLER FOR SQLSTATE '02000' SET done = 1;
   OPEN inv_cursor;
@@ -100,13 +100,13 @@ BEGIN
             v_dst_ouser, v_inv_time, v_callid, v_from_tag, v_to_tag, v_src_ip;
     IF NOT done THEN
       SET bye_record = 0;
-      SELECT 1, time INTO bye_record, v_bye_time FROM openser.acc WHERE
+      SELECT 1, time INTO bye_record, v_bye_time FROM acc WHERE
                  method='BYE' AND callid=v_callid AND ((from_tag=v_from_tag
                  AND to_tag=v_to_tag)
                  OR (from_tag=v_to_tag AND to_tag=v_from_tag))
                  ORDER BY time ASC LIMIT 1;
       IF bye_record = 1 THEN
-        INSERT INTO openser.cdrs (src_username,src_domain,dst_username,
+        INSERT INTO cdrs (src_username,src_domain,dst_username,
                  dst_domain,dst_ousername,call_start_time,duration,sip_call_id,
                  sip_from_tag,sip_to_tag,src_ip,created) VALUES (v_src_user,
                  v_src_domain,v_dst_user,v_dst_domain,v_dst_ouser,v_inv_time,
@@ -129,7 +129,7 @@ BEGIN
   DECLARE v_duration, v_rate_unit, v_time_unit INT DEFAULT 0;
   DECLARE v_dst_username VARCHAR(64);
   DECLARE cdrs_cursor CURSOR FOR SELECT cdr_id, dst_username, duration
-     FROM openser.cdrs WHERE rated=0;
+     FROM cdrs WHERE rated=0;
   DECLARE CONTINUE HANDLER FOR SQLSTATE '02000' SET done = 1;
   OPEN cdrs_cursor;
   REPEAT
@@ -137,12 +137,12 @@ BEGIN
     IF NOT done THEN
       SET rate_record = 0;
       SELECT 1, rate_unit, time_unit INTO rate_record, v_rate_unit, v_time_unit
-             FROM openser.billing_rates
+             FROM billing_rates
              WHERE rate_group=rgroup AND v_dst_username LIKE concat(prefix, '%')
              ORDER BY prefix DESC LIMIT 1;
       IF rate_record = 1 THEN
         SET vx_cost = v_rate_unit * CEIL(v_duration/v_time_unit);
-        UPDATE openser.cdrs SET rated=1, cost=vx_cost WHERE cdr_id=v_cdr_id;
+        UPDATE cdrs SET rated=1, cost=vx_cost WHERE cdr_id=v_cdr_id;
       END IF;
       SET done = 0;
     END IF;
