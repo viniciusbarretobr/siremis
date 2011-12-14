@@ -7,6 +7,8 @@ BASEDIR=`pwd`
 SIREMISDIR=$(BASEDIR)/$(NAME)
 VERSION=3.2.0
 
+owner ?= www-data:www-data
+
 # tools
 TAR ?= tar
 
@@ -99,6 +101,10 @@ cleanlocks:
 	@echo "removing install lock..."
 	rm -rf siremis/install.lock
 
+.PHONY: chown
+chown:
+	@echo "changing onwner to $(owner) ..."
+	chown -R $(owner) .
 
 cleantopkg: distclean cleansvn cleansiremis cleanbin cleantoolsx
 
