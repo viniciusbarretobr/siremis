@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EasyForm Name="PdtNewForm" Class="EasyForm" FormType="New" jsClass="jbForm" Title="New Pdt" Description="" BizDataObj="ser.rtg.pdt.do.PdtDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
     <DataPanel>
-        <Element Name="fld_sdomain" Class="InputText" FieldName="sdomain" Label="Sdomain"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_sdomain" Class="InputPicker" FieldName="sdomain" Label="Source Domain" ValuePicker="ser.srv.domain.form.DomainPickForm" PickerMap="fld_sdomain:fld_domain"/>
         <Element Name="fld_prefix" Class="InputText" FieldName="prefix" Label="Prefix"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
-        <Element Name="fld_domain" Class="InputText" FieldName="domain" Label="Domain"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_domain" Class="InputText" FieldName="domain" Label="Target Domain"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
         </DataPanel>
     <ActionPanel>
         <Element Name="btn_save" Class="Button" Text="Save" CssClass="button_gray_m">
