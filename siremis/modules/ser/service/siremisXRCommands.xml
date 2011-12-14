@@ -7,6 +7,13 @@
         <XRCommands>
             <cmd name="help" title="List commands" command="system.listMethods"/>
             <cmd name="uptime" title="Uptime" command="core.uptime"/>
+			<cmd name="psx" title="List Processes" command="core.psx"/>
+			<cmd name="which" title="Get All MI Commands" command="mi which"/>
+			<cmd name="dslist" title="List Dispatcher Records" command="dispatcher.list"/>
+			<cmd name="dsreload" title="Reload Dispatcher Records" command="dispatcher.reload"/>
+			<cmd name="pdtlist" title="List PDT Records" command="mi pdt_list"/>
+			<cmd name="pdtreload" title="Reload PDT Records" command="mi pdt_reload"/>
+
         </XRCommands>
     </XRConfig>
 </PluginService>
