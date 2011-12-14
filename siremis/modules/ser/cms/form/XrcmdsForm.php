@@ -44,9 +44,14 @@ class XrcmdsForm extends EasyForm
 		<FORM style="float:center;" action="" method="post">
 			<SELECT name="cmdid">';
 
+			$selcmd = $_GET["xcmdid"];
 			foreach ($micmds as $micobj) {
-				$sHTML .= 
-				'<OPTION value="' . $micobj->GetName() . '">' . $micobj->GetTitle() . '</OPTION>';
+				if($selcmd != $micobj->GetName())
+					$sHTML .= 
+					'<OPTION value="' . $micobj->GetName() . '">' . $micobj->GetTitle() . '</OPTION>';
+				else
+					$sHTML .= 
+					'<OPTION value="' . $micobj->GetName() . '" selected>' . $micobj->GetTitle() . '</OPTION>';
 			}
 			$sHTML .= 
 			'</SELECT>
