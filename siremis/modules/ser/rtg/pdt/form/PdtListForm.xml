@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<EasyForm Name="PdtListForm" Class="EasyForm" FormType="List" jsClass="jbForm" Title="Pdt Management" Description="" BizDataObj="ser.rtg.pdt.do.PdtDO" PageSize="10" DefaultForm="Y" TemplateEngine="Smarty" TemplateFile="grid.tpl" EventName="" MessageFile="">
+<EasyForm Name="PdtListForm" Class="ser.common.form.EasySiremisForm" FormType="List" jsClass="jbForm" Title="Pdt Management" Description="" BizDataObj="ser.rtg.pdt.do.PdtDO" PageSize="10" DefaultForm="Y" TemplateEngine="Smarty" TemplateFile="grid.tpl" EventName="" MessageFile="">
     <DataPanel>
         <Element Name="row_selections" Class="RowCheckbox"  Label="" FieldName="Id"/>
         <Element Name="fld_Id" Class="ColumnText" FieldName="Id" Label="Id" Sortable="Y" AllowURLParam="N" Link="javascript:">         
@@ -26,6 +26,9 @@
         </Element>
         <Element Name="btn_excel" Class="Button" Text="Export" CssClass="button_gray_m">
             <EventHandler Name="exc_onclick" Event="onclick" EventLogMsg="" Function="CallService(excelService,renderCSV)" FunctionType="Popup" ShortcutKey="Ctrl+Shift+X" ContextMenu="Export"/>
+        </Element>
+        <Element Name="btn_sreload" Class="Button" Text="SReload" CssClass="button_gray_m" Description="Reaload Records In SIP Server" >
+			<EventHandler Name="btn_sreload_onclick" Event="onclick" EventLogMsg="" Function="GetSiremisCmdPage()"  RedirectPage="{@home:url}/ser/{@:x_SiremisCmdPage}/xcmdid=pdtreload" ShortcutKey="Ctrl+Shift+R" ContextMenu="Reload"/>
         </Element>
     </ActionPanel> 
     <NavPanel>
