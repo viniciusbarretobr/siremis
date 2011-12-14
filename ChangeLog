@@ -5,8 +5,60 @@ Web Management Interface for SIP Routing Engines
 
 Release changelogs
 
-+++ SIREMIS v2.0.1 :: 2011-XX-XX
++++ SIREMIS v3.2.0 :: 2011-12-14
 
+* versioning changed to match first digits to Kamailio compatible version
+* compatible with Kamailio v3.2.x
+* added new field (time_us) to SIPTrace view pages
+* added tools to generate new management pages for kamailio/ser modules
+* make toolsx - prepare for using the tools to generate new ser modules
+* new ser management module - srv/uacreg - manage remote registration records
+* lcr view updated to match database schema for kamailio 3.2
+* added dst_ouser column to acc and cdrs table
+* statistics table updated to match the charts
+* table and stored procedure for rating calls
+* billing_rates - the table to keep rates per prefixes
+* updated the options for dispatcher flags
+* added dispatcher search form
+* added view for dialog_vars table
+* extended the list of MI commands in select box
+* select box for setting white/blacklist type for userblacklist forms
+* listbox with domains from domain table for userblacklist records
+* added view for globalblacklist from userblacklist module
+* added acc stats view and config file for ChartsStatsAccForm
+* number of hours to fetch records for in acc charts is configurable
+* added acc records summary view
+* configurable acc summary parameters
+* use select box for key and value type of htable items
+* speeddial short dial domain is selected from domain table
+* avpops takes the domain values from domain table
+* listbox with domains from domain table for uri_db records
+* added pick form for usernames in subscriber table
+* use subscriber pick form to select the username of alias_db records
+* use picker form for usernames in userblacklist
+* pickerform for usernames in grp records
+* select boxes for enabled and stopper fields in lcr_rules records
+* use edit combobox for group name in group edit forms
+	- preconfigured group names can be added in
+      siremis/modules/ser/config/select/AclGroup.xml
+* attribute name can be selected from an edit combobox for user preferences
+    - preconfigured values can be added in
+      siremis/modules/ser/config/select/SbsAvpops.xml
+* use picker form for username field in avpops usr_preferences
+* hide ha1 and ha1b fields in subscriber edit forms
+* added management page for mtree tables
+* micmds view can take cmd id via http url param
+* button to jump to SIP Server command pannel to reload dispatcher records
+* added sip server reload button to pdt list view
+* source domain in pdt can be selected from the records of domain table
+* added search page for pdt records
+* make command to remove/restore install lock file
+* XMLRPC commands panel can take the id of command from HTTP parameter
+* extended the list of XMLRPC commands in select box
+
++++ SIREMIS v2.1.0 :: 2011-11-23
+
+* compatible with Kamailio v3.1.x
 * fixed LCR input field types
 * detect eval() errors
 * set default dispatcher flags to 0
@@ -15,11 +67,11 @@ Release changelogs
 * updates to user roles and redirections
 * added new RLS pages
 * enhancements to dispatcher pages
-* user interface element changes
+* user interface element changes (ckeditor usage)
 * added new PUA pages
 * updated access restrictions of pages
-* added new field to SIPTrace view pages
 * fix install error when siremis cannot access the kamailio database
+* added make tar option to generate the tarball
 
 +++ SIREMIS v2.0.0 :: 2010-11-01
 
