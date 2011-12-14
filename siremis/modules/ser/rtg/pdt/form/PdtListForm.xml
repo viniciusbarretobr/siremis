@@ -27,6 +27,9 @@
         <Element Name="btn_excel" Class="Button" Text="Export" CssClass="button_gray_m">
             <EventHandler Name="exc_onclick" Event="onclick" EventLogMsg="" Function="CallService(excelService,renderCSV)" FunctionType="Popup" ShortcutKey="Ctrl+Shift+X" ContextMenu="Export"/>
         </Element>
+        <Element Name="btn_search" Class="Button" Text="Search" CssClass="button_gray_m" Description="Search record" >
+            <EventHandler Name="btn_search_onclick" Event="onclick" EventLogMsg="" Function="SwitchForm(ser.rtg.pdt.form.PdtSearchForm)"  ShortcutKey="Ctrl+Shift+S" ContextMenu="Search"/>
+        </Element>
         <Element Name="btn_sreload" Class="Button" Text="SReload" CssClass="button_gray_m" Description="Reaload Records In SIP Server" >
 			<EventHandler Name="btn_sreload_onclick" Event="onclick" EventLogMsg="" Function="GetSiremisCmdPage()"  RedirectPage="{@home:url}/ser/{@:x_SiremisCmdPage}/xcmdid=pdtreload" ShortcutKey="Ctrl+Shift+R" ContextMenu="Reload"/>
         </Element>
