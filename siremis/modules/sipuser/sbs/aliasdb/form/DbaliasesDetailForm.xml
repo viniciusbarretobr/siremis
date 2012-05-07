@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EasyForm Name="DbaliasesDetailForm" Class="EasyForm" FormType="" jsClass="jbForm" Title="Dbaliases Detail" Description="" BizDataObj="sipuser.sbs.aliasdb.do.DbaliasesDO" TemplateEngine="Smarty" TemplateFile="detail_elementset.tpl" EventName="" MessageFile="">
+    <DataPanel>
+		<Element Name="fld_Id" ElementSet="General" Hidden="Y" Class="LabelText" FieldName="Id" Label="Id" AllowURLParam="Y"/>
+       	<Element Name="fld_alias_username" ElementSet="General" Class="LabelText" FieldName="alias_username" Label="Alias Username" AllowURLParam="N"/>
+       	<Element Name="fld_alias_domain" ElementSet="General" Class="LabelText" FieldName="alias_domain" Label="Alias Domain" AllowURLParam="N"/>
+       	<Element Name="fld_username" ElementSet="General" Class="LabelText" FieldName="username" Label="Username" AllowURLParam="N"/>
+       	<Element Name="fld_domain" ElementSet="General" Class="LabelText" FieldName="domain" Label="Domain" AllowURLParam="N"/>
+    </DataPanel>
+    <ActionPanel>       
+        <Element Name="btn_new" Class="Button" Text="Add" CssClass="button_gray_add" Hidden="Y" Description="new record (Insert)">
+			<EventHandler Name="btn_new_onclick" Event="onclick" Function="SwitchForm(sipuser.sbs.aliasdb.form.DbaliasesNewForm)"  ShortcutKey="Insert" ContextMenu="New" />
+        </Element>          
+        <Element Name="btn_edit" Class="Button" Text="Edit" CssClass="button_gray_m" Hidden="Y" Description="edit record (Ctrl+E)">
+			<EventHandler Name="btn_new_onclick" Event="onclick" Function="SwitchForm(sipuser.sbs.aliasdb.form.DbaliasesEditForm,{@:Elem[fld_Id].Value})"  ShortcutKey="Ctrl+E" ContextMenu="Edit" />
+        </Element>
+		<Element Name="btn_copy" Class="Button" Text="Copy" CssClass="button_gray_m" Hidden="Y" Description="copy record (Ctrl+C)">
+            <EventHandler Name="onclick" Event="onclick" EventLogMsg="" Function="CopyRecord({@:Elem[fld_Id].Value})" RedirectPage="form=sipuser.sbs.aliasdb.form.DbaliasesCopyForm&amp;fld:Id={@:Elem[fld_Id].Value}" ShortcutKey="Ctrl+C" ContextMenu="Copy"/>
+        </Element> 
+        <Element Name="btn_delete" Class="Button" Text="Delete" CssClass="button_gray_m" Hidden="Y" Description="delete record (Delete)">
+            <EventHandler Name="del_onclick" Event="onclick" EventLogMsg="" Function="DeleteRecord({@:Elem[fld_Id].Value})"  RedirectPage="form=sipuser.sbs.aliasdb.form.DbaliasesListForm" ShortcutKey="Ctrl+Delete" ContextMenu="Delete" />
+        </Element>
+        <Element Name="btn_cancel" Class="Button" Text="Back" CssClass="button_gray_m">
+            <EventHandler Name="btn_cancel_onclick" Event="onclick" Function="SwitchForm(sipuser.sbs.aliasdb.form.DbaliasesListForm)"  ShortcutKey="Escape" ContextMenu="Cancel" />
+        </Element>         
+    </ActionPanel> 
+    <NavPanel>
+    </NavPanel> 
+    <SearchPanel>
+    </SearchPanel>
+</EasyForm>

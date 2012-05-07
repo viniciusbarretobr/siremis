@@ -1,0 +1,19 @@
+<?xml version="1.0" standalone="no"?>
+<BizDataObj Name="SubscriberDO" Description="" Class="SubscriberDO" DBName="Serdb" Table="subscriber" SearchRule="" SortRule="" AccessRule="[username]='{@profile:username}'" OtherSQLRule="" Uniqueness="username,domain;" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+	<BizFieldList>
+        <BizField Name="Id" Column="id"     Type="Number"/>
+        <BizField Name="username" Column="username" Length="64"   Required="Y" Type="Text"/>
+        <BizField Name="domain" Column="domain" Length="64"   Required="Y" Type="Text"/>
+        <BizField Name="password" Column="password" Length="25"   Required="Y" Type="Text"/>
+        <BizField Name="email_address" Column="email_address" Length="64"   Required="Y" Type="Text"/>
+        <BizField Name="ha1" Column="ha1" Length="64"   Required="Y" Type="Text"/>
+        <BizField Name="ha1b" Column="ha1b" Length="64"   Required="Y" Type="Text"/>
+        <BizField Name="rpid" Column="rpid" Length="64"   Required="N" Type="Text"/>
+	</BizFieldList>
+    <TableJoins>
+    </TableJoins>
+    <ObjReferences>
+        <Object Name="sipuser.sbs.aliasdb.do.DbaliasesDO" Relationship="1-M" Table="dbaliases" Column="username" FieldRef="username" CascadeDelete="Y"/>
+        <Object Name="sipuser.sbs.usrloc.do.LocationDO" Relationship="1-M" Table="location" Column="username" FieldRef="username" CascadeDelete="Y"/>
+    </ObjReferences>
+</BizDataObj>

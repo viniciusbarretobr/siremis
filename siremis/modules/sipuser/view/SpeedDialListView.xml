@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<EasyView Name="SpeedDialListView" Description="sipuser.sbs.speeddial" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SIPUser.Administer_Modules" TemplateFile="view.tpl">
+   <FormReferences>
+   		<Reference Name="sipuser.sbs.speeddial.form.SpeedDialListForm"/>
+   </FormReferences>
+   <FormReferenceLibs>
+   		<Reference Name="sipuser.sbs.speeddial.form.SpeedDialListForm"/>
+   		<Reference Name="sipuser.sbs.speeddial.form.SpeedDialEditForm"/>
+   		<Reference Name="sipuser.sbs.speeddial.form.SpeedDialCopyForm"/>
+   		<Reference Name="sipuser.sbs.speeddial.form.SpeedDialNewForm"/>
+   		<Reference Name="sipuser.sbs.speeddial.form.SpeedDialDetailForm"/>
+   </FormReferenceLibs>    
+</EasyView>

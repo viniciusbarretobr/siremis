@@ -1,0 +1,28 @@
+<?xml version="1.0" standalone="no"?>
+<Module Name="sipuser" Description="SIP User module" Version="0.5" OpenbizVersion="2.4">
+	<ACL>
+		<Resource Name="SIPUser">
+			<Action Name="Administer_Modules" Description="Can manage own SIP settings"/>
+		</Resource>
+	</ACL>
+    <Menu>
+		<MenuItem Name="System.Sipuser" Title="SIP User Menu" Description="SIP Profile Management" URL="/sipuser/sipuser_default" Access="SIPUser.Administer_Modules" IconImage="spacer.gif" IconCssClass="" Order="45">	
+			<MenuItem Name="System.Sipuser.Sbs" Title="Own SIP Profile" Parent="System.Sipuser" Order="10">
+				<MenuItem Name="System.Sipuser.Sbs.Subscriber.List" Title="Subscriber Data" Description=""
+					URL="{@home:url}/sipuser/subscriber_list" Order="20"/>
+				<MenuItem Name="System.Sipuser.Sbs.Location.List" Title="Location Records" Description=""
+					URL="{@home:url}/sipuser/location_list" Order="30"/>
+				<MenuItem Name="System.Sipuser.Sbs.Aliasdb.List" Title="Aliases DB Records" Description=""
+					URL="{@home:url}/sipuser/aliasdb_list" Order="40"/>
+				<MenuItem Name="System.Sipuser.Sbs.Speeddial.List" Title="Speed Dial Records" Description=""
+					URL="{@home:url}/sipuser/speed_dial_list" Order="50"/>
+				<MenuItem Name="System.Sipuser.Sbs.Msilo.List" Title="Stored Messages" Description=""
+					URL="{@home:url}/sipuser/silo_list" Order="60"/>
+			</MenuItem>	
+		</MenuItem>	
+    </Menu>
+    <Dependency>
+    	<Module Name="system"/>
+    	<Module Name="menu"/>
+    </Dependency>
+</Module>

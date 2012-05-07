@@ -1,0 +1,6 @@
+<?xml version="1.0" standalone="no"?>
+<EasyView Name="SipuserDefaultView" Description="SIP Profile Administration" class="EasyView" Tab="" TemplateEngine="Smarty" Access="SIPUser.Administer_Modules" TemplateFile="view.tpl">
+    <FormReferences>
+        <Reference Name="sipuser.widget.SipUserStartPage"/>
+    </FormReferences>
+</EasyView>

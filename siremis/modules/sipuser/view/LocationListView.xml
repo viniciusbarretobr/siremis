@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<EasyView Name="LocationListView" Description="sipuser.sbs.usrloc" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SIPUser.Administer_Modules" TemplateFile="view.tpl">
+   <FormReferences>
+   		<Reference Name="sipuser.sbs.usrloc.form.LocationListForm"/>
+   </FormReferences>
+   <FormReferenceLibs>
+   		<Reference Name="sipuser.sbs.usrloc.form.LocationListForm"/>
+   		<Reference Name="sipuser.sbs.usrloc.form.LocationEditForm"/>
+   		<Reference Name="sipuser.sbs.usrloc.form.LocationCopyForm"/>
+   		<Reference Name="sipuser.sbs.usrloc.form.LocationNewForm"/>
+   		<Reference Name="sipuser.sbs.usrloc.form.LocationDetailForm"/>
+   </FormReferenceLibs>    
+</EasyView>

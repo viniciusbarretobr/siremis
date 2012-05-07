@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EasyForm Name="SubscriberPickForm" Class="PickerForm" FormType="List" jsClass="jbForm" Title="Subscriber Pick List" Description="" BizDataObj="sipuser.sbs.authdb.do.SubscriberPickDO" PageSize="10" DefaultForm="Y" TemplateEngine="Smarty" TemplateFile="system_pickform.tpl.html" EventName="" MessageFile="">
+    <DataPanel>
+		<Element Name="fld_Id" Class="ColumnText" FieldName="Id" Label="Id" Sortable="Y" AllowURLParam="N"/>         
+		<Element Name="fld_username" Class="ColumnText" FieldName="username" Label="Username" Sortable="Y" AllowURLParam="N"/>
+		<Element Name="fld_domain" Class="ColumnText" FieldName="domain" Label="Domain" Sortable="Y" AllowURLParam="N"/>
+    </DataPanel>
+    <ActionPanel>
+        <Element Name="btn_edit" Class="Button" text="Select" CssClass="button_gray_m">
+            <EventHandler Name="onclick" Event="onclick" Function="PickToParent()"/>
+        </Element>
+        <Element Name="btn_new" Class="Button" Text="Close" CssClass="button_gray_m">
+            <EventHandler Name="onclick" Event="onclick" Function="js:Openbiz.Window.closeDialog()"/>
+        </Element>
+    </ActionPanel> 
+    <NavPanel>
+        <Element Name="btn_first" Class="Button" Enabled="{(@:m_CurrentPage == 1)?'N':'Y'}" Text="" CssClass="button_gray_navi {(@:m_CurrentPage == 1)?'first_gray':'first'}">
+            <EventHandler Name="first_onclick" Event="onclick" Function="GotoPage(1)"/>
+        </Element>
+        <Element Name="btn_prev" Class="Button" Enabled="{(@:m_CurrentPage == 1)?'N':'Y'}" Text="" CssClass="button_gray_navi {(@:m_CurrentPage == 1)?'prev_gray':'prev'}">
+            <EventHandler Name="prev_onclick" Event="onclick" Function="GotoPage({@:m_CurrentPage - 1})" ShortcutKey="Ctrl+Shift+Left"/>
+        </Element>
+        <Element Name="txt_page" Class="LabelText" Text="{'@:m_CurrentPage of @:m_TotalPages '}">
+        </Element>
+        <Element Name="btn_next" Class="Button" Enabled="{(@:m_CurrentPage == @:m_TotalPages )?'N':'Y'}" Text="" CssClass="button_gray_navi {(@:m_CurrentPage == @:m_TotalPages)?'next_gray':'next'}">
+            <EventHandler Name="next_onclick" Event="onclick" Function="GotoPage({@:m_CurrentPage + 1})" ShortcutKey="Ctrl+Shift+Right"/>
+        </Element>
+        <Element Name="btn_last" Class="Button" Enabled="{(@:m_CurrentPage == @:m_TotalPages )?'N':'Y'}" Text="" CssClass="button_gray_navi {(@:m_CurrentPage == @:m_TotalPages)?'last_gray':'last'}">
+            <EventHandler Name="last_onclick" Event="onclick" Function="GotoPage({@:m_TotalPages})"/>
+        </Element>
+    </NavPanel> 
+    <SearchPanel>
+			<Element Name="qry_username" Class="AutoSuggest" SelectFrom="sipuser.sbs.authdb.do.SubscriberDO[username],[username] like '%{@:Elem[qry_username].Value}%' GROUP BY [username]" FuzzySearch="Y" FieldName="username" Label="" cssFocusClass="input_text_search_focus" CssClass="input_text_search" />
+        <Element Name="btn_dosearch" Class="Button" text="Go" CssClass="button_gray">
+            <EventHandler Name="search_onclick" Event="onclick" Function="RunSearch()" ShortcutKey="Enter"/>
+        </Element>	
+    </SearchPanel>
+</EasyForm>

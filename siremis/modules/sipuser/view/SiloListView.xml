@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<EasyView Name="SiloListView" Description="sipuser.sbs.msilo" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SIPUser.Administer_Modules" TemplateFile="view.tpl">
+   <FormReferences>
+   		<Reference Name="sipuser.sbs.msilo.form.SiloListForm"/>
+   </FormReferences>
+   <FormReferenceLibs>
+   		<Reference Name="sipuser.sbs.msilo.form.SiloListForm"/>
+   		<Reference Name="sipuser.sbs.msilo.form.SiloEditForm"/>
+   		<Reference Name="sipuser.sbs.msilo.form.SiloCopyForm"/>
+   		<Reference Name="sipuser.sbs.msilo.form.SiloNewForm"/>
+   		<Reference Name="sipuser.sbs.msilo.form.SiloDetailForm"/>
+   </FormReferenceLibs>    
+</EasyView>

@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<EasyView Name="AliasdbListView" Description="sipuser.sbs.aliasdb" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SIPUser.Administer_Modules" TemplateFile="view.tpl">
+   <FormReferences>
+   		<Reference Name="sipuser.sbs.aliasdb.form.DbaliasesListForm"/>
+   </FormReferences>
+   <FormReferenceLibs>
+   		<Reference Name="sipuser.sbs.aliasdb.form.DbaliasesListForm"/>
+   		<Reference Name="sipuser.sbs.aliasdb.form.DbaliasesEditForm"/>
+   		<Reference Name="sipuser.sbs.aliasdb.form.DbaliasesCopyForm"/>
+   		<Reference Name="sipuser.sbs.aliasdb.form.DbaliasesNewForm"/>
+   		<Reference Name="sipuser.sbs.aliasdb.form.DbaliasesDetailForm"/>
+   </FormReferenceLibs>    
+</EasyView>
