@@ -1,2 +1,2 @@
-<MenuWidget Name="SerMenu" Title="SER MenuX" Class="menu.widget.MenuWidget" CssCLass="system" BizDataObj="menu.do.MenuTreeDO" SearchRule="[PId]='System.Ser'" GlobalSearchRule="[published] = 1" MenuDeep="2" TemplateEngine="Smarty" TemplateFile="vertical_menu.tpl" CacheLifeTime="0">
+<MenuWidget Name="SerMenu" Title="SIP Admin MenuX" Class="menu.widget.MenuWidget" CssCLass="system" BizDataObj="menu.do.MenuTreeDO" SearchRule="[PId]='System.Ser'" GlobalSearchRule="[published] = 1" MenuDeep="2" TemplateEngine="Smarty" TemplateFile="vertical_menu.tpl" CacheLifeTime="0">
 </MenuWidget>

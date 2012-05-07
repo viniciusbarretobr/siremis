@@ -1,12 +1,12 @@
 <?xml version="1.0" standalone="no"?>
-<Module Name="ser" Description="SER module" Version="0.2" OpenbizVersion="2.4">
+<Module Name="ser" Description="SIP Admin Modules" Version="0.2" OpenbizVersion="2.4">
 	<ACL>
 		<Resource Name="SERAdmin">
-			<Action Name="Administer_Modules" Description="Can manage SER settings"/>
+			<Action Name="Administer_Modules" Description="Can manage all SIP settings"/>
 		</Resource>
 	</ACL>
     <Menu>
-		<MenuItem Name="System.Ser" Title="SER Menu" Description="SER Management" URL="/ser/ser_default" IconImage="spacer.gif" IconCssClass="" Order="25">			
+		<MenuItem Name="System.Ser" Title="SIP Admin Menu" Description="SIP Admin Management" URL="/ser/ser_default" Access="SERAdmin.Administer_Modules" IconImage="spacer.gif" IconCssClass="" Order="25">			
 			<MenuItem Name="System.Ser.Sbs" Title="Subscriber Services" Parent="System.Ser" Order="10">
 				<MenuItem Name="System.Ser.Sbs.Subscriber.List" Title="Subscriber List" Description=""
 					URL="{@home:url}/ser/subscriber_list" Order="20"/>
