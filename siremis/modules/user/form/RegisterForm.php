@@ -46,12 +46,12 @@ class RegisterForm extends UserForm
 
         $this->_doInsert($recArr);
                 
-        //set default user role to member
+        //set default user role to sip user
 		$userinfo = $this->getActiveRecord();
         $userRoleObj = BizSystem::getObject('system.do.UserRoleDO');
         $uesrRoloArr =array(
         				"user_id"=>$userinfo['Id'],
-        				"role_id"=>"2",  //role 3 is Guest
+        				"role_id"=>"3",  //role 3 is SIP user
         				); 
          
         $userRoleObj->insertRecord($uesrRoloArr);
@@ -63,12 +63,21 @@ class RegisterForm extends UserForm
     	$eventlog->log("USER_MANAGEMENT", "MSG_USER_REGISTERED", $logComment);   
     	     
         //send user email
-        $emailObj 	= BizSystem::getService(USER_EMAIL_SERIVCE);
-        $emailObj->UserWelcomeEmail($userinfo['Id']);
+        //$emailObj 	= BizSystem::getService(USER_EMAIL_SERIVCE);
+        //$emailObj->UserWelcomeEmail($userinfo['Id']);
         
         //init profile for future use like redirect to my account view
         $profile = $g_BizSystem->InituserProfile($userinfo['username']);
         
+
+		$serUserObj = BizSystem::getObject('ser.sbs.authdb.do.SubscriberDO');
+		$serUserArr = array(
+							"username"=>$recArr['username'],
+							"domain"=>$recArr['domain'],
+							"password"=>$recArr['password'],
+							"email_address"=>$recArr['email']
+						);
+		$serUserObj->InsertRecord($serUserArr);
         $this->processPostAction();
     }
 }
