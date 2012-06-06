@@ -19,6 +19,14 @@
 				<MenuItem Name="System.Sipuser.Sbs.Msilo.List" Title="Stored Messages" Description=""
 					URL="{@home:url}/sipuser/silo_list" Order="60"/>
 			</MenuItem>	
+			<MenuItem Name="System.Sipuser.Acs" Title="Accounting" Parent="System.Sipuser" Order="20">
+				<MenuItem Name="System.Sipuser.Acs.Acc.List" Title="Initiated Calls" Description=""
+					URL="{@home:url}/sipuser/acc_list" Order="20"/>
+				<MenuItem Name="System.Sipuser.Acs.MissedCalls.List" Title="Missed Calls" Description=""
+					URL="{@home:url}/sipuser/missed_calls_list" Order="30"/>
+				<MenuItem Name="System.Sipuser.Acs.Cdrs.List" Title="Call Data Records" Description=""
+					URL="{@home:url}/sipuser/cdrs_list" Order="40"/>
+			</MenuItem>	
 		</MenuItem>	
     </Menu>
     <Dependency>

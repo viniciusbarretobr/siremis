@@ -1,0 +1,23 @@
+<?xml version="1.0" standalone="no"?>
+<BizDataObj Name="CdrsDO" Description="" Class="BizDataObj" DBName="Serdb" Table="cdrs" SearchRule="" SortRule=""  AccessRule="[src_username]='{@profile:username}'" OtherSQLRule="" Uniqueness="sip_call_id,sip_from_tag,sip_to_tag;" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+	<BizFieldList>
+        <BizField Name="Id" Column="cdr_id"     Type="Number"/>
+        <BizField Name="src_username" Column="src_username" Length="64"   Required="Y" Type="Text"/>
+        <BizField Name="src_domain" Column="src_domain" Length="128"   Required="Y" Type="Text"/>
+        <BizField Name="dst_username" Column="dst_username" Length="64"   Required="Y" Type="Text"/>
+        <BizField Name="dst_domain" Column="dst_domain" Length="128"   Required="Y" Type="Text"/>
+        <BizField Name="dst_ousername" Column="dst_ousername" Length="64"   Required="Y" Type="Text"/>
+        <BizField Name="call_start_time" Column="call_start_time"  DefaultValue="0000-00-00 00:00:00"  Required="Y" Type="Datetime"/>
+        <BizField Name="duration" Column="duration"    Required="Y" Type="Number"/>
+        <BizField Name="sip_call_id" Column="sip_call_id" Length="128"   Required="Y" Type="Text"/>
+        <BizField Name="sip_from_tag" Column="sip_from_tag" Length="128"   Required="Y" Type="Text"/>
+        <BizField Name="sip_to_tag" Column="sip_to_tag" Length="128"   Required="Y" Type="Text"/>
+        <BizField Name="src_ip" Column="src_ip" Length="64"   Required="Y" Type="Text"/>
+        <BizField Name="cost" Column="cost"    Required="Y" Type="Number"/>
+        <BizField Name="created" Column="created"    Required="Y" Type="Datetime"/>
+	</BizFieldList>
+    <TableJoins>
+    </TableJoins>
+    <ObjReferences>
+    </ObjReferences>
+</BizDataObj>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EasyForm Name="MissedCallsDetailForm" Class="EasyForm" FormType="" jsClass="jbForm" Title="Missed Calls Detail" Description="" BizDataObj="sipuser.acs.acc.do.MissedCallsDO" TemplateEngine="Smarty" TemplateFile="detail_elementset.tpl" EventName="" MessageFile="">
+    <DataPanel>
+		<Element Name="fld_Id" ElementSet="General" Hidden="Y" Class="LabelText" FieldName="Id" Label="Id" AllowURLParam="Y"/>
+       	<Element Name="fld_method" ElementSet="General" Class="LabelText" FieldName="method" Label="Method" AllowURLParam="N"/>
+       	<Element Name="fld_from_tag" ElementSet="General" Class="LabelText" FieldName="from_tag" Label="From Tag" AllowURLParam="N"/>
+       	<Element Name="fld_to_tag" ElementSet="General" Class="LabelText" FieldName="to_tag" Label="To Tag" AllowURLParam="N"/>
+       	<Element Name="fld_callid" ElementSet="General" Class="LabelText" FieldName="callid" Label="Callid" AllowURLParam="N"/>
+       	<Element Name="fld_sip_code" ElementSet="General" Class="LabelText" FieldName="sip_code" Label="Sip Code" AllowURLParam="N"/>
+       	<Element Name="fld_sip_reason" ElementSet="General" Class="LabelText" FieldName="sip_reason" Label="Sip Reason" AllowURLParam="N"/>
+       	<Element Name="fld_time" ElementSet="General" Class="LabelText" FieldName="time" Label="Time" AllowURLParam="N"/>
+       	<Element Name="fld_src_ip" ElementSet="General" Class="LabelText" FieldName="src_ip" Label="Src Ip" AllowURLParam="N"/>
+       	<Element Name="fld_dst_user" ElementSet="General" Class="LabelText" FieldName="dst_user" Label="Dst User" AllowURLParam="N"/>
+       	<Element Name="fld_dst_domain" ElementSet="General" Class="LabelText" FieldName="dst_domain" Label="Dst Domain" AllowURLParam="N"/>
+       	<Element Name="fld_dst_ouser" ElementSet="General" Class="LabelText" FieldName="dst_ouser" Label="Orig Dst User" AllowURLParam="N"/>
+       	<Element Name="fld_src_user" ElementSet="General" Class="LabelText" FieldName="src_user" Label="Src User" AllowURLParam="N"/>
+       	<Element Name="fld_src_domain" ElementSet="General" Class="LabelText" FieldName="src_domain" Label="Src Domain" AllowURLParam="N"/>
+       	<Element Name="fld_cdr_id" ElementSet="General" Class="LabelText" FieldName="cdr_id" Label="Cdr Id" AllowURLParam="N"/>
+    </DataPanel>
+    <ActionPanel>       
+        <Element Name="btn_cancel" Class="Button" Text="Back" CssClass="button_gray_m">
+            <EventHandler Name="btn_cancel_onclick" Event="onclick" Function="SwitchForm(sipuser.acs.acc.form.MissedCallsListForm)"  ShortcutKey="Escape" ContextMenu="Cancel" />
+        </Element>         
+    </ActionPanel> 
+    <NavPanel>
+    </NavPanel> 
+    <SearchPanel>
+    </SearchPanel>
+</EasyForm>
