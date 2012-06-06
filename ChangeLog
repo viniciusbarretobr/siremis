@@ -5,6 +5,23 @@ Web Management Interface for SIP Routing Engines
 
 Release changelogs
 
++++ SIREMIS v3.2.1 :: 2012-06-07
+
+* automatically created users member and guests are disabled by default
+* the user roles were updated to: administrator, sipadmin and sipuser
+* registration page creates a SIP user with same username as for SIREMIS
+* new users added via registration page are created with sipuser role
+* SER Admin tab title renamed to SIP Admin
+* SIP Admin tab is accessible only for users having administrator or sipadmin
+  roles
+* new tab SIP User that allows profile management for users with sipuser
+  role
+* the SIP User tab gives access to SIP data, such as subscriber profile,
+  speed dial rules, view of aliases, location or accounting details
+* configuration option for public registration - default is disabled
+* version set to 3.2.1 - the last to be released with compatibility to
+  Kamailio v3.2.x
+
 +++ SIREMIS v3.2.0 :: 2011-12-14
 
 * versioning changed to match first digits to Kamailio compatible version
