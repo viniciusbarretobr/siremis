@@ -1,0 +1,10 @@
+<?xml version="1.0" standalone="no"?>
+<EasyView Name="MissedCallsListView" Description="sipuser.acs.acc" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SIPUser.Administer_Modules" TemplateFile="view.tpl">
+   <FormReferences>
+   		<Reference Name="sipuser.acs.acc.form.MissedCallsListForm"/>
+   </FormReferences>
+   <FormReferenceLibs>
+   		<Reference Name="sipuser.acs.acc.form.MissedCallsListForm"/>
+   		<Reference Name="sipuser.acs.acc.form.MissedCallsDetailForm"/>
+   </FormReferenceLibs>    
+</EasyView>

@@ -1,0 +1,10 @@
+<?xml version="1.0" standalone="no"?>
+<EasyView Name="CdrsListView" Description="sipuser.acs.cdrs" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SIPUser.Administer_Modules" TemplateFile="view.tpl">
+   <FormReferences>
+   		<Reference Name="sipuser.acs.cdrs.form.CdrsListForm"/>
+   </FormReferences>
+   <FormReferenceLibs>
+   		<Reference Name="sipuser.acs.cdrs.form.CdrsListForm"/>
+   		<Reference Name="sipuser.acs.cdrs.form.CdrsDetailForm"/>
+   </FormReferenceLibs>    
+</EasyView>

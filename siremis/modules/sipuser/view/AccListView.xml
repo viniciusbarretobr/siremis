@@ -1,0 +1,10 @@
+<?xml version="1.0" standalone="no"?>
+<EasyView Name="AccListView" Description="sipuser.acs.acc" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SIPUser.Administer_Modules" TemplateFile="view.tpl">
+   <FormReferences>
+   		<Reference Name="sipuser.acs.acc.form.AccListForm"/>
+   </FormReferences>
+   <FormReferenceLibs>
+   		<Reference Name="sipuser.acs.acc.form.AccListForm"/>
+   		<Reference Name="sipuser.acs.acc.form.AccDetailForm"/>
+   </FormReferenceLibs>    
+</EasyView>
