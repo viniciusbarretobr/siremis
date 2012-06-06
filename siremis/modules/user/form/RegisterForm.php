@@ -1,5 +1,6 @@
 <?php 
 include_once(MODULE_PATH."/system/form/UserForm.php");
+include_once(MODULE_PATH."/ser/config/common.Main.php");
 
 class RegisterForm extends UserForm
 {
@@ -9,7 +10,14 @@ class RegisterForm extends UserForm
      * @return void
      */
     public function CreateUser()
-    {
+	{
+		if($cfg_siremis_public_registrations == false) {
+			$errorMessage = "Public registration is not enabled!";
+			$errors['fld_username'] = $errorMessage;
+			$this->processFormObjError($errors);
+			return;
+		}
+
         $recArr = $this->readInputRecord();
         $this->setActiveRecord($recArr);
         if (count($recArr) == 0)
