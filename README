@@ -1,7 +1,7 @@
-SIREMIS - Web Management Interface for Kamailio SIP Server and SER
-==================================================================
+SIREMIS - Web Management Interface for Kamailio SIP Server
+==========================================================
 
-v3.2.0, Dec 14, 2011
+v3.2.1, Jun 07, 2012
 Web: http://siremis.asipto.com/
 
 Project Management:
@@ -21,7 +21,7 @@ Install:
 Mailing list:
 
     * use Kamailio (OpenSER) mailing lists to ask questions about SIREMIS
-    * Kamailio Users Mailing List: <users@lists.kamailio.org>
+    * Kamailio Users Mailing List: <sr-users@lists.sip-router.org>
     * Kamailio Devel Mailing List: <sr-dev@lists.sip-router.org>
 
 IRC Channel:
