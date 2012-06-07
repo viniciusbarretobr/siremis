@@ -18,15 +18,6 @@
                 <Element Name="fld_body" Class="ColumnText" FieldName="body" Label="Body" Sortable="Y"/>
     </DataPanel>
     <ActionPanel>
-        <Element Name="lnk_new" Class="Button" Text="Add" CssClass="button_gray_add" Hidden="Y" Description="new record (Insert)">
-            <EventHandler Name="lnk_new_onclick" Event="onclick" EventLogMsg="" Function="SwitchForm(sipuser.sbs.msilo.form.SiloNewForm)" ShortcutKey="Insert" ContextMenu="New"/>
-        </Element>
-        <Element Name="btn_edit" Class="Button" Text="Edit" CssClass="button_gray_m" Hidden="Y" Description="edit record (Ctrl+E)">
-            <EventHandler Name="btn_edit_onclick" Event="onclick" EventLogMsg="" Function="EditRecord()" RedirectPage="form=sipuser.sbs.msilo.form.SiloEditForm&amp;fld:Id={@:Elem[fld_Id].Value}" ShortcutKey="Ctrl+E" ContextMenu="Edit"/>
-        </Element>
-        <Element Name="btn_copy" Class="Button" Text="Copy" CssClass="button_gray_m" Hidden="Y" Description="copy record (Ctrl+C)">
-            <EventHandler Name="btn_copy_onclick" Event="onclick" EventLogMsg="" Function="CopyRecord()" RedirectPage="form=sipuser.sbs.msilo.form.SiloCopyForm&amp;fld:Id={@:Elem[fld_Id].Value}" ShortcutKey="Ctrl+C" ContextMenu="Copy"/>
-        </Element>
         <Element Name="btn_delete" Class="Button" Text="Delete" CssClass="button_gray_m">
             <EventHandler Name="del_onclick" Event="onclick" EventLogMsg="" Function="DeleteRecord()" ShortcutKey="Ctrl+Delete" ContextMenu="Delete"/>
         </Element>
