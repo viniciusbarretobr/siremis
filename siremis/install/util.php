@@ -154,10 +154,14 @@ function fillDB()
 	    $loader->loadModule(true);
 	}
 
-   	giveActionAccess("", 1);	// admin to access all actions
+	// admin to access all actions
+	giveActionAccess("", 1);
    	
+	// sipadmin to access siremis user profile and sip admin pages
 	giveActionAccess("module='user' OR module='ser'", 2);
-	giveActionAccess("module='ser'", 3);
+
+	// sipuser to access siremis user profile and sip user pages
+	giveActionAccess("module='user' OR module='sipuser'", 3);
 
 	return true;
 }
