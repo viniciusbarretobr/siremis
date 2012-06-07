@@ -11,17 +11,8 @@
        	<Element Name="fld_rpid" ElementSet="General" Class="LabelText" FieldName="rpid" Label="Rpid" AllowURLParam="N"/>
     </DataPanel>
     <ActionPanel>       
-        <Element Name="btn_new" Class="Button" Text="Add" CssClass="button_gray_add" Hidden="Y" Description="new record (Insert)">
-			<EventHandler Name="btn_new_onclick" Event="onclick" Function="SwitchForm(sipuser.sbs.authdb.form.SubscriberNewForm)"  ShortcutKey="Insert" ContextMenu="New" />
-        </Element>          
         <Element Name="btn_edit" Class="Button" Text="Edit" CssClass="button_gray_m" Description="edit record (Ctrl+E)">
 			<EventHandler Name="btn_new_onclick" Event="onclick" Function="SwitchForm(sipuser.sbs.authdb.form.SubscriberEditForm,{@:Elem[fld_Id].Value})"  ShortcutKey="Ctrl+E" ContextMenu="Edit" />
-        </Element>
-		<Element Name="btn_copy" Class="Button" Text="Copy" CssClass="button_gray_m" Hidden="Y" Description="copy record (Ctrl+C)">
-            <EventHandler Name="onclick" Event="onclick" EventLogMsg="" Function="CopyRecord({@:Elem[fld_Id].Value})" RedirectPage="form=sipuser.sbs.authdb.form.SubscriberCopyForm&amp;fld:Id={@:Elem[fld_Id].Value}" ShortcutKey="Ctrl+C" ContextMenu="Copy"/>
-        </Element> 
-        <Element Name="btn_delete" Class="Button" Text="Delete" CssClass="button_gray_m" Hidden="Y" Description="delete record (Delete)">
-            <EventHandler Name="del_onclick" Event="onclick" EventLogMsg="" Function="DeleteRecord({@:Elem[fld_Id].Value})"  RedirectPage="form=sipuser.sbs.authdb.form.SubscriberListForm" ShortcutKey="Ctrl+Delete" ContextMenu="Delete" />
         </Element>
         <Element Name="btn_cancel" Class="Button" Text="Back" CssClass="button_gray_m">
             <EventHandler Name="btn_cancel_onclick" Event="onclick" Function="SwitchForm(sipuser.sbs.authdb.form.SubscriberListForm)"  ShortcutKey="Escape" ContextMenu="Cancel" />
