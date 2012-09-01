@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no"?>
-<Module Name="ser" Description="SIP Admin Modules" Version="0.2" OpenbizVersion="2.4">
+<Module Name="ser" Description="SIP Admin Modules" Version="3.3" OpenbizVersion="2.4">
 	<ACL>
 		<Resource Name="SERAdmin">
 			<Action Name="Administer_Modules" Description="Can manage all SIP settings"/>
@@ -30,6 +30,8 @@
 			<MenuItem Name="System.Ser.Srv" Title="Server Services" Parent="System.Ser" Order="20">
 				<MenuItem Name="System.Ser.Srv.Domain.List" Title="Domain List" Description=""
 					URL="{@home:url}/ser/domain_list" Order="10"/>
+				<MenuItem Name="System.Ser.Srv.DomainAttrs.List" Title="Domain Attrs List" Description=""
+					URL="{@home:url}/ser/domain_attrs_list" Order="15"/>
 				<MenuItem Name="System.Ser.Srv.Htable.List" Title="HTable List" Description=""
 					URL="{@home:url}/ser/htable_list" Order="20"/>
 				<MenuItem Name="System.Ser.Srv.Dialplan.List" Title="Dialplan List" Description=""
