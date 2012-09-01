@@ -26,8 +26,10 @@
                 <Element Name="fld_start_time" Class="ColumnText" FieldName="start_time" Label="Start Time"  Sortable="Y"/>
                 <Element Name="fld_timeout" Class="ColumnText" FieldName="timeout" Label="Timeout"  Sortable="Y"/>
                 <Element Name="fld_sflags" Class="ColumnText" FieldName="sflags" Label="Sflags"  Sortable="Y"/>
+                <Element Name="fld_iflags" Class="ColumnText" FieldName="iflags" Label="Iflags"  Sortable="Y"/>
                 <Element Name="fld_toroute_name" Class="ColumnText" FieldName="toroute_name" Label="Toroute"  Sortable="Y"/>
                 <Element Name="fld_req_uri" Class="ColumnText" FieldName="req_uri" Label="Req Uri"  Sortable="Y"/>
+                <Element Name="fld_xdata" Class="ColumnText" FieldName="xdata" Label="X Data"  Sortable="Y"/>
     </DataPanel>
     <ActionPanel>
         <Element Name="lnk_new" Class="Button" Text="Add" CssClass="button_gray_add" Description="new record (Insert)" >

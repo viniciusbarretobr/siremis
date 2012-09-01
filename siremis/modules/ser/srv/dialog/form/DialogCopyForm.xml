@@ -21,8 +21,10 @@
 		<Element Name="fld_start_time" Class="InputText" FieldName="start_time" Label="Start Time"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
 		<Element Name="fld_timeout" Class="InputText" FieldName="timeout" Label="Timeout"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
 		<Element Name="fld_sflags" Class="InputText" FieldName="sflags" Label="Sflags"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_iflags" Class="InputText" FieldName="iflags" Label="Iflags"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
 		<Element Name="fld_toroute_name" Class="InputText" FieldName="toroute_name" Label="Toroute"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
 		<Element Name="fld_req_uri" Class="InputText" FieldName="req_uri" Label="Req Uri"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_xdata" Class="InputText" FieldName="xdata" Label="X Data"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
     </DataPanel>
     <ActionPanel>
         <Element Name="btn_save" Class="Button" Text="Save" CssClass="button_gray_m">

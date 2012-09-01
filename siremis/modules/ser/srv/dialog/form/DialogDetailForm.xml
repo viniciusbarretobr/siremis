@@ -21,8 +21,10 @@
        	<Element Name="fld_start_time" ElementSet="General" Class="LabelText" FieldName="start_time" Label="Start Time" AllowURLParam="N"/>
        	<Element Name="fld_timeout" ElementSet="General" Class="LabelText" FieldName="timeout" Label="Timeout" AllowURLParam="N"/>
        	<Element Name="fld_sflags" ElementSet="General" Class="LabelText" FieldName="sflags" Label="Sflags" AllowURLParam="N"/>
+       	<Element Name="fld_iflags" ElementSet="General" Class="LabelText" FieldName="iflags" Label="Iflags" AllowURLParam="N"/>
        	<Element Name="fld_toroute_name" ElementSet="General" Class="LabelText" FieldName="toroute_name" Label="Toroute" AllowURLParam="N"/>
        	<Element Name="fld_req_uri" ElementSet="General" Class="LabelText" FieldName="req_uri" Label="Req Uri" AllowURLParam="N"/>
+       	<Element Name="fld_xdata" ElementSet="General" Class="LabelText" FieldName="xdata" Label="X Data" AllowURLParam="N"/>
     </DataPanel>
     <ActionPanel>       
         <Element Name="btn_new" Class="Button" Text="Add" CssClass="button_gray_add" Description="new record (Insert)">
