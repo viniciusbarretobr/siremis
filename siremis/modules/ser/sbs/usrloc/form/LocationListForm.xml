@@ -22,6 +22,9 @@
                 <Element Name="fld_user_agent" Class="ColumnText" FieldName="user_agent" Label="User Agent" Sortable="Y"/>
                 <Element Name="fld_socket" Class="ColumnText" FieldName="socket" Label="Socket" Sortable="Y" Hidden="Y"/>
                 <Element Name="fld_methods" Class="ColumnText" FieldName="methods" Label="Methods" Sortable="Y" Hidden="Y"/>
+                <Element Name="fld_ruid" Class="ColumnText" FieldName="ruid" Label="Ruid" Sortable="Y" Hidden="Y"/>
+                <Element Name="fld_instance" Class="ColumnText" FieldName="instance" Label="Instance" Sortable="Y" Hidden="Y"/>
+                <Element Name="fld_reg_id" Class="ColumnText" FieldName="reg_id" Label="Reg-Id" Sortable="Y" Hidden="Y"/>
     </DataPanel>
     <ActionPanel>
         <Element Name="lnk_new" Class="Button" Text="Add" CssClass="button_gray_add" Hidden="Y" Description="new record (Insert)">
