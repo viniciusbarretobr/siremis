@@ -5,6 +5,7 @@
        	<Element Name="fld_lcr_id" ElementSet="General" Class="LabelText" FieldName="lcr_id" Label="Lcr Id" AllowURLParam="N"/>
        	<Element Name="fld_prefix" ElementSet="General" Class="LabelText" FieldName="prefix" Label="Prefix" AllowURLParam="N"/>
        	<Element Name="fld_from_uri" ElementSet="General" Class="LabelText" FieldName="from_uri" Label="From Uri" AllowURLParam="N"/>
+       	<Element Name="fld_request_uri" ElementSet="General" Class="LabelText" FieldName="request_uri" Label="Request Uri" AllowURLParam="N"/>
        	<Element Name="fld_stopper" ElementSet="General" Class="LabelText" FieldName="stopper" Label="Stopper" AllowURLParam="N"/>
        	<Element Name="fld_enabled" ElementSet="General" Class="LabelText" FieldName="enabled" Label="Enabled" AllowURLParam="N"/>
     </DataPanel>

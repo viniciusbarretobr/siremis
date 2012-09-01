@@ -5,6 +5,7 @@
 		<Element Name="fld_lcr_id" Class="InputText" FieldName="lcr_id" Label="Lcr Id"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
 		<Element Name="fld_prefix" Class="InputText" FieldName="prefix" Label="Prefix"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
 		<Element Name="fld_from_uri" Class="InputText" FieldName="from_uri" Label="From Uri"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_request_uri" Class="InputText" FieldName="request_uri" Label="Request Uri"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
 		<Element Name="fld_stopper" Class="Listbox" FieldName="stopper" Label="Stopper" AllowURLParam="N" SelectFrom="ser.common.select.values(lcrGwRuleStopper)"/>
 		<Element Name="fld_enabled" Class="Listbox" FieldName="enabled" Label="Enabled" AllowURLParam="N" SelectFrom="ser.common.select.values(lcrGwRuleEnabled)"/>
     </DataPanel>

@@ -4,7 +4,7 @@
         <BizField Name="Id" Column="id"     Type="Number"/>
         <BizField Name="lcr_id" Column="lcr_id"    Required="Y" Type="Text"/>
         <BizField Name="gw_name" Column="gw_name" Length="128"   Required="N" Type="Text"/>
-        <BizField Name="ip_addr" Column="ip_addr" Length="15"   Required="N" Type="Text"/>
+        <BizField Name="ip_addr" Column="ip_addr" Length="48"   Required="N" Type="Text"/>
         <BizField Name="hostname" Column="hostname" Length="64"   Required="N" Type="Text"/>
         <BizField Name="port" Column="port"    Required="N" Type="Text"/>
         <BizField Name="params" Column="params" Length="64"   Required="N" Type="Text"/>

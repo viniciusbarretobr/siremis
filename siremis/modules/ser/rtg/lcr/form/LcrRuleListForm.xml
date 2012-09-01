@@ -10,6 +10,7 @@
         </Element>
                 <Element Name="fld_prefix" Class="ColumnText" FieldName="prefix" Label="Prefix"  Sortable="Y"/>
                 <Element Name="fld_from_uri" Class="ColumnText" FieldName="from_uri" Label="From Uri"  Sortable="Y"/>
+                <Element Name="fld_request_uri" Class="ColumnText" FieldName="request_uri" Label="Request Uri"  Sortable="Y"/>
                 <Element Name="fld_stopper" Class="ColumnText" FieldName="stopper" Label="Stopper"  Sortable="Y"/>
                 <Element Name="fld_enabled" Class="ColumnText" FieldName="enabled" Label="Enabled" DefaultValue="1" Sortable="Y"/>
     </DataPanel>

@@ -7,6 +7,7 @@
         <BizField Name="from_uri" Column="from_uri" Length="64"   Required="N" Type="Text"/>
         <BizField Name="stopper" Column="stopper"    Required="Y" Type="Number"/>
         <BizField Name="enabled" Column="enabled"  DefaultValue="1"  Required="Y" Type="Number"/>
+        <BizField Name="request_uri" Column="request_uri" Length="64"   Required="N" Type="Text"/>
 	</BizFieldList>
     <TableJoins>
     </TableJoins>
