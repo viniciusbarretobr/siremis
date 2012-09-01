@@ -3,6 +3,7 @@
 	<BizFieldList>
         <BizField Name="Id" Column="id"     Type="Number"/>
         <BizField Name="domain" Column="domain" Length="64"   Required="Y" Type="Text"/>
+        <BizField Name="did" Column="did" Length="64"   Required="N" Type="Text"/>
         <BizField Name="last_modified" Column="last_modified"  DefaultValue="1900-01-01 00:00:01"  Required="Y" Type="Datetime"/>
 	</BizFieldList>
     <TableJoins>

@@ -2,6 +2,7 @@
 <EasyForm Name="DomainNewForm" Class="EasyForm" FormType="New" jsClass="jbForm" Title="New Domain" Description="" BizDataObj="ser.srv.domain.do.DomainDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
     <DataPanel>
         <Element Name="fld_domain" Class="InputText" FieldName="domain" Label="Domain"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_did" Class="InputText" FieldName="did" Label="Domain Id" DefaultValue="" AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
     			<Element Name="fld_last_modified" Class="InputDatetime" DateFormat="%Y-%m-%d %H:%M:%S" FieldName="last_modified" Label="Last Modified" DefaultValue="1900-01-01 00:00:01" Sortable="Y" AllowURLParam="N" Translatable="N" OnEventLog="N"  CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
         </DataPanel>
     <ActionPanel>

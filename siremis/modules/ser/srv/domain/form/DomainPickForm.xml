@@ -3,6 +3,7 @@
     <DataPanel>
 		<Element Name="fld_Id" Class="ColumnText" FieldName="Id" Label="Id" Sortable="Y" AllowURLParam="N"/>         
 		<Element Name="fld_domain" Class="ColumnText" FieldName="domain" Label="Domain" Sortable="Y" AllowURLParam="N"/>
+		<Element Name="fld_did" Class="ColumnText" FieldName="did" Label="Domain Id" Sortable="Y" AllowURLParam="N"/>
     </DataPanel>
     <ActionPanel>
         <Element Name="btn_edit" Class="Button" text="Select" CssClass="button_gray_m">

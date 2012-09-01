@@ -8,6 +8,7 @@
                 <Element Name="fld_domain" Class="ColumnText" FieldName="domain" Label="Domain"  Sortable="Y" Link="javascript:">
          		<EventHandler Name="fld_domain_onclick" Event="onclick" Function="SwitchForm(ser.srv.domain.form.DomainDetailForm,{@:Elem[fld_Id].Value})"   />
         </Element>
+		<Element Name="fld_did" Class="ColumnText" FieldName="did" Label="Domain ID"  Sortable="Y" DefaultValue="" />
                 <Element Name="fld_last_modified" Class="ColumnText" FieldName="last_modified" Label="Last Modified" DefaultValue="1900-01-01 00:00:01" Sortable="Y"/>
     </DataPanel>
     <ActionPanel>
