@@ -5,6 +5,18 @@ Web Management Interface for SIP Routing Engines
 
 Release changelogs
 
++++ SIREMIS v3.3.0 :: 2012-09-06
+
+* use png format for top banner
+* use png format to login banner
+* updated domain table management to handle did column
+* added domain_attrs table management
+* updated the lcr module views to match db schema for Kamailio v3.3.0
+* updated location views to handle gruu columns
+* updated dialog views for v3.3.0
+* relaxed IP address size constraints to work with IPv6
+
+
 +++ SIREMIS v3.2.1 :: 2012-06-07
 
 * automatically created users member and guests are disabled by default
