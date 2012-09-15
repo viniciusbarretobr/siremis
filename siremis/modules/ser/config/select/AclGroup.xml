@@ -3,6 +3,6 @@
 
 	<GroupValue Value="suspended" Text="suspended"/>
 	<GroupValue Value="voip" Text="voip"/>
-	<GroupValue Value="pstn" Text="pstb"/>
+	<GroupValue Value="pstn" Text="pstn"/>
 
 </Selection>
