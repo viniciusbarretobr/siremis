@@ -13,6 +13,10 @@
 			<cmd name="dsreload" title="Reload Dispatcher Records" command="dispatcher.reload"/>
 			<cmd name="pdtlist" title="List PDT Records" command="mi pdt_list"/>
 			<cmd name="pdtreload" title="Reload PDT Records" command="mi pdt_reload"/>
+			<cmd name="addrlist" title="List Address Permissions Records" command="mi address_dump"/>
+			<cmd name="subnlist" title="List Subnet Permissions Records" command="mi subnet_dump"/>
+			<cmd name="addrreload" title="Reload Address Permissions Records" command="mi address_reload"/>
+
 
         </XRCommands>
     </XRConfig>
