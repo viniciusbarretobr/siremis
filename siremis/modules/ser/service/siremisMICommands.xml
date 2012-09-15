@@ -14,6 +14,9 @@
 			<cmd name="pdtreload" title="Reload PDT Records" command="pdt_reload"/>
 			<cmd name="uldump" title="List Location Records" command="ul_dump"/>
 			<cmd name="uldumpbrief" title="Brief of Location Records" command="ul_dump brief"/>
+			<cmd name="addrlist" title="List Address Permissions Records" command="address_dump"/>
+			<cmd name="subnlist" title="List Subnet Permissions Records" command="subnet_dump"/>
+			<cmd name="addrreload" title="Reload Address Permissions Records" command="address_reload"/>
 		</MICommands>
 	</MIConfig>
 </PluginService>
