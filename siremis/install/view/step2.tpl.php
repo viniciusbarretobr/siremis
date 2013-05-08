@@ -78,17 +78,17 @@
 <tr>
 	<td><label>SIP DB Name</label></td>
 	<td><input class="input_text" onfocus="this.className='input_text_focus'" onblur="this.className='input_text'" 
-    		type="text" name="db1Name" value="<?php echo  isset($_REQUEST['db1Name']) ? $_REQUEST['db1Name'] : 'openser'?>"></td>
+    		type="text" name="db1Name" value="<?php echo  isset($_REQUEST['db1Name']) ? $_REQUEST['db1Name'] : 'kamailio'?>"></td>
 </tr>
 <tr>
 	<td ><label>SIP DB Username</label></td>
 	<td><input class="input_text" onfocus="this.className='input_text_focus'" onblur="this.className='input_text'"
-    		 type="text" name="db1UserName" value="<?php echo  isset($_REQUEST['db1UserName']) ? $_REQUEST['db1UserName'] : 'openser'?>"> <span class="input_desc">&nbsp;</span></td>
+    		 type="text" name="db1UserName" value="<?php echo  isset($_REQUEST['db1UserName']) ? $_REQUEST['db1UserName'] : 'kamailio'?>"> <span class="input_desc">&nbsp;</span></td>
 </tr>
 <tr>
 	<td ><label>SIP DB Password</label></td>
 	<td><input class="input_text" onfocus="this.className='input_text_focus'" onblur="this.className='input_text'"
-    		type="password" name="db1Password" value="<?php echo  isset($_REQUEST['db1Password']) ? $_REQUEST['db1Password'] : 'openserrw'?>"> <span class="input_desc">&nbsp;</span></td>
+    		type="password" name="db1Password" value="<?php echo  isset($_REQUEST['db1Password']) ? $_REQUEST['db1Password'] : 'kamailiorw'?>"> <span class="input_desc">&nbsp;</span></td>
 </tr>
 <tr>
 	<td> </td>
