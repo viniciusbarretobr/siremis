@@ -2,12 +2,12 @@
 <EasyForm Name="LocationAttrsDetailForm" Class="EasyForm" FormType="" jsClass="jbForm" Title="Location Attrs Detail" Description="" BizDataObj="ser.sbs.usrloc.do.LocationAttrsDO" TemplateEngine="Smarty" TemplateFile="detail_elementset.tpl" EventName="" MessageFile="">
     <DataPanel>
 		<Element Name="fld_Id" ElementSet="General" Hidden="Y" Class="LabelText" FieldName="Id" Label="Id" AllowURLParam="Y"/>
-       	<Element Name="fld_ruid" ElementSet="General" Class="LabelText" FieldName="ruid" Label="Ruid" AllowURLParam="N"/>
+       	<Element Name="fld_ruid" ElementSet="General" Class="LabelText" FieldName="ruid" Label="RUID" AllowURLParam="N"/>
        	<Element Name="fld_username" ElementSet="General" Class="LabelText" FieldName="username" Label="Username" AllowURLParam="N"/>
        	<Element Name="fld_domain" ElementSet="General" Class="LabelText" FieldName="domain" Label="Domain" AllowURLParam="N"/>
-       	<Element Name="fld_aname" ElementSet="General" Class="LabelText" FieldName="aname" Label="Aname" AllowURLParam="N"/>
-       	<Element Name="fld_atype" ElementSet="General" Class="LabelText" FieldName="atype" Label="Atype" AllowURLParam="N"/>
-       	<Element Name="fld_avalue" ElementSet="General" Class="LabelText" FieldName="avalue" Label="Avalue" AllowURLParam="N"/>
+       	<Element Name="fld_aname" ElementSet="General" Class="LabelText" FieldName="aname" Label="Attr Nname" AllowURLParam="N"/>
+       	<Element Name="fld_atype" ElementSet="General" Class="LabelText" FieldName="atype" Label="Attr Type" AllowURLParam="N"/>
+       	<Element Name="fld_avalue" ElementSet="General" Class="LabelText" FieldName="avalue" Label="Attr Value" AllowURLParam="N"/>
        	<Element Name="fld_last_modified" ElementSet="General" Class="LabelText" FieldName="last_modified" Label="Last Modified" AllowURLParam="N"/>
     </DataPanel>
     <ActionPanel>       

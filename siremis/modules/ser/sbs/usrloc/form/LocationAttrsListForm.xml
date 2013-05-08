@@ -5,14 +5,14 @@
         <Element Name="fld_Id" Class="ColumnText" FieldName="Id" Label="Id" Sortable="Y" AllowURLParam="N" Link="javascript:">         
          	<EventHandler Name="fld_Id_onclick" Event="onclick" Function="SwitchForm(ser.sbs.usrloc.form.LocationAttrsDetailForm,{@:Elem[fld_Id].Value})"   />
         </Element>
-                <Element Name="fld_ruid" Class="ColumnText" FieldName="ruid" Label="Ruid"  Sortable="Y" Link="javascript:">
+                <Element Name="fld_ruid" Class="ColumnText" FieldName="ruid" Label="RUID"  Sortable="Y" Link="javascript:">
          		<EventHandler Name="fld_ruid_onclick" Event="onclick" Function="SwitchForm(ser.sbs.usrloc.form.LocationAttrsDetailForm,{@:Elem[fld_Id].Value})"   />
         </Element>
                 <Element Name="fld_username" Class="ColumnText" FieldName="username" Label="Username"  Sortable="Y"/>
                 <Element Name="fld_domain" Class="ColumnText" FieldName="domain" Label="Domain"  Sortable="Y"/>
-                <Element Name="fld_aname" Class="ColumnText" FieldName="aname" Label="Aname"  Sortable="Y"/>
-                <Element Name="fld_atype" Class="ColumnText" FieldName="atype" Label="Atype"  Sortable="Y"/>
-                <Element Name="fld_avalue" Class="ColumnText" FieldName="avalue" Label="Avalue"  Sortable="Y"/>
+                <Element Name="fld_aname" Class="ColumnText" FieldName="aname" Label="Attr Name"  Sortable="Y"/>
+                <Element Name="fld_atype" Class="ColumnText" FieldName="atype" Label="Attr Type"  Sortable="Y"/>
+                <Element Name="fld_avalue" Class="ColumnText" FieldName="avalue" Label="Attr Value"  Sortable="Y"/>
                 <Element Name="fld_last_modified" Class="ColumnText" FieldName="last_modified" Label="Last Modified" DefaultValue="1900-01-01 00:00:01" Sortable="Y"/>
     </DataPanel>
     <ActionPanel>
