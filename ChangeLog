@@ -1,9 +1,18 @@
 SIREMIS Project
-Web Management Interface for SIP Routing Engines
-     (Kamailio and SER)
+Web Management Interface for Kamailio (SER) SIP Server
+
 - http://siremis.asipto.com
 
 Release changelogs
+
++++ SIREMIS v4.0.0 :: 2013-05-08
+
+* use database connection attributes as in Kamailio v4.0.x
+* added location_atts table management (usrloc module)
+* added sca_subscriptions table management (sca module)
+* added permissions address commands to XMLRPC panel drop-down list
+* added permissions address commands to MI panel drop-down list
+* few more fixes and small adjustments
 
 +++ SIREMIS v3.3.0 :: 2012-09-06
 
