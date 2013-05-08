@@ -1,0 +1,17 @@
+<?xml version="1.0" standalone="no"?>
+<BizDataObj Name="LocationAttrsDO" Description="" Class="BizDataObj" DBName="Serdb" Table="location_attrs" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+	<BizFieldList>
+        <BizField Name="Id" Column="id"     Type="Number"/>
+        <BizField Name="ruid" Column="ruid" Length="64"   Required="Y" Type="Text"/>
+        <BizField Name="username" Column="username" Length="64"   Required="Y" Type="Text"/>
+        <BizField Name="domain" Column="domain" Length="64"   Required="N" Type="Text"/>
+        <BizField Name="aname" Column="aname" Length="64"   Required="Y" Type="Text"/>
+        <BizField Name="atype" Column="atype"    Required="Y" Type="Number"/>
+        <BizField Name="avalue" Column="avalue" Length="255"   Required="Y" Type="Text"/>
+        <BizField Name="last_modified" Column="last_modified"  DefaultValue="1900-01-01 00:00:01"  Required="Y" Type="Datetime"/>
+	</BizFieldList>
+    <TableJoins>
+    </TableJoins>
+    <ObjReferences>
+    </ObjReferences>
+</BizDataObj>
