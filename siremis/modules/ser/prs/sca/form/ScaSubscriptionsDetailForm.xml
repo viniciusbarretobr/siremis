@@ -3,7 +3,7 @@
     <DataPanel>
 		<Element Name="fld_Id" ElementSet="General" Hidden="Y" Class="LabelText" FieldName="Id" Label="Id" AllowURLParam="Y"/>
        	<Element Name="fld_subscriber" ElementSet="General" Class="LabelText" FieldName="subscriber" Label="Subscriber" AllowURLParam="N"/>
-       	<Element Name="fld_aor" ElementSet="General" Class="LabelText" FieldName="aor" Label="Aor" AllowURLParam="N"/>
+       	<Element Name="fld_aor" ElementSet="General" Class="LabelText" FieldName="aor" Label="AoR" AllowURLParam="N"/>
        	<Element Name="fld_event" ElementSet="General" Class="LabelText" FieldName="event" Label="Event" AllowURLParam="N"/>
        	<Element Name="fld_expires" ElementSet="General" Class="LabelText" FieldName="expires" Label="Expires" AllowURLParam="N"/>
        	<Element Name="fld_state" ElementSet="General" Class="LabelText" FieldName="state" Label="State" AllowURLParam="N"/>

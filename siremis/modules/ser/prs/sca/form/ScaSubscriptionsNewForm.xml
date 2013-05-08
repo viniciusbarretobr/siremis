@@ -2,7 +2,7 @@
 <EasyForm Name="ScaSubscriptionsNewForm" Class="EasyForm" FormType="New" jsClass="jbForm" Title="New Sca Subscriptions" Description="" BizDataObj="ser.prs.sca.do.ScaSubscriptionsDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
     <DataPanel>
         <Element Name="fld_subscriber" Class="InputText" FieldName="subscriber" Label="Subscriber"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
-        <Element Name="fld_aor" Class="InputText" FieldName="aor" Label="Aor"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_aor" Class="InputText" FieldName="aor" Label="AoR"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
         <Element Name="fld_event" Class="InputText" FieldName="event" Label="Event"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
         <Element Name="fld_expires" Class="InputText" FieldName="expires" Label="Expires"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
         <Element Name="fld_state" Class="InputText" FieldName="state" Label="State"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>

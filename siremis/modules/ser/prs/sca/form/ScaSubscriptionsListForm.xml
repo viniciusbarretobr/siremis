@@ -8,7 +8,7 @@
                 <Element Name="fld_subscriber" Class="ColumnText" FieldName="subscriber" Label="Subscriber"  Sortable="Y" Link="javascript:">
          		<EventHandler Name="fld_subscriber_onclick" Event="onclick" Function="SwitchForm(ser.prs.sca.form.ScaSubscriptionsDetailForm,{@:Elem[fld_Id].Value})"   />
         </Element>
-                <Element Name="fld_aor" Class="ColumnText" FieldName="aor" Label="Aor"  Sortable="Y"/>
+                <Element Name="fld_aor" Class="ColumnText" FieldName="aor" Label="AoR"  Sortable="Y"/>
                 <Element Name="fld_event" Class="ColumnText" FieldName="event" Label="Event"  Sortable="Y"/>
                 <Element Name="fld_expires" Class="ColumnText" FieldName="expires" Label="Expires"  Sortable="Y"/>
                 <Element Name="fld_state" Class="ColumnText" FieldName="state" Label="State"  Sortable="Y"/>
