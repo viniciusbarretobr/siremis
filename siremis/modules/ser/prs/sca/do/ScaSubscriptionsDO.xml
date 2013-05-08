@@ -1,0 +1,22 @@
+<?xml version="1.0" standalone="no"?>
+<BizDataObj Name="ScaSubscriptionsDO" Description="" Class="BizDataObj" DBName="Serdb" Table="sca_subscriptions" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="subscriber,call_id,from_tag,to_tag;" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+	<BizFieldList>
+        <BizField Name="Id" Column="id"     Type="Number"/>
+        <BizField Name="subscriber" Column="subscriber" Length="255"   Required="Y" Type="Text"/>
+        <BizField Name="aor" Column="aor" Length="255"   Required="Y" Type="Text"/>
+        <BizField Name="event" Column="event"    Required="Y" Type="Number"/>
+        <BizField Name="expires" Column="expires"    Required="Y" Type="Number"/>
+        <BizField Name="state" Column="state"    Required="Y" Type="Number"/>
+        <BizField Name="app_idx" Column="app_idx"    Required="Y" Type="Number"/>
+        <BizField Name="call_id" Column="call_id" Length="255"   Required="Y" Type="Text"/>
+        <BizField Name="from_tag" Column="from_tag" Length="64"   Required="Y" Type="Text"/>
+        <BizField Name="to_tag" Column="to_tag" Length="64"   Required="Y" Type="Text"/>
+        <BizField Name="record_route" Column="record_route"    Required="N" Type="Text"/>
+        <BizField Name="notify_cseq" Column="notify_cseq"    Required="Y" Type="Number"/>
+        <BizField Name="subscribe_cseq" Column="subscribe_cseq"    Required="Y" Type="Number"/>
+	</BizFieldList>
+    <TableJoins>
+    </TableJoins>
+    <ObjReferences>
+    </ObjReferences>
+</BizDataObj>

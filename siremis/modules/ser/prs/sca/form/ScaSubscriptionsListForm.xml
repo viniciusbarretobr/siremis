@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EasyForm Name="ScaSubscriptionsListForm" Class="EasyForm" FormType="List" jsClass="jbForm" Title="Sca Subscriptions Management" Description="" BizDataObj="ser.prs.sca.do.ScaSubscriptionsDO" PageSize="10" DefaultForm="Y" TemplateEngine="Smarty" TemplateFile="grid.tpl" EventName="" MessageFile="">
+    <DataPanel>
+        <Element Name="row_selections" Class="RowCheckbox"  Label="" FieldName="Id"/>
+        <Element Name="fld_Id" Class="ColumnText" FieldName="Id" Label="Id" Sortable="Y" AllowURLParam="N" Link="javascript:">         
+         	<EventHandler Name="fld_Id_onclick" Event="onclick" Function="SwitchForm(ser.prs.sca.form.ScaSubscriptionsDetailForm,{@:Elem[fld_Id].Value})"   />
+        </Element>
+                <Element Name="fld_subscriber" Class="ColumnText" FieldName="subscriber" Label="Subscriber"  Sortable="Y" Link="javascript:">
+         		<EventHandler Name="fld_subscriber_onclick" Event="onclick" Function="SwitchForm(ser.prs.sca.form.ScaSubscriptionsDetailForm,{@:Elem[fld_Id].Value})"   />
+        </Element>
+                <Element Name="fld_aor" Class="ColumnText" FieldName="aor" Label="Aor"  Sortable="Y"/>
+                <Element Name="fld_event" Class="ColumnText" FieldName="event" Label="Event"  Sortable="Y"/>
+                <Element Name="fld_expires" Class="ColumnText" FieldName="expires" Label="Expires"  Sortable="Y"/>
+                <Element Name="fld_state" Class="ColumnText" FieldName="state" Label="State"  Sortable="Y"/>
+                <Element Name="fld_app_idx" Class="ColumnText" FieldName="app_idx" Label="App Idx"  Sortable="Y"/>
+                <Element Name="fld_call_id" Class="ColumnText" FieldName="call_id" Label="Call Id"  Sortable="Y"/>
+                <Element Name="fld_from_tag" Class="ColumnText" FieldName="from_tag" Label="From Tag"  Sortable="Y"/>
+                <Element Name="fld_to_tag" Class="ColumnText" FieldName="to_tag" Label="To Tag"  Sortable="Y"/>
+                <Element Name="fld_record_route" Class="ColumnText" FieldName="record_route" Label="Record Route"  Sortable="Y"/>
+                <Element Name="fld_notify_cseq" Class="ColumnText" FieldName="notify_cseq" Label="Notify Cseq"  Sortable="Y"/>
+                <Element Name="fld_subscribe_cseq" Class="ColumnText" FieldName="subscribe_cseq" Label="Subscribe Cseq"  Sortable="Y"/>
+    </DataPanel>
+    <ActionPanel>
+        <Element Name="lnk_new" Class="Button" Text="Add" CssClass="button_gray_add" Description="new record (Insert)" >
+            <EventHandler Name="lnk_new_onclick" Event="onclick" EventLogMsg="" Function="SwitchForm(ser.prs.sca.form.ScaSubscriptionsNewForm)"  ShortcutKey="Insert" ContextMenu="New"/>
+        </Element>
+        <Element Name="btn_edit" Class="Button" Text="Edit" CssClass="button_gray_m" Description="edit record (Ctrl+E)">
+            <EventHandler Name="btn_edit_onclick" Event="onclick" EventLogMsg="" Function="EditRecord()" RedirectPage="form=ser.prs.sca.form.ScaSubscriptionsEditForm&amp;fld:Id={@:Elem[fld_Id].Value}" ShortcutKey="Ctrl+E" ContextMenu="Edit" />
+        </Element>
+        <Element Name="btn_copy" Class="Button" Text="Copy" CssClass="button_gray_m" Description="copy record (Ctrl+C)" >
+            <EventHandler Name="btn_copy_onclick" Event="onclick" EventLogMsg="" Function="CopyRecord()" RedirectPage="form=ser.prs.sca.form.ScaSubscriptionsCopyForm&amp;fld:Id={@:Elem[fld_Id].Value}" ShortcutKey="Ctrl+C" ContextMenu="Copy"/>
+        </Element>
+        <Element Name="btn_delete" Class="Button" Text="Delete" CssClass="button_gray_m" >
+            <EventHandler Name="del_onclick" Event="onclick" EventLogMsg="" Function="DeleteRecord()" ShortcutKey="Ctrl+Delete" ContextMenu="Delete"/>
+        </Element>
+        <Element Name="btn_excel" Class="Button" Text="Export" CssClass="button_gray_m">
+            <EventHandler Name="exc_onclick" Event="onclick" EventLogMsg="" Function="CallService(excelService,renderCSV)" FunctionType="Popup" ShortcutKey="Ctrl+Shift+X" ContextMenu="Export"/>
+        </Element>
+        <Element Name="btn_search" Class="Button" Text="Search" CssClass="button_gray_m" Description="Search record" >
+            <EventHandler Name="btn_search_onclick" Event="onclick" EventLogMsg="" Function="SwitchForm(ser.prs.sca.form.ScaSubscriptionsSearchForm)"  ShortcutKey="Ctrl+Shift+S" ContextMenu="Search"/>
+        </Element>
+    </ActionPanel> 
+    <NavPanel>
+  		<Element Name="page_selector" Class="PageSelector" Text="{@:m_CurrentPage}" Label="Go to Page" CssClass="input_select" cssFocusClass="input_select_focus">
+            <EventHandler Name="btn_page_selector_onchange" Event="onchange" Function="GotoSelectedPage(page_selector)"/>
+        </Element>
+        <Element Name="pagesize_selector" Class="PagesizeSelector" Text="{@:m_Range}" Label="Show Rows" CssClass="input_select" cssFocusClass="input_select_focus">
+            <EventHandler Name="btn_pagesize_selector_onchange" Event="onchange" Function="SetPageSize(pagesize_selector)"/>
+        </Element>      
+        <Element Name="btn_first" Class="Button" Enabled="{(@:m_CurrentPage == 1)?'N':'Y'}" Text="" CssClass="button_gray_navi {(@:m_CurrentPage == 1)?'first_gray':'first'}">
+            <EventHandler Name="first_onclick" Event="onclick" Function="GotoPage(1)"/>
+        </Element>
+        <Element Name="btn_prev" Class="Button" Enabled="{(@:m_CurrentPage == 1)?'N':'Y'}" Text="" CssClass="button_gray_navi {(@:m_CurrentPage == 1)?'prev_gray':'prev'}">
+            <EventHandler Name="prev_onclick" Event="onclick" Function="GotoPage({@:m_CurrentPage - 1})" ShortcutKey="Ctrl+Shift+Left"/>
+        </Element>
+        <Element Name="txt_page" Class="LabelText" Text="{'@:m_CurrentPage of @:m_TotalPages '}">
+        </Element>
+        <Element Name="btn_next" Class="Button" Enabled="{(@:m_CurrentPage == @:m_TotalPages )?'N':'Y'}" Text="" CssClass="button_gray_navi {(@:m_CurrentPage == @:m_TotalPages)?'next_gray':'next'}">
+            <EventHandler Name="next_onclick" Event="onclick" Function="GotoPage({@:m_CurrentPage + 1})" ShortcutKey="Ctrl+Shift+Right"/>
+        </Element>
+        <Element Name="btn_last" Class="Button" Enabled="{(@:m_CurrentPage == @:m_TotalPages )?'N':'Y'}" Text="" CssClass="button_gray_navi {(@:m_CurrentPage == @:m_TotalPages)?'last_gray':'last'}">
+            <EventHandler Name="last_onclick" Event="onclick" Function="GotoPage({@:m_TotalPages})"/>
+        </Element>
+    </NavPanel> 
+    <SearchPanel>
+			<Element Name="qry_subscriber" Class="AutoSuggest" SelectFrom="ser.prs.sca.do.ScaSubscriptionsDO[subscriber],[subscriber] like '%{@:Elem[qry_subscriber].Value}%' GROUP BY [subscriber]" FuzzySearch="Y" FieldName="subscriber" Label="" cssFocusClass="input_text_search_focus" CssClass="input_text_search" />
+        <Element Name="btn_dosearch" Class="Button" text="Go" CssClass="button_gray">
+            <EventHandler Name="search_onclick" Event="onclick" Function="RunSearch()" ShortcutKey="Enter"/>
+        </Element>	
+    </SearchPanel>
+</EasyForm>
