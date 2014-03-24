@@ -46,10 +46,12 @@
 					URL="{@home:url}/ser/sip_trace_list" Order="60"/>
 				<MenuItem Name="System.Ser.Srv.UACReg.List" Title="UACReg List" Description=""
 					URL="{@home:url}/ser/uacreg_list" Order="70"/>
-				<MenuItem Name="System.Ser.Srv.Mtrees.List" Title="Mtrees List" Description=""
+				<MenuItem Name="System.Ser.Srv.Mtrees.List" Title="MTrees List" Description=""
 					URL="{@home:url}/ser/mtrees_list" Order="80"/>
-				<MenuItem Name="System.Ser.Srv.Mtree.List" Title="Mtree List" Description=""
+				<MenuItem Name="System.Ser.Srv.Mtree.List" Title="MTree List" Description=""
 					URL="{@home:url}/ser/mtree_list" Order="90"/>
+				<MenuItem Name="System.Ser.Srv.Rtpproxy.List" Title="RTPProxy List" Description=""
+					URL="{@home:url}/ser/rtpproxy_list" Order="100"/>
 			</MenuItem>	
 			<MenuItem Name="System.Ser.Acl" Title="ACL Services" Parent="System.Ser" Order="30">
 				<MenuItem Name="System.Ser.Acl.Grp.List" Title="Group List" Description=""
