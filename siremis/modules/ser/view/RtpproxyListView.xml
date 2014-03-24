@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<EasyView Name="RtpproxyListView" Description="ser.srv.rtpproxy" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SERAdmin.Administer_Modules" TemplateFile="view.tpl">
+   <FormReferences>
+   		<Reference Name="ser.srv.rtpproxy.form.RtpproxyListForm"/>
+   </FormReferences>
+   <FormReferenceLibs>
+   		<Reference Name="ser.srv.rtpproxy.form.RtpproxyListForm"/>
+   		<Reference Name="ser.srv.rtpproxy.form.RtpproxyEditForm"/>
+   		<Reference Name="ser.srv.rtpproxy.form.RtpproxyCopyForm"/>
+   		<Reference Name="ser.srv.rtpproxy.form.RtpproxyNewForm"/>
+   		<Reference Name="ser.srv.rtpproxy.form.RtpproxyDetailForm"/>
+   </FormReferenceLibs>    
+</EasyView>

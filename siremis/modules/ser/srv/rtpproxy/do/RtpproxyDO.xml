@@ -1,0 +1,15 @@
+<?xml version="1.0" standalone="no"?>
+<BizDataObj Name="RtpproxyDO" Description="" Class="BizDataObj" DBName="Serdb" Table="rtpproxy" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+	<BizFieldList>
+        <BizField Name="Id" Column="id"     Type="Number"/>
+        <BizField Name="setid" Column="setid" Length="32"   Required="Y" Type="Text"/>
+        <BizField Name="url" Column="url" Length="64"   Required="Y" Type="Text"/>
+        <BizField Name="flags" Column="flags"    Required="Y" Type="Number"/>
+        <BizField Name="weight" Column="weight"  DefaultValue="1"  Required="Y" Type="Number"/>
+        <BizField Name="description" Column="description" Length="64"   Required="Y" Type="Text"/>
+	</BizFieldList>
+    <TableJoins>
+    </TableJoins>
+    <ObjReferences>
+    </ObjReferences>
+</BizDataObj>
