@@ -5,7 +5,7 @@ NAME ?= siremis
 URLBASE ?= $(NAME)
 BASEDIR=`pwd`
 SIREMISDIR=$(BASEDIR)/$(NAME)
-VERSION=4.0.0
+VERSION=4.1.0
 
 owner ?= www-data:www-data
 
