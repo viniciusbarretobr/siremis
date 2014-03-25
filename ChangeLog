@@ -5,6 +5,17 @@ Web Management Interface for Kamailio (SER) SIP Server
 
 Release changelogs
 
++++ SIREMIS v4.1.0 :: 2014-03-25
+
+* use database connection attributes as in Kamailio v4.1.x
+* added rtpproxy table management
+* added mohqueues table management
+* added mohqcalls table management
+* added mtree commands to MI panel drop-down list
+* email_address field is optional when adding new subscriber
+* added 127.0.0.1 as default domain
+* few more fixes and small adjustments
+
 +++ SIREMIS v4.0.0 :: 2013-05-08
 
 * use database connection attributes as in Kamailio v4.0.x
