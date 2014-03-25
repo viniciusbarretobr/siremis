@@ -29,6 +29,9 @@
         <Element Name="btn_search" Class="Button" Text="Search" CssClass="button_gray_m" Description="Search record" >
             <EventHandler Name="btn_search_onclick" Event="onclick" EventLogMsg="" Function="SwitchForm(ser.srv.mtree.form.MtreeSearchForm)"  ShortcutKey="Ctrl+Shift+S" ContextMenu="Search"/>
         </Element>
+        <Element Name="btn_kreload" Class="Button" Text="KReload" CssClass="button_gray_m" Description="Reaload Records In Kamailio" >
+			<EventHandler Name="btn_kreload_onclick" Event="onclick" EventLogMsg="" Function="GetSiremisCmdPage()"  RedirectPage="{@home:url}/ser/{@:x_SiremisCmdPage}/xcmdid=mtreload" ShortcutKey="Ctrl+Shift+R" ContextMenu="Reload"/>
+        </Element>
     </ActionPanel> 
     <NavPanel>
   		<Element Name="page_selector" Class="PageSelector" Text="{@:m_CurrentPage}" Label="Go to Page" CssClass="input_select" cssFocusClass="input_select_focus">
