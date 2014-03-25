@@ -171,3 +171,5 @@ CREATE TABLE `statistics` (
   PRIMARY KEY  (`id`)
 );
 
+INSERT INTO domain (domain, did) VALUES ('127.0.0.1', 'default');
+
