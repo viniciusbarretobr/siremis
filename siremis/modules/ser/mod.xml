@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no"?>
-<Module Name="ser" Description="SIP Admin Modules" Version="4.0" OpenbizVersion="2.4">
+<Module Name="ser" Description="SIP Admin Modules" Version="4.1" OpenbizVersion="2.4">
 	<ACL>
 		<Resource Name="SERAdmin">
 			<Action Name="Administer_Modules" Description="Can manage all SIP settings"/>
