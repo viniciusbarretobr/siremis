@@ -28,7 +28,7 @@
 					URL="{@home:url}/ser/userblacklist_list" Order="90"/>
 				<MenuItem Name="System.Ser.Sbs.Globalblacklist.List" Title="Global Black List" Description=""
 					URL="{@home:url}/ser/globalblacklist_list" Order="100"/>
-			</MenuItem>	
+			</MenuItem>
 			<MenuItem Name="System.Ser.Srv" Title="Server Services" Parent="System.Ser" Order="20">
 				<MenuItem Name="System.Ser.Srv.Domain.List" Title="Domain List" Description=""
 					URL="{@home:url}/ser/domain_list" Order="10"/>
@@ -52,7 +52,7 @@
 					URL="{@home:url}/ser/mtree_list" Order="90"/>
 				<MenuItem Name="System.Ser.Srv.Rtpproxy.List" Title="RTPProxy List" Description=""
 					URL="{@home:url}/ser/rtpproxy_list" Order="100"/>
-			</MenuItem>	
+			</MenuItem>
 			<MenuItem Name="System.Ser.Acl" Title="ACL Services" Parent="System.Ser" Order="30">
 				<MenuItem Name="System.Ser.Acl.Grp.List" Title="Group List" Description=""
 					URL="{@home:url}/ser/grp_list" Order="10"/>
@@ -62,7 +62,7 @@
 					URL="{@home:url}/ser/address_list" Order="30"/>
 				<MenuItem Name="System.Ser.Acl.Trusted.List" Title="Permissions - Trusted" Description=""
 					URL="{@home:url}/ser/trusted_list" Order="40"/>
-			</MenuItem>	
+			</MenuItem>
 			<MenuItem Name="System.Ser.Rtg" Title="Routing Services" Parent="System.Ser" Order="40">
 				<MenuItem Name="System.Ser.Rtg.Dispatcher.List" Title="Dispatcher List" Description=""
 					URL="{@home:url}/ser/dispatcher_list" Order="10"/>
@@ -82,7 +82,7 @@
 					URL="{@home:url}/ser/carrier_name_list" Order="80"/>
 				<MenuItem Name="System.Ser.Rtg.CRDomainName.List" Title="CR Domain List" Description=""
 					URL="{@home:url}/ser/domain_name_list" Order="90"/>
-			</MenuItem>	
+			</MenuItem>
 			<MenuItem Name="System.Ser.Acs" Title="Accounting Services" Parent="System.Ser" Order="50">
 				<MenuItem Name="System.Ser.Acs.Accounting" Title="Accounting List" Description=""
 					URL="{@home:url}/ser/acc_list" Order="10"/>
@@ -92,7 +92,7 @@
 					URL="{@home:url}/ser/cdrs_list" Order="30"/>
 				<MenuItem Name="System.Ser.Acs.BillingRates" Title="Billing Rates List" Description=""
 					URL="{@home:url}/ser/billing_rates_list" Order="40"/>
-			</MenuItem>	
+			</MenuItem>
 			<MenuItem Name="System.Ser.Prs" Title="Presence Services" Parent="System.Ser" Order="60">
 				<MenuItem Name="System.Ser.Prs.ActiveWatchers" Title="Active Watchers List" Description=""
 					URL="{@home:url}/ser/active_watchers_list" Order="10"/>
@@ -110,16 +110,22 @@
 					URL="{@home:url}/ser/xcap_list" Order="70"/>
 				<MenuItem Name="System.Ser.Prs.Sca" Title="SCA List" Description=""
 					URL="{@home:url}/ser/sca_subscriptions_list" Order="80"/>
-			</MenuItem>	
-			<MenuItem Name="System.Ser.Cms" Title="Command Services" Parent="System.Ser" Order="70">
+			</MenuItem>
+			<MenuItem Name="System.Ser.Msc" Title="Misc Services" Parent="System.Ser" Order="70">
+				<MenuItem Name="System.Ser.Msc.Mohqueues.List" Title="MoH Queues List" Description=""
+					URL="{@home:url}/ser/mohqueues_list" Order="10"/>
+				<MenuItem Name="System.Ser.Msc.Mohqcalls.List" Title="MoH QCalls List" Description=""
+					URL="{@home:url}/ser/mohqcalls_list" Order="20"/>
+			</MenuItem>
+			<MenuItem Name="System.Ser.Cms" Title="Command Services" Parent="System.Ser" Order="80">
 				<MenuItem Name="System.Ser.Cms.Micmds" Title="MI Commands" Description=""
 					URL="{@home:url}/ser/micmds" Order="10"/>
 				<MenuItem Name="System.Ser.Cms.Xrcmds" Title="XMLRPC Commands" Description=""
 					URL="{@home:url}/ser/xrcmds" Order="20"/>
 				<MenuItem Name="System.Ser.Cms.Fscmds" Title="FSwitch Commands" Description=""
 					URL="{@home:url}/ser/fscmds" Order="30"/>
-			</MenuItem>	
-			<MenuItem Name="System.Ser.Charts" Title="Chart Services" Parent="System.Ser" Order="80">
+			</MenuItem>
+			<MenuItem Name="System.Ser.Charts" Title="Chart Services" Parent="System.Ser" Order="90">
 				<MenuItem Name="System.Ser.Charts.Shm" Title="SHM Charts" Description=""
 					URL="{@home:url}/ser/charts_shm/cg=shm" Order="20"/>
 				<MenuItem Name="System.Ser.Charts.Load" Title="Load Charts" Description=""
@@ -134,8 +140,8 @@
 					URL="{@home:url}/ser/charts_stats_acc" Order="70"/>
 				<MenuItem Name="System.Ser.SummaryStatsAcc" Title="Acc Summary" Description=""
 					URL="{@home:url}/ser/summary_stats_acc" Order="80"/>
-			</MenuItem>	
-		</MenuItem>	
+			</MenuItem>
+		</MenuItem>
     </Menu>
     <Dependency>
     	<Module Name="system"/>
