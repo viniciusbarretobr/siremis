@@ -17,6 +17,8 @@
 			<cmd name="addrlist" title="List Address Permissions Records" command="address_dump"/>
 			<cmd name="subnlist" title="List Subnet Permissions Records" command="subnet_dump"/>
 			<cmd name="addrreload" title="Reload Address Permissions Records" command="address_reload"/>
+			<cmd name="mtlist" title="List MTree Records" command="mt_list"/>
+			<cmd name="mtreload" title="Reload MTree Records" command="mt_reload"/>
 		</MICommands>
 	</MIConfig>
 </PluginService>
