@@ -50,8 +50,6 @@
 					URL="{@home:url}/ser/mtrees_list" Order="80"/>
 				<MenuItem Name="System.Ser.Srv.Mtree.List" Title="MTree List" Description=""
 					URL="{@home:url}/ser/mtree_list" Order="90"/>
-				<MenuItem Name="System.Ser.Srv.Rtpproxy.List" Title="RTPProxy List" Description=""
-					URL="{@home:url}/ser/rtpproxy_list" Order="100"/>
 			</MenuItem>
 			<MenuItem Name="System.Ser.Acl" Title="ACL Services" Parent="System.Ser" Order="30">
 				<MenuItem Name="System.Ser.Acl.Grp.List" Title="Group List" Description=""
@@ -112,10 +110,12 @@
 					URL="{@home:url}/ser/sca_subscriptions_list" Order="80"/>
 			</MenuItem>
 			<MenuItem Name="System.Ser.Msc" Title="Misc Services" Parent="System.Ser" Order="70">
+				<MenuItem Name="System.Ser.Srv.Rtpproxy.List" Title="RTPProxy List" Description=""
+					URL="{@home:url}/ser/rtpproxy_list" Order="10"/>
 				<MenuItem Name="System.Ser.Msc.Mohqueues.List" Title="MoH Queues List" Description=""
-					URL="{@home:url}/ser/mohqueues_list" Order="10"/>
+					URL="{@home:url}/ser/mohqueues_list" Order="20"/>
 				<MenuItem Name="System.Ser.Msc.Mohqcalls.List" Title="MoH QCalls List" Description=""
-					URL="{@home:url}/ser/mohqcalls_list" Order="20"/>
+					URL="{@home:url}/ser/mohqcalls_list" Order="30"/>
 			</MenuItem>
 			<MenuItem Name="System.Ser.Cms" Title="Command Services" Parent="System.Ser" Order="80">
 				<MenuItem Name="System.Ser.Cms.Micmds" Title="MI Commands" Description=""
