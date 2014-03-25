@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EasyForm Name="MohqcallsCopyForm" Class="EasyForm" FormType="Edit" jsClass="jbForm" Title="Copy Mohqcalls" Description="" BizDataObj="ser.msc.mohqcalls.do.MohqcallsDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
+    <DataPanel>
+        <Element Name="fld_Id" Class="Hidden" FieldName="Id" Label="Id" AllowURLParam="Y"/>	
+		<Element Name="fld_mohq_id" Class="InputText" FieldName="mohq_id" Label="Mohq Id"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_call_id" Class="InputText" FieldName="call_id" Label="Call Id"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_call_status" Class="InputText" FieldName="call_status" Label="Call Status"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_call_from" Class="InputText" FieldName="call_from" Label="Call From"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_call_contact" Class="InputText" FieldName="call_contact" Label="Call Contact"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_call_time" Class="InputDatetime" DateFormat="%Y-%m-%d %H:%M:%S" FieldName="call_time" Label="Call Time"  Sortable="Y" AllowURLParam="N" Translatable="N" OnEventLog="N"  CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+    </DataPanel>
+    <ActionPanel>
+        <Element Name="btn_save" Class="Button" Text="Save" CssClass="button_gray_m">
+            <EventHandler Name="save_onclick" EventLogMsg="" Event="onclick" Function="InsertRecord()" RedirectPage="form=ser.msc.mohqcalls.form.MohqcallsDetailForm&amp;fld:Id={@ser.msc.mohqcalls.do.MohqcallsDO:Field[Id].Value}"  ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
+        </Element>
+        <Element Name="btn_cancel" Class="Button" Text="Cancel" CssClass="button_gray_m">
+            <EventHandler Name="cancel_onclick" Event="onclick" Function="SwitchForm(ser.msc.mohqcalls.form.MohqcallsListForm)"  ShortcutKey="Escape" ContextMenu="Cancel"/>
+        </Element>
+    </ActionPanel> 
+    <NavPanel>
+    </NavPanel> 
+    <SearchPanel>
+    </SearchPanel>
+</EasyForm>

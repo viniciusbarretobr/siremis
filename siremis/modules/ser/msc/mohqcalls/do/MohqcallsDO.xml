@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="no"?>
+<BizDataObj Name="MohqcallsDO" Description="" Class="BizDataObj" DBName="Serdb" Table="mohqcalls" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="call_id;" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+	<BizFieldList>
+        <BizField Name="Id" Column="id"     Type="Number"/>
+        <BizField Name="mohq_id" Column="mohq_id"    Required="Y" Type="Number"/>
+        <BizField Name="call_id" Column="call_id" Length="100"   Required="Y" Type="Text"/>
+        <BizField Name="call_status" Column="call_status"    Required="Y" Type="Number"/>
+        <BizField Name="call_from" Column="call_from" Length="100"   Required="Y" Type="Text"/>
+        <BizField Name="call_contact" Column="call_contact" Length="100"   Required="N" Type="Text"/>
+        <BizField Name="call_time" Column="call_time"    Required="Y" Type="Datetime"/>
+	</BizFieldList>
+    <TableJoins>
+    </TableJoins>
+    <ObjReferences>
+    </ObjReferences>
+</BizDataObj>
