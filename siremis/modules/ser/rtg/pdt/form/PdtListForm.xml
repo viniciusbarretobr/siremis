@@ -30,8 +30,8 @@
         <Element Name="btn_search" Class="Button" Text="Search" CssClass="button_gray_m" Description="Search record" >
             <EventHandler Name="btn_search_onclick" Event="onclick" EventLogMsg="" Function="SwitchForm(ser.rtg.pdt.form.PdtSearchForm)"  ShortcutKey="Ctrl+Shift+S" ContextMenu="Search"/>
         </Element>
-        <Element Name="btn_sreload" Class="Button" Text="SReload" CssClass="button_gray_m" Description="Reaload Records In SIP Server" >
-			<EventHandler Name="btn_sreload_onclick" Event="onclick" EventLogMsg="" Function="GetSiremisCmdPage()"  RedirectPage="{@home:url}/ser/{@:x_SiremisCmdPage}/xcmdid=pdtreload" ShortcutKey="Ctrl+Shift+R" ContextMenu="Reload"/>
+        <Element Name="btn_sreload" Class="Button" Text="KReload" CssClass="button_gray_m" Description="Reaload Records In Kamailio" >
+			<EventHandler Name="btn_kreload_onclick" Event="onclick" EventLogMsg="" Function="GetSiremisCmdPage()"  RedirectPage="{@home:url}/ser/{@:x_SiremisCmdPage}/xcmdid=pdtreload" ShortcutKey="Ctrl+Shift+R" ContextMenu="Reload"/>
         </Element>
     </ActionPanel> 
     <NavPanel>
