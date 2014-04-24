@@ -129,7 +129,7 @@ rte.build();
 
 				}
 			} else {
-				echo "NO RESULT";
+				$sHTML .= 'NO RESULT';
 			}
 			$xre->sxr_close();
 		}
