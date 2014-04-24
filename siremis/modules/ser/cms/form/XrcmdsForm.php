@@ -29,7 +29,7 @@ class XrcmdsForm extends EasyForm
 		</td></tr>
 		<tr><td width="10%"></td><td>
 		<FORM id="micmds_form" action="" method="post">
-			<INPUT align="type="text" name="cmd" size="40"/>
+			<INPUT type="text" name="cmd" size="40"/>
 			<INPUT type="submit" name="submit" value="Run"/>
 			<INPUT type="reset"/>
 		</FORM>
