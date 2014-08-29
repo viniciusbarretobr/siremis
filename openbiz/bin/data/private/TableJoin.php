@@ -69,6 +69,11 @@ class TableJoin extends MetaObject
     public $m_OnSaveDataObj;
 
     /**
+     * @var string
+     */
+    protected $m_QuoteIdentifiers = null;
+
+    /**
      * Initialize TableJoin with xml array
      *
      * @param array $xmlArr
@@ -88,7 +93,35 @@ class TableJoin extends MetaObject
         $this->m_OnSaveDataObj = isset($xmlArr["ATTRIBUTES"]["ONSAVEDATAOBJ"]) ? $xmlArr["ATTRIBUTES"]["ONSAVEDATAOBJ"] : null;
 
         $this->m_BizObjName = $this->prefixPackage($this->m_BizObjName);
+        $this->setQuoteIdentifiers($bizObj);
     }
+
+    /**
+     * set char to quote system identifiers
+     * @return void
+     */
+    protected function setQuoteIdentifiers($dataObj)
+    {
+        if($this->m_QuoteIdentifiers == null) {
+			$this->m_QuoteIdentifiers = '';
+			$dbInfo = BizSystem::getConfiguration()->getDatabaseInfo($dataObj->m_Database);
+			if(strtoupper($dbInfo["Driver"])=="PDO_MYSQL") $this->m_QuoteIdentifiers = '`';
+		}
+    }
+
+    /**
+     * get Identifier quoted if needed
+     * @retutn string
+     */
+    public function getQuoted($identifier)
+    {
+		if($this->m_QuoteIdentifiers == null || $this->m_QuoteIdentifiers == '') {
+			return $identifier;
+		}
+        $value = trim(trim($identifier), $this->m_QuoteIdentifiers);
+        return implode($this->m_QuoteIdentifiers, array($value));
+    }
+
 }
 
 ?>

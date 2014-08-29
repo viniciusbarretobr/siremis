@@ -84,7 +84,7 @@ class BizDataObj_SQLHelper
         // build the SQL statement based on the fields and search rule
         $dataSqlObj = $this->getNewDataSqlObj();
         // add table
-        $dataSqlObj->addMainTable($dataObj->m_MainTable);
+        $dataSqlObj->addMainTable($dataObj->getQuoted($dataObj->m_MainTable));
         // add join table
         if ($dataObj->m_TableJoins)
         {
@@ -191,12 +191,12 @@ class BizDataObj_SQLHelper
         $sql = "";
         foreach ($colval_pairs as $col=>$val)
         {
-            $queryString = QueryStringParam::formatQueryString("`$col`", "=", $val);
+            $queryString = QueryStringParam::formatQueryString($dataObj->getQuoted($col), "=", $val);
             if ($sql!="") $sql .= ", $queryString";
             else $sql .= $queryString;
         }
 
-        $sql = "UPDATE `" . $dataObj->m_MainTable . "` SET " . $sql;
+        $sql = "UPDATE " . $dataObj->getQuoted($dataObj->m_MainTable) . " SET " . $sql;
 
         $whereStr = $dataObj->m_BizRecord->getKeySearchRule(true, true);  // use old value and column name
         $sql .= " WHERE " . $whereStr;
@@ -207,7 +207,7 @@ class BizDataObj_SQLHelper
     {   
     	     
         $setValueStr = $this->_convertSqlExpressionWithoutPrefix($dataObj, $setValue);                 
-        $sql = "UPDATE `" . $dataObj->m_MainTable ."` SET ".$setValueStr;
+        $sql = "UPDATE " . $dataObj->getQuoted($dataObj->m_MainTable) ." SET ".$setValueStr;
     	if($condition)
         {
         	$whereStr = $this->_convertSqlExpressionWithoutPrefix($dataObj, $condition); 
@@ -224,7 +224,7 @@ class BizDataObj_SQLHelper
      */
     public function buildDeleteSQL($dataObj)
     {
-        $sql = "DELETE FROM `" . $dataObj->m_MainTable ."`";
+        $sql = "DELETE FROM " . $dataObj->getQuoted($dataObj->m_MainTable);
         $whereStr = $dataObj->m_BizRecord->getKeySearchRule(false, true);  // use cur value and column name
         $sql .= " WHERE " . $whereStr;
         return $sql;
@@ -233,7 +233,7 @@ class BizDataObj_SQLHelper
     public function buildDeleteSQLwithCondition($dataObj, $condition = null)
     {
     	
-        $sql = "DELETE FROM `" . $dataObj->m_MainTable . "`";  
+        $sql = "DELETE FROM " . $dataObj->getQuoted($dataObj->m_MainTable);
         if($condition)
         {
         	$whereStr = $this->_convertSqlExpressionWithoutPrefix($dataObj, $condition); 
@@ -279,7 +279,7 @@ class BizDataObj_SQLHelper
             }
 
             if (!$_val || $_val == '') continue;
-            $sql_col .= "`" . $col . "`, ";
+            $sql_col .= $dataObj->getQuoted($col) . ", ";
             //$sql_val .= $_val. ", ";
             $sql_val .= QueryStringParam::formatQueryValue($_val). ", ";
         }
@@ -290,7 +290,7 @@ class BizDataObj_SQLHelper
             foreach($joinValues as $joinColumn=>$joinValue)
             {
                 if (!$joinValue || $joinValue == '') continue;
-                $sql_col .= $joinColumn. ", ";
+                $sql_col .= $dataObj->getQuoted($joinColumn) . ", ";
                 $sql_val .= "'".$joinValue. "', ";
             }
         }
@@ -298,7 +298,7 @@ class BizDataObj_SQLHelper
         $sql_col = substr($sql_col, 0, -2);
         $sql_val = substr($sql_val, 0, -2);
 
-        $sql = "INSERT INTO  `" . $dataObj->m_MainTable . "` (" . $sql_col . ") VALUES (" . $sql_val.")";
+        $sql = "INSERT INTO  " . $dataObj->getQuoted($dataObj->m_MainTable) . " (" . $sql_col . ") VALUES (" . $sql_val.")";
         return $sql;
     }
 

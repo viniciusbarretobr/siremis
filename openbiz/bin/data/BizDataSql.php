@@ -46,7 +46,7 @@ class BizDataSql
     public function addMainTable($mainTable)
     {
         $this->_mainTable = "$mainTable";
-        $this->_tableJoins = " `$mainTable` T0 ";
+		$this->_tableJoins = " $mainTable T0 ";
     }
 
     /**
@@ -64,7 +64,7 @@ class BizDataSql
      **/
     public function addJoinTable($tableJoin)
     {
-        $table = $tableJoin->m_Table;
+		$table = $tableJoin->getQuoted($tableJoin->m_Table);
         $joinType = $tableJoin->m_JoinType;
         $column = $tableJoin->m_Column;
         $joinRef = $tableJoin->m_JoinRef;
@@ -74,7 +74,7 @@ class BizDataSql
         $this->_joinAliasList[$tableJoin->m_Name] = $alias;
         $this->_tableAliasList[$table] = $alias;
         $aliasRef = $this->getJoinAlias($joinRef);
-        $this->_tableJoins .= " $joinType `$table` $alias ON $alias.$column = $aliasRef.$columnRef ";
+        $this->_tableJoins .= " $joinType $table $alias ON $alias.$column = $aliasRef.$columnRef ";
     }
 
     /**
@@ -234,7 +234,7 @@ class BizDataSql
             // ... INNER JOIN xtable TX ON TX.column2 = T0.column
             // WHERE ... Tx.column1 = 'PrtTableColumnValue'
             $mytable_col = $this->getTableColumn(null, $assoc["Column"]);   // this table's alias.column
-            $xtable = $assoc["XTable"];    // xtable's name
+            $xtable = $assoc->getQuoted($assoc["XTable"]);    // xtable's name
             $column1 = $assoc["XColumn1"]; // xtable column1
             $column2 = $assoc["XColumn2"]; // xtable column2
             $xalias = "TX";
@@ -245,7 +245,7 @@ class BizDataSql
             //if (strpos($this->m_TableJoins, "JOIN $xtable") === false)
             if (!isset($this->_tableAliasList[$xtable]))
             {
-                $this->_tableJoins .= " INNER JOIN `$xtable` $xalias ON $xalias.$column2 = $mytable_col ";
+                $this->_tableJoins .= " INNER JOIN $xtable $xalias ON $xalias.$column2 = $mytable_col ";
                 $this->_tableAliasList[$xtable] = $xalias;
             }
             // add a new where condition

@@ -159,6 +159,12 @@ abstract class BizDataObj_Abstract extends MetaObject implements iSessionObject
     protected $m_Messages;
 
     /**
+     * character to quote system identifiers if needed
+     * @var string
+     */
+    protected $m_QuoteIdentifiers = null;
+
+    /**
      * Initialize BizDataObj_Abstract with xml array
      *
      * @param array $xmlArr
@@ -168,6 +174,7 @@ abstract class BizDataObj_Abstract extends MetaObject implements iSessionObject
     {
         $this->readMetadata($xmlArr);
         $this->inheritParentObj();
+        $this->setQuoteIdentifiers();
     }
 
     /**
@@ -244,10 +251,37 @@ abstract class BizDataObj_Abstract extends MetaObject implements iSessionObject
 
         foreach ($this->m_BizRecord as $field)
             $field->adjustBizObjName($this->m_Name);
-        
+
         $this->m_TableJoins->merge($parentObj->m_TableJoins);
         $this->m_ObjReferences->merge($parentObj->m_ObjReferences);
         $this->m_Parameters->merge($parentObj->m_Parameters);
+    }
+
+    /**
+     * set char to quote system identifiers
+     * @return void
+     */
+    protected function setQuoteIdentifiers()
+    {
+		if($this->m_QuoteIdentifiers == null) {
+			$this->m_QuoteIdentifiers = '';
+			$dbInfo = BizSystem::getConfiguration()->getDatabaseInfo($this->m_Database);
+			if(strtoupper($dbInfo["Driver"])=="PDO_MYSQL") $this->m_QuoteIdentifiers = '`';
+		}
+    }
+
+    /**
+     * get Identifier quoted if needed
+     * @retutn string
+     */
+    public function getQuoted($identifier)
+	{
+		setQuoteIdentifiers();
+		if($this->m_QuoteIdentifiers == null || $this->m_QuoteIdentifiers == '') {
+				return $identifier;
+		}
+        $value = trim(trim($identifier), $this->m_QuoteIdentifiers);
+        return implode($this->m_QuoteIdentifiers, array($value));
     }
 
     /**
