@@ -276,7 +276,7 @@ abstract class BizDataObj_Abstract extends MetaObject implements iSessionObject
      */
     public function getQuoted($identifier)
 	{
-		setQuoteIdentifiers();
+		$this->setQuoteIdentifiers();
 		if($this->m_QuoteIdentifiers == null || $this->m_QuoteIdentifiers == '') {
 				return $identifier;
 		}
