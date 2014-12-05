@@ -38,6 +38,13 @@ apache-conf:
 				-e "s#%%SIREMISDIR%%#$(SIREMISDIR)#g" \
 				< ./misc/templates/apache2.conf
 
+apache24-conf:
+	@echo "# siremis apache conf snippet ..."
+	@echo
+	@sed -e "s#%%URLBASE%%#$(URLBASE)#g" \
+				-e "s#%%SIREMISDIR%%#$(SIREMISDIR)#g" \
+				< ./misc/templates/apache24.conf
+
 clean: cleancache
 
 distclean: cleancache cleansessions
