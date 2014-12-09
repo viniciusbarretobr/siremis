@@ -1,0 +1,26 @@
+<?xml version="1.0" standalone="no"?>
+<PluginService Name="siremisJRCommands" Package="asipto" Class="siremisJRCommands">
+    <JRConfig name="JRConfig" mode="rich">
+		<RSocket name="rsocket" address="http://127.0.0.1:5060/RPC2" timeout="3"
+                 username="alice" password="wonderland"/>
+        <JRCommands>
+            <cmd name="help" title="List commands" command="system.listMethods"/>
+            <cmd name="uptime" title="Uptime" command="core.uptime"/>
+			<cmd name="psx" title="List Processes" command="core.psx"/>
+			<cmd name="uptime" title="Show Uptime" command="mi uptime"/>
+			<cmd name="getstatsall" title="Get All Statistics" command="mi get_statistics all"/>
+			<cmd name="which" title="Get All MI Commands" command="mi which"/>
+			<cmd name="dslist" title="List Dispatcher Records" command="dispatcher.list"/>
+			<cmd name="dsreload" title="Reload Dispatcher Records" command="dispatcher.reload"/>
+			<cmd name="pdtlist" title="List PDT Records" command="mi pdt_list"/>
+			<cmd name="pdtreload" title="Reload PDT Records" command="mi pdt_reload"/>
+			<cmd name="uldump" title="List Location Records" command="mi ul_dump"/>
+			<cmd name="uldumpbrief" title="Brief of Location Records" command="mi ul_dump brief"/>
+			<cmd name="addrlist" title="List Address Permissions Records" command="mi address_dump"/>
+			<cmd name="subnlist" title="List Subnet Permissions Records" command="mi subnet_dump"/>
+			<cmd name="addrreload" title="Reload Address Permissions Records" command="mi address_reload"/>
+			<cmd name="mtlist" title="List MTree Records" command="mi mt_list"/>
+			<cmd name="mtreload" title="Reload MTree Records" command="mi mt_reload"/>
+        </JRCommands>
+    </JRConfig>
+</PluginService>
