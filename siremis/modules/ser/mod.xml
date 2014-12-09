@@ -120,10 +120,12 @@
 			<MenuItem Name="System.Ser.Cms" Title="Command Services" Parent="System.Ser" Order="80">
 				<MenuItem Name="System.Ser.Cms.Micmds" Title="MI Commands" Description=""
 					URL="{@home:url}/ser/micmds" Order="10"/>
+				<MenuItem Name="System.Ser.Cms.Jrcmds" Title="JSONRPC Commands" Description=""
+					URL="{@home:url}/ser/jrcmds" Order="20"/>
 				<MenuItem Name="System.Ser.Cms.Xrcmds" Title="XMLRPC Commands" Description=""
-					URL="{@home:url}/ser/xrcmds" Order="20"/>
+					URL="{@home:url}/ser/xrcmds" Order="30"/>
 				<MenuItem Name="System.Ser.Cms.Fscmds" Title="FSwitch Commands" Description=""
-					URL="{@home:url}/ser/fscmds" Order="30"/>
+					URL="{@home:url}/ser/fscmds" Order="40"/>
 			</MenuItem>
 			<MenuItem Name="System.Ser.Charts" Title="Chart Services" Parent="System.Ser" Order="90">
 				<MenuItem Name="System.Ser.Charts.Shm" Title="SHM Charts" Description=""
