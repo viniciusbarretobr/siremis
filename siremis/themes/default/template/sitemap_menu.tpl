@@ -28,6 +28,11 @@
 				<ul>
 				{foreach item=subitem from=$item->m_ChildNodes}													
 					<li><a href="{if $subitem->m_URL}{$subitem->m_URL}{else}javascript:{/if}">{$subitem->m_Name}</a></li>					
+					{if $subitem->m_ChildNodes|@count > 0}
+						{foreach item=thirditem from=$subitem->m_ChildNodes}													
+							<li><a href="{if $thirditem->m_URL}{$thirditem->m_URL}{else}javascript:{/if}"> &raquo; {$thirditem->m_Name}</a></li>					
+						{/foreach}	
+					{/if}
 				{/foreach}	
 				</ul>
 				{assign var='i' value=$i+1}	
