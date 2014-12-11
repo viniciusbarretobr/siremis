@@ -26,11 +26,31 @@
     			{/if}
     	    {/foreach}
 			{if $current == 1 }
-				{assign var=submenu_class value="current" }	
+				{if $subitem->m_URL}
+					{assign var=submenu_class value="current" }
+				{else}
+					{assign var=submenu_class value="" }
+			    {/if}					
 			{else}
 				{assign var=submenu_class value="" }
 		    {/if}					
-				<li><a class="{$submenu_class}" href="{if $subitem->m_URL}{$subitem->m_URL}{else}javascript:{/if}">{$subitem->m_Name}</a></li>						
+			<li><a class="{$submenu_class}" href="{if $subitem->m_URL}{$subitem->m_URL}{else}javascript:{/if}">{$subitem->m_Name}</a></li>
+			{if $subitem->m_ChildNodes|@count > 0}
+				{foreach item=thirditem from=$subitem->m_ChildNodes}
+			   		{assign var='current' value='0'}
+			   	    {foreach item=bc from=$widget.breadcrumb}
+			   			{if $thirditem->m_Id == $bc->m_Id}
+				    		{assign var='current' value='1'}
+						{/if}
+			   	    {/foreach}
+					{if $current == 1 }
+						{assign var=submenu_class value="current" }	
+					{else}
+						{assign var=submenu_class value="" }
+				    {/if}					
+					<li><a class="{$submenu_class}" href="{if $thirditem->m_URL}{$thirditem->m_URL}{else}javascript:{/if}"> &raquo; {$thirditem->m_Name}</a></li>						
+				{/foreach}	
+			{/if}
 		{/foreach}	
 		</ul>
 		{/if}
