@@ -6,7 +6,7 @@
 		</Resource>
 	</ACL>
     <Menu>
-		<MenuItem Name="System.Ser" Title="SIP Admin Menu" Description="SIP Admin Management" URL="/ser/ser_default" Access="SERAdmin.Administer_Modules" IconImage="spacer.gif" IconCssClass="" Order="25">			
+		<MenuItem Name="System.Ser" Title="SIP Admin Menu" Description="SIP Admin Management" URL="/ser/ser_default" Access="SERAdmin.Administer_Modules" IconImage="spacer.gif" IconCssClass="" Order="25">
 			<MenuItem Name="System.Ser.Sbs" Title="Subscriber Services" Parent="System.Ser" Order="10">
 				<MenuItem Name="System.Ser.Sbs.Subscriber.List" Title="Subscriber List" Description=""
 					URL="{@home:url}/ser/subscriber_list" Order="20"/>
@@ -18,92 +18,131 @@
 					URL="{@home:url}/ser/usr_preferences_list" Order="50"/>
 				<MenuItem Name="System.Ser.Sbs.Uridb.List" Title="URI DB List" Description=""
 					URL="{@home:url}/ser/uri_list" Order="60"/>
-				<MenuItem Name="System.Ser.Sbs.Location.List" Title="Location List" Description=""
-					URL="{@home:url}/ser/location_list" Order="70"/>
-				<MenuItem Name="System.Ser.Sbs.LocationAttrs.List" Title="Location Attrs List" Description=""
-					URL="{@home:url}/ser/location_attrs_list" Order="75"/>
+				<MenuItem Name="System.Ser.Sbs.Location.Management" Title="Location Management" Description=""
+							URL="" Order="70">
+					<MenuItem Name="System.Ser.Sbs.Location.List" Title="Location List" Description=""
+						URL="{@home:url}/ser/location_list" Order="10"/>
+					<MenuItem Name="System.Ser.Sbs.LocationAttrs.List" Title="Location Attrs List" Description=""
+						URL="{@home:url}/ser/location_attrs_list" Order="20"/>
+				</MenuItem>
 				<MenuItem Name="System.Ser.Sbs.Msilo.List" Title="Messages List" Description=""
 					URL="{@home:url}/ser/silo_list" Order="80"/>
-				<MenuItem Name="System.Ser.Sbs.Userblacklist.List" Title="User Black List" Description=""
-					URL="{@home:url}/ser/userblacklist_list" Order="90"/>
-				<MenuItem Name="System.Ser.Sbs.Globalblacklist.List" Title="Global Black List" Description=""
-					URL="{@home:url}/ser/globalblacklist_list" Order="100"/>
+				<MenuItem Name="System.Ser.Sbs.Userblacklist.Management" Title="Blacklist Management" Description=""
+							URL="" Order="90">
+					<MenuItem Name="System.Ser.Sbs.Userblacklist.List" Title="User Black List" Description=""
+						URL="{@home:url}/ser/userblacklist_list" Order="10"/>
+					<MenuItem Name="System.Ser.Sbs.Globalblacklist.List" Title="Global Black List" Description=""
+						URL="{@home:url}/ser/globalblacklist_list" Order="20"/>
+				</MenuItem>
 			</MenuItem>
 			<MenuItem Name="System.Ser.Srv" Title="Server Services" Parent="System.Ser" Order="20">
-				<MenuItem Name="System.Ser.Srv.Domain.List" Title="Domain List" Description=""
-					URL="{@home:url}/ser/domain_list" Order="10"/>
-				<MenuItem Name="System.Ser.Srv.DomainAttrs.List" Title="Domain Attrs List" Description=""
-					URL="{@home:url}/ser/domain_attrs_list" Order="15"/>
+				<MenuItem Name="System.Ser.Srv.Domain.Management" Title="Domain Management" Description=""
+							URL="" Order="10">
+					<MenuItem Name="System.Ser.Srv.Domain.List" Title="Domain List" Description=""
+						URL="{@home:url}/ser/domain_list" Order="10"/>
+					<MenuItem Name="System.Ser.Srv.DomainAttrs.List" Title="Domain Attrs List" Description=""
+						URL="{@home:url}/ser/domain_attrs_list" Order="20"/>
+				</MenuItem>
 				<MenuItem Name="System.Ser.Srv.Htable.List" Title="HTable List" Description=""
 					URL="{@home:url}/ser/htable_list" Order="20"/>
 				<MenuItem Name="System.Ser.Srv.Dialplan.List" Title="Dialplan List" Description=""
 					URL="{@home:url}/ser/dialplan_list" Order="30"/>
-				<MenuItem Name="System.Ser.Srv.Dialog.List" Title="Dialog List" Description=""
-					URL="{@home:url}/ser/dialog_list" Order="40"/>
-				<MenuItem Name="System.Ser.Srv.DialogVars.List" Title="Dialog Vars List" Description=""
-					URL="{@home:url}/ser/dialog_vars_list" Order="50"/>
+				<MenuItem Name="System.Ser.Srv.Dialog.Management" Title="Dialog Management" Description=""
+							URL="" Order="40">
+					<MenuItem Name="System.Ser.Srv.Dialog.List" Title="Dialog List" Description=""
+						URL="{@home:url}/ser/dialog_list" Order="40"/>
+					<MenuItem Name="System.Ser.Srv.DialogVars.List" Title="Dialog Vars List" Description=""
+						URL="{@home:url}/ser/dialog_vars_list" Order="50"/>
+				</MenuItem>
 				<MenuItem Name="System.Ser.Srv.SipTrace.List" Title="SIP Trace List" Description=""
 					URL="{@home:url}/ser/sip_trace_list" Order="60"/>
 				<MenuItem Name="System.Ser.Srv.UACReg.List" Title="UACReg List" Description=""
 					URL="{@home:url}/ser/uacreg_list" Order="70"/>
-				<MenuItem Name="System.Ser.Srv.Mtrees.List" Title="MTrees List" Description=""
-					URL="{@home:url}/ser/mtrees_list" Order="80"/>
-				<MenuItem Name="System.Ser.Srv.Mtree.List" Title="MTree List" Description=""
-					URL="{@home:url}/ser/mtree_list" Order="90"/>
+				<MenuItem Name="System.Ser.Srv.Mtrees.Management" Title="MTrees Management" Description=""
+							URL="" Order="80">
+					<MenuItem Name="System.Ser.Srv.Mtrees.List" Title="MTrees List" Description=""
+						URL="{@home:url}/ser/mtrees_list" Order="10"/>
+					<MenuItem Name="System.Ser.Srv.Mtree.List" Title="MTree List" Description=""
+						URL="{@home:url}/ser/mtree_list" Order="20"/>
+				</MenuItem>
 			</MenuItem>
 			<MenuItem Name="System.Ser.Acl" Title="ACL Services" Parent="System.Ser" Order="30">
-				<MenuItem Name="System.Ser.Acl.Grp.List" Title="Group List" Description=""
-					URL="{@home:url}/ser/grp_list" Order="10"/>
-				<MenuItem Name="System.Ser.Acl.ReGrp.List" Title="RegExp Group List" Description=""
-					URL="{@home:url}/ser/re_grp_list" Order="20"/>
-				<MenuItem Name="System.Ser.Acl.Address.List" Title="Permissions - Address" Description=""
-					URL="{@home:url}/ser/address_list" Order="30"/>
-				<MenuItem Name="System.Ser.Acl.Trusted.List" Title="Permissions - Trusted" Description=""
-					URL="{@home:url}/ser/trusted_list" Order="40"/>
+				<MenuItem Name="System.Ser.Acl.Grp.Management" Title="Group Management" Description=""
+							URL="" Order="10">
+					<MenuItem Name="System.Ser.Acl.Grp.List" Title="Group List" Description=""
+						URL="{@home:url}/ser/grp_list" Order="10"/>
+					<MenuItem Name="System.Ser.Acl.ReGrp.List" Title="RegExp Group List" Description=""
+						URL="{@home:url}/ser/re_grp_list" Order="20"/>
+				</MenuItem>
+				<MenuItem Name="System.Ser.Acl.Permissions.Management" Title="Permissions Management" Description=""
+							URL="" Order="30">
+					<MenuItem Name="System.Ser.Acl.Address.List" Title="Permissions - Address" Description=""
+						URL="{@home:url}/ser/address_list" Order="10"/>
+					<MenuItem Name="System.Ser.Acl.Trusted.List" Title="Permissions - Trusted" Description=""
+						URL="{@home:url}/ser/trusted_list" Order="20"/>
+				</MenuItem>
 			</MenuItem>
 			<MenuItem Name="System.Ser.Rtg" Title="Routing Services" Parent="System.Ser" Order="40">
 				<MenuItem Name="System.Ser.Rtg.Dispatcher.List" Title="Dispatcher List" Description=""
 					URL="{@home:url}/ser/dispatcher_list" Order="10"/>
 				<MenuItem Name="System.Ser.Rtg.Pdt.List" Title="Pdt List" Description=""
 					URL="{@home:url}/ser/pdt_list" Order="20"/>
-				<MenuItem Name="System.Ser.Rtg.LcrGw.List" Title="LCR Gateway List" Description=""
-					URL="{@home:url}/ser/lcr_gw_list" Order="30"/>
-				<MenuItem Name="System.Ser.Rtg.LcrRule.List" Title="LCR Rule List" Description=""
-					URL="{@home:url}/ser/lcr_rule_list" Order="40"/>
-				<MenuItem Name="System.Ser.Rtg.LcrRuleTarget.List" Title="LCR Target List" Description=""
-					URL="{@home:url}/ser/lcr_rule_target_list" Order="50"/>
-				<MenuItem Name="System.Ser.Rtg.CarrierRoute.List" Title="CR Route List" Description=""
-					URL="{@home:url}/ser/carrierroute_list" Order="60"/>
-				<MenuItem Name="System.Ser.Rtg.CarrierFailureRoute.List" Title="CR Failure List" Description=""
-					URL="{@home:url}/ser/carrierfailureroute_list" Order="70"/>
-				<MenuItem Name="System.Ser.Rtg.CarrierName.List" Title="CR Name List" Description=""
-					URL="{@home:url}/ser/carrier_name_list" Order="80"/>
-				<MenuItem Name="System.Ser.Rtg.CRDomainName.List" Title="CR Domain List" Description=""
-					URL="{@home:url}/ser/domain_name_list" Order="90"/>
+				<MenuItem Name="System.Ser.Rtg.Lcr.Management" Title="LCR Management" Description=""
+							URL="" Order="30">
+					<MenuItem Name="System.Ser.Rtg.LcrGw.List" Title="LCR Gateway List" Description=""
+						URL="{@home:url}/ser/lcr_gw_list" Order="10"/>
+					<MenuItem Name="System.Ser.Rtg.LcrRule.List" Title="LCR Rule List" Description=""
+						URL="{@home:url}/ser/lcr_rule_list" Order="20"/>
+					<MenuItem Name="System.Ser.Rtg.LcrRuleTarget.List" Title="LCR Target List" Description=""
+						URL="{@home:url}/ser/lcr_rule_target_list" Order="30"/>
+				</MenuItem>
+				<MenuItem Name="System.Ser.Rtg.CarrierRoute.Management" Title="CarrierRoute Management" Description=""
+							URL="" Order="60">
+					<MenuItem Name="System.Ser.Rtg.CarrierRoute.List" Title="CR Route List" Description=""
+						URL="{@home:url}/ser/carrierroute_list" Order="10"/>
+					<MenuItem Name="System.Ser.Rtg.CarrierFailureRoute.List" Title="CR Failure List" Description=""
+						URL="{@home:url}/ser/carrierfailureroute_list" Order="20"/>
+					<MenuItem Name="System.Ser.Rtg.CarrierName.List" Title="CR Name List" Description=""
+						URL="{@home:url}/ser/carrier_name_list" Order="30"/>
+					<MenuItem Name="System.Ser.Rtg.CRDomainName.List" Title="CR Domain List" Description=""
+						URL="{@home:url}/ser/domain_name_list" Order="40"/>
+				</MenuItem>
 			</MenuItem>
 			<MenuItem Name="System.Ser.Acs" Title="Accounting Services" Parent="System.Ser" Order="50">
-				<MenuItem Name="System.Ser.Acs.Accounting" Title="Accounting List" Description=""
-					URL="{@home:url}/ser/acc_list" Order="10"/>
-				<MenuItem Name="System.Ser.Acs.MissedCalls" Title="Missed Calls List" Description=""
-					URL="{@home:url}/ser/missed_calls_list" Order="20"/>
-				<MenuItem Name="System.Ser.Acs.Cdrs" Title="CDR List" Description=""
-					URL="{@home:url}/ser/cdrs_list" Order="30"/>
-				<MenuItem Name="System.Ser.Acs.BillingRates" Title="Billing Rates List" Description=""
-					URL="{@home:url}/ser/billing_rates_list" Order="40"/>
+				<MenuItem Name="System.Ser.Acs.Acc.Management" Title="Accounting Management" Description=""
+							URL="" Order="10">
+					<MenuItem Name="System.Ser.Acs.Accounting" Title="Accounting List" Description=""
+						URL="{@home:url}/ser/acc_list" Order="10"/>
+					<MenuItem Name="System.Ser.Acs.MissedCalls" Title="Missed Calls List" Description=""
+						URL="{@home:url}/ser/missed_calls_list" Order="20"/>
+				</MenuItem>
+				<MenuItem Name="System.Ser.Acs.Cdrs.Management" Title="CDR Management" Description=""
+							URL="" Order="30">
+					<MenuItem Name="System.Ser.Acs.Cdrs" Title="CDR List" Description=""
+						URL="{@home:url}/ser/cdrs_list" Order="10"/>
+					<MenuItem Name="System.Ser.Acs.BillingRates" Title="Billing Rates List" Description=""
+						URL="{@home:url}/ser/billing_rates_list" Order="20"/>
+				</MenuItem>
 			</MenuItem>
 			<MenuItem Name="System.Ser.Prs" Title="Presence Services" Parent="System.Ser" Order="60">
-				<MenuItem Name="System.Ser.Prs.ActiveWatchers" Title="Active Watchers List" Description=""
-					URL="{@home:url}/ser/active_watchers_list" Order="10"/>
-				<MenuItem Name="System.Ser.Prs.Watchers" Title="Watchers List" Description=""
-					URL="{@home:url}/ser/watchers_list" Order="20"/>
-				<MenuItem Name="System.Ser.Prs.Presentity" Title="Presentity List" Description=""
-					URL="{@home:url}/ser/presentity_list" Order="30"/>
-				<MenuItem Name="System.Ser.Prs.Pua" Title="PUA List" Description=""
-					URL="{@home:url}/ser/pua_list" Order="40"/>
-				<MenuItem Name="System.Ser.Prs.RlsWatchers" Title="RLS Watchers List" Description=""
-					URL="{@home:url}/ser/rls_watchers_list" Order="50"/>
-				<MenuItem Name="System.Ser.Prs.RlsPresentity" Title="RLS Presentity List" Description=""
-					URL="{@home:url}/ser/rls_presentity_list" Order="60"/>				
+				<MenuItem Name="System.Ser.Prs.Management" Title="Management List" Description=""
+							URL="" Order="10">
+					<MenuItem Name="System.Ser.Prs.ActiveWatchers" Title="Active Watchers List" Description=""
+						URL="{@home:url}/ser/active_watchers_list" Order="10"/>
+					<MenuItem Name="System.Ser.Prs.Watchers" Title="Watchers List" Description=""
+						URL="{@home:url}/ser/watchers_list" Order="20"/>
+					<MenuItem Name="System.Ser.Prs.Presentity" Title="Presentity List" Description=""
+						URL="{@home:url}/ser/presentity_list" Order="30"/>
+					<MenuItem Name="System.Ser.Prs.Pua" Title="PUA List" Description=""
+						URL="{@home:url}/ser/pua_list" Order="40"/>
+				</MenuItem>
+				<MenuItem Name="System.Ser.Prs.Rls. Management" Title="RLS Management" Description=""
+							URL="" Order="50">
+					<MenuItem Name="System.Ser.Prs.RlsWatchers" Title="RLS Watchers List" Description=""
+						URL="{@home:url}/ser/rls_watchers_list" Order="10"/>
+					<MenuItem Name="System.Ser.Prs.RlsPresentity" Title="RLS Presentity List" Description=""
+						URL="{@home:url}/ser/rls_presentity_list" Order="20"/>
+				</MenuItem>
 				<MenuItem Name="System.Ser.Prs.Xcap" Title="XCAP List" Description=""
 					URL="{@home:url}/ser/xcap_list" Order="70"/>
 				<MenuItem Name="System.Ser.Prs.Sca" Title="SCA List" Description=""
@@ -112,10 +151,13 @@
 			<MenuItem Name="System.Ser.Msc" Title="Misc Services" Parent="System.Ser" Order="70">
 				<MenuItem Name="System.Ser.Srv.Rtpproxy.List" Title="RTPProxy List" Description=""
 					URL="{@home:url}/ser/rtpproxy_list" Order="10"/>
-				<MenuItem Name="System.Ser.Msc.Mohqueues.List" Title="MoH Queues List" Description=""
-					URL="{@home:url}/ser/mohqueues_list" Order="20"/>
-				<MenuItem Name="System.Ser.Msc.Mohqcalls.List" Title="MoH QCalls List" Description=""
-					URL="{@home:url}/ser/mohqcalls_list" Order="30"/>
+				<MenuItem Name="System.Ser.Msc.Moh.Management" Title="MoH Management" Description=""
+							URL="{@home:url}/ser/mohqueues_list" Order="20">
+					<MenuItem Name="System.Ser.Msc.Mohqueues.List" Title="MoH Queues List" Description=""
+						URL="{@home:url}/ser/mohqueues_list" Order="10"/>
+					<MenuItem Name="System.Ser.Msc.Mohqcalls.List" Title="MoH QCalls List" Description=""
+						URL="{@home:url}/ser/mohqcalls_list" Order="20"/>
+				</MenuItem>
 			</MenuItem>
 			<MenuItem Name="System.Ser.Cms" Title="Command Services" Parent="System.Ser" Order="80">
 				<MenuItem Name="System.Ser.Cms.Micmds" Title="MI Commands" Description=""
