@@ -1,7 +1,7 @@
 SIREMIS - Web Management Interface for Kamailio SIP Server
 ==========================================================
 
-v4.1.0, Mar 25, 2014
+v4.2.0, Feb 02, 2015
 Web: http://siremis.asipto.com/
 
 Project Management:
@@ -10,9 +10,9 @@ Project Management:
 
 Licensing:
 
-    * code and modules developed by ASIPTO are released under GPLv3: http://www.gnu.org/licenses/gpl-3.0.html
-    * for the licenses of the content of the PHPOpenBiz and Cubi frameworks included in SIREMIS tarball visit PHPOpenBiz.org site
-    * OFC library used to build charts is licensed under GPL2
+    * code and modules developed by ASIPTO are released under GPLv2 license, or (at your option) any later version
+    * for the licenses of the content of the PHPOpenBiz and Cubi frameworks included in SIREMIS tarball visit http://www.openbiz.me
+    * OFC library used to build charts is licensed under GPLv2
 
 Install:
 
@@ -28,9 +28,9 @@ IRC Channel:
 
     * #kamailio on irc.freenode.net
 
-Sourceforge Project:
+Github Project:
 
-    * http://sourceforge.net/projects/siremis/
+    * https://github.com/asipto/siremis
 
 Paid support or development extensions for SIREMIS:
 
