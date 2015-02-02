@@ -8,6 +8,7 @@ Release changelogs
 +++ SIREMIS v4.2.0 :: 2015-02-02
 
 * use database connection attributes as in Kamailio v4.2.x
+* git repository moved at https://github.com/asipto/siremis
 * added three level menu options
 * menu entries for pages related to the same module are groupped
   on the 3rd level
@@ -19,6 +20,7 @@ Release changelogs
 * handle db driver specific quotations for identifiers (fix for postgress)
 * fixed wrong html in input field for xmlrpc form
 * store 'no result' text in $sHTML to be sent out for xmlrpc form
+* license for Asipto extensions set to GPLv2 or later
 
 +++ SIREMIS v4.1.0 :: 2014-03-25
 
