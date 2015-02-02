@@ -5,6 +5,21 @@ Web Management Interface for Kamailio (SER) SIP Server
 
 Release changelogs
 
++++ SIREMIS v4.2.0 :: 2015-02-02
+
+* use database connection attributes as in Kamailio v4.2.x
+* added three level menu options
+* menu entries for pages related to the same module are groupped
+  on the 3rd level
+* added jsonrpc command panel
+* imported openbiz files inside git repository
+* updated to smarty 2.6.28
+* added config template for apache 2.4
+* embedded lightweight jsonrpc client library, requires php curl library
+* handle db driver specific quotations for identifiers (fix for postgress)
+* fixed wrong html in input field for xmlrpc form
+* store 'no result' text in $sHTML to be sent out for xmlrpc form
+
 +++ SIREMIS v4.1.0 :: 2014-03-25
 
 * use database connection attributes as in Kamailio v4.1.x
