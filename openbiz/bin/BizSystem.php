@@ -427,7 +427,7 @@ class BizSystem
      * @param string $dbName database name
      * @return Zend_Db_Adapter_Abstract database connection
      */
-    public function dbConnection($dbName=null)
+    public static function dbConnection($dbName=null)
     {
         return BizSystem::instance()->getDBConnection($dbName);
     }

@@ -104,7 +104,7 @@ class TableJoin extends MetaObject
     {
         if($this->m_QuoteIdentifiers == null) {
 			$this->m_QuoteIdentifiers = '';
-			$dbInfo = BizSystem::getConfiguration()->getDatabaseInfo($dataObj->m_Database);
+			$dbInfo = BizSystem::configuration()->getDatabaseInfo($dataObj->m_Database);
 			if(strtoupper($dbInfo["Driver"])=="PDO_MYSQL") $this->m_QuoteIdentifiers = '`';
 		}
     }

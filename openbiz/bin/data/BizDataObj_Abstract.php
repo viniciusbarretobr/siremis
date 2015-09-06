@@ -265,7 +265,7 @@ abstract class BizDataObj_Abstract extends MetaObject implements iSessionObject
     {
 		if($this->m_QuoteIdentifiers == null) {
 			$this->m_QuoteIdentifiers = '';
-			$dbInfo = BizSystem::getConfiguration()->getDatabaseInfo($this->m_Database);
+			$dbInfo = BizSystem::configuration()->getDatabaseInfo($this->m_Database);
 			if(strtoupper($dbInfo["Driver"])=="PDO_MYSQL") $this->m_QuoteIdentifiers = '`';
 		}
     }
