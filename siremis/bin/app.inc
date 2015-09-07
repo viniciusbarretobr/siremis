@@ -97,7 +97,7 @@ define("LANGUAGE_PATH", APP_HOME.DIRECTORY_SEPARATOR."languages");
 //$local["en"]="en_EN.utf8";
 
 // select default timezone
-date_default_timezone_set('America/Los_Angeles');
+//date_default_timezone_set('America/Los_Angeles');
 
 // login page
 define('USER_LOGIN_VIEW', "user.view.LoginView");
