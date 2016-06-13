@@ -13,13 +13,13 @@ function siremisConnectDB($noDB=false)
         'dbname'   => $_REQUEST['db1Name']
     );
     if ($noDB) $param['dbname'] = '';
-    
+
     try {
         $db = Zend_Db::factory($_REQUEST['db1type'], $param);
         $conn = $db->getConnection();
     } catch (Zend_Db_Adapter_Exception $e) {
         // perhaps a failed login credential, or perhaps the RDBMS is not running
-        echo 'ERROR: '.$e->getMessage(); 
+        echo 'ERROR: '.$e->getMessage();
         exit;
     } catch (Zend_Exception $e) {
         // perhaps factory() failed to load the specified Adapter class
@@ -31,12 +31,16 @@ function siremisConnectDB($noDB=false)
 function siremisFillDB()
 {
     siremisReplaceDbConfig();
-	BizSystem::log(LOG_DEBUG, "SIREMIS", "install module siremis sql");
-    $sqlfile = MODULE_PATH."/ser/mod.install.siremis.sql";
+	BizSystem::log(LOG_DEBUG, "SIREMIS", "install module siremis sql - " . $_REQUEST['db1type']);
+	if($_REQUEST['db1type']=="Pdo_Pgsql" || $_REQUEST['db1type']=="pdo_pgsql") {
+		$sqlfile = MODULE_PATH."/ser/mod.install.siremis.pgsql.sql";
+	} else {
+		$sqlfile = MODULE_PATH."/ser/mod.install.siremis.sql";
+	}
     if (!file_exists($sqlfile))
        	return true;
-        
-    // Getting the SQL file content        
+
+    // Getting the SQL file content
     $query = trim(file_get_contents($sqlfile));
     if (empty($query))
        	return true;
