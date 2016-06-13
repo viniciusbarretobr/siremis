@@ -72,7 +72,7 @@ abstract class Zend_Db_Adapter_Pdo_Abstract extends Zend_Db_Adapter_Abstract
 
         // use all remaining parts in the DSN
         foreach ($dsn as $key => $val) {
-            $dsn[$key] = "$key=$val";
+            if($val!="") $dsn[$key] = "$key=$val";
         }
 
         return $this->_pdoType . ':' . implode(';', $dsn);
@@ -120,6 +120,11 @@ abstract class Zend_Db_Adapter_Pdo_Abstract extends Zend_Db_Adapter_Abstract
             $this->_config['driver_options'][PDO::ATTR_PERSISTENT] = true;
         }
 
+		if($this->_pdoType=="pgsql") {
+			if(substr($dsn, -1)!=";") { $dsn .= ";"; }
+			$dsn .= "user=".$this->_config['username'] . ";password="
+				. $this->_config['password'] .";";
+		}
         try {
             $this->_connection = new PDO(
                 $dsn,
