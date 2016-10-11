@@ -30,7 +30,7 @@ class DispatcherDO extends BizDataObj
 	public function fetch()
 	{
 		$resultRecords = array();
-		$resultSet	= $this->_run_search($this->m_limit);
+		$resultSet	= $this->_run_search($this->m_Limit);
 		if ($resultSet !== null)
 		{
 			$field = 'flags';
