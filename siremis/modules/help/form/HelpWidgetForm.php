@@ -3,7 +3,7 @@ class HelpWidgetForm extends EasyForm
 {
 	protected $m_CategoryDO 		= "help.do.HelpCategoryDO";
 	protected $m_CategoryMappingDO 	= "help.do.HelpCategoryMappingDO";
-	
+
 	protected function GetURL(){
 		if($_SERVER["REDIRECT_QUERY_STRING"])
 		{
@@ -31,56 +31,56 @@ class HelpWidgetForm extends EasyForm
 		}
 		return $url;	
 	}
-	
-	public function SetSearchRule(){
+
+	public function setSearchRule($searchRule, $searchRuleBindValues=null){
 		$url = $this->GetURL();
-		
+
 		if(!$url){
 			return ;
 		}
-		
+
 		//search cat_id from mapping table
 		$mappingObj  =  BizSystem::GetObject($this->m_CategoryMappingDO,1);
-    	
+
 		//@todo: $url need to be filtered before use in database
-    	$records = $mappingObj->directFetch("[url]='$url'");
-    	if(count($records)==1){
-    		$cat_id = (int)$records[0]['cat_id'];
-    	}
-    	else
-    	{
+		$records = $mappingObj->directFetch("[url]='$url'");
+		if(count($records)==1){
+			$cat_id = (int)$records[0]['cat_id'];
+		}
+		else
+		{
 			//if no matched, generate record from category table url_match
 			$categoryObj  =  BizSystem::GetObject($this->m_CategoryDO,1);
 			$records = $categoryObj->directFetch();
 			foreach($records as $record){  
 				$match = $record['url_match'];
 				if($match){
-					
+
 					$pattern = "/".str_replace('/','\\/',$match)."/si";
 					$pattern = "@".$match."@si";
 					if(preg_match($pattern,"/".$url)){
 						$cat_id = $record['Id'];
 						//cache it into database;
 						$obj_array =array(	        				
-							"cat_id"=>$cat_id,
-	        				"url"=>$url,     				
-	        				); 
+								"cat_id"=>$cat_id,
+								"url"=>$url,
+								);
 						$mappingObj->insertRecord($obj_array);
 						break;
 					}
-					
+
 				}
-				
+
 			}
-    	}
-    	
-    	$this->m_SearchRule="[category_id]='$cat_id'";
+		}
+
+		$this->m_SearchRule="[category_id]='$cat_id'";
 	}
-	
+
 	public function fetchDataSet(){
-		$this->SetSearchRule();
+		$this->setSearchRule(null);
 		return parent::fetchDataSet();
 	}
-	
+
 }
 ?>
