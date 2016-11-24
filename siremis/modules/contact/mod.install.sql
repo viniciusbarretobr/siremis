@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `contact` (
   `create_by` int(11) NOT NULL,
   `create_time` datetime NOT NULL,
   `update_by` int(11) NOT NULL,
-  `update_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
+  `update_time` timestamp NOT NULL DEFAULT '2000-01-01 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `type_id` (`type_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
