@@ -16,11 +16,23 @@ TAR ?= tar
 
 all: prepare
 
-# prepare SIREMIS dirs for web install
-prepare:
-	@echo "updating htaccess file..."
+prepare-htaccess:
+	@echo "updating htaccess file for apache 2.2 ..."
 	@sed -e "s#/%%URLBASE%%/#/$(URLBASE)/#g" \
 				< ./misc/templates/htaccess > ./siremis/.htaccess
+
+
+prepare-htaccess24:
+	@echo "updating htaccess file for apache 2.4 ..."
+	@sed -e "s#/%%URLBASE%%/#/$(URLBASE)/#g" \
+				< ./misc/templates/htaccess24 > ./siremis/.htaccess
+	@echo "deploying htaccess files for apache 2.4 in subdirs ..."
+	@cp ./misc/templates/htaccess24-deny ./siremis/log/.htaccess
+	@cp ./misc/templates/htaccess24-deny ./openbiz/metadata/.htaccess
+	@cp ./misc/templates/htaccess24-deny ./openbiz/languages/.htaccess
+
+
+prepare-common:
 	@echo "updating app.inc file..."
 	@sed -e "s#/%%URLBASE%%#/$(URLBASE)#g" \
 				< ./misc/templates/app.inc > ./siremis/bin/app.inc
@@ -31,15 +43,24 @@ prepare:
 	@mkdir -p siremis/themes/default/template/cpl
 	@echo "done"
 
+
+# prepare SIREMIS dirs for web install with apache 2.2
+prepare: prepare-htaccess prepare-common
+
+
+# prepare SIREMIS dirs for web install with apache 2.4
+prepare24: prepare-htaccess24 prepare-common
+
+
 apache-conf:
-	@echo "# siremis apache conf snippet ..."
+	@echo "# siremis apache 2.2 conf snippet ..."
 	@echo
 	@sed -e "s#%%URLBASE%%#$(URLBASE)#g" \
 				-e "s#%%SIREMISDIR%%#$(SIREMISDIR)#g" \
 				< ./misc/templates/apache2.conf
 
 apache24-conf:
-	@echo "# siremis apache conf snippet ..."
+	@echo "# siremis apache 2.4 conf snippet ..."
 	@echo
 	@sed -e "s#%%URLBASE%%#$(URLBASE)#g" \
 				-e "s#%%SIREMISDIR%%#$(SIREMISDIR)#g" \
