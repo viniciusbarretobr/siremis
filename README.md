@@ -6,7 +6,7 @@ v4.2.0, Feb 02, 2015
 
 Web: http://siremis.asipto.com/
 
-Compatible with Kamailio: v4.2.x, v4.3.x
+Compatible with Kamailio: v4.2.x, v4.3.x, v4.4.x
 
 ### Licensing
 
@@ -40,4 +40,4 @@ Paid support or development extensions for SIREMIS:
 
 Project Management:
 
-  * Elena-Ramona Modroiu - http://www.asipto.com
+  * Elena-Ramona Modroiu
