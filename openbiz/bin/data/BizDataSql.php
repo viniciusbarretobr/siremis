@@ -31,11 +31,8 @@ class BizDataSql
     protected $_orderBy = null;
     protected $_otherSQL = null;
     protected $_aliasIndex = 0;
-    protected $_mainTable;
+	protected $_mainTable;
 
-    public function __construct()
-    {
-    }
 
     /**
      * Add main table in the sql statement T0 alias
@@ -46,7 +43,7 @@ class BizDataSql
     public function addMainTable($mainTable)
     {
         $this->_mainTable = "$mainTable";
-		$this->_tableJoins = " $mainTable T0 ";
+		$this->_tableJoins = " " . BizSystem::getDBTableQuoted($mainTable) . " T0 ";
     }
 
     /**
@@ -64,7 +61,7 @@ class BizDataSql
      **/
     public function addJoinTable($tableJoin)
     {
-		$table = $tableJoin->getQuoted($tableJoin->m_Table);
+		$table = BizSystem::getDBTableQuoted($tableJoin->m_Table);
         $joinType = $tableJoin->m_JoinType;
         $column = $tableJoin->m_Column;
         $joinRef = $tableJoin->m_JoinRef;
@@ -234,7 +231,7 @@ class BizDataSql
             // ... INNER JOIN xtable TX ON TX.column2 = T0.column
             // WHERE ... Tx.column1 = 'PrtTableColumnValue'
             $mytable_col = $this->getTableColumn(null, $assoc["Column"]);   // this table's alias.column
-            $xtable = $assoc->getQuoted($assoc["XTable"]);    // xtable's name
+            $xtable = BizSystem::getDBTableQuoted($assoc["XTable"]);    // xtable's name
             $column1 = $assoc["XColumn1"]; // xtable column1
             $column2 = $assoc["XColumn2"]; // xtable column2
             $xalias = "TX";

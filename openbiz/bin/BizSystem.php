@@ -433,6 +433,22 @@ class BizSystem
     }
 
     /**
+     * get identifier quoted as database table if needed
+     * @retutn string
+     */
+    public static function getDBTableQuoted($identifier, $dbName=null)
+	{
+		$rDBName = (!$dbName) ? "Default" : $dbName;
+
+        $dbInfo = BizSystem::instance()->getConfiguration()->getDatabaseInfo($rDBName);
+		if(strtoupper($dbInfo["Driver"])=="PDO_MYSQL") {
+			$value = trim(trim($identifier), "`");
+			return "`".$value."`";
+		}
+		return $identifier;
+    }
+
+    /**
      * Evaluate macro, this method can only be used to get profile in 2.0
      * For example, @macro_var:macro_key. i.e. @profile:ROLE
      *
