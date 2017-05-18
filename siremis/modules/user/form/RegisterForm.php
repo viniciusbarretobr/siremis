@@ -1,6 +1,5 @@
 <?php 
 include_once(MODULE_PATH."/system/form/UserForm.php");
-include_once(MODULE_PATH."/ser/config/common.Main.php");
 
 class RegisterForm extends UserForm
 {
@@ -11,6 +10,7 @@ class RegisterForm extends UserForm
      */
     public function CreateUser()
 	{
+		include_once(MODULE_PATH."/ser/config/common.Main.php");
 		if($cfg_siremis_public_registrations == false) {
 			$errorMessage = "Public registration is not enabled!";
 			$errors['fld_username'] = $errorMessage;
@@ -52,6 +52,8 @@ class RegisterForm extends UserForm
         $recArr['create_by']="0";
         $recArr['update_by']="0";
 
+		$password = $recArr['password'];
+		$recArr['password'] = hash(HASH_ALG, $password);
         $this->_doInsert($recArr);
                 
         //set default user role to sip user
@@ -82,7 +84,7 @@ class RegisterForm extends UserForm
 		$serUserArr = array(
 							"username"=>$recArr['username'],
 							"domain"=>$recArr['domain'],
-							"password"=>$recArr['password'],
+							"password"=>$password,
 							"email_address"=>$recArr['email']
 						);
 		$serUserObj->InsertRecord($serUserArr);
