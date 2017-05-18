@@ -21,6 +21,10 @@
 		<Element Name="fld_ruid" ElementSet="General" Class="LabelText" FieldName="ruid" Label="Ruid"  AllowURLParam="N"/>
 		<Element Name="fld_instance" ElementSet="General" Class="LabelText" FieldName="instance" Label="Instance"  AllowURLParam="N"/>
 		<Element Name="fld_reg_id" ElementSet="General" Class="LabelText" FieldName="reg_id" Label="Reg-Id"  AllowURLParam="N"/>
+		<Element Name="fld_server_id" ElementSet="General" Class="LabelText" FieldName="server_id" Label="Srv-Id"  AllowURLParam="N"/>
+		<Element Name="fld_connection_id" ElementSet="General" Class="LabelText" FieldName="connection_id" Label="Con-Id"  AllowURLParam="N"/>
+		<Element Name="fld_keepalive" ElementSet="General" Class="LabelText" FieldName="keepalive" Label="Keepalive"  AllowURLParam="N"/>
+		<Element Name="fld_partition" ElementSet="General" Class="LabelText" FieldName="partition" Label="Partition"  AllowURLParam="N"/>
     </DataPanel>
     <ActionPanel>       
         <Element Name="btn_new" Class="Button" Text="Add" CssClass="button_gray_add" Description="new record (Insert)">

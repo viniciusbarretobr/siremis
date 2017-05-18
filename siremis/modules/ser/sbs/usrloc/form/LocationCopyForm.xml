@@ -20,6 +20,10 @@
 		<Element Name="fld_ruid" Class="InputText" FieldName="ruid" Label="Ruid"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
 		<Element Name="fld_instance" Class="InputText" FieldName="instance" Label="Instance"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
 		<Element Name="fld_reg_id" Class="InputText" FieldName="reg_id" Label="Reg-Id"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_server_id" Class="InputText" FieldName="server_id" Label="Srv-Id"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_connection_id" Class="InputText" FieldName="connection_id" Label="Con-Id"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_keepalive" Class="InputText" FieldName="keepalive" Label="Keepalive"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_partition" Class="InputText" FieldName="partition" Label="Partition"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
     </DataPanel>
     <ActionPanel>
         <Element Name="btn_save" Class="Button" Text="Save" CssClass="button_gray_m">

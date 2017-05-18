@@ -20,6 +20,10 @@
         <BizField Name="ruid" Column="ruid" Length="64"   Required="Y" Type="Text"/>
         <BizField Name="instance" Column="instance" Length="255"   Required="N" Type="Text"/>
         <BizField Name="reg_id" Column="reg_id"    Required="N" Type="Number"/>
+        <BizField Name="server_id" Column="server_id"    Required="N" Type="Number"/>
+        <BizField Name="connection_id" Column="connection_id"    Required="N" Type="Number"/>
+        <BizField Name="keepalive" Column="keepalive"    Required="N" Type="Number"/>
+        <BizField Name="partition" Column="partition"    Required="N" Type="Number"/>
 	</BizFieldList>
     <TableJoins>
     </TableJoins>
