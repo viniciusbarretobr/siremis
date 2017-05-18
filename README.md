@@ -2,7 +2,7 @@
 
 ### Web Management Interface for Kamailio SIP Server
 
-v4.3.0, Nov 26, 2016
+v4.4.0, May 18, 2017
 
 Web: http://siremis.asipto.com/
 
