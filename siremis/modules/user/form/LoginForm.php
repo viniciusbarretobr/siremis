@@ -45,7 +45,7 @@ class LoginForm extends EasyForm
     			
     			// after authenticate user: 2. insert login event
     			$logComment=array(	$this->username, $_SERVER['REMOTE_ADDR']);
-    			$eventlog->log("LOGIN", "MSG_LOGIN_SUCCESSFUL", $logComment);
+    			$eventlog->log("LOGIN", "MSG_LOGIN_FETCH_SUCCESSFUL", $logComment);
     			
     			// after authenticate user: 3. update login time in user record
     	   	    if (!$this->UpdateloginTime())
@@ -56,7 +56,8 @@ class LoginForm extends EasyForm
     			if($profile['roleStartpage'][0]){
        	        	BizSystem::clientProxy()->ReDirectPage($redirectPage);	
        	        }else{
-    		    	parent::processPostAction();
+					$errorMessage['login_status'] = "login failure - no role for this account - contact admin";
+					$this->processFormObjError($errorMessage);
        	        }
        	        return ;
     		}
@@ -116,8 +117,9 @@ class LoginForm extends EasyForm
     	   	    
        	        if($profile['roleStartpage'][0]){
        	        	BizSystem::clientProxy()->ReDirectPage($redirectPage);	
-       	        }else{
-    		    	parent::processPostAction();
+				}else{
+					$errorMessage['login_status'] = "login failure - no role for this account - contact admin";
+					$this->processFormObjError($errorMessage);
        	        }
     		    return true;
     		}
