@@ -5,6 +5,21 @@ Web Management Interface for Kamailio (SER) SIP Server
 
 Release changelogs
 
++++ SIREMIS v4.4.0 :: 2017-05-18
+
+* added missing columns when viewing location records
+* fixes for public registration form
+* quote db identifiers for sql operations
+* increased the ipaddr column size in event_log table
+* converted files from dos line ending to unix style
+
++++ SIREMIS v4.3.0 :: 2016-11-26
+
+* compatibility with PHP7
+* options to install for Apache 2.2 or 2.4
+* updated default datetime fields to work with MySQL 5.7
+* commented explicit set of timezone in app.inc template
+
 +++ SIREMIS v4.2.0 :: 2015-02-02
 
 * use database connection attributes as in Kamailio v4.2.x
