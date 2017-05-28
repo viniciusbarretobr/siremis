@@ -17,20 +17,20 @@
 class siremisJRCommands
 {
    private $m_ConfigFile = "siremisJRCommands.xml";
-   public $m_Name; 
-   public $m_JRConfig; 
-   
+   public $m_Name;
+   public $m_JRConfig;
+
    function __construct(&$xmlArr)
    {
       $this->ReadMetadata($xmlArr);
       $this->m_Name = $xmlArr["ATTRIBUTES"]["NAME"];
    }
-   
+
    protected function ReadMetadata(&$xmlArr)
    {
       $this->m_JRConfig = new MetaIterator($xmlArr["PLUGINSERVICE"]["JRCONFIG"],"JRConfig");
    }
-   
+
    public function GetJRConfig()
    {
       foreach ($this->m_JRConfig as $micobj) {
@@ -46,13 +46,17 @@ class JRConfig
    public $m_Name;
    public $m_Mode;
    public $m_RSocket;
+   public $m_UDPLocal;
+   public $m_UDPRemote;
    public $m_JRCommands;
-   
+
    public function __construct($xmlArr)
    {
       $this->m_Name = $xmlArr["ATTRIBUTES"]["NAME"];
       $this->m_Mode = $xmlArr["ATTRIBUTES"]["MODE"];
-      $this->m_RSocket = new MetaIterator($xmlArr["RSOCKET"],"JRPeer");
+      $this->m_RSocket = new MetaIterator($xmlArr["RSOCKET"],"JRHTTPPeer");
+      $this->m_UDPLocal = new MetaIterator($xmlArr["UDPLOCAL"],"JRUDPPeer");
+      $this->m_UDPRemote = new MetaIterator($xmlArr["UDPREMOTE"],"JRUDPPeer");
       $this->m_JRCommands = new MetaIterator($xmlArr["JRCOMMANDS"]["CMD"],"JRCommand");
    }
    public function GetName() { return $this->m_Name; }
@@ -76,14 +80,14 @@ class JRConfig
    }
 }
 
-class JRPeer
+class JRHTTPPeer
 {
    public $m_Name;
    public $m_Address;
    public $m_Timeout;
    public $m_Username;
    public $m_Password;
-   
+
    public function __construct($xmlArr)
    {
       $this->m_Name = $xmlArr["ATTRIBUTES"]["NAME"];
@@ -101,12 +105,32 @@ class JRPeer
    public function GetPassword() { return $this->m_Password; }
 }
 
+class JRUDPPeer
+{
+   public $m_Name;
+   public $m_Address;
+   public $m_Port;
+   public $m_Timeout;
+
+   public function __construct($xmlArr)
+   {
+      $this->m_Name = $xmlArr["ATTRIBUTES"]["NAME"];
+      $this->m_Address = $xmlArr["ATTRIBUTES"]["ADDRESS"];
+      $this->m_Port = $xmlArr["ATTRIBUTES"]["PORT"];
+      $this->m_Timeout = $xmlArr["ATTRIBUTES"]["TIMEOUT"];
+   }
+   public function GetName() { return $this->m_Name; }
+   public function GetAddress() { return $this->m_Address; }
+   public function GetPort() { return $this->m_Port; }
+   public function GetTimeout() { return $this->m_Timeout; }
+}
+
 class JRCommand
 {
    public $m_Name;
    public $m_Title;
    public $m_Command;
-   
+
    public function __construct($xmlArr)
    {
       $this->m_Name = $xmlArr["ATTRIBUTES"]["NAME"];

@@ -2,15 +2,15 @@
 include_once (MODULE_PATH.'/ser/service/asipto/libs/cmds/serjr.php');
 include_once (MODULE_PATH.'/ser/service/siremisJRCommands.php');
 
-class JrcmdsForm extends EasyForm 
-{ 
+class JrcmdsForm extends EasyForm
+{
    	protected $localService = "ser.service.siremisJRCommands";
-   	
+
    	protected function renderHTML()
    	{
    		$jrobj = BizSystem::getObject($this->localService);
-		$sHTML = ""; 
-		$sHTML .= 
+		$sHTML = "";
+		$sHTML .=
 		//	'<script type="text/javascript" src="'.APP_URL.'/js/richtext.js"></script>';
 			'<script type="text/javascript" src="'.APP_URL.'/modules/ser/js/orichtext.js"></script>';
 		$sHTML .= '<br />
@@ -24,7 +24,7 @@ class JrcmdsForm extends EasyForm
 			return $sHTML;
 		}
 
-		$sHTML .= 
+		$sHTML .=
 		'<strong>JSONRPC Command Panel</strong><br /><br />
 		</td></tr>
 		<tr><td width="10%"></td><td>
@@ -38,7 +38,7 @@ class JrcmdsForm extends EasyForm
 		$micmds = $jrobj->GetJRConfig()->GetJRCommands();
 		if($micmds)
 		{
-			$sHTML .= 
+			$sHTML .=
 		'<br />
 		<br />
 		<FORM style="float:center;" action="" method="post">
@@ -47,13 +47,13 @@ class JrcmdsForm extends EasyForm
 			$selcmd = $_GET["jcmdid"];
 			foreach ($micmds as $micobj) {
 				if($selcmd != $micobj->GetName())
-					$sHTML .= 
+					$sHTML .=
 					'<OPTION value="' . $micobj->GetName() . '">' . $micobj->GetTitle() . '</OPTION>';
 				else
-					$sHTML .= 
+					$sHTML .=
 					'<OPTION value="' . $micobj->GetName() . '" selected>' . $micobj->GetTitle() . '</OPTION>';
 			}
-			$sHTML .= 
+			$sHTML .=
 			'</SELECT>
 			<INPUT type="submit" name="submit" value="Run"/>
 		</FORM>
@@ -61,7 +61,7 @@ class JrcmdsForm extends EasyForm
 
 		}
 
-		$sHTML .= 
+		$sHTML .=
 			'</td></tr><tr><td align="center" colspan="2">';
 
 		$vcmd = $_POST["cmd"];
@@ -86,7 +86,7 @@ class JrcmdsForm extends EasyForm
 			}
 			$jrret = $jre->sjr_command($vcmd);
 
-			$sHTML .= 
+			$sHTML .=
 				'<hr size="1px" width="50%"/>
 				<br />
 				<span style="color: #AA8800;">Result For JSONRPC Command: [ ' . $vcmd . ' ]</span>
@@ -97,7 +97,7 @@ class JrcmdsForm extends EasyForm
 			{
 				if($jrobj->GetJRConfig()->getMode()=="rich")
 				{
-			$sHTML .= 
+			$sHTML .=
 '<script language="JavaScript" type="text/javascript">
 <!--
 //build richTextEditor
@@ -106,7 +106,7 @@ document.writeln(\'<br><br>\');
 var rte = new richTextEditor(\'rte\');
 ';
 			$content = $jre->toRichStr();
-			$sHTML .= 
+			$sHTML .=
 'rte.html = \'' . $content .'\';
 rte.width = 600;
 rte.height = 400;
@@ -119,7 +119,7 @@ rte.build();
 </script>
 ';
 				} else {
-			$sHTML .= 
+			$sHTML .=
 '<TEXTAREA name="mitext" rows="20" cols="80" readonly>
 ' . $jre->toPlainStr() . '
 </TEXTAREA>';
