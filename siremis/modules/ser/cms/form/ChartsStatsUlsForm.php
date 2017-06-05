@@ -46,6 +46,7 @@ class ChartsStatsUlsForm extends EasyForm
 
 		$ul_uas = array();
 		$ul_uas['asterisk'] = 0;
+		$ul_uas['audiocodes'] = 0;
 		$ul_uas['freeswitch'] = 0;
 		$ul_uas['x-lite'] = 0;
 		$ul_uas['eyebeam'] = 0;
@@ -128,6 +129,8 @@ class ChartsStatsUlsForm extends EasyForm
 			{
 				if(preg_match('/asterisk/i', $r_user_agent)) {
 					$ul_uas['asterisk'] = $ul_uas['asterisk'] + 1;
+				} else if(preg_match("/audiocodes/i", $r_user_agent)) {
+					$ul_uas['audiocodes'] = $ul_uas['audiocodes'] + 1;
 				} else if(preg_match("/freeswitch/i", $r_user_agent)) {
 					$ul_uas['freeswitch'] = $ul_uas['freeswitch'] + 1;
 				} else if(preg_match("/x-lite/i", $r_user_agent)) {
