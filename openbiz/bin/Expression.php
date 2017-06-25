@@ -361,9 +361,9 @@ class Expression
         if ($b) return false; // Unbalanced braces would break the eval below
         else
         {
-			// --- fix for parse error
-			if( ( preg_match( '{[[:alnum:]]+([,][ ][[:digit:]]+){2}}' , $code , $matches ) === 1 ) ) {
-				BizSystem::log( LOG_ERR , 'MATCH' , __LINE__ . ': preg_match: ' . $code . '; $matches = '
+			// --- catch parse error for {value, number, number}
+			if( ( preg_match( '{[^,]+([,][ ][[:digit:]]+){2}}' , $code , $matches ) === 1 ) ) {
+				BizSystem::log( LOG_INFO , 'MATCH' , __LINE__ . ': preg_match: ' . $code . '; $matches = '
 						. var_export( $matches , true ) . ' ' . $error ) ;
 				return  false ;
 			}
