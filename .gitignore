@@ -22,3 +22,5 @@ TAGS
 siremis/session/sess_*
 siremis/log/*.log
 siremis/install.lock
+siremis/files/cache/
+siremis/themes/default/template/cpl/
