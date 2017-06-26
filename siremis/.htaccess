@@ -14,11 +14,9 @@ Options FollowSymLinks
 </IfModule>
 
 <FilesMatch ".xml$">
-    Order deny,allow
-    Deny from all
+    Require all denied
 </FilesMatch>
 
 <FilesMatch ".inc$">
-    Order deny,allow
-    Deny from all
+    Require all denied
 </FilesMatch>
