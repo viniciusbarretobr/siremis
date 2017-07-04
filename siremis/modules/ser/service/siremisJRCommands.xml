@@ -11,23 +11,23 @@
 		<UnixSockLocal name="unixsocklocal" address="/var/run/siremis/siremis_rpc.sock" timeout="3.0"/>
 		<UnixSockRemote name="unixsockremote" address="/var/run/kamailio/kamailio_rpc.sock" timeout="3.0"/>
         <JRCommands>
-            <cmd name="help" title="List commands" command="system.listMethods"/>
-            <cmd name="uptime" title="Uptime" command="core.uptime"/>
-			<cmd name="psx" title="List Processes" command="core.psx"/>
-			<cmd name="uptime" title="Show Uptime" command="mi uptime"/>
-			<cmd name="getstatsall" title="Get All Statistics" command="mi get_statistics all"/>
-			<cmd name="which" title="Get All MI Commands" command="mi which"/>
-			<cmd name="dslist" title="List Dispatcher Records" command="dispatcher.list"/>
-			<cmd name="dsreload" title="Reload Dispatcher Records" command="dispatcher.reload"/>
-			<cmd name="pdtlist" title="List PDT Records" command="mi pdt_list"/>
-			<cmd name="pdtreload" title="Reload PDT Records" command="mi pdt_reload"/>
-			<cmd name="uldump" title="List Location Records" command="mi ul_dump"/>
-			<cmd name="uldumpbrief" title="Brief of Location Records" command="mi ul_dump brief"/>
-			<cmd name="addrlist" title="List Address Permissions Records" command="mi address_dump"/>
-			<cmd name="subnlist" title="List Subnet Permissions Records" command="mi subnet_dump"/>
-			<cmd name="addrreload" title="Reload Address Permissions Records" command="mi address_reload"/>
-			<cmd name="mtlist" title="List MTree Records" command="mi mt_list"/>
-			<cmd name="mtreload" title="Reload MTree Records" command="mi mt_reload"/>
+			<cmd name="help" title="List RPC Commands" command="system.listMethods"/>
+			<cmd name="uptime" title="Server - Uptime" command="core.uptime"/>
+			<cmd name="psx" title="Server - List Processes" command="core.psx"/>
+			<cmd name="getstatsall" title="Server - All Statistics" command="stats.get_statistics all"/>
+			<cmd name="corexsockets" title="Server - Listen Sockets" command="corex.list_sockets"/>
+			<cmd name="corexaliases" title="Server - Domain Aliases" command="corex.list_aliases"/>
+			<cmd name="dslist" title="Dispatcher - List Records" command="dispatcher.list"/>
+			<cmd name="dsreload" title="Dispatcher - Reload Records" command="dispatcher.reload"/>
+			<cmd name="uldump" title="UsrLoc - Location Records" command="ul.dump"/>
+			<cmd name="uldumpbrief" title="UsrLoc - Brief Location Records" command="ul.dump brief"/>
+			<cmd name="addrlist" title="Permissions - List IP Address Records" command="permissions.addressDump"/>
+			<cmd name="subnlist" title="Permissions - List IP Subnet Records" command="permissions.subnetDump"/>
+			<cmd name="addrreload" title="Permissions - Reload DB Address Records" command="permissions.addressReload"/>
+			<cmd name="mtlist" title="MTree - List Records" command="mtree.list"/>
+			<cmd name="mtreload" title="MTree - Reload Records" command="mtree.reload"/>
+			<cmd name="pdtlist" title="PDT - List Records" command="pdt.list"/>
+			<cmd name="pdtreload" title="PDT - Reload Records" command="pdt.reload"/>
         </JRCommands>
     </JRConfig>
 </PluginService>
