@@ -44,7 +44,7 @@ class JrcmdsForm extends EasyForm
 		<FORM style="float:center;" action="" method="post">
 			<SELECT name="cmdid">';
 
-			$selcmd = $_GET["jcmdid"];
+			$selcmd = $_GET["xcmdid"];
 			foreach ($micmds as $micobj) {
 				if($selcmd != $micobj->GetName())
 					$sHTML .=
