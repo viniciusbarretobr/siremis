@@ -2,10 +2,16 @@
 
 /* configuration
 <PluginService Name="siremisJRCommands" Package="asipto" Class="siremisJRCommands">
-    <JRConfig name="JRConfig">
-		<RSocket name="rsocket"
-                address="http://127.0.0.1:8021/RPC2" timeout="5"
-                username="alice" password="wonderland"/>
+    <JRConfig name="JRConfig" type="http" mode="rich">
+		<!-- used for type="http" -->
+		<RSocket name="rsocket" address="http://127.0.0.1:5060/RPC2" timeout="3"
+                 username="alice" password="wonderland"/>
+		<!-- used for type="udp" -->
+		<UDPLocal name="udplocal" address="127.0.0.1" port="8044" timeout="3.0"/>
+		<UDPRemote name="udpremote" address="127.0.0.1" port="8033" timeout="3.0"/>
+		<!-- used for type="unixsock" -->
+		<UnixSockLocal name="unixsocklocal" address="/tmp/siremis-kamailio-rpc.sock" timeout="3.0"/>
+		<UnixSockRemote name="unixsockremote" address="/var/run/kamailio/kamailio_rpc.sock" timeout="3.0"/>>
         <JRCommands>
             <cmd name="status" title="Status" command="status"/>
             <cmd name="help" title="Help" command="help"/>
@@ -44,26 +50,61 @@ class siremisJRCommands
 class JRConfig
 {
    public $m_Name;
+   public $m_Type;
    public $m_Mode;
    public $m_RSocket;
    public $m_UDPLocal;
    public $m_UDPRemote;
+   public $m_UnixSockLocal;
+   public $m_UnixSockRemote;
    public $m_JRCommands;
 
    public function __construct($xmlArr)
    {
       $this->m_Name = $xmlArr["ATTRIBUTES"]["NAME"];
+      $this->m_Type = $xmlArr["ATTRIBUTES"]["TYPE"];
       $this->m_Mode = $xmlArr["ATTRIBUTES"]["MODE"];
       $this->m_RSocket = new MetaIterator($xmlArr["RSOCKET"],"JRHTTPPeer");
       $this->m_UDPLocal = new MetaIterator($xmlArr["UDPLOCAL"],"JRUDPPeer");
       $this->m_UDPRemote = new MetaIterator($xmlArr["UDPREMOTE"],"JRUDPPeer");
+      $this->m_UnixSockLocal = new MetaIterator($xmlArr["UNIXSOCKLOCAL"],"JRUnixSockPeer");
+      $this->m_UnixSockRemote = new MetaIterator($xmlArr["UNIXSOCKREMOTE"],"JRUnixSockPeer");
       $this->m_JRCommands = new MetaIterator($xmlArr["JRCOMMANDS"]["CMD"],"JRCommand");
    }
    public function GetName() { return $this->m_Name; }
+   public function GetType() { return $this->m_Type; }
    public function GetMode() { return $this->m_Mode; }
    public function GetRSocket()
    {
       foreach ($this->m_RSocket as $micobj) {
+          return $micobj;
+      }
+      return null;
+   }
+   public function GetUDPLocal()
+   {
+      foreach ($this->m_UDPLocal as $micobj) {
+          return $micobj;
+      }
+      return null;
+   }
+   public function GetUDPRemote()
+   {
+      foreach ($this->m_UDPRemote as $micobj) {
+          return $micobj;
+      }
+      return null;
+   }
+   public function GetUnixSockLocal()
+   {
+      foreach ($this->m_UnixSockLocal as $micobj) {
+          return $micobj;
+      }
+      return null;
+   }
+   public function GetUnixSockRemote()
+   {
+      foreach ($this->m_UnixSockRemote as $micobj) {
           return $micobj;
       }
       return null;
@@ -122,6 +163,23 @@ class JRUDPPeer
    public function GetName() { return $this->m_Name; }
    public function GetAddress() { return $this->m_Address; }
    public function GetPort() { return $this->m_Port; }
+   public function GetTimeout() { return $this->m_Timeout; }
+}
+
+class JRUnixSockPeer
+{
+   public $m_Name;
+   public $m_Address;
+   public $m_Timeout;
+
+   public function __construct($xmlArr)
+   {
+      $this->m_Name = $xmlArr["ATTRIBUTES"]["NAME"];
+      $this->m_Address = $xmlArr["ATTRIBUTES"]["ADDRESS"];
+      $this->m_Timeout = $xmlArr["ATTRIBUTES"]["TIMEOUT"];
+   }
+   public function GetName() { return $this->m_Name; }
+   public function GetAddress() { return $this->m_Address; }
    public function GetTimeout() { return $this->m_Timeout; }
 }
 

@@ -350,26 +350,29 @@ class JsonRPCClient
 
 
 /**
- * Class for JsonRPC over UDP client
+ * Class for JsonRPC over UDP/UnixSock client
  */
 
 class JsonRPCUdpClient
 {
 	public $sock = false;
 	public $ready = false;
+	public $error_code = 0;
+	public $error_msg = 'unknown';
+	private $stype;
+	private $spath = '';
 	private $raddr;
 	private $rport;
 	private $cmd;
-	private $hdrs;
-	private $body;
+	public $http_body; /* match http jsonrcp class field */
 	private $sto;
 	private $uto;
 
-	function JsonRPCUdpClient($laddr='127.0.0.1', $lport=8044,
-			$timeout="3.0", $taddr='127.0.0.1', $tport=8033)
+	function __construct($stype='udp', $laddr='127.0.0.1', $lport=8044,
+			$taddr='127.0.0.1', $tport=8033, $timeout='3.0')
 	{
-			if (!defined('BUFFER_SIZE')) {
-			define('BUFFER_SIZE', 8192);
+		if (!defined('BUFFER_SIZE')) {
+			define('BUFFER_SIZE', 16384);
 		}
 		if(strpos($timeout, '.')) {
 			$split = preg_split("/\./", $timeout);
@@ -381,10 +384,50 @@ class JsonRPCUdpClient
 		}
 		$this->raddr = $taddr;
 		$this->rport = $tport;
-		$this->sock = socket_create(AF_INET, SOCK_DGRAM, SOL_UDP);
-		if(socket_bind($this->sock, $laddr, $lport)) {
-			$this->ready=true;
+		$this->stype = $stype;
+		if($this->stype=='udp') {
+			// udp inet socket
+			$this->sock = socket_create(AF_INET, SOCK_DGRAM, SOL_UDP);
+			if($this->sock==false) {
+				error_log ("socket create failed: " . socket_strerror(socket_last_error()));
+				return;
+			}
+			if(socket_bind($this->sock, $laddr, $lport)==true) {
+				$this->ready=true;
+			} else {
+				error_log ("socket bind failed: " . socket_strerror(socket_last_error($this->sock)));
+			}
+		} else {
+			// unix socket file
+			$this->spath = $laddr . "." . substr( md5(rand()), 0, 8);
+			if (file_exists($this->spath)) {
+				unlink($this->spath);
+			}
+
+			$this->sock = socket_create(AF_UNIX, SOCK_DGRAM, 0);
+			if($this->sock==false) {
+				error_log ("socket create failed: " . socket_strerror(socket_last_error()));
+				return;
+			}
+			if(socket_bind($this->sock, $this->spath)==true) {
+				$this->ready=true;
+				if (file_exists($this->spath)) {
+					chmod($this->spath, 0666);
+				} else {
+					error_log ("Unable to create JSONRPC client unix socket file: "
+						. $this->spath);
+				}
+				// socket_connect($this->sock, $this->raddr);
+			} else {
+				error_log ("socket bind failed: " . socket_strerror(socket_last_error($this->sock)));
+			}
 		}
+	}
+
+	function JsonRPCUdpClient($stype='udp', $laddr='127.0.0.1', $lport=8044,
+			$taddr='127.0.0.1', $tport=8033, $timeout='3.0')
+	{
+		self::__construct($stype, $laddr, $lport, $taddr, $tport, $timeout);
 	}
 
 	function sjr_close()
@@ -393,155 +436,102 @@ class JsonRPCUdpClient
 			socket_close($this->sock);
 			$this->sock = false;
 		}
+		if(strlen($this->spath)>0) {
+			if (file_exists($this->spath)) {
+				unlink($this->spath);
+			}
+		}
 	}
 
 	private function sjr_read()
 	{
-		unset($this->hdrs);
-		unset($this->body);
+		unset($this->http_body);
 
-		socket_set_option($this->sock,SOL_SOCKET, SO_RCVTIMEO, array("sec"=>$this->sto, "usec"=>$this->uto));
-		$ret = @socket_recvfrom($this->sock, $rcvbuf, BUFFER_SIZE, 0, $faddr, $fport);
+		socket_set_option($this->sock, SOL_SOCKET, SO_RCVTIMEO, array("sec"=>$this->sto, "usec"=>$this->uto));
+		if($this->stype=='udp') {
+			$ret = socket_recvfrom($this->sock, $rcvbuf, BUFFER_SIZE, 0,
+						$faddr, $fport);
+		} else {
+			$ret = socket_recvfrom($this->sock, $rcvbuf, BUFFER_SIZE, 0,
+						$faddr);
+		}
 
-		if($ret<0) {
+		if($ret==false) {
+			error_log($this->stype . " socket recv failed: " . socket_strerror(socket_last_error($this->sock)));
 			return false;
 		}
 
-		$lines = explode("\n", $rcvbuf);
-		$this->hdrs[] = $lines[0];
-		for ($i=1; $i<count($lines); $i++) {
-			$this->body[] = $lines[$i];
-		}
+		$this->http_body = $rcvbuf;
+
 		return true;
     }
 
 	private function sjr_write($input)
 	{
 		$len = strlen($input);
-		if(socket_sendto($this->sock, $input, $len, 0,
-				$this->raddr, $this->rport)==false)
-			return false;
+		if($this->stype=='udp') {
+			if(socket_sendto($this->sock, $input, $len, 0,
+					$this->raddr, $this->rport)==false) {
+				error_log("i socket send failed: " . socket_strerror(socket_last_error($this->sock)));
+				return false;
+			}
+		} else {
+			if(socket_sendto($this->sock, $input, $len, 0,
+					$this->raddr)==false) {
+				error_log("u socket send failed: " . socket_strerror(socket_last_error($this->sock)));
+				return false;
+			}
+		}
 		return true;
 	}
 
-	public function sjr_command($vcmd)
+	public function execute($vcmd, array $params = array())
 	{
-		if(!$this->ready)
+		if(!$this->ready) {
+			$this->error_code = 500;
+			$this->error_msg = "JSONRPC client not ready";
 			return false;
+		}
+		$this->error_code = 0;
+		/*
+		{
+			"jsonrpc": "2.0",
+			"method": "cmd",
+			"params": ["p1", p2, "p3"],
+			"id": 1
+		}
+		*/
 		$words = explode(" ", $vcmd);
-		$udpbuf = ":".$words[0].":\n";
-		$this->cmd = $words[0];
-		$c=count($words);
-		for($i = 1; $i < $c; $i = $i + 1)
-			$udpbuf .= $words[$i]."\n";
-		if($this->smi_write($udpbuf)==false)
+		$udpbuf = "{\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"";
+		$udpbuf .= $vcmd . "\",\n";
+		$c=count($params);
+		if($c>0) {
+			$udpbuf .= "  \"params\": [";
+			for($i = 0; $i < $c; $i = $i + 1) {
+				if(i>0) {
+					$udpbuf .= ",";
+				}
+				if(is_string($params[$i])) {
+					$udpbuf .= "\"" . $params[$i] . "\"";
+				} else {
+					$udpbuf .= $params[$i];
+				}
+			}
+			$udpbuf .= "],\n";
+		}
+		$udpbuf .= "  \"id\": " . rand (1,10000) . "\n}\n";
+		if($this->sjr_write($udpbuf)==false) {
+			$this->error_code = 500;
+			$this->error_msg = "JSONRPC client send failed";
 			return false;
-		if($this->smi_read()==false)
+		}
+		if($this->sjr_read()==false) {
+			$this->error_code = 500;
+			$this->error_msg = "JSONRPC client recv failed";
 			return false;
+		}
 		return true;
     }
-
-	function printText()
-	{
-		if (isset($this->hdrs)) {
-			foreach ($this->hdrs as $key=>$val) {
-				printf("%s\n", $val);
-			}
-			if (isset($this->body)) {
-				printf("\n");
-				foreach ($this->body as $key=>$val) {
-					printf("%s\n", $val);
-				}
-			}
-		} else {
-			printf("[[NO CONTENT]]\n");
-		}
-	}
-
-	function toPlainStr()
-	{
-		$output = "";
-		if (isset($this->hdrs)) {
-			foreach ($this->hdrs as $key=>$val) {
-				$output .= $val."\n";
-			}
-			if (isset($this->body)) {
-				$output .= "\n";
-				foreach ($this->body as $key=>$val) {
-					$output .= $val."\n";
-				}
-			}
-		} else {
-			$output .= "[[NO CONTENT]]\n";
-		}
-		return $output;
-	}
-
-	function richSafe($strText)
-	{
-		//returns safe code for preloading in the RTE
-		$tmpString = $strText;
-
-		//convert all types of single quotes
-		$tmpString = str_replace(chr(145), chr(39), $tmpString);
-		$tmpString = str_replace(chr(146), chr(39), $tmpString);
-		$tmpString = str_replace("'", "&#39;", $tmpString);
-
-		//convert all types of double quotes
-		$tmpString = str_replace(chr(147), chr(34), $tmpString);
-		$tmpString = str_replace(chr(148), chr(34), $tmpString);
-
-		//replace carriage returns & line feeds
-		$tmpString = str_replace(chr(10), " ", $tmpString);
-		$tmpString = str_replace(chr(13), " ", $tmpString);
-
-		//replace < and >
-		$tmpString = str_replace("<", "&#60;", $tmpString);
-		$tmpString = str_replace(">", "&#62;", $tmpString);
-
-		return $tmpString;
-	}
-
-	function bodyToRichStr()
-	{
-		$output = "";
-		$output .= "<br/>";
-		$output .= "<span style=\"color:#000066\">";
-		switch($this->cmd) {
-			case "which":
-				$line = 0;
-				foreach ($this->body as $key=>$val) {
-					$output .= "<span style=\"color:#009933\">";
-					$output .= $this->richSafe($val)."<br/>";
-					$output .= "</span>";
-				}
-			break;
-			default:
-				foreach ($this->body as $key=>$val) {
-					$output .= $this->richSafe($val)."<br/>";
-				}
-		}
-		$output .= "</span>";
-		return $output;
-	}
-
-	function toRichStr()
-	{
-		$output = "";
-		if (isset($this->hdrs)) {
-			$output .= "<span style=\"color:#663333;font-family:Arial;font-size:12px;\">";
-			foreach ($this->hdrs as $key=>$val) {
-				$output .= "<b>".$this->richSafe($val)."</b><br/>";
-			}
-			if (isset($this->body)) {
-				$output .= $this->bodyToRichStr();
-			}
-			$output .= "</span>";
-		} else {
-			$output .= "<b>[[NO CONTENT]]</b><br/>";
-		}
-		return $output;
-	}
 }
 
 /**
@@ -552,26 +542,44 @@ class serjr
 {
 	public $client = false;
 	public $ready = false;
+	private $ctype = 'http';
 	private $cmd;
 	private $timeout;
 	private $result;
 	private $jmsg;
 
-	function serjr($addr='http://127.0.0.1:5060/RPC2', $timeout=3)
+	function __construct($stype='udp', $laddr='127.0.0.1', $lport=8044,
+			$taddr='127.0.0.1', $tport=8033, $timeout='3.0')
 	{
 		if (!defined('BUFFER_SIZE')) {
 			define('BUFFER_SIZE', 8192);
 		}
 		$this->timeout = $timeout;
-		$this->client = new JsonRPCClient($addr, $timeout);
+		$this->ctype = $stype;
+		if($this->ctype == 'http') {
+			$this->client = new JsonRPCClient($taddr, $timeout);
+		} else {
+			$this->client = new JsonRPCUdpClient($stype, $laddr, $lport,
+							$taddr, $tport, $timeout);
+		}
+
 		if($this->client) {
 			$this->ready=true;
 		}
 	}
 
+	function serjr($stype='udp', $laddr='127.0.0.1', $lport=8044,
+			$taddr='127.0.0.1', $tport=8033, $timeout="3.0")
+	{
+		self::__construct($stype, $laddr, $lport, $taddr, $tport, $timeout);
+	}
+
 	function sjr_close()
 	{
 		if($this->client) {
+			if($this->ctype == 'unixsock') {
+				$this->client->sjr_close();
+			}
 			$this->client = false;
 			$this->ready = false;
 		}
@@ -684,7 +692,7 @@ class serjr
 						$output .= "</pre>";
 				}
 			} else {
-				$output .= "Fault Code: " . $this->client->error_code() . "<br/>";
+				$output .= "Fault Code: " . $this->client->error_code . "<br/>";
 				$output .= "Fault Reason: " . $this->richSafe($this->client->error_msg) . "<br/>";
 			}
 			$output .= "</span>";

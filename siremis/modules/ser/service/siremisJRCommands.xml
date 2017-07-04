@@ -1,12 +1,15 @@
 <?xml version="1.0" standalone="no"?>
 <PluginService Name="siremisJRCommands" Package="asipto" Class="siremisJRCommands">
-    <JRConfig name="JRConfig" type="http" mode="rich">
+    <JRConfig name="JRConfig" type="unixsock" mode="rich">
 		<!-- used for type="http" -->
 		<RSocket name="rsocket" address="http://127.0.0.1:5060/RPC2" timeout="3"
                  username="alice" password="wonderland"/>
 		<!-- used for type="udp" -->
-		<UDPLocal name="local" address="127.0.0.1" port="8044" timeout="3.0"/>
-		<UDPRemote name="remote" address="127.0.0.1" port="8033" timeout="3.0"/>
+		<UDPLocal name="udplocal" address="127.0.0.1" port="8044" timeout="3.0"/>
+		<UDPRemote name="udpremote" address="127.0.0.1" port="8033" timeout="3.0"/>
+		<!-- used for type="unixsock" *** note: avoid sockets in /tmp/ if you haven't reconfigured systemd -->
+		<UnixSockLocal name="unixsocklocal" address="/var/run/siremis/siremis_rpc.sock" timeout="3.0"/>
+		<UnixSockRemote name="unixsockremote" address="/var/run/kamailio/kamailio_rpc.sock" timeout="3.0"/>
         <JRCommands>
             <cmd name="help" title="List commands" command="system.listMethods"/>
             <cmd name="uptime" title="Uptime" command="core.uptime"/>

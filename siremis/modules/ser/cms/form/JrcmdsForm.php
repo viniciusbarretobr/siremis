@@ -68,7 +68,7 @@ class JrcmdsForm extends EasyForm
 		if(!$vcmd || $vcmd=="")
 		{
 			$vcmdid = $_POST["cmdid"];
-			// die(printf("Command: ".$vcmdid."\r\n"));
+			// die("Command: ".$vcmdid."\r\n");
 			if($vcmdid && $vcmdid!="")
 			{
 				$vcmd = $jrobj->GetJRConfig()->GetJRCommand($vcmdid)->GetCommand();
@@ -76,13 +76,34 @@ class JrcmdsForm extends EasyForm
 		}
 		if($vcmd && $vcmd!="")
 		{
-			$jre = new serjr(
-						$jrobj->GetJRConfig()->GetRSocket()->GetAddress(),
-						$jrobj->GetJRConfig()->GetRSocket()->GetTimeout()
-					);
+			if($jrobj->GetJRConfig()->GetType()=="http") {
+				$jre = new serjr("http",
+							"", 0, /* no locl address:port */
+							$jrobj->GetJRConfig()->GetRSocket()->GetAddress(), 0,
+							$jrobj->GetJRConfig()->GetRSocket()->GetTimeout()
+						);
+			} else if($jrobj->GetJRConfig()->GetType()=="udp") {
+				$jre = new serjr("udp",
+							$jrobj->GetJRConfig()->GetUDPLocal()->GetAddress(),
+							$jrobj->GetJRConfig()->GetUDPLocal()->GetPort(),
+							$jrobj->GetJRConfig()->GetUDPRemote()->GetAddress(),
+							$jrobj->GetJRConfig()->GetUDPRemote()->GetPort(),
+							$jrobj->GetJRConfig()->GetUDPRemote()->GetTimeout()
+						);
+			} else if($jrobj->GetJRConfig()->GetType()=="unixsock") {
+				$jre = new serjr("unixsock",
+							$jrobj->GetJRConfig()->GetUnixSockLocal()->GetAddress(),
+							0,
+							$jrobj->GetJRConfig()->GetUnixSockRemote()->GetAddress(),
+							0,
+							$jrobj->GetJRConfig()->GetUnixSockRemote()->GetTimeout()
+						);
+			} else {
+				die("Unknown JSONRPC client type\r\n");
+			}
 			if ($jre->ready != true) {
 				$jre->sjr_close();
-				die(printf("Unable to create JSONRPC client\r\n"));
+				die("Unable to create JSONRPC client\r\n");
 			}
 			$jrret = $jre->sjr_command($vcmd);
 
