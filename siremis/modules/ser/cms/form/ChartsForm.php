@@ -14,91 +14,54 @@ class ChartsForm extends EasyForm
 		$sHTML = ""; 
 
 		$sHTML .= '<br />
-			<table id="micmds" align="center" width="100%">
-			<tr align="center"><td align="center" colspan="2">
+			<div id="echarts" align="center">
 			';
 		if(!$cgobj)
 		{
-			$sHTML .= 'Charts Service not configured';
-			$sHTML .= '</td></tr></table>';
+			$sHTML .= '<p>Charts Service Not Configured</p>';
+			$sHTML .= '</div>';
 			return $sHTML;
 		}
 
 		$clist = $cgrp->GetChartList();
 		
 		$sHTML .= 
-			'<strong>Charts Service Panel</strong><br /><br />
-			</td></tr><tr><td align="center" colspan="2">
+			'<p><strong>Charts Service Panel</strong></p><br />
 			';
 
+		foreach ($clist as $chart => $chartobj) {
+			$sHTML .=
+				'
+				<br />
+				<div id="echart_'.$chartobj->GetName().'" style="height:400px;">
+				</div>
+				<br />
+				';
+		}
 
 		$sHTML .= 
 			'
-			<script type="text/javascript" src="'.APP_URL.'/js/swfobject.js"></script>
+			<script type="text/javascript" src="'.APP_URL.'/modules/ser/pages/echarts.min.js"></script>
 			<script type="text/javascript">
 			';
 
 		foreach ($clist as $chartobj) {
 			$sHTML .= 
-				'// chart: '.$chartobj->GetName(). '
+				'// echart: '.$chartobj->GetName(). '
 				';
 
 			$sHTML .= 
-				'swfobject.embedSWF(
-					"'.APP_URL.'/modules/ser/pages/open-flash-chart.swf",
-					"div_chart_' . $chartobj->GetName() .'",
-					"640", "300",
-					"9.0.0", "",
-					{"get-data":"get_data_'.$chartobj->GetName().'"} );
+				'
+				var vChart_'.$chartobj->GetName().' = echarts.init(document.getElementById("echart_'.$chartobj->GetName().'"));
+				var vOpts_'.$chartobj->GetName().' = JSON.parse(\''.siremis_get_chart_data($_GET["cg"], $chartobj->GetName()).'\');
+				vChart_'.$chartobj->GetName().'.setOption(vOpts_'.$chartobj->GetName().');
 				';
 		}
 		$sHTML .= 
 			'
 			</script>';
 
-		if($cgrp)
-		{
-			$sHTML .= 
-				'<div align="center">';
-			$clist = $cgrp->GetChartList();
-			foreach ($clist as $chart => $chartobj) {
-				$sHTML .= 
-					'<div id="div_chart_'.$chartobj->GetName().'">
-					</div>
-					<br />
-					<br />';
-			}
-			$sHTML .= 
-				'</div>';
-		} else {
-			echo "No charts for ".$_GET["cg"];
-		}
-
-		$sHTML .= 
-			'
-			<script type="text/javascript">
-			';
-
-		foreach ($clist as $chartobj) {
-			$sHTML .= 
-				'
-				function get_data_'.$chartobj->GetName().'()
-				{
-					data = \''.siremis_get_chart_data($_GET["cg"], $chartobj->GetName()).'\';
-					return data;
-				}
-				';
-		}
-
-		$sHTML .= 
-			'
-		</script>';
-		
-		$sHTML .= 
-			'<br />
-			';
-	
-		$sHTML .= '</td></tr></table>';
+		$sHTML .= '</div>';
 		return $sHTML;
    	}
 }
