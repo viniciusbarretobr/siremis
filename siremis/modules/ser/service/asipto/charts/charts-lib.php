@@ -1,7 +1,4 @@
 <?php
-// include_once("../../../../../bin/app.inc");
-include_once(MODULE_PATH."/ser/pages/ofc/open-flash-chart.php");
-
    function siremis_get_chart_data($groupId, $chartId, $debug=0)
    {
 		global $g_BizSystem;
@@ -40,7 +37,7 @@ include_once(MODULE_PATH."/ser/pages/ofc/open-flash-chart.php");
 			$sql .= " ".$chart->GetOrderBy();
 		if($chart->GetLimit() && $chart->GetLimit()!="")
 			$sql .= " ".$chart->GetLimit();
-		// " ORDER BY id DESC LIMIT 30";
+		// echo " - sql: " . $sql;
 		$db = $g_BizSystem->GetDBConnection("Serdb");
 		$resultSet = $db->query($sql);
 		if ($resultSet === false) {
@@ -75,16 +72,19 @@ include_once(MODULE_PATH."/ser/pages/ofc/open-flash-chart.php");
 			}
 			$k = $k + 1;
 		}
-		$ofcobj = new open_flash_chart();
+
 		$ctitle = $chart->GetTitle();
+		$ecdata = array();
+		$clabels = array();
+		$clegends = array();
+		$ccolors = array("#FF7588","#40C7CA","#FFA87D");
+
 		$rev = 0;
 		if($chart->GetOrder() && $chart->GetOrder()=="reverse")
 			$rev = 1;
-		$x = new x_axis();
 		$xstep = (int)($k/20);
 		if($k%20!=0)
 			$xstep = $xstep + 1;
-		$x->set_steps( $xstep );
 		if($xydata[0]->getXYType()=="timestamp")
 		{
 			if($rev==1) {
@@ -94,76 +94,71 @@ include_once(MODULE_PATH."/ser/pages/ofc/open-flash-chart.php");
 				$time_min = $xdata[0];
 				$time_max = $xdata[$k-1];
 			}
-			$ctitle .= " - From ".date('Y-m-d H:i:s', $time_min); 
-			$ctitle .= " To ".date('Y-m-d H:i:s', $time_max); 
+			$ctitle .= " (".date('Y-m-d H:i:s', $time_min);
+			$ctitle .= " - ".date('Y-m-d H:i:s', $time_max).")";
 
-			$time_x_labels = new x_axis_labels();
-			$time_x_labels->rotate(20);
-			$chart_lbls = array();
 			for($i = 0; $i < $k; $i = $i + 1)
 			{
 				if($rev==0) {
-					$chart_lbls[] = date('H:i', $xdata[$i]);
+					$clabels[] = date('H:i', $xdata[$i]);
 				} else {
-					$chart_lbls[] = date('H:i', $xdata[$k- $i -1]);
+					$clabels[] = date('H:i', $xdata[$k- $i -1]);
 				}
 			}
-
-			$time_x_labels->visible_steps($xstep);
-			$time_x_labels->set_labels($chart_lbls);
-			$x->set_labels($time_x_labels);
 		} else {
-			$time_x_labels->visible_steps($xstep);
 			if($rev==1) {
-				$ctitle .= " - From ".$xdata[$k-1]." To ".$xdata[0]; 
+				$ctitle .= " (".$xdata[$k-1]." - ".$xdata[0].")";
 			} else {
-				$ctitle .= " - From ".$xdata[0]." To ".$xdata[$k-1]; 
+				$ctitle .= " (".$xdata[0]." - ".$xdata[$k-1].")";
+			}
+			for($i = 0; $i < $k; $i = $i + 1)
+			{
+				if($rev==0) {
+					$clabels[] = $xdata[$i];
+				} else {
+					$clabels[] = $xdata[$k- $i -1];
+				}
 			}
 		}
-		$ofcobj->set_title( new title( $ctitle ) );
-		$dot_style = new dot();
-		$dot_style
-			->size(3)
-			->halo_size(1);
-		for($i = 0; $i<$yn; $i++)
-		{
-			if($chart->GetChartType()=="area") {
-				$line[$i] = new area();
-				$line[$i]->set_fill_alpha( 0.30 );
-				$line[$i]->set_default_dot_style($dot_style);
-			} else if($chart->GetChartType()=="line_dot") {
-				$line[$i] = new line_dot();
-				$line[$i]->set_default_dot_style($dot_style);
+
+		$series = array();
+		for($i = 0; $i<$yn; $i++) {
+			$series[$i] = array();
+			if($xydata[$i+1]->GetXYTitle() && $xydata[$i+1]->GetXYTitle()!="") {
+				$series[$i]["name"] = $xydata[$i+1]->GetXYTitle();
+				$clegends[$i] = $xydata[$i+1]->GetXYTitle();
 			} else {
-				$line[$i] = new line();
-				$line[$i]->set_default_dot_style($dot_style);
+				$series[$i]["name"] = "Key ".$i;
+				$clegends[$i] = "Key ".$i;
 			}
 			if($xydata[$i+1]->GetXYColor() && $xydata[$i+1]->GetXYColor()!="")
-				$line[$i]->set_colour( $xydata[$i+1]->GetXYColor() );
-			if($xydata[$i+1]->GetXYTitle() && $xydata[$i+1]->GetXYTitle()!="")
-				$line[$i]->set_key( $xydata[$i+1]->GetXYTitle() , 10 );
-			else
-				$line[$i]->set_key( "Key ".$i , 10 );
-			if($rev==1) {
-				$line[$i]->set_values( array_reverse( $ydata[$i] ) );
+				$ccolors[$i] = $xydata[$i+1]->GetXYColor();
+			$series[$i]["type"] = "line";
+			$series[$i]["smooth"] = 0;
+			if($chart->GetChartType()=="area") {
+				$series[$i]["itemStyle"] = array("normal" => array("areaStyle" => array("type" => "default")));
+			} else if($chart->GetChartType()=="line_dot") {
+				//
 			} else {
-				$line[$i]->set_values( $ydata[$i] );
+				//
 			}
-			$ofcobj->add_element( $line[$i] );
+			if($rev==1) {
+				$series[$i]["data"] = array_reverse( $ydata[$i] );
+			} else {
+				$series[$i]["data"] = $ydata[$i] ;
+			}
 		}
-		if($ymax>10)
-		{
-			$y = new y_axis();
-			if($ymin>10)
-				$y->set_range( $ymin-10, $ymax, (int)(($ymax-$ymin+10)/10) );
-			else
-				$y->set_range( 0, $ymax, (int)($ymax/10) );
-			$ofcobj->set_y_axis( $y );
-		}
-		$ofcobj->set_x_axis( $x );
-		if($chart->GetBGColor() && $chart->GetBGColor()!="")
-			$ofcobj->set_bg_colour( $chart->GetBGColor() );
-		// return $ofcobj->toPrettyString();
-		return $ofcobj->toString();
+
+		$ecdata["title"] = array("text" => $ctitle,
+				"textStyle"=>array("fontSize" => 12),
+				"top"=>5, "left"=>20);
+		$ecdata["tooltip"] = array("trigger" => "axis");
+		$ecdata["legend"] = array("data" => $clegends, "top"=>25);
+		$ecdata["color"] = $ccolors;
+		$ecdata["xAxis"] = array("data" => $clabels);
+		$ecdata["yAxis"] = new stdClass();
+		$ecdata["series"] = $series;
+		// return json_encode($ecdata, JSON_PRETTY_PRINT);
+		return json_encode($ecdata);
    }
 ?> 
