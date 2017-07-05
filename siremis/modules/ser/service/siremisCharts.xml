@@ -63,7 +63,7 @@
 			<Item name="rcv_req_diff" data="rcv_req_diff" title="Rcv Reqs Load" type="dataset" color="#990000" />
 		</YAxis>
     </Chart>
-	  <Chart name="freqload" table="statistics" title="Rcv Reqs" bgcolor="#66CC99"
+	  <Chart name="freqload" table="statistics" title="Fwd Reqs" bgcolor="#66CC99"
 			order="reverse" orderby="ORDER BY id DESC" limit="LIMIT 120">
 		<XAxis>
 			<Item name="time_stamp" data="time_stamp" title="timestamp" type="timestamp"/>
