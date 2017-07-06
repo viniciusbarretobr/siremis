@@ -10,6 +10,8 @@ class ChartsStatsUlsForm extends EasyForm
 	{
 		global $g_BizSystem;
 
+		$sHTML = '';
+
 		$sql = "SELECT username, cflags, methods, user_agent, contact from location order by username";
 		$db = $g_BizSystem->GetDBConnection("Serdb");
 		$resultSet = $db->query($sql);
@@ -275,254 +277,319 @@ class ChartsStatsUlsForm extends EasyForm
 				$ul_contacts[5] = $ul_contacts[5] + 1;
 			}
 		}
+
 		/* user agents chart */
-		$ua_title = new title( 'User Agents' );
-		$ua_x_labels = new x_axis_labels();
-		$ua_x_labels->rotate(20);
-		$ua_bar = new bar_glass();
-		$chart_vals = array();
-		$chart_lbls = array();
+		$uachart = array();
+		$ualabels = array();
+		$ualegends = array();
+		$uachart["title"] = array("text" => "UsrLoc User Agents",
+				"textStyle"=>array("fontSize" => 12),
+				"top"=>5, "left"=>20);
+
+		$uavals = array();
+		$uacolors = array();
 		$i = 0;
 		$ymax = 10;
 		foreach($ul_uas as $key => $val) {
 			if($val>0)
 			{
-				$chart_vals[$i] = new bar_value($val);
-				$chart_vals[$i]->set_colour($chart_colors[$i % $chart_colors_size]);
-				$chart_vals[$i]->set_tooltip( $key.'<br>#val#' );
-				$chart_lbls[$i] = $key;
+				$uavals[$i] = array("value" => $val,
+									"itemStyle" => array("normal" => array("color"=>$chart_colors[$i % $chart_colors_size])));
+				$uacolors[$i] = $chart_colors[$i % $chart_colors_size];
+				$ualabels[$i] = $key;
 				if($ymax<$val)
 					$ymax = $val;
 				$i = $i + 1;
 			}
 		}
-		$ua_bar->set_values( $chart_vals );	
-		$ua_x_labels->set_labels($chart_lbls);
-		$x = new x_axis();
-		$x->set_labels($ua_x_labels);
-		$y = new y_axis();
-		$y->set_range( 0, $ymax, $ymax/10 );
-		$ul_uas_chart = new open_flash_chart();
-		$ul_uas_chart->set_title( $ua_title );
-		$ul_uas_chart->add_element( $ua_bar );
-		$ul_uas_chart->set_x_axis( $x );
-		$ul_uas_chart->add_y_axis( $y );
+		$uaseries = array();
+		$uaseries[0] = array();
+		$uaseries[0]["name"] = "User Agents";
+		$uaseries[0]["type"] = "bar";
+		$uaseries[0]["data"] = $uavals;
+		$uachart["tooltip"] = array("trigger" => "axis");
+		$uachart["legend"] = array("data" => $ualegends, "top"=>25);
+		$uachart["color"] = $uacolors;
+		$uachart["xAxis"] = array("data" => $ualabels);
+		$uachart["yAxis"] = new stdClass();
+		$uachart["series"] = $uaseries;
+		$uadata = json_encode($uachart);
 	
 		/* supported SIP Methods chart */
-		$mt_title = new title( 'Supported SIP Methods' );
-		$mt_x_labels = new x_axis_labels();
-		$mt_x_labels->rotate(20);
-		$mt_bar = new bar_glass();
-		$chart_vals = array();
-		$chart_lbls = array();
+		$mtchart = array();
+		$mtlabels = array();
+		$mtlegends = array();
+		$mtchart["title"] = array("text" => "UsrLoc SIP Methods",
+				"textStyle"=>array("fontSize" => 12),
+				"top"=>5, "left"=>20);
+
+		$mtvals = array();
+		$mtcolors = array();
 		$i = 0;
 		$ymax = 10;
 		foreach($ul_methods as $key => $val) {
 			if($val>0)
 			{
-				$chart_vals[$i] = new bar_value($val);
-				$chart_vals[$i]->set_colour($chart_colors[$i % $chart_colors_size]);
-				$chart_vals[$i]->set_tooltip( $key.'<br>#val#' );
-				$chart_lbls[$i] = $key;
+				$mtvals[$i] = array("value" => $val,
+									"itemStyle" => array("normal" => array("color"=>$chart_colors[$i % $chart_colors_size])));
+				$mtcolors[$i] = $chart_colors[$i % $chart_colors_size];
+				$mtlabels[$i] = $key;
 				if($ymax<$val)
 					$ymax = $val;
 				$i = $i + 1;
 			}
 		}
-		$mt_bar->set_values( $chart_vals );	
-		$mt_x_labels->set_labels($chart_lbls);
-		$x = new x_axis();
-		$x->set_labels($mt_x_labels);
-		$y = new y_axis();
-		$y->set_range( 0, $ymax, $ymax/10 );
-		$mt_chart = new open_flash_chart();
-		$mt_chart->set_title( $mt_title );
-		$mt_chart->add_element( $mt_bar );
-		$mt_chart->set_x_axis( $x );
-		$mt_chart->add_y_axis( $y );
+		$mtseries = array();
+		$mtseries[0] = array();
+		$mtseries[0]["name"] = "SIP Methods";
+		$mtseries[0]["type"] = "bar";
+		$mtseries[0]["data"] = $mtvals;
+		$mtchart["tooltip"] = array("trigger" => "axis");
+		$mtchart["legend"] = array("data" => $mtlegends, "top"=>25);
+		$mtchart["color"] = $mtcolors;
+		$mtchart["xAxis"] = array("data" => $mtlabels);
+		$mtchart["yAxis"] = new stdClass();
+		$mtchart["series"] = $mtseries;
+		$mtdata = json_encode($mtchart);
 
 		/* bar stacks - contacts/user, nat stats, ... */
 
-		$cn_title = new title('Contacts and NAT Stats');
-		$cn_x_labels = new x_axis_labels();
-		$cn_x_labels->rotate(20);
+		$cnchart = array();
+		$cnlabels = array();
+		$cnlegends = array();
+		$cnchart["title"] = array("text" => "UsrLoc Stats",
+				"textStyle"=>array("fontSize" => 12),
+				"top"=>5, "left"=>20);
 
-		$bar_stack = new bar_stack();
-		$bar_stack->set_colours( $chart_colors );
-		$chart_lbls = array();
+		$cncolors = array();
 		$c = 0;
-		$lidx = 0;
-	
-		$chart_vals = array();
-		$i = 0;
-		$chart_vals[$i] = new bar_stack_value($yidx,
-							$chart_colors[($c++) % $chart_colors_size]);
-		$chart_vals[$i]->set_tooltip( 'Records<br>#val#' );
-		$bar_stack->append_stack($chart_vals);
-		$chart_lbls[$lidx++] = 'All Records';
+		$sidx = 0;
 
-		$chart_vals = array();
-		$i = 0;
-		$chart_vals[$i] = new bar_stack_value($ousr,
-							$chart_colors[($c++) % $chart_colors_size]);
-		$chart_vals[$i]->set_tooltip( 'Online<br>#val#' );
-		$bar_stack->append_stack($chart_vals);
-		$chart_lbls[$lidx++] = 'Online Users';
+		$cnlabels[0] = "v";
 
-		$chart_vals = array();
-		$i = 0;
-		$chart_vals[$i] = new bar_stack_value($ul_contacts[1],
-							$chart_colors[($c++) % $chart_colors_size]);
-		$chart_vals[$i]->set_tooltip( '1 contact<br>#val#' );
-		$i = $i + 1;
-		$chart_vals[$i] = new bar_stack_value($ul_contacts[2],
-							$chart_colors[($c++) % $chart_colors_size]);
-		$chart_vals[$i]->set_tooltip( '2 contacts<br>#val#' );
-		$i = $i + 1;
-		$chart_vals[$i] = new bar_stack_value($ul_contacts[3],
-							$chart_colors[($c++) % $chart_colors_size]);
-		$chart_vals[$i]->set_tooltip( '3 contacts<br>#val#' );
-		$i = $i + 1;
-		$chart_vals[$i] = new bar_stack_value($ul_contacts[4],
-							$chart_colors[($c++) % $chart_colors_size]);
-		$chart_vals[$i]->set_tooltip( '4 contacts<br>#val#' );
-		$i = $i + 1;
-		$chart_vals[$i] = new bar_stack_value($ul_contacts[5],
-							$chart_colors[($c++) % $chart_colors_size]);
-		$chart_vals[$i]->set_tooltip( '&gt;=5 contacts <br>#val#' );
-		$i = $i + 1;
-		$bar_stack->append_stack($chart_vals);
-		$chart_lbls[$lidx++] = 'Contacts per AoR';
+		$cnseries = array();
 
-		$chart_vals = array();
-		$i = 0;
-		$chart_vals[$i] = new bar_stack_value($ul_nat['NATTED'],
-							$chart_colors[($c++) % $chart_colors_size]);
-		$chart_vals[$i]->set_tooltip( 'Natted<br>#val#' );
-		$i = $i + 1;
-		$chart_vals[$i] = new bar_stack_value($yidx - $ul_nat['NATTED'],
-							$chart_colors[($c++) % $chart_colors_size]);
-		$chart_vals[$i]->set_tooltip( 'Not-Natted<br>#val#' );
-		$bar_stack->append_stack($chart_vals);
-		$chart_lbls[$lidx++] = 'Natted';
+		$cnvals = array();
+		$cnvals[0] = array("name" => "all", "value" => $yidx,
+									"itemStyle" => array("normal" => array("color"=>$chart_colors[($c++) % $chart_colors_size])));
+		$cnseries[$sidx] = array();
+		$cnseries[$sidx]["name"] = "UsrLoc Records";
+		$cnseries[$sidx]["type"] = "bar";
+		$cnseries[$sidx]["stack"] = "all";
+		$cnseries[$sidx]["data"] = $cnvals;
 
-		$chart_vals = array();
-		$i = 0;
-		$chart_vals[$i] = new bar_stack_value($ul_nat['SIPPING'],
-							$chart_colors[($c++) % $chart_colors_size]);
-		$chart_vals[$i]->set_tooltip( 'SIP Ping<br>#val#' );
-		$i = $i + 1;
-		$chart_vals[$i] = new bar_stack_value($yidx - $ul_nat['SIPPING'],
-							$chart_colors[($c++) % $chart_colors_size]);
-		$chart_vals[$i]->set_tooltip( 'No SIP Ping<br>#val#' );
-		$bar_stack->append_stack($chart_vals);
-		$chart_lbls[$lidx++] = 'SIP Ping';
+		$sidx = $sidx + 1;
+		$cnvals = array();
+		$cnvals[0] = array("name" => "online", "value" => $ousr,
+									"itemStyle" => array("normal" => array("color"=>$chart_colors[($c++) % $chart_colors_size])));
+		$cnseries[$sidx] = array();
+		$cnseries[$sidx]["name"] = "Online Users";
+		$cnseries[$sidx]["type"] = "bar";
+		$cnseries[$sidx]["stack"] = "online";
+		$cnseries[$sidx]["data"] = $cnvals;
 
-		$chart_vals = array();
-		$i = 0;
-		$chart_vals[$i] = new bar_stack_value($ul_proto['UDP'],
-							$chart_colors[($c++) % $chart_colors_size]);
-		$chart_vals[$i]->set_tooltip( 'UDP<br>#val#' );
-		$i = $i + 1;
-		$chart_vals[$i] = new bar_stack_value($ul_proto['TCP'],
-							$chart_colors[($c++) % $chart_colors_size]);
-		$chart_vals[$i]->set_tooltip( 'TCP<br>#val#' );
-		$i = $i + 1;
-		$chart_vals[$i] = new bar_stack_value($ul_proto['TLS'],
-							$chart_colors[($c++) % $chart_colors_size]);
-		$chart_vals[$i]->set_tooltip( 'TLS<br>#val#' );
-		$i = $i + 1;
-		$chart_vals[$i] = new bar_stack_value($ul_proto['SCTP'],
-							$chart_colors[($c++) % $chart_colors_size]);
-		$chart_vals[$i]->set_tooltip( 'SCTP<br>#val#' );
-		$bar_stack->append_stack($chart_vals);
-		$chart_lbls[$lidx++] = 'Transports';
+		$sidx = $sidx + 1;
+		$cnvals = array();
+		$cnvals[0] = array("name" => "One Contact", "value" => $ul_contacts[1],
+									"itemStyle" => array("normal" => array("color"=>$chart_colors[($c++) % $chart_colors_size])));
+		$cnseries[$sidx] = array();
+		$cnseries[$sidx]["name"] = "User Contacts - One";
+		$cnseries[$sidx]["type"] = "bar";
+		$cnseries[$sidx]["stack"] = "ucontacts";
+		$cnseries[$sidx]["data"] = $cnvals;
 
-		$cn_x_labels->set_labels($chart_lbls);
-		$x = new x_axis();
-		$x->set_labels($cn_x_labels);
-		$y = new y_axis();
-		$y->set_range( 0, $yidx, $yidx/10 );
-		$cn_chart = new open_flash_chart();
-		$cn_chart->set_title( $cn_title );
-		$cn_chart->add_element( $bar_stack );
-		$cn_chart->set_x_axis( $x );
-		$cn_chart->add_y_axis( $y );
+		$sidx = $sidx + 1;
+		$cnvals = array();
+		$cnvals[0] = array("name" => "Two Contacts", "value" => $ul_contacts[2],
+									"itemStyle" => array("normal" => array("color"=>$chart_colors[($c++) % $chart_colors_size])));
+		$cnseries[$sidx] = array();
+		$cnseries[$sidx]["name"] = "User Contacts - Two";
+		$cnseries[$sidx]["type"] = "bar";
+		$cnseries[$sidx]["stack"] = "ucontacts";
+		$cnseries[$sidx]["data"] = $cnvals;
 
-		$sHTML = '';
+		$sidx = $sidx + 1;
+		$cnvals = array();
+		$cnvals[0] = array("name" => "Three Contacts", "value" => $ul_contacts[3],
+									"itemStyle" => array("normal" => array("color"=>$chart_colors[($c++) % $chart_colors_size])));
+		$cnseries[$sidx] = array();
+		$cnseries[$sidx]["name"] = "User Contacts - Three";
+		$cnseries[$sidx]["type"] = "bar";
+		$cnseries[$sidx]["stack"] = "ucontacts";
+		$cnseries[$sidx]["data"] = $cnvals;
 
-		$sHTML .= 
+		$sidx = $sidx + 1;
+		$cnvals = array();
+		$cnvals[0] = array("name" => "Four Contacts", "value" => $ul_contacts[4],
+									"itemStyle" => array("normal" => array("color"=>$chart_colors[($c++) % $chart_colors_size])));
+		$cnseries[$sidx] = array();
+		$cnseries[$sidx]["name"] = "User Contacts - Four";
+		$cnseries[$sidx]["type"] = "bar";
+		$cnseries[$sidx]["stack"] = "ucontacts";
+		$cnseries[$sidx]["data"] = $cnvals;
+
+		$sidx = $sidx + 1;
+		$cnvals = array();
+		$cnvals[0] = array("name" => "Five Or More Contacts", "value" => $ul_contacts[5],
+									"itemStyle" => array("normal" => array("color"=>$chart_colors[($c++) % $chart_colors_size])));
+		$cnseries[$sidx] = array();
+		$cnseries[$sidx]["name"] = "User Contacts - Five Or More";
+		$cnseries[$sidx]["type"] = "bar";
+		$cnseries[$sidx]["stack"] = "ucontacts";
+		$cnseries[$sidx]["data"] = $cnvals;
+
+		$sidx = $sidx + 1;
+		$cnvals = array();
+		$cnvals[0] = array("name" => "NAT Users", "value" => $ul_nat['NATTED'],
+									"itemStyle" => array("normal" => array("color"=>$chart_colors[($c++) % $chart_colors_size])));
+		$cnseries[$sidx] = array();
+		$cnseries[$sidx]["name"] = "NAT Users";
+		$cnseries[$sidx]["type"] = "bar";
+		$cnseries[$sidx]["stack"] = "unat";
+		$cnseries[$sidx]["data"] = $cnvals;
+
+		$sidx = $sidx + 1;
+		$cnvals = array();
+		$cnvals[0] = array("name" => "No NAT Users", "value" => $yidx - $ul_nat['NATTED'],
+									"itemStyle" => array("normal" => array("color"=>$chart_colors[($c++) % $chart_colors_size])));
+		$cnseries[$sidx] = array();
+		$cnseries[$sidx]["name"] = "No NAT Users";
+		$cnseries[$sidx]["type"] = "bar";
+		$cnseries[$sidx]["stack"] = "unat";
+		$cnseries[$sidx]["data"] = $cnvals;
+
+		$sidx = $sidx + 1;
+		$cnvals = array();
+		$cnvals[0] = array("name" => "NAT SIP Ping", "value" => $ul_nat['SIPPING'],
+									"itemStyle" => array("normal" => array("color"=>$chart_colors[($c++) % $chart_colors_size])));
+		$cnseries[$sidx] = array();
+		$cnseries[$sidx]["name"] = "NAT SIP Ping";
+		$cnseries[$sidx]["type"] = "bar";
+		$cnseries[$sidx]["stack"] = "unatsip";
+		$cnseries[$sidx]["data"] = $cnvals;
+
+		$sidx = $sidx + 1;
+		$cnvals = array();
+		$cnvals[0] = array("name" => "No NAT SIP Ping", "value" => $yidx - $ul_nat['SIPPING'],
+									"itemStyle" => array("normal" => array("color"=>$chart_colors[($c++) % $chart_colors_size])));
+		$cnseries[$sidx] = array();
+		$cnseries[$sidx]["name"] = "No NAT SIP Ping";
+		$cnseries[$sidx]["type"] = "bar";
+		$cnseries[$sidx]["stack"] = "unatsip";
+		$cnseries[$sidx]["data"] = $cnvals;
+
+		$sidx = $sidx + 1;
+		$cnvals = array();
+		$cnvals[0] = array("name" => "UDP Contacts", "value" => $ul_proto['UDP'],
+									"itemStyle" => array("normal" => array("color"=>$chart_colors[($c++) % $chart_colors_size])));
+		$cnseries[$sidx] = array();
+		$cnseries[$sidx]["name"] = "UDP Contacts";
+		$cnseries[$sidx]["type"] = "bar";
+		$cnseries[$sidx]["stack"] = "uproto";
+		$cnseries[$sidx]["data"] = $cnvals;
+
+		$sidx = $sidx + 1;
+		$cnvals = array();
+		$cnvals[0] = array("name" => "TCP Contacts", "value" => $ul_proto['TCP'],
+									"itemStyle" => array("normal" => array("color"=>$chart_colors[($c++) % $chart_colors_size])));
+		$cnseries[$sidx] = array();
+		$cnseries[$sidx]["name"] = "TCP Contacts";
+		$cnseries[$sidx]["type"] = "bar";
+		$cnseries[$sidx]["stack"] = "uproto";
+		$cnseries[$sidx]["data"] = $cnvals;
+
+		$sidx = $sidx + 1;
+		$cnvals = array();
+		$cnvals[0] = array("name" => "TLS Contacts", "value" => $ul_proto['TLS'],
+									"itemStyle" => array("normal" => array("color"=>$chart_colors[($c++) % $chart_colors_size])));
+		$cnseries[$sidx] = array();
+		$cnseries[$sidx]["name"] = "TLS Contacts";
+		$cnseries[$sidx]["type"] = "bar";
+		$cnseries[$sidx]["stack"] = "uproto";
+		$cnseries[$sidx]["data"] = $cnvals;
+
+		$sidx = $sidx + 1;
+		$cnvals = array();
+		$cnvals[0] = array("name" => "WS Contacts", "value" => $ul_proto['WS'],
+									"itemStyle" => array("normal" => array("color"=>$chart_colors[($c++) % $chart_colors_size])));
+		$cnseries[$sidx] = array();
+		$cnseries[$sidx]["name"] = "WS Contacts";
+		$cnseries[$sidx]["type"] = "bar";
+		$cnseries[$sidx]["stack"] = "uproto";
+		$cnseries[$sidx]["data"] = $cnvals;
+
+		$sidx = $sidx + 1;
+		$cnvals = array();
+		$cnvals[0] = array("name" => "WSS Contacts", "value" => $ul_proto['WSS'],
+									"itemStyle" => array("normal" => array("color"=>$chart_colors[($c++) % $chart_colors_size])));
+		$cnseries[$sidx] = array();
+		$cnseries[$sidx]["name"] = "WSS Contacts";
+		$cnseries[$sidx]["type"] = "bar";
+		$cnseries[$sidx]["stack"] = "uproto";
+		$cnseries[$sidx]["data"] = $cnvals;
+
+		$cnchart["tooltip"] = array("trigger" => "item");
+		$cnchart["legend"] = array("data" => $cnlegends, "top"=>25);
+		$cnchart["color"] = $mtcolors;
+		$cnchart["xAxis"] = array("data" => $cnlabels);
+		$cnchart["yAxis"] = new stdClass();
+		$cnchart["series"] = $cnseries;
+		$cndata = json_encode($cnchart);
+
+		$sHTML .=
 			'
+			<div>
 			<div align="center">
-				<p><b>Processed ' . $yidx . ' records.</b></p>
+				<p><b>Processed ' . $yidx . ' Records.</b></p>
+			</div>
+			<br />
+			';
+			$sHTML .=
+			'
+			<div id="echarts" align="center">
+				<br />
+				<div id="echart_ulua" style="height:400px;"></div>
+				<br />
+				<br />
+				<div id="echart_ulmt" style="height:400px;"></div>
+				<br />
+				<br />
+				<div id="echart_ulcn" style="height:400px;"></div>
+				<br />
 			</div>
 			';
 		if($yidx>0) {
-			$sHTML .= 
+			$sHTML .=
+				'
+				<script type="text/javascript" src="'.APP_URL.'/modules/ser/pages/echarts.min.js"></script>
+				<script type="text/javascript">
+				';
+			$sHTML .=
+				'
+				var vChart_ulua = echarts.init(document.getElementById("echart_ulua"));
+				var vOpts_ulua = JSON.parse(\''.$uadata.'\');
+				vChart_ulua.setOption(vOpts_ulua);
+				';
+			$sHTML .=
+				'
+				var vChart_ulmt = echarts.init(document.getElementById("echart_ulmt"));
+				var vOpts_ulmt = JSON.parse(\''.$mtdata.'\');
+				vChart_ulmt.setOption(vOpts_ulmt);
+				';
+			$sHTML .=
+				'
+				var vChart_ulcn = echarts.init(document.getElementById("echart_ulcn"));
+				var vOpts_ulcn = JSON.parse(\''.$cndata.'\');
+				vChart_ulcn.setOption(vOpts_ulcn);
+				';
+		$sHTML .=
 			'
-			<script type="text/javascript" src="'.APP_URL.'/js/swfobject.js"></script>
-			<script type="text/javascript">
-				swfobject.embedSWF(
-					"'.APP_URL.'/modules/ser/pages/open-flash-chart.swf",
-				   	"div_chart_ul_uas",
-					"600", "300", "9.0.0", "expressInstall.swf",
-					{"get-data":"get_data_ul_uas"} );
-				swfobject.embedSWF(
-					"'.APP_URL.'/modules/ser/pages/open-flash-chart.swf",
-				   	"div_chart_ul_met",
-					"600", "300", "9.0.0", "expressInstall.swf",
-					{"get-data":"get_data_ul_met"} );
-				swfobject.embedSWF(
-					"'.APP_URL.'/modules/ser/pages/open-flash-chart.swf",
-				   	"div_chart_ul_cns",
-					"600", "300", "9.0.0", "expressInstall.swf",
-				{"get-data":"get_data_ul_cns"} );
-			</script> 
-			';
-
-			$sHTML .= 
+			</script>';
+		} /* if $yidx */
+		$sHTML .=
 			'
-			<br />
-			<div align="center">
-				<div id="div_chart_ul_uas">
-				</div>
-				<br />
-				<br />
-				<div id="div_chart_ul_met">
-				</div>
-				<br />
-				<br />
-				<div id="div_chart_ul_cns">
-				</div>
-				<br />
-				<br />
 			</div>
 			';
-
-			$sHTML .= 
-			'
-			<script type="text/javascript">
-				function get_data_ul_uas()
-				{
-					data = \'' . $ul_uas_chart->toString() . '\';
-					return data;
-				}
-
-				function get_data_ul_met()
-				{
-					data = \'' . $mt_chart->toString() . '\';
-					return data;
-				}
-
-				function get_data_ul_cns()
-				{
-					data = \'' . $cn_chart->toString() . '\';
-					return data;
-				}
-
-			</script>
-			';
-		} /* if $yidx */
 		return $sHTML;
    	}
 }
