@@ -64,6 +64,10 @@ class ChartsStatsUlsForm extends EasyForm
 		$ul_uas['avm'] = 0;
 		$ul_uas['sipura'] = 0;
 		$ul_uas['mitel'] = 0;
+		$ul_uas['yealink'] = 0;
+		$ul_uas['csipsimple'] = 0;
+		$ul_uas['zoiper'] = 0;
+		$ul_uas['linphone'] = 0;
 		$ul_uas['others'] = 0;
 
 		$ul_methods = array();
@@ -164,6 +168,14 @@ class ChartsStatsUlsForm extends EasyForm
 					$ul_uas['sipura'] = $ul_uas['sipura'] + 1;
 				} else if(preg_match("/mitel/i", $r_user_agent)) {
 					$ul_uas['mitel'] = $ul_uas['mitel'] + 1;
+				} else if(preg_match("/yealink/i", $r_user_agent)) {
+					$ul_uas['yealink'] = $ul_uas['yealink'] + 1;
+				} else if(preg_match("/csipsimple/i", $r_user_agent)) {
+					$ul_uas['csipsimple'] = $ul_uas['csipsimple'] + 1;
+				} else if(preg_match("/zoiper/i", $r_user_agent)) {
+					$ul_uas['zoiper'] = $ul_uas['zoiper'] + 1;
+				} else if(preg_match("/linphone/i", $r_user_agent)) {
+					$ul_uas['linphone'] = $ul_uas['linphone'] + 1;
 				} else {
 					$ul_uas['others'] = $ul_uas['others'] + 1;
 				}
