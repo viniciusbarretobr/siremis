@@ -92,6 +92,8 @@ class ChartsStatsUlsForm extends EasyForm
 		$ul_proto['TCP'] = 0;
 		$ul_proto['TLS'] = 0;
 		$ul_proto['SCTP'] = 0;
+		$ul_proto['WS'] = 0;
+		$ul_proto['WSS'] = 0;
 
 		$yidx = 0;
 		$ousr = 0;
@@ -175,6 +177,10 @@ class ChartsStatsUlsForm extends EasyForm
 					$ul_proto['TLS'] = $ul_proto['TLS'] + 1;
 				} else if(preg_match("/;transport=sctp/i", $r_contact)) {
 					$ul_proto['SCTP'] = $ul_proto['SCTP'] + 1;
+				} else if(preg_match("/;transport=wss/i", $r_contact)) {
+					$ul_proto['WSS'] = $ul_proto['WSS'] + 1;
+				} else if(preg_match("/;transport=ws/i", $r_contact)) {
+					$ul_proto['WS'] = $ul_proto['WS'] + 1;
 				} else {
 					$ul_proto['UDP'] = $ul_proto['UDP'] + 1;
 				}
