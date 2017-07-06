@@ -1,6 +1,5 @@
 <?php
 include_once (MODULE_PATH.'/ser/service/siremisCharts.php');
-include_once (MODULE_PATH.'/ser/service/asipto/charts/charts-lib.php');
 
 class ChartsStatsUlsForm extends EasyForm 
 { 
