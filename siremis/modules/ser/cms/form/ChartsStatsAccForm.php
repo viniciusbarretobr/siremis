@@ -1,6 +1,5 @@
 <?php
 include_once (MODULE_PATH.'/ser/service/siremisCharts.php');
-include_once (MODULE_PATH.'/ser/service/asipto/charts/charts-lib.php');
 
 class ChartsStatsAccForm extends EasyForm 
 { 
@@ -11,6 +10,8 @@ class ChartsStatsAccForm extends EasyForm
 		global $g_BizSystem;
 
 		include_once (MODULE_PATH.'/ser/config/cms.ChartsStatsAccCfg.php');
+
+		$sHTML = '';
 
 		$fetchInterval = $cfg_stats_acc_fetch_interval;
 
@@ -104,243 +105,181 @@ class ChartsStatsAccForm extends EasyForm
 			$yidx = $yidx + 1;
 		}
 
-		/* sip method types chart */
-		$mtsobj = new open_flash_chart();
-		$ctitle = "SIP Method Types";
-		$x = new x_axis();
-		$xstep = (int)($fetchInterval / 12);
-		if($fetchInterval % 2!=0)
-			$xstep = $xstep + 1;
-		$x->set_steps( $xstep );
-		
 		$time_min = $stime;
 		$time_max = $ctime;
-				
-		$ctitle .= " - From ".date('Y-m-d H:i:s', $time_min); 
-		$ctitle .= " To ".date('Y-m-d H:i:s', $time_max); 
+		$cidx = 0;
 
-		$time_x_labels = new x_axis_labels();
-		$time_x_labels->rotate(20);
-		$chart_lbls = array();
-		for($i = 0; $i < $fetchInterval; $i = $i + 1)
-		{
-			$chart_lbls[] = date('H:i', $stime + 3600*$i);
+		/* sip method types chart */
+
+		$mtchart = array();
+		$mtlabels = array();
+		$mtlegends = array();
+		$mtchart["title"] = array("text" => "SIP Methods",
+				"textStyle"=>array("fontSize" => 12),
+				"top"=>5, "left"=>20);
+
+		for($i = 0; $i < $fetchInterval; $i = $i + 1) {
+			$mtlabels[$i] = date('H:i', $stime + 3600*$i);
 		}
 
-		$time_x_labels->visible_steps($xstep);
-		$time_x_labels->set_labels($chart_lbls);
-		$x->set_labels($time_x_labels);
-		$mtsobj->set_title( new title( $ctitle ) );
-		$dot_style = new dot();
-		$dot_style
-			->size(3)
-			->halo_size(1);
+		$mtvals = array();
+		$mtcolors = array();
 
-		$clr = 0;
-		$i = 0;
-		$line[$i] = new line();
-		$line[$i]->set_default_dot_style($dot_style);
-		$line[$i]->set_colour( $chart_colors[($clr++) % $chart_colors_size] );
-		$line[$i]->set_key( "INVITE" , 10 );
-		$line[$i]->set_values( $acc_records['invite'] );
-		$mtsobj->add_element( $line[$i] );
-		$i++;
-		$line[$i] = new line();
-		$line[$i]->set_default_dot_style($dot_style);
-		$line[$i]->set_colour( $chart_colors[($clr++) % $chart_colors_size] );
-		$line[$i]->set_key( "BYE" , 10 );
-		$line[$i]->set_values( $acc_records['bye'] );
-		$mtsobj->add_element( $line[$i] );
-		$i++;
+		$mtseries = array();
+		$sidx = 0;
+		$mtcolors[$sidx] = $chart_colors[($cidx++) % $chart_colors_size];
+		$mtlegends[$sidx] = "INVITE";
+		$mtseries[$sidx] = array();
+		$mtseries[$sidx]["name"] = "INVITE";
+		$mtseries[$sidx]["type"] = "line";
+		$mtseries[$sidx]["smooth"] = 0;
+		$mtseries[$sidx]["data"] = $acc_records['invite'];
+		$sidx = $sidx + 1;
+		$mtcolors[$sidx] = $chart_colors[($cidx++) % $chart_colors_size];
+		$mtlegends[$sidx] = "BYE";
+		$mtseries[$sidx] = array();
+		$mtseries[$sidx]["name"] = "BYE";
+		$mtseries[$sidx]["type"] = "line";
+		$mtseries[$sidx]["smooth"] = 0;
+		$mtseries[$sidx]["data"] = $acc_records['bye'];
+
 		if($cfg_stats_acc_message)
 		{
-			$line[$i] = new line();
-			$line[$i]->set_default_dot_style($dot_style);
-			$line[$i]->set_colour( $chart_colors[($clr++) % $chart_colors_size] );
-			$line[$i]->set_key( "MESSAGE" , 10 );
-			$line[$i]->set_values( $acc_records['message'] );
-			$mtsobj->add_element( $line[$i] );
-			$i++;
+			$sidx = $sidx + 1;
+			$mtcolors[$sidx] = $chart_colors[ ($cidx++) % $chart_colors_size];
+			$mtlegends[$sidx] = "MESSAGE";
+			$mtseries[$sidx] = array();
+			$mtseries[$sidx]["name"] = "MESSAGE";
+			$mtseries[$sidx]["type"] = "line";
+			$mtseries[$sidx]["smooth"] = 0;
+			$mtseries[$sidx]["data"] = $acc_records['message'];
 		}
 		if($cfg_stats_acc_other)
 		{
-			$line[$i] = new line();
-			$line[$i]->set_default_dot_style($dot_style);
-			$line[$i]->set_colour( $chart_colors[($clr++) % $chart_colors_size] );
-			$line[$i]->set_key( "OTHER" , 10 );
-			$line[$i]->set_values( $acc_records['other'] );
-			$mtsobj->add_element( $line[$i] );
-			$i++;
+			$sidx = $sidx + 1;
+			$mtcolors[$sidx] = $chart_colors[ ($cidx++) % $chart_colors_size];
+			$mtlegends[$sidx] = "OTHER";
+			$mtseries[$sidx] = array();
+			$mtseries[$sidx]["name"] = "OTHER";
+			$mtseries[$sidx]["type"] = "line";
+			$mtseries[$sidx]["smooth"] = 0;
+			$mtseries[$sidx]["data"] = $acc_records['other'];
 		}
 
-		$val = max($acc_records['invite']);
-		if($ymax<$val) $ymax = $val;
-		$val = max($acc_records['bye']);
-		if($ymax<$val) $ymax = $val;
-		if($cfg_stats_acc_message)
-		{
-			$val = max($acc_records['message']);
-			if($ymax<$val) $ymax = $val;
-		}
-		if($cfg_stats_acc_other)
-		{
-			$val = max($acc_records['other']);
-			if($ymax<$val) $ymax = $val;
-		}
-
-		$val = min($acc_records['invite']);
-		if($ymin>$val) $ymin = $val;
-		$val = min($acc_records['bye']);
-		if($ymin>$val) $ymin = $val;
-		if($cfg_stats_acc_message)
-		{
-			$val = min($acc_records['message']);
-			if($ymin>$val) $ymin = $val;
-		}
-		if($cfg_stats_acc_other)
-		{
-			$val = min($acc_records['other']);
-			if($ymin>$val) $ymin = $val;
-		}
-
-		if($ymax>10)
-		{
-			$y = new y_axis();
-			if($ymin>10)
-				$y->set_range( $ymin-10, $ymax, (int)(($ymax-$ymin+10)/10) );
-			else
-				$y->set_range( 0, $ymax, (int)($ymax/10) );
-			$mtsobj->set_y_axis( $y );
-		}
-		$mtsobj->set_x_axis( $x );
-		$mtsobj->set_bg_colour( "#A0C0B0" );
+		$mtchart["tooltip"] = array("trigger" => "axis");
+		$mtchart["legend"] = array("data" => $mtlegends, "top"=>25);
+		$mtchart["color"] = $mtcolors;
+		$mtchart["xAxis"] = array("data" => $mtlabels);
+		$mtchart["yAxis"] = new stdClass();
+		$mtchart["series"] = $mtseries;
+		$mtdata = json_encode($mtchart);
 
 		/* sip invites chart */
-		$ivsobj = new open_flash_chart();
-		$ctitle = "SIP INVITEs";
-		$ctitle .= " - From ".date('Y-m-d H:i:s', $time_min); 
-		$ctitle .= " To ".date('Y-m-d H:i:s', $time_max); 
-		$ivsobj->set_title( new title( $ctitle ) );
-		$ymax = 0;
-		$ymin = 0x0fffffff;
+		$inchart = array();
+		$inlabels = array();
+		$inlegends = array();
+		$inchart["title"] = array("text" => "INVITEs",
+				"textStyle"=>array("fontSize" => 12),
+				"top"=>5, "left"=>20);
 
-		$i = 0;
-		$line[$i] = new line();
-		$line[$i]->set_default_dot_style($dot_style);
-		$line[$i]->set_colour( $chart_colors[($clr++) % $chart_colors_size] );
-		$line[$i]->set_key( "200" , 10 );
-		$line[$i]->set_values( $acc_records['invite200'] );
-		$ivsobj->add_element( $line[$i] );
-		$i++;
-		$line[$i] = new line();
-		$line[$i]->set_default_dot_style($dot_style);
-		$line[$i]->set_colour( $chart_colors[($clr++) % $chart_colors_size] );
-		$line[$i]->set_key( "404" , 10 );
-		$line[$i]->set_values( $acc_records['invite404'] );
-		$ivsobj->add_element( $line[$i] );
-		$i++;
-		$line[$i] = new line();
-		$line[$i]->set_default_dot_style($dot_style);
-		$line[$i]->set_colour( $chart_colors[($clr++) % $chart_colors_size] );
-		$line[$i]->set_key( "487" , 10 );
-		$line[$i]->set_values( $acc_records['invite487'] );
-		$ivsobj->add_element( $line[$i] );
-		$i++;
-		$line[$i] = new line();
-		$line[$i]->set_default_dot_style($dot_style);
-		$line[$i]->set_colour( $chart_colors[($clr++) % $chart_colors_size] );
-		$line[$i]->set_key( "XYZ" , 10 );
-		$line[$i]->set_values( $acc_records['inviteXYZ'] );
-		$ivsobj->add_element( $line[$i] );
-		$i++;
-
-		$val = max($acc_records['invite200']);
-		if($ymax<$val) $ymax = $val;
-		$val = max($acc_records['invite404']);
-		if($ymax<$val) $ymax = $val;
-		$val = max($acc_records['invite487']);
-		if($ymax<$val) $ymax = $val;
-		$val = max($acc_records['inviteXYZ']);
-		if($ymax<$val) $ymax = $val;
-
-		$val = min($acc_records['invite200']);
-		if($ymin>$val) $ymin = $val;
-		$val = min($acc_records['invite404']);
-		if($ymin>$val) $ymin = $val;
-		$val = min($acc_records['invite487']);
-		if($ymin>$val) $ymin = $val;
-		$val = min($acc_records['inviteXYZ']);
-		if($ymin>$val) $ymin = $val;
-
-		if($ymax>10)
-		{
-			$y = new y_axis();
-			if($ymin>10)
-				$y->set_range( $ymin-10, $ymax, (int)(($ymax-$ymin+10)/10) );
-			else
-				$y->set_range( 0, $ymax, (int)($ymax/10) );
-			$ivsobj->set_y_axis( $y );
+		for($i = 0; $i < $fetchInterval; $i = $i + 1) {
+			$inlabels[$i] = date('H:i', $stime + 3600*$i);
 		}
-		$ivsobj->set_x_axis( $x );
-		$ivsobj->set_bg_colour( "#C0C0A0" );
 
-		$sHTML = '';
+		$invals = array();
+		$incolors = array();
+
+		$inseries = array();
+		$sidx = 0;
+		$incolors[$sidx] = $chart_colors[($cidx++) % $chart_colors_size];
+		$inlegends[$sidx] = "200";
+		$inseries[$sidx] = array();
+		$inseries[$sidx]["name"] = "200";
+		$inseries[$sidx]["type"] = "line";
+		$inseries[$sidx]["smooth"] = 0;
+		$inseries[$sidx]["data"] = $acc_records['invite200'];
+		$sidx = $sidx + 1;
+		$incolors[$sidx] = $chart_colors[($cidx++) % $chart_colors_size];
+		$inlegends[$sidx] = "404";
+		$inseries[$sidx] = array();
+		$inseries[$sidx]["name"] = "404";
+		$inseries[$sidx]["type"] = "line";
+		$inseries[$sidx]["smooth"] = 0;
+		$inseries[$sidx]["data"] = $acc_records['invite404'];
+		$sidx = $sidx + 1;
+		$incolors[$sidx] = $chart_colors[($cidx++) % $chart_colors_size];
+		$inlegends[$sidx] = "487";
+		$inseries[$sidx] = array();
+		$inseries[$sidx]["name"] = "487";
+		$inseries[$sidx]["type"] = "line";
+		$inseries[$sidx]["smooth"] = 0;
+		$inseries[$sidx]["data"] = $acc_records['invite487'];
+		$sidx = $sidx + 1;
+		$incolors[$sidx] = $chart_colors[($cidx++) % $chart_colors_size];
+		$inlegends[$sidx] = "XYZ";
+		$inseries[$sidx] = array();
+		$inseries[$sidx]["name"] = "XYZ";
+		$inseries[$sidx]["type"] = "line";
+		$inseries[$sidx]["smooth"] = 0;
+		$inseries[$sidx]["data"] = $acc_records['inviteXYZ'];
+
+		$inchart["tooltip"] = array("trigger" => "axis");
+		$inchart["legend"] = array("data" => $inlegends, "top"=>25);
+		$inchart["color"] = $incolors;
+		$inchart["xAxis"] = array("data" => $inlabels);
+		$inchart["yAxis"] = new stdClass();
+		$inchart["series"] = $inseries;
+		$indata = json_encode($inchart);
 
 		$sHTML .= 
 			'
+			<div>
 			<div align="center">
-				<p><b>Processed ' . $yidx . ' records. <br />Timezone: ' . date_default_timezone_get () . ' </b></p>
+				<p>
+				<b>Processed ' . $yidx . ' Records<br />Timezone: ' . date_default_timezone_get () . '</b>
+				<br />
+				('.date('Y-m-d H:i:s', $time_min).' - '.date('Y-m-d H:i:s', $time_max).')
+				</p>
 			</div>
 			';
 		if($yidx>0) {
-			$sHTML .= 
+			$sHTML .=
 			'
-			<script type="text/javascript" src="'.APP_URL.'/js/swfobject.js"></script>
-			<script type="text/javascript">
-				swfobject.embedSWF(
-					"'.APP_URL.'/modules/ser/pages/open-flash-chart.swf",
-				   	"div_chart_acc_methods",
-					"600", "300", "9.0.0", "expressInstall.swf",
-					{"get-data":"get_data_acc_methods"} );
-				swfobject.embedSWF(
-					"'.APP_URL.'/modules/ser/pages/open-flash-chart.swf",
-				   	"div_chart_acc_invites",
-					"600", "300", "9.0.0", "expressInstall.swf",
-					{"get-data":"get_data_acc_invites"} );
-			</script> 
-			';
-
-			$sHTML .= 
-			'
-			<br />
-			<div align="center">
-				<div id="div_chart_acc_methods">
-				</div>
+			<div id="echarts" align="center">
+				<br />
+				<div id="echart_accmt" style="height:400px;"></div>
 				<br />
 				<br />
-				<div id="div_chart_acc_invites">
-				</div>
-				<br />
+				<div id="echart_accin" style="height:400px;"></div>
 				<br />
 			</div>
 			';
-
-			$sHTML .= 
-			'
-			<script type="text/javascript">
-				function get_data_acc_methods()
-				{
-					data = \'' . $mtsobj->toString() . '\';
-					return data;
-				}
-				function get_data_acc_invites()
-				{
-					data = \'' . $ivsobj->toString() . '\';
-					return data;
-				}
-			</script>
-			';
+			$sHTML .=
+				'
+				<script type="text/javascript" src="'.APP_URL.'/modules/ser/pages/echarts.min.js"></script>
+				<script type="text/javascript">
+				';
+			$sHTML .=
+				'
+				var vChart_accmt = echarts.init(document.getElementById("echart_accmt"));
+				var vOpts_accmt = JSON.parse(\''.$mtdata.'\');
+				vChart_accmt.setOption(vOpts_accmt);
+				';
+			$sHTML .=
+				'
+				var vChart_accin = echarts.init(document.getElementById("echart_accin"));
+				var vOpts_accin = JSON.parse(\''.$indata.'\');
+				vChart_accin.setOption(vOpts_accin);
+				';
+			$sHTML .=
+				'
+				</script>
+				';
 		} /* if $yidx */
+		$sHTML .=
+			'
+			</div>
+			';
 		return $sHTML;
    	}
 }
