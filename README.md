@@ -2,11 +2,13 @@
 
 ### Web Management Interface for Kamailio SIP Server
 
-v4.4.0, May 18, 2017
+v5.0.0 (under development)
 
-Web: http://siremis.asipto.com/
+Web: https://www.siremis.org
 
-Compatible with Kamailio: v4.2.x, v4.3.x, v4.4.x
+Compatible with Kamailio: v5.0.x
+
+  * https://www.kamailio.org
 
 ### Licensing
 
@@ -16,15 +18,15 @@ Compatible with Kamailio: v4.2.x, v4.3.x, v4.4.x
 
 ### Install
 
-  * http://siremis.asipto.com/install/
+  * https://www.siremis.org/install/
 
 ### Resources
 
 Mailing lists
 
-  * use Kamailio (OpenSER) mailing lists to ask questions about SIREMIS
-    * Kamailio Users Mailing List: <sr-users@lists.sip-router.org>
-    * Kamailio Devel Mailing List: <sr-dev@lists.sip-router.org>
+  * use Kamailio mailing lists to ask questions about SIREMIS
+    * Kamailio Users Mailing List: <sr-users@lists.kamailio.org>
+    * Kamailio Devel Mailing List: <sr-dev@lists.kamailio.org>
 
 IRC Channel:
 
@@ -36,8 +38,9 @@ Github Project:
 
 Paid support or development extensions for SIREMIS:
 
-  * Asipto - http://www.asipto.com
+  * Asipto - https://www.asipto.com
 
 Project Management:
 
+  * Daniel-Constantin Mierla
   * Elena-Ramona Modroiu
