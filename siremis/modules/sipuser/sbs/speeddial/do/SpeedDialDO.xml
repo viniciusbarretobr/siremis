@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no"?>
-<BizDataObj Name="SpeedDialDO" Description="" Class="BizDataObj" DBName="Serdb" Table="speed_dial" SearchRule="" SortRule="" AccessRule="[username]='{@profile:username}'" OtherSQLRule="" Uniqueness="username,domain,sd_domain,sd_username;" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+<BizDataObj Name="SpeedDialDO" Description="" Class="BizDataObj" DBName="Sipdb" Table="speed_dial" SearchRule="" SortRule="" AccessRule="[username]='{@profile:username}'" OtherSQLRule="" Uniqueness="username,domain,sd_domain,sd_username;" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
 	<BizFieldList>
         <BizField Name="Id" Column="id"     Type="Number"/>
         <BizField Name="username" Column="username" Length="64"   Required="Y" Type="Text"/>

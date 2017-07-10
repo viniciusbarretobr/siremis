@@ -16,7 +16,7 @@ class ChartsStatsAccForm extends EasyForm
 		$fetchInterval = $cfg_stats_acc_fetch_interval;
 
 		$sql = "SELECT method, sip_code, time, UNIX_TIMESTAMP(time) as tstamp FROM acc WHERE DATE_SUB(NOW(), INTERVAL " .$fetchInterval. " HOUR) <= time";
-		$db = $g_BizSystem->GetDBConnection("Serdb");
+		$db = $g_BizSystem->GetDBConnection("Sipdb");
 		$resultSet = $db->query($sql);
 		if ($resultSet === false) {
 			$err = $db->ErrorMsg();

@@ -45,7 +45,7 @@ function siremisFillDB()
     if (empty($query))
        	return true;
 
-    // $db = BizSystem::dbConnection("Serdb");
+    // $db = BizSystem::dbConnection("Sipdb");
 	$db = siremisConnectDB();
     include_once (MODULE_PATH."/system/lib/MySQLDumpParser.php");
     $queryArr = MySQLDumpParser::parse($query);

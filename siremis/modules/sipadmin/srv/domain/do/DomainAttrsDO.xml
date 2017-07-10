@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no"?>
-<BizDataObj Name="DomainAttrsDO" Description="" Class="BizDataObj" DBName="Serdb" Table="domain_attrs" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="did,name,value;" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+<BizDataObj Name="DomainAttrsDO" Description="" Class="BizDataObj" DBName="Sipdb" Table="domain_attrs" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="did,name,value;" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
 	<BizFieldList>
         <BizField Name="Id" Column="id"     Type="Number"/>
         <BizField Name="did" Column="did" Length="64"   Required="Y" Type="Text"/>

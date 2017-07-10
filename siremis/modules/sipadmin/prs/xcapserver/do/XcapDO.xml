@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no"?>
-<BizDataObj Name="XcapDO" Description="" Class="sipadmin.prs.xcapserver.do.XcapDO" DBName="Serdb" Table="xcap" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="username,domain,doc_type,doc_uri;" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+<BizDataObj Name="XcapDO" Description="" Class="sipadmin.prs.xcapserver.do.XcapDO" DBName="Sipdb" Table="xcap" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="username,domain,doc_type,doc_uri;" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
 	<BizFieldList>
         <BizField Name="Id" Column="id"     Type="Number"/>
         <BizField Name="username" Column="username" Length="64"   Required="Y" Type="Text"/>

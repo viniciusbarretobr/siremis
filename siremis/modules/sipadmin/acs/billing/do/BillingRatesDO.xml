@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no"?>
-<BizDataObj Name="BillingRatesDO" Description="" Class="BizDataObj" DBName="Serdb" Table="billing_rates" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="rate_group,prefix;" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+<BizDataObj Name="BillingRatesDO" Description="" Class="BizDataObj" DBName="Sipdb" Table="billing_rates" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="rate_group,prefix;" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
 	<BizFieldList>
         <BizField Name="Id" Column="rate_id"     Type="Number"/>
         <BizField Name="rate_group" Column="rate_group" Length="64" DefaultValue="default"  Required="Y" Type="Text"/>

@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no"?>
-<BizDataObj Name="RtpproxyDO" Description="" Class="BizDataObj" DBName="Serdb" Table="rtpproxy" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+<BizDataObj Name="RtpproxyDO" Description="" Class="BizDataObj" DBName="Sipdb" Table="rtpproxy" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
 	<BizFieldList>
         <BizField Name="Id" Column="id"     Type="Number"/>
         <BizField Name="setid" Column="setid" Length="32"   Required="Y" Type="Text"/>

@@ -12,7 +12,7 @@ class ChartsStatsUlsForm extends EasyForm
 		$sHTML = '';
 
 		$sql = "SELECT username, cflags, methods, user_agent, contact from location order by username";
-		$db = $g_BizSystem->GetDBConnection("Serdb");
+		$db = $g_BizSystem->GetDBConnection("Sipdb");
 		$resultSet = $db->query($sql);
 		if ($resultSet === false) {
 			$err = $db->ErrorMsg();

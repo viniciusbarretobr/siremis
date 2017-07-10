@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no"?>
-<BizDataObj Name="HtableDO" Description="" Class="BizDataObj" DBName="Serdb" Table="htable" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+<BizDataObj Name="HtableDO" Description="" Class="BizDataObj" DBName="Sipdb" Table="htable" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
 	<BizFieldList>
         <BizField Name="Id" Column="id"     Type="Number"/>
         <BizField Name="key_name" Column="key_name" Length="64"   Required="Y" Type="Text"/>

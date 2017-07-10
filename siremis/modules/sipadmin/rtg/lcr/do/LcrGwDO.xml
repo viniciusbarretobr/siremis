@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no"?>
-<BizDataObj Name="LcrGwDO" Description="" Class="BizDataObj" DBName="Serdb" Table="lcr_gw" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="lcr_id,ip_addr,port,hostname;" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+<BizDataObj Name="LcrGwDO" Description="" Class="BizDataObj" DBName="Sipdb" Table="lcr_gw" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="lcr_id,ip_addr,port,hostname;" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
 	<BizFieldList>
         <BizField Name="Id" Column="id"     Type="Number"/>
         <BizField Name="lcr_id" Column="lcr_id"    Required="Y" Type="Text"/>

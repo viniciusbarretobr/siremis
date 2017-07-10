@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no"?>
-<BizDataObj Name="UsrPreferencesDO" Description="" Class="BizDataObj" DBName="Serdb" Table="usr_preferences" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+<BizDataObj Name="UsrPreferencesDO" Description="" Class="BizDataObj" DBName="Sipdb" Table="usr_preferences" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
 	<BizFieldList>
         <BizField Name="Id" Column="id" Type="Number"/>
         <BizField Name="uuid" Column="uuid" Type="Text" Required="N"/>

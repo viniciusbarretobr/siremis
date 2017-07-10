@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no"?>
-<BizDataObj Name="RlsPresentityDO" Description="" Class="sipadmin.prs.presence.do.RlsPresentityDO" DBName="Serdb" Table="rls_presentity" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness=";" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+<BizDataObj Name="RlsPresentityDO" Description="" Class="sipadmin.prs.presence.do.RlsPresentityDO" DBName="Sipdb" Table="rls_presentity" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness=";" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
 	<BizFieldList>
         <BizField Name="Id" Column="id" Type="Number"/>
         <BizField Name="rlsubs_did" Column="rlsubs_did" Length="255" Required="Y" Type="Text"/>

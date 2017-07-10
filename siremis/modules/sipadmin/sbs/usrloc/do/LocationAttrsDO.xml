@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no"?>
-<BizDataObj Name="LocationAttrsDO" Description="" Class="BizDataObj" DBName="Serdb" Table="location_attrs" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+<BizDataObj Name="LocationAttrsDO" Description="" Class="BizDataObj" DBName="Sipdb" Table="location_attrs" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
 	<BizFieldList>
         <BizField Name="Id" Column="id"     Type="Number"/>
         <BizField Name="ruid" Column="ruid" Length="64"   Required="Y" Type="Text"/>

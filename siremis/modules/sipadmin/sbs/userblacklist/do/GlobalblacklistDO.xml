@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no"?>
-<BizDataObj Name="GlobalblacklistDO" Description="" Class="BizDataObj" DBName="Serdb" Table="globalblacklist" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+<BizDataObj Name="GlobalblacklistDO" Description="" Class="BizDataObj" DBName="Sipdb" Table="globalblacklist" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
 	<BizFieldList>
         <BizField Name="Id" Column="id"     Type="Number"/>
         <BizField Name="prefix" Column="prefix" Length="64"   Required="Y" Type="Text"/>

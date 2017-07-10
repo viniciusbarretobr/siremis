@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no"?>
-<BizDataObj Name="SipTraceDetailXDO" Description="" Class="SipTraceDO" DBName="Serdb" Table="sip_trace" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+<BizDataObj Name="SipTraceDetailXDO" Description="" Class="SipTraceDO" DBName="Sipdb" Table="sip_trace" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
 	<BizFieldList>
         <BizField Name="Id" Column="id"     Type="Number"/>
         <BizField Name="time_stamp" Column="time_stamp"  DefaultValue="1900-01-01 00:00:01"  Required="Y" Type="Datetime"/>

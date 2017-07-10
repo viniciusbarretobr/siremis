@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no"?>
-<BizDataObj Name="DialplanDO" Description="" Class="BizDataObj" DBName="Serdb" Table="dialplan" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+<BizDataObj Name="DialplanDO" Description="" Class="BizDataObj" DBName="Sipdb" Table="dialplan" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
 	<BizFieldList>
         <BizField Name="Id" Column="id" Type="Number"/>
         <BizField Name="dpid" Column="dpid" Required="Y" Type="Number"/>

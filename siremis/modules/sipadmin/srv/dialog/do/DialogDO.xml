@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no"?>
-<BizDataObj Name="DialogDO" Description="" Class="BizDataObj" DBName="Serdb" Table="dialog" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+<BizDataObj Name="DialogDO" Description="" Class="BizDataObj" DBName="Sipdb" Table="dialog" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
 	<BizFieldList>
         <BizField Name="Id" Column="id"     Type="Number"/>
         <BizField Name="hash_entry" Column="hash_entry"    Required="Y" Type="Number"/>

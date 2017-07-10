@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no"?>
-<BizDataObj Name="MohqcallsDO" Description="" Class="BizDataObj" DBName="Serdb" Table="mohqcalls" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="call_id;" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+<BizDataObj Name="MohqcallsDO" Description="" Class="BizDataObj" DBName="Sipdb" Table="mohqcalls" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="call_id;" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
 	<BizFieldList>
         <BizField Name="Id" Column="id"     Type="Number"/>
         <BizField Name="mohq_id" Column="mohq_id"    Required="Y" Type="Number"/>

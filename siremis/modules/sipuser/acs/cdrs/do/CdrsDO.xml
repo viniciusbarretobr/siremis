@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no"?>
-<BizDataObj Name="CdrsDO" Description="" Class="BizDataObj" DBName="Serdb" Table="cdrs" SearchRule="" SortRule=""  AccessRule="[src_username]='{@profile:username}'" OtherSQLRule="" Uniqueness="sip_call_id,sip_from_tag,sip_to_tag;" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+<BizDataObj Name="CdrsDO" Description="" Class="BizDataObj" DBName="Sipdb" Table="cdrs" SearchRule="" SortRule=""  AccessRule="[src_username]='{@profile:username}'" OtherSQLRule="" Uniqueness="sip_call_id,sip_from_tag,sip_to_tag;" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
 	<BizFieldList>
         <BizField Name="Id" Column="cdr_id"     Type="Number"/>
         <BizField Name="src_username" Column="src_username" Length="64"   Required="Y" Type="Text"/>

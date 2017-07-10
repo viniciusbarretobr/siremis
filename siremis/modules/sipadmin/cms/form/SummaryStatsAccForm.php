@@ -12,7 +12,7 @@ class SummaryStatsAccForm extends EasyForm
 		/* load config file */
 		include_once (MODULE_PATH.'/sipadmin/config/cms.SummaryStatsAccCfg.php');
 
-		$db = $g_BizSystem->GetDBConnection("Serdb");
+		$db = $g_BizSystem->GetDBConnection("Sipdb");
 
 		$acc_records = array();
 		$acc_records['statstime'] = array();

@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no"?>
-<BizDataObj Name="MissedCallsDO" Description="" Class="BizDataObj" DBName="Serdb" Table="missed_calls" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+<BizDataObj Name="MissedCallsDO" Description="" Class="BizDataObj" DBName="Sipdb" Table="missed_calls" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
 	<BizFieldList>
         <BizField Name="Id" Column="id"     Type="Number"/>
         <BizField Name="method" Column="method" Length="16"   Required="Y" Type="Text"/>

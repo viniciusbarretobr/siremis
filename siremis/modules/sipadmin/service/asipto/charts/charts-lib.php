@@ -38,7 +38,7 @@
 		if($chart->GetLimit() && $chart->GetLimit()!="")
 			$sql .= " ".$chart->GetLimit();
 		// echo " - sql: " . $sql;
-		$db = $g_BizSystem->GetDBConnection("Serdb");
+		$db = $g_BizSystem->GetDBConnection("Sipdb");
 		$resultSet = $db->query($sql);
 		if ($resultSet === false) {
 			 $err = $db->ErrorMsg();
