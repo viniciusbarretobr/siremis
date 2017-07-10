@@ -102,7 +102,7 @@ class MenuForm extends EasyForm
     * DeleteRecord() - allow delete only if no child node
     * @return avoid
     */
-   public function deleteRecord()
+   public function deleteRecord($id = NULL)
    {
       $rec = $this->getActiveRecord();
       if (!$rec) return;
