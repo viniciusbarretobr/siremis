@@ -1,0 +1,2 @@
+<MenuWidget Name="SipAdminStartPage" Title="SIP Admin Modules" Class="menu.widget.MenuWidget" CssCLass="system" BizDataObj="menu.do.MenuTreeDO" SearchRule="[PId]='System.Sipadmin'" GlobalSearchRule="[published] = 1" MenuDeep="3" TemplateEngine="Smarty" TemplateFile="sitemap_menu.tpl" CacheLifeTime="0">
+</MenuWidget>

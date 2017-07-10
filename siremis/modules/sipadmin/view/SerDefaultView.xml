@@ -1,6 +1,0 @@
-<?xml version="1.0" standalone="no"?>
-<EasyView Name="SerDefaultView" Description="SIP Admin" class="EasyView" Tab="" TemplateEngine="Smarty" Access="SIPAdmin.Administer_Modules" TemplateFile="view.tpl">
-    <FormReferences>
-        <Reference Name="sipadmin.widget.SIPAdminStartPage"/>
-    </FormReferences>
-</EasyView>
