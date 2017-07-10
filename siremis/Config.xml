@@ -2,6 +2,6 @@
 <Config>
    <DataSource>
       <Database Name="Default" Driver="Pdo_Mysql" Server="localhost" Port="3306" DBName="siremis" User="siremis" Password="siremisrw" Charset="utf8"/>
-      <Database Name="Serdb" Driver="Pdo_Mysql" Server="localhost" Port="3306" DBName="siremis" User="kamailio" Password="kamailiorw" Charset="utf8"/>
+      <Database Name="Serdb" Driver="Pdo_Mysql" Server="localhost" Port="3306" DBName="kamailio" User="kamailio" Password="kamailiorw" Charset="utf8"/>
    </DataSource>
 </Config>
