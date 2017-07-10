@@ -1,10 +1,10 @@
 <?php
-include_once (MODULE_PATH.'/ser/service/asipto/libs/cmds/serjr.php');
-include_once (MODULE_PATH.'/ser/service/siremisJRCommands.php');
+include_once (MODULE_PATH.'/sipadmin/service/asipto/libs/cmds/serjr.php');
+include_once (MODULE_PATH.'/sipadmin/service/siremisJRCommands.php');
 
 class JrcmdsForm extends EasyForm
 {
-   	protected $localService = "ser.service.siremisJRCommands";
+   	protected $localService = "sipadmin.service.siremisJRCommands";
 
    	protected function renderHTML()
    	{
@@ -12,7 +12,7 @@ class JrcmdsForm extends EasyForm
 		$sHTML = "";
 		$sHTML .=
 		//	'<script type="text/javascript" src="'.APP_URL.'/js/richtext.js"></script>';
-			'<script type="text/javascript" src="'.APP_URL.'/modules/ser/js/orichtext.js"></script>';
+			'<script type="text/javascript" src="'.APP_URL.'/modules/sipadmin/js/orichtext.js"></script>';
 		$sHTML .= '<br />
 			<table id="micmds" align="center" width="100%">
 			<tr align="center"><td align="center" colspan="2">

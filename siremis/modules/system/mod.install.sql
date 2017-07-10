@@ -106,7 +106,7 @@ CREATE TABLE `role` (
 /*Data for the table `role` */
 
 insert  into `role`(`id`,`name`,`description`,`status`,`startpage`) values (1,'Administrator','System administrator',1,'/system/general_default');
-insert  into `role`(`id`,`name`,`description`,`status`,`startpage`) values (2,'Sipadmin','General SIP admins',1,'/ser/ser_default');
+insert  into `role`(`id`,`name`,`description`,`status`,`startpage`) values (2,'Sipadmin','General SIP admins',1,'/sipadmin/sipadmin_default');
 insert  into `role`(`id`,`name`,`description`,`status`,`startpage`) values (3,'Sipuser','General SIP users',1,'/sipuser/sipuser_default');
 
 /*Table structure for table `user` */

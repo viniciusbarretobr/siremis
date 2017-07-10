@@ -1,13 +1,13 @@
 <?xml version="1.0" standalone="no"?>
-<EasyView Name="GlobalblacklistListView" Description="ser.sbs.userblacklist" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SERAdmin.Administer_Modules" TemplateFile="view.tpl">
+<EasyView Name="GlobalblacklistListView" Description="sipadmin.sbs.userblacklist" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SIPAdmin.Administer_Modules" TemplateFile="view.tpl">
    <FormReferences>
-   		<Reference Name="ser.sbs.userblacklist.form.GlobalblacklistListForm"/>
+   		<Reference Name="sipadmin.sbs.userblacklist.form.GlobalblacklistListForm"/>
    </FormReferences>
    <FormReferenceLibs>
-   		<Reference Name="ser.sbs.userblacklist.form.GlobalblacklistListForm"/>
-   		<Reference Name="ser.sbs.userblacklist.form.GlobalblacklistEditForm"/>
-   		<Reference Name="ser.sbs.userblacklist.form.GlobalblacklistCopyForm"/>
-   		<Reference Name="ser.sbs.userblacklist.form.GlobalblacklistNewForm"/>
-   		<Reference Name="ser.sbs.userblacklist.form.GlobalblacklistDetailForm"/>
+   		<Reference Name="sipadmin.sbs.userblacklist.form.GlobalblacklistListForm"/>
+   		<Reference Name="sipadmin.sbs.userblacklist.form.GlobalblacklistEditForm"/>
+   		<Reference Name="sipadmin.sbs.userblacklist.form.GlobalblacklistCopyForm"/>
+   		<Reference Name="sipadmin.sbs.userblacklist.form.GlobalblacklistNewForm"/>
+   		<Reference Name="sipadmin.sbs.userblacklist.form.GlobalblacklistDetailForm"/>
    </FormReferenceLibs>    
 </EasyView>

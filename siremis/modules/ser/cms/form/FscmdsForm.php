@@ -1,10 +1,10 @@
 <?php
-include_once (MODULE_PATH.'/ser/service/asipto/libs/cmds/fsevs.php');
-include_once (MODULE_PATH.'/ser/service/siremisFSCommands.php');
+include_once (MODULE_PATH.'/sipadmin/service/asipto/libs/cmds/fsevs.php');
+include_once (MODULE_PATH.'/sipadmin/service/siremisFSCommands.php');
 
 class FscmdsForm extends EasyForm 
 { 
-   	protected $localService = "ser.service.siremisFSCommands";
+   	protected $localService = "sipadmin.service.siremisFSCommands";
    	
    	protected function renderHTML()
    	{
@@ -12,7 +12,7 @@ class FscmdsForm extends EasyForm
 		$sHTML = ""; 
 		$sHTML .= 
 		//	'<script type="text/javascript" src="'.APP_URL.'/js/richtext.js"></script>';
-			'<script type="text/javascript" src="'.APP_URL.'/modules/ser/js/orichtext.js"></script>';
+			'<script type="text/javascript" src="'.APP_URL.'/modules/sipadmin/js/orichtext.js"></script>';
 		$sHTML .= '<br />
 			<table id="micmds" align="center" width="100%">
 			<tr align="center"><td align="center" colspan="2">

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<EasyForm Name="DomainPickForm" Class="PickerForm" FormType="List" jsClass="jbForm" Title="Domain Pick List" Description="" BizDataObj="ser.srv.domain.do.DomainPickDO" PageSize="10" DefaultForm="Y" TemplateEngine="Smarty" TemplateFile="system_pickform.tpl.html" EventName="" MessageFile="">
+<EasyForm Name="DomainPickForm" Class="PickerForm" FormType="List" jsClass="jbForm" Title="Domain Pick List" Description="" BizDataObj="sipadmin.srv.domain.do.DomainPickDO" PageSize="10" DefaultForm="Y" TemplateEngine="Smarty" TemplateFile="system_pickform.tpl.html" EventName="" MessageFile="">
     <DataPanel>
 		<Element Name="fld_Id" Class="ColumnText" FieldName="Id" Label="Id" Sortable="Y" AllowURLParam="N"/>         
 		<Element Name="fld_domain" Class="ColumnText" FieldName="domain" Label="Domain" Sortable="Y" AllowURLParam="N"/>
@@ -30,7 +30,7 @@
         </Element>
     </NavPanel> 
     <SearchPanel>
-			<Element Name="qry_domain" Class="AutoSuggest" SelectFrom="ser.srv.domain.do.DomainDO[domain],[domain] like '%{@:Elem[qry_domain].Value}%' GROUP BY [domain]" FuzzySearch="Y" FieldName="domain" Label="" cssFocusClass="input_text_search_focus" CssClass="input_text_search" />
+			<Element Name="qry_domain" Class="AutoSuggest" SelectFrom="sipadmin.srv.domain.do.DomainDO[domain],[domain] like '%{@:Elem[qry_domain].Value}%' GROUP BY [domain]" FuzzySearch="Y" FieldName="domain" Label="" cssFocusClass="input_text_search_focus" CssClass="input_text_search" />
         <Element Name="btn_dosearch" Class="Button" text="Go" CssClass="button_gray">
             <EventHandler Name="search_onclick" Event="onclick" Function="RunSearch()" ShortcutKey="Enter"/>
         </Element>	

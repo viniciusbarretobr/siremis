@@ -1,13 +1,13 @@
 <?xml version="1.0" standalone="no"?>
-<EasyView Name="LocationAttrsListView" Description="ser.sbs.usrloc" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SERAdmin.Administer_Modules" TemplateFile="view.tpl">
+<EasyView Name="LocationAttrsListView" Description="sipadmin.sbs.usrloc" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SIPAdmin.Administer_Modules" TemplateFile="view.tpl">
    <FormReferences>
-   		<Reference Name="ser.sbs.usrloc.form.LocationAttrsListForm"/>
+   		<Reference Name="sipadmin.sbs.usrloc.form.LocationAttrsListForm"/>
    </FormReferences>
    <FormReferenceLibs>
-   		<Reference Name="ser.sbs.usrloc.form.LocationAttrsListForm"/>
-   		<Reference Name="ser.sbs.usrloc.form.LocationAttrsEditForm"/>
-   		<Reference Name="ser.sbs.usrloc.form.LocationAttrsCopyForm"/>
-   		<Reference Name="ser.sbs.usrloc.form.LocationAttrsNewForm"/>
-   		<Reference Name="ser.sbs.usrloc.form.LocationAttrsDetailForm"/>
+   		<Reference Name="sipadmin.sbs.usrloc.form.LocationAttrsListForm"/>
+   		<Reference Name="sipadmin.sbs.usrloc.form.LocationAttrsEditForm"/>
+   		<Reference Name="sipadmin.sbs.usrloc.form.LocationAttrsCopyForm"/>
+   		<Reference Name="sipadmin.sbs.usrloc.form.LocationAttrsNewForm"/>
+   		<Reference Name="sipadmin.sbs.usrloc.form.LocationAttrsDetailForm"/>
    </FormReferenceLibs>    
 </EasyView>

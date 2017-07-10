@@ -1,6 +1,6 @@
 <?PHP
 include_once(OPENBIZ_BIN.'data/BizDataObj.php');
-include_once(OPENBIZ_BIN.'../../siremis/modules/ser/common/libs/SERUtils.php');
+include_once(OPENBIZ_BIN.'../../siremis/modules/sipadmin/common/libs/SERUtils.php');
 
 class SipTraceDO extends BizDataObj
 {

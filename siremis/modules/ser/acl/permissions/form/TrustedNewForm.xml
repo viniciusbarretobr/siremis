@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<EasyForm Name="TrustedNewForm" Class="EasyForm" FormType="New" jsClass="jbForm" Title="New Trusted" Description="" BizDataObj="ser.acl.permissions.do.TrustedDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
+<EasyForm Name="TrustedNewForm" Class="EasyForm" FormType="New" jsClass="jbForm" Title="New Trusted" Description="" BizDataObj="sipadmin.acl.permissions.do.TrustedDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
     <DataPanel>
         <Element Name="fld_src_ip" Class="InputText" FieldName="src_ip" Label="Src Ip"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
         <Element Name="fld_proto" Class="InputText" FieldName="proto" Label="Proto"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
@@ -8,10 +8,10 @@
         </DataPanel>
     <ActionPanel>
         <Element Name="btn_save" Class="Button" Text="Save" CssClass="button_gray_m">
-            <EventHandler Name="save_onclick" EventLogMsg="" Event="onclick" Function="InsertRecord()" RedirectPage="form=ser.acl.permissions.form.TrustedDetailForm&amp;fld:Id={@ser.acl.permissions.do.TrustedDO:Field[Id].Value}"  ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
+            <EventHandler Name="save_onclick" EventLogMsg="" Event="onclick" Function="InsertRecord()" RedirectPage="form=sipadmin.acl.permissions.form.TrustedDetailForm&amp;fld:Id={@sipadmin.acl.permissions.do.TrustedDO:Field[Id].Value}"  ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
         </Element>
         <Element Name="btn_cancel" Class="Button" Text="Cancel" CssClass="button_gray_m">
-            <EventHandler Name="cancel_onclick" Event="onclick" Function="SwitchForm(ser.acl.permissions.form.TrustedListForm)"  ShortcutKey="Escape" ContextMenu="Cancel"/>
+            <EventHandler Name="cancel_onclick" Event="onclick" Function="SwitchForm(sipadmin.acl.permissions.form.TrustedListForm)"  ShortcutKey="Escape" ContextMenu="Cancel"/>
         </Element>
     </ActionPanel> 
     <NavPanel>

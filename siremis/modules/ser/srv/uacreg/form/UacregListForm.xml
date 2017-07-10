@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<EasyForm Name="UacregListForm" Class="EasyForm" FormType="List" jsClass="jbForm" Title="Uacreg Management" Description="" BizDataObj="ser.srv.uacreg.do.UacregDO" PageSize="10" DefaultForm="Y" TemplateEngine="Smarty" TemplateFile="grid.tpl" EventName="" MessageFile="">
+<EasyForm Name="UacregListForm" Class="EasyForm" FormType="List" jsClass="jbForm" Title="Uacreg Management" Description="" BizDataObj="sipadmin.srv.uacreg.do.UacregDO" PageSize="10" DefaultForm="Y" TemplateEngine="Smarty" TemplateFile="grid.tpl" EventName="" MessageFile="">
     <DataPanel>
         <Element Name="row_selections" Class="RowCheckbox"  Label="" FieldName="Id"/>
         <Element Name="fld_Id" Class="ColumnText" FieldName="Id" Label="Id" Sortable="Y" AllowURLParam="N" Link="javascript:">         
-         	<EventHandler Name="fld_Id_onclick" Event="onclick" Function="SwitchForm(ser.srv.uacreg.form.UacregDetailForm,{@:Elem[fld_Id].Value})"   />
+         	<EventHandler Name="fld_Id_onclick" Event="onclick" Function="SwitchForm(sipadmin.srv.uacreg.form.UacregDetailForm,{@:Elem[fld_Id].Value})"   />
         </Element>
                 <Element Name="fld_l_uuid" Class="ColumnText" FieldName="l_uuid" Label="L Uuid"  Sortable="Y" Link="javascript:">
-         		<EventHandler Name="fld_l_uuid_onclick" Event="onclick" Function="SwitchForm(ser.srv.uacreg.form.UacregDetailForm,{@:Elem[fld_Id].Value})"   />
+         		<EventHandler Name="fld_l_uuid_onclick" Event="onclick" Function="SwitchForm(sipadmin.srv.uacreg.form.UacregDetailForm,{@:Elem[fld_Id].Value})"   />
         </Element>
                 <Element Name="fld_l_username" Class="ColumnText" FieldName="l_username" Label="L Username"  Sortable="Y"/>
                 <Element Name="fld_l_domain" Class="ColumnText" FieldName="l_domain" Label="L Domain"  Sortable="Y"/>
@@ -20,13 +20,13 @@
     </DataPanel>
     <ActionPanel>
         <Element Name="lnk_new" Class="Button" Text="Add" CssClass="button_gray_add" Description="new record (Insert)" >
-            <EventHandler Name="lnk_new_onclick" Event="onclick" EventLogMsg="" Function="SwitchForm(ser.srv.uacreg.form.UacregNewForm)"  ShortcutKey="Insert" ContextMenu="New"/>
+            <EventHandler Name="lnk_new_onclick" Event="onclick" EventLogMsg="" Function="SwitchForm(sipadmin.srv.uacreg.form.UacregNewForm)"  ShortcutKey="Insert" ContextMenu="New"/>
         </Element>
         <Element Name="btn_edit" Class="Button" Text="Edit" CssClass="button_gray_m" Description="edit record (Ctrl+E)">
-            <EventHandler Name="btn_edit_onclick" Event="onclick" EventLogMsg="" Function="EditRecord()" RedirectPage="form=ser.srv.uacreg.form.UacregEditForm&amp;fld:Id={@:Elem[fld_Id].Value}" ShortcutKey="Ctrl+E" ContextMenu="Edit" />
+            <EventHandler Name="btn_edit_onclick" Event="onclick" EventLogMsg="" Function="EditRecord()" RedirectPage="form=sipadmin.srv.uacreg.form.UacregEditForm&amp;fld:Id={@:Elem[fld_Id].Value}" ShortcutKey="Ctrl+E" ContextMenu="Edit" />
         </Element>
         <Element Name="btn_copy" Class="Button" Text="Copy" CssClass="button_gray_m" Description="copy record (Ctrl+C)" >
-            <EventHandler Name="btn_copy_onclick" Event="onclick" EventLogMsg="" Function="CopyRecord()" RedirectPage="form=ser.srv.uacreg.form.UacregCopyForm&amp;fld:Id={@:Elem[fld_Id].Value}" ShortcutKey="Ctrl+C" ContextMenu="Copy"/>
+            <EventHandler Name="btn_copy_onclick" Event="onclick" EventLogMsg="" Function="CopyRecord()" RedirectPage="form=sipadmin.srv.uacreg.form.UacregCopyForm&amp;fld:Id={@:Elem[fld_Id].Value}" ShortcutKey="Ctrl+C" ContextMenu="Copy"/>
         </Element>
         <Element Name="btn_delete" Class="Button" Text="Delete" CssClass="button_gray_m" >
             <EventHandler Name="del_onclick" Event="onclick" EventLogMsg="" Function="DeleteRecord()" ShortcutKey="Ctrl+Delete" ContextMenu="Delete"/>
@@ -35,7 +35,7 @@
             <EventHandler Name="exc_onclick" Event="onclick" EventLogMsg="" Function="CallService(excelService,renderCSV)" FunctionType="Popup" ShortcutKey="Ctrl+Shift+X" ContextMenu="Export"/>
         </Element>
         <Element Name="btn_search" Class="Button" Text="Search" CssClass="button_gray_m" Description="Search record" >
-            <EventHandler Name="btn_search_onclick" Event="onclick" EventLogMsg="" Function="SwitchForm(ser.srv.uacreg.form.UacregSearchForm)"  ShortcutKey="Ctrl+Shift+S" ContextMenu="Search"/>
+            <EventHandler Name="btn_search_onclick" Event="onclick" EventLogMsg="" Function="SwitchForm(sipadmin.srv.uacreg.form.UacregSearchForm)"  ShortcutKey="Ctrl+Shift+S" ContextMenu="Search"/>
         </Element>
     </ActionPanel> 
     <NavPanel>
@@ -61,7 +61,7 @@
         </Element>
     </NavPanel> 
     <SearchPanel>
-			<Element Name="qry_l_uuid" Class="AutoSuggest" SelectFrom="ser.srv.uacreg.do.UacregDO[l_uuid],[l_uuid] like '%{@:Elem[qry_l_uuid].Value}%' GROUP BY [l_uuid]" FuzzySearch="Y" FieldName="l_uuid" Label="" cssFocusClass="input_text_search_focus" CssClass="input_text_search" />
+			<Element Name="qry_l_uuid" Class="AutoSuggest" SelectFrom="sipadmin.srv.uacreg.do.UacregDO[l_uuid],[l_uuid] like '%{@:Elem[qry_l_uuid].Value}%' GROUP BY [l_uuid]" FuzzySearch="Y" FieldName="l_uuid" Label="" cssFocusClass="input_text_search_focus" CssClass="input_text_search" />
         <Element Name="btn_dosearch" Class="Button" text="Go" CssClass="button_gray">
             <EventHandler Name="search_onclick" Event="onclick" Function="RunSearch()" ShortcutKey="Enter"/>
         </Element>	

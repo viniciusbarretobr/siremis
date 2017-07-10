@@ -1,13 +1,13 @@
 <?xml version="1.0" standalone="no"?>
-<EasyView Name="ReGrpListView" Description="ser.acl.group" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SERAdmin.Administer_Modules" TemplateFile="view.tpl">
+<EasyView Name="ReGrpListView" Description="sipadmin.acl.group" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SIPAdmin.Administer_Modules" TemplateFile="view.tpl">
    <FormReferences>
-   		<Reference Name="ser.acl.group.form.ReGrpListForm"/>
+   		<Reference Name="sipadmin.acl.group.form.ReGrpListForm"/>
    </FormReferences>
    <FormReferenceLibs>
-   		<Reference Name="ser.acl.group.form.ReGrpListForm"/>
-   		<Reference Name="ser.acl.group.form.ReGrpEditForm"/>
-   		<Reference Name="ser.acl.group.form.ReGrpCopyForm"/>
-   		<Reference Name="ser.acl.group.form.ReGrpNewForm"/>
-   		<Reference Name="ser.acl.group.form.ReGrpDetailForm"/>
+   		<Reference Name="sipadmin.acl.group.form.ReGrpListForm"/>
+   		<Reference Name="sipadmin.acl.group.form.ReGrpEditForm"/>
+   		<Reference Name="sipadmin.acl.group.form.ReGrpCopyForm"/>
+   		<Reference Name="sipadmin.acl.group.form.ReGrpNewForm"/>
+   		<Reference Name="sipadmin.acl.group.form.ReGrpDetailForm"/>
    </FormReferenceLibs>    
 </EasyView>

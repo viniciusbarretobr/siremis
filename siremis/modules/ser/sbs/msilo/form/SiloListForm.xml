@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<EasyForm Name="SiloListForm" Class="EasyForm" FormType="List" jsClass="jbForm" Title="Silo Management" Description="" BizDataObj="ser.sbs.msilo.do.SiloDO" PageSize="10" DefaultForm="Y" TemplateEngine="Smarty" TemplateFile="grid.tpl" EventName="" MessageFile="">
+<EasyForm Name="SiloListForm" Class="EasyForm" FormType="List" jsClass="jbForm" Title="Silo Management" Description="" BizDataObj="sipadmin.sbs.msilo.do.SiloDO" PageSize="10" DefaultForm="Y" TemplateEngine="Smarty" TemplateFile="grid.tpl" EventName="" MessageFile="">
     <DataPanel>
         <Element Name="row_selections" Class="RowCheckbox" Label="" FieldName="Id"/>
         <Element Name="fld_Id" Class="ColumnText" FieldName="Id" Label="Id" Sortable="Y" AllowURLParam="N" Link="javascript:">         
-         	<EventHandler Name="fld_Id_onclick" Event="onclick" Function="SwitchForm(ser.sbs.msilo.form.SiloDetailForm,{@:Elem[fld_Id].Value})"/>
+         	<EventHandler Name="fld_Id_onclick" Event="onclick" Function="SwitchForm(sipadmin.sbs.msilo.form.SiloDetailForm,{@:Elem[fld_Id].Value})"/>
         </Element>
                 <Element Name="fld_src_addr" Class="ColumnText" FieldName="src_addr" Label="Src Addr" Sortable="Y" Link="javascript:">
-         		<EventHandler Name="fld_src_addr_onclick" Event="onclick" Function="SwitchForm(ser.sbs.msilo.form.SiloDetailForm,{@:Elem[fld_Id].Value})"/>
+         		<EventHandler Name="fld_src_addr_onclick" Event="onclick" Function="SwitchForm(sipadmin.sbs.msilo.form.SiloDetailForm,{@:Elem[fld_Id].Value})"/>
         </Element>
                 <Element Name="fld_dst_addr" Class="ColumnText" FieldName="dst_addr" Label="Dst Addr" Sortable="Y"/>
                 <Element Name="fld_username" Class="ColumnText" FieldName="username" Label="Username" Sortable="Y"/>
@@ -19,13 +19,13 @@
     </DataPanel>
     <ActionPanel>
         <Element Name="lnk_new" Class="Button" Text="Add" CssClass="button_gray_add" Hidden="Y" Description="new record (Insert)">
-            <EventHandler Name="lnk_new_onclick" Event="onclick" EventLogMsg="" Function="SwitchForm(ser.sbs.msilo.form.SiloNewForm)" ShortcutKey="Insert" ContextMenu="New"/>
+            <EventHandler Name="lnk_new_onclick" Event="onclick" EventLogMsg="" Function="SwitchForm(sipadmin.sbs.msilo.form.SiloNewForm)" ShortcutKey="Insert" ContextMenu="New"/>
         </Element>
         <Element Name="btn_edit" Class="Button" Text="Edit" CssClass="button_gray_m" Hidden="Y" Description="edit record (Ctrl+E)">
-            <EventHandler Name="btn_edit_onclick" Event="onclick" EventLogMsg="" Function="EditRecord()" RedirectPage="form=ser.sbs.msilo.form.SiloEditForm&amp;fld:Id={@:Elem[fld_Id].Value}" ShortcutKey="Ctrl+E" ContextMenu="Edit"/>
+            <EventHandler Name="btn_edit_onclick" Event="onclick" EventLogMsg="" Function="EditRecord()" RedirectPage="form=sipadmin.sbs.msilo.form.SiloEditForm&amp;fld:Id={@:Elem[fld_Id].Value}" ShortcutKey="Ctrl+E" ContextMenu="Edit"/>
         </Element>
         <Element Name="btn_copy" Class="Button" Text="Copy" CssClass="button_gray_m" Hidden="Y" Description="copy record (Ctrl+C)">
-            <EventHandler Name="btn_copy_onclick" Event="onclick" EventLogMsg="" Function="CopyRecord()" RedirectPage="form=ser.sbs.msilo.form.SiloCopyForm&amp;fld:Id={@:Elem[fld_Id].Value}" ShortcutKey="Ctrl+C" ContextMenu="Copy"/>
+            <EventHandler Name="btn_copy_onclick" Event="onclick" EventLogMsg="" Function="CopyRecord()" RedirectPage="form=sipadmin.sbs.msilo.form.SiloCopyForm&amp;fld:Id={@:Elem[fld_Id].Value}" ShortcutKey="Ctrl+C" ContextMenu="Copy"/>
         </Element>
         <Element Name="btn_delete" Class="Button" Text="Delete" CssClass="button_gray_m">
             <EventHandler Name="del_onclick" Event="onclick" EventLogMsg="" Function="DeleteRecord()" ShortcutKey="Ctrl+Delete" ContextMenu="Delete"/>
@@ -34,7 +34,7 @@
             <EventHandler Name="exc_onclick" Event="onclick" EventLogMsg="" Function="CallService(excelService,renderCSV)" FunctionType="Popup" ShortcutKey="Ctrl+Shift+X" ContextMenu="Export"/>
         </Element>
         <Element Name="btn_search" Class="Button" Text="Search" CssClass="button_gray_m" Description="Search record">
-            <EventHandler Name="btn_search_onclick" Event="onclick" EventLogMsg="" Function="SwitchForm(ser.sbs.msilo.form.SiloSearchForm)" ShortcutKey="Ctrl+Shift+S" ContextMenu="Search"/>
+            <EventHandler Name="btn_search_onclick" Event="onclick" EventLogMsg="" Function="SwitchForm(sipadmin.sbs.msilo.form.SiloSearchForm)" ShortcutKey="Ctrl+Shift+S" ContextMenu="Search"/>
         </Element>
     </ActionPanel> 
     <NavPanel>
@@ -60,7 +60,7 @@
         </Element>
     </NavPanel> 
     <SearchPanel>
-			<Element Name="qry_username" Class="AutoSuggest" SelectFrom="ser.sbs.msilo.do.SiloDO[username],[username] like '%{@:Elem[qry_username].Value}%' GROUP BY [username]" FuzzySearch="Y" FieldName="username" Label="" cssFocusClass="input_text_search_focus" CssClass="input_text_search"/>
+			<Element Name="qry_username" Class="AutoSuggest" SelectFrom="sipadmin.sbs.msilo.do.SiloDO[username],[username] like '%{@:Elem[qry_username].Value}%' GROUP BY [username]" FuzzySearch="Y" FieldName="username" Label="" cssFocusClass="input_text_search_focus" CssClass="input_text_search"/>
         <Element Name="btn_dosearch" Class="Button" text="Go" CssClass="button_gray">
             <EventHandler Name="search_onclick" Event="onclick" Function="RunSearch()" ShortcutKey="Enter"/>
         </Element>	

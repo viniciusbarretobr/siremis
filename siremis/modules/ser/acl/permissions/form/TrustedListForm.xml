@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<EasyForm Name="TrustedListForm" Class="EasyForm" FormType="List" jsClass="jbForm" Title="Trusted Management" Description="" BizDataObj="ser.acl.permissions.do.TrustedDO" PageSize="10" DefaultForm="Y" TemplateEngine="Smarty" TemplateFile="grid.tpl" EventName="" MessageFile="">
+<EasyForm Name="TrustedListForm" Class="EasyForm" FormType="List" jsClass="jbForm" Title="Trusted Management" Description="" BizDataObj="sipadmin.acl.permissions.do.TrustedDO" PageSize="10" DefaultForm="Y" TemplateEngine="Smarty" TemplateFile="grid.tpl" EventName="" MessageFile="">
     <DataPanel>
         <Element Name="row_selections" Class="RowCheckbox"  Label="" FieldName="Id"/>
         <Element Name="fld_Id" Class="ColumnText" FieldName="Id" Label="Id" Sortable="Y" AllowURLParam="N" Link="javascript:">         
-         	<EventHandler Name="fld_Id_onclick" Event="onclick" Function="SwitchForm(ser.acl.permissions.form.TrustedDetailForm,{@:Elem[fld_Id].Value})"   />
+         	<EventHandler Name="fld_Id_onclick" Event="onclick" Function="SwitchForm(sipadmin.acl.permissions.form.TrustedDetailForm,{@:Elem[fld_Id].Value})"   />
         </Element>
                 <Element Name="fld_src_ip" Class="ColumnText" FieldName="src_ip" Label="Src Ip"  Sortable="Y" Link="javascript:">
-         		<EventHandler Name="fld_src_ip_onclick" Event="onclick" Function="SwitchForm(ser.acl.permissions.form.TrustedDetailForm,{@:Elem[fld_Id].Value})"   />
+         		<EventHandler Name="fld_src_ip_onclick" Event="onclick" Function="SwitchForm(sipadmin.acl.permissions.form.TrustedDetailForm,{@:Elem[fld_Id].Value})"   />
         </Element>
                 <Element Name="fld_proto" Class="ColumnText" FieldName="proto" Label="Proto"  Sortable="Y"/>
                 <Element Name="fld_from_pattern" Class="ColumnText" FieldName="from_pattern" Label="From Pattern"  Sortable="Y"/>
@@ -14,13 +14,13 @@
     </DataPanel>
     <ActionPanel>
         <Element Name="lnk_new" Class="Button" Text="Add" CssClass="button_gray_add" Description="new record (Insert)" >
-            <EventHandler Name="lnk_new_onclick" Event="onclick" EventLogMsg="" Function="SwitchForm(ser.acl.permissions.form.TrustedNewForm)"  ShortcutKey="Insert" ContextMenu="New"/>
+            <EventHandler Name="lnk_new_onclick" Event="onclick" EventLogMsg="" Function="SwitchForm(sipadmin.acl.permissions.form.TrustedNewForm)"  ShortcutKey="Insert" ContextMenu="New"/>
         </Element>
         <Element Name="btn_edit" Class="Button" Text="Edit" CssClass="button_gray_m" Description="edit record (Ctrl+E)">
-            <EventHandler Name="btn_edit_onclick" Event="onclick" EventLogMsg="" Function="EditRecord()" RedirectPage="form=ser.acl.permissions.form.TrustedEditForm&amp;fld:Id={@:Elem[fld_Id].Value}" ShortcutKey="Ctrl+E" ContextMenu="Edit" />
+            <EventHandler Name="btn_edit_onclick" Event="onclick" EventLogMsg="" Function="EditRecord()" RedirectPage="form=sipadmin.acl.permissions.form.TrustedEditForm&amp;fld:Id={@:Elem[fld_Id].Value}" ShortcutKey="Ctrl+E" ContextMenu="Edit" />
         </Element>
         <Element Name="btn_copy" Class="Button" Text="Copy" CssClass="button_gray_m" Description="copy record (Ctrl+C)" >
-            <EventHandler Name="btn_copy_onclick" Event="onclick" EventLogMsg="" Function="CopyRecord()" RedirectPage="form=ser.acl.permissions.form.TrustedCopyForm&amp;fld:Id={@:Elem[fld_Id].Value}" ShortcutKey="Ctrl+C" ContextMenu="Copy"/>
+            <EventHandler Name="btn_copy_onclick" Event="onclick" EventLogMsg="" Function="CopyRecord()" RedirectPage="form=sipadmin.acl.permissions.form.TrustedCopyForm&amp;fld:Id={@:Elem[fld_Id].Value}" ShortcutKey="Ctrl+C" ContextMenu="Copy"/>
         </Element>
         <Element Name="btn_delete" Class="Button" Text="Delete" CssClass="button_gray_m" >
             <EventHandler Name="del_onclick" Event="onclick" EventLogMsg="" Function="DeleteRecord()" ShortcutKey="Ctrl+Delete" ContextMenu="Delete"/>
@@ -29,7 +29,7 @@
             <EventHandler Name="exc_onclick" Event="onclick" EventLogMsg="" Function="CallService(excelService,renderCSV)" FunctionType="Popup" ShortcutKey="Ctrl+Shift+X" ContextMenu="Export"/>
         </Element>
         <Element Name="btn_search" Class="Button" Text="Search" CssClass="button_gray_m" Description="Search record" >
-            <EventHandler Name="btn_search_onclick" Event="onclick" EventLogMsg="" Function="SwitchForm(ser.acl.permissions.form.TrustedSearchForm)"  ShortcutKey="Ctrl+Shift+S" ContextMenu="Search"/>
+            <EventHandler Name="btn_search_onclick" Event="onclick" EventLogMsg="" Function="SwitchForm(sipadmin.acl.permissions.form.TrustedSearchForm)"  ShortcutKey="Ctrl+Shift+S" ContextMenu="Search"/>
         </Element>
     </ActionPanel> 
     <NavPanel>
@@ -55,7 +55,7 @@
         </Element>
     </NavPanel> 
     <SearchPanel>
-			<Element Name="qry_src_ip" Class="AutoSuggest" SelectFrom="ser.acl.permissions.do.TrustedDO[src_ip],[src_ip] like '%{@:Elem[qry_src_ip].Value}%' GROUP BY [src_ip]" FuzzySearch="Y" FieldName="src_ip" Label="" cssFocusClass="input_text_search_focus" CssClass="input_text_search" />
+			<Element Name="qry_src_ip" Class="AutoSuggest" SelectFrom="sipadmin.acl.permissions.do.TrustedDO[src_ip],[src_ip] like '%{@:Elem[qry_src_ip].Value}%' GROUP BY [src_ip]" FuzzySearch="Y" FieldName="src_ip" Label="" cssFocusClass="input_text_search_focus" CssClass="input_text_search" />
         <Element Name="btn_dosearch" Class="Button" text="Go" CssClass="button_gray">
             <EventHandler Name="search_onclick" Event="onclick" Function="RunSearch()" ShortcutKey="Enter"/>
         </Element>	

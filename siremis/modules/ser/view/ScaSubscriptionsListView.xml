@@ -1,13 +1,13 @@
 <?xml version="1.0" standalone="no"?>
-<EasyView Name="ScaSubscriptionsListView" Description="ser.prs.sca" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SERAdmin.Administer_Modules" TemplateFile="view.tpl">
+<EasyView Name="ScaSubscriptionsListView" Description="sipadmin.prs.sca" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SIPAdmin.Administer_Modules" TemplateFile="view.tpl">
    <FormReferences>
-   		<Reference Name="ser.prs.sca.form.ScaSubscriptionsListForm"/>
+   		<Reference Name="sipadmin.prs.sca.form.ScaSubscriptionsListForm"/>
    </FormReferences>
    <FormReferenceLibs>
-   		<Reference Name="ser.prs.sca.form.ScaSubscriptionsListForm"/>
-   		<Reference Name="ser.prs.sca.form.ScaSubscriptionsEditForm"/>
-   		<Reference Name="ser.prs.sca.form.ScaSubscriptionsCopyForm"/>
-   		<Reference Name="ser.prs.sca.form.ScaSubscriptionsNewForm"/>
-   		<Reference Name="ser.prs.sca.form.ScaSubscriptionsDetailForm"/>
+   		<Reference Name="sipadmin.prs.sca.form.ScaSubscriptionsListForm"/>
+   		<Reference Name="sipadmin.prs.sca.form.ScaSubscriptionsEditForm"/>
+   		<Reference Name="sipadmin.prs.sca.form.ScaSubscriptionsCopyForm"/>
+   		<Reference Name="sipadmin.prs.sca.form.ScaSubscriptionsNewForm"/>
+   		<Reference Name="sipadmin.prs.sca.form.ScaSubscriptionsDetailForm"/>
    </FormReferenceLibs>    
 </EasyView>

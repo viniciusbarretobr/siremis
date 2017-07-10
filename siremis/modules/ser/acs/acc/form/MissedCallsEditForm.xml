@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<EasyForm Name="MissedCallsEditForm" Class="EasyForm" FormType="Edit" jsClass="jbForm" Title="Edit Missed Calls" Description="" BizDataObj="ser.acs.acc.do.MissedCallsDO" DefaultForm="Y" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
+<EasyForm Name="MissedCallsEditForm" Class="EasyForm" FormType="Edit" jsClass="jbForm" Title="Edit Missed Calls" Description="" BizDataObj="sipadmin.acs.acc.do.MissedCallsDO" DefaultForm="Y" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
     <DataPanel>
 		<Element Name="fld_Id" Class="Hidden" FieldName="Id" Label="Id" AllowURLParam="Y" Translatable="N" OnEventLog="N" CssClass="input" CssErrorClass="input_error"/>
 		<Element Name="fld_method" Class="InputText" FieldName="method" Label="Method"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
@@ -19,10 +19,10 @@
     </DataPanel>
     <ActionPanel>
         <Element Name="btn_save" Class="Button" Text="Save" CssClass="button_gray_m">
-            <EventHandler Name="save_onclick" Event="onclick" EventLogMsg=""  Function="UpdateRecord()" RedirectPage="form=ser.acs.acc.form.MissedCallsDetailForm&amp;fld:Id={@ser.acs.acc.do.MissedCallsDO:Field[Id].Value}" ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
+            <EventHandler Name="save_onclick" Event="onclick" EventLogMsg=""  Function="UpdateRecord()" RedirectPage="form=sipadmin.acs.acc.form.MissedCallsDetailForm&amp;fld:Id={@sipadmin.acs.acc.do.MissedCallsDO:Field[Id].Value}" ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
         </Element>
         <Element Name="btn_cancel" Class="Button" Text="Cancel" CssClass="button_gray_m">
-            <EventHandler Name="btn_cancel_onclick" Event="onclick" Function="SwitchForm(ser.acs.acc.form.MissedCallsListForm)"  ShortcutKey="Escape" ContextMenu="Cancel" />
+            <EventHandler Name="btn_cancel_onclick" Event="onclick" Function="SwitchForm(sipadmin.acs.acc.form.MissedCallsListForm)"  ShortcutKey="Escape" ContextMenu="Cancel" />
         </Element>
     </ActionPanel> 
     <NavPanel>

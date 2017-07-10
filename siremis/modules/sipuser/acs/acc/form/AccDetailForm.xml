@@ -5,7 +5,7 @@
        	<Element Name="fld_method" ElementSet="General" Class="LabelText" FieldName="method" Label="Method" AllowURLParam="N"/>
        	<Element Name="fld_from_tag" ElementSet="General" Class="LabelText" FieldName="from_tag" Label="From Tag" AllowURLParam="N"/>
        	<Element Name="fld_to_tag" ElementSet="General" Class="LabelText" FieldName="to_tag" Label="To Tag" AllowURLParam="N"/>
-       	<Element Name="fld_callid"  ElementSet="General" Class="LabelText" FieldName="callid" Label="Callid" Link="{@home:url}/ser/cdrs_list/fld:sip_call_id={@:Elem[fld_callid].Value}"/>
+       	<Element Name="fld_callid"  ElementSet="General" Class="LabelText" FieldName="callid" Label="Callid" Link="{@home:url}/sipadmin/cdrs_list/fld:sip_call_id={@:Elem[fld_callid].Value}"/>
        	<Element Name="fld_sip_code" ElementSet="General" Class="LabelText" FieldName="sip_code" Label="Sip Code" AllowURLParam="N"/>
        	<Element Name="fld_sip_reason" ElementSet="General" Class="LabelText" FieldName="sip_reason" Label="Sip Reason" AllowURLParam="N"/>
        	<Element Name="fld_time" ElementSet="General" Class="LabelText" FieldName="time" Label="Time" AllowURLParam="N"/>
@@ -19,7 +19,7 @@
     </DataPanel>
     <ActionPanel>       
         <Element Name="btn_cancel" Class="Button" Text="Back" CssClass="button_gray_m">
-            <EventHandler Name="btn_cancel_onclick" Event="onclick" Function="SwitchForm(ser.acs.acc.form.AccListForm)" ShortcutKey="Escape" ContextMenu="Cancel"/>
+            <EventHandler Name="btn_cancel_onclick" Event="onclick" Function="SwitchForm(sipadmin.acs.acc.form.AccListForm)" ShortcutKey="Escape" ContextMenu="Cancel"/>
         </Element>         
     </ActionPanel> 
     <NavPanel>

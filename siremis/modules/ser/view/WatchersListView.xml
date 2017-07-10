@@ -1,13 +1,13 @@
 <?xml version="1.0" standalone="no"?>
-<EasyView Name="WatchersListView" Description="ser.prs.presence" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SERAdmin.Administer_Modules" TemplateFile="view.tpl">
+<EasyView Name="WatchersListView" Description="sipadmin.prs.presence" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SIPAdmin.Administer_Modules" TemplateFile="view.tpl">
    <FormReferences>
-   		<Reference Name="ser.prs.presence.form.WatchersListForm"/>
+   		<Reference Name="sipadmin.prs.presence.form.WatchersListForm"/>
    </FormReferences>
    <FormReferenceLibs>
-   		<Reference Name="ser.prs.presence.form.WatchersListForm"/>
-   		<Reference Name="ser.prs.presence.form.WatchersEditForm"/>
-   		<Reference Name="ser.prs.presence.form.WatchersCopyForm"/>
-   		<Reference Name="ser.prs.presence.form.WatchersNewForm"/>
-   		<Reference Name="ser.prs.presence.form.WatchersDetailForm"/>
+   		<Reference Name="sipadmin.prs.presence.form.WatchersListForm"/>
+   		<Reference Name="sipadmin.prs.presence.form.WatchersEditForm"/>
+   		<Reference Name="sipadmin.prs.presence.form.WatchersCopyForm"/>
+   		<Reference Name="sipadmin.prs.presence.form.WatchersNewForm"/>
+   		<Reference Name="sipadmin.prs.presence.form.WatchersDetailForm"/>
    </FormReferenceLibs>    
 </EasyView>

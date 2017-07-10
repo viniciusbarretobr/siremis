@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<EasyForm Name="MissedCallsListForm" Class="EasyForm" FormType="List" jsClass="jbForm" Title="Missed Calls Management" Description="" BizDataObj="ser.acs.acc.do.MissedCallsDO" PageSize="10" DefaultForm="Y" TemplateEngine="Smarty" TemplateFile="grid.tpl" EventName="" MessageFile="">
+<EasyForm Name="MissedCallsListForm" Class="EasyForm" FormType="List" jsClass="jbForm" Title="Missed Calls Management" Description="" BizDataObj="sipadmin.acs.acc.do.MissedCallsDO" PageSize="10" DefaultForm="Y" TemplateEngine="Smarty" TemplateFile="grid.tpl" EventName="" MessageFile="">
     <DataPanel>
         <Element Name="row_selections" Class="RowCheckbox" Label="" FieldName="Id"/>
         <Element Name="fld_Id" Class="ColumnText" FieldName="Id" Label="Id" Sortable="Y" AllowURLParam="N" Link="javascript:">         
-         	<EventHandler Name="fld_Id_onclick" Event="onclick" Function="SwitchForm(ser.acs.acc.form.MissedCallsDetailForm,{@:Elem[fld_Id].Value})"/>
+         	<EventHandler Name="fld_Id_onclick" Event="onclick" Function="SwitchForm(sipadmin.acs.acc.form.MissedCallsDetailForm,{@:Elem[fld_Id].Value})"/>
         </Element>
                 <Element Name="fld_method" Class="ColumnText" FieldName="method" Label="Method" Sortable="Y" Link="javascript:">
-         		<EventHandler Name="fld_method_onclick" Event="onclick" Function="SwitchForm(ser.acs.acc.form.MissedCallsDetailForm,{@:Elem[fld_Id].Value})"/>
+         		<EventHandler Name="fld_method_onclick" Event="onclick" Function="SwitchForm(sipadmin.acs.acc.form.MissedCallsDetailForm,{@:Elem[fld_Id].Value})"/>
         </Element>
                 <Element Name="fld_from_tag" Class="ColumnText" FieldName="from_tag" Label="From Tag" Sortable="Y" Hidden="Y"/>
                 <Element Name="fld_to_tag" Class="ColumnText" FieldName="to_tag" Label="To Tag" Sortable="Y" Hidden="Y"/>
@@ -24,13 +24,13 @@
     </DataPanel>
     <ActionPanel>
         <Element Name="lnk_new" Class="Button" Text="Add" CssClass="button_gray_add" Hidden="Y" Description="new record (Insert)">
-            <EventHandler Name="lnk_new_onclick" Event="onclick" EventLogMsg="" Function="SwitchForm(ser.acs.acc.form.MissedCallsNewForm)" ShortcutKey="Insert" ContextMenu="New"/>
+            <EventHandler Name="lnk_new_onclick" Event="onclick" EventLogMsg="" Function="SwitchForm(sipadmin.acs.acc.form.MissedCallsNewForm)" ShortcutKey="Insert" ContextMenu="New"/>
         </Element>
         <Element Name="btn_edit" Class="Button" Text="Edit" CssClass="button_gray_m" Hidden="Y" Description="edit record (Ctrl+E)">
-            <EventHandler Name="btn_edit_onclick" Event="onclick" EventLogMsg="" Function="EditRecord()" RedirectPage="form=ser.acs.acc.form.MissedCallsEditForm&amp;fld:Id={@:Elem[fld_Id].Value}" ShortcutKey="Ctrl+E" ContextMenu="Edit"/>
+            <EventHandler Name="btn_edit_onclick" Event="onclick" EventLogMsg="" Function="EditRecord()" RedirectPage="form=sipadmin.acs.acc.form.MissedCallsEditForm&amp;fld:Id={@:Elem[fld_Id].Value}" ShortcutKey="Ctrl+E" ContextMenu="Edit"/>
         </Element>
         <Element Name="btn_copy" Class="Button" Text="Copy" CssClass="button_gray_m" Hidden="Y" Description="copy record (Ctrl+C)">
-            <EventHandler Name="btn_copy_onclick" Event="onclick" EventLogMsg="" Function="CopyRecord()" RedirectPage="form=ser.acs.acc.form.MissedCallsCopyForm&amp;fld:Id={@:Elem[fld_Id].Value}" ShortcutKey="Ctrl+C" ContextMenu="Copy"/>
+            <EventHandler Name="btn_copy_onclick" Event="onclick" EventLogMsg="" Function="CopyRecord()" RedirectPage="form=sipadmin.acs.acc.form.MissedCallsCopyForm&amp;fld:Id={@:Elem[fld_Id].Value}" ShortcutKey="Ctrl+C" ContextMenu="Copy"/>
         </Element>
         <Element Name="btn_delete" Class="Button" Text="Delete" CssClass="button_gray_m">
             <EventHandler Name="del_onclick" Event="onclick" EventLogMsg="" Function="DeleteRecord()" ShortcutKey="Ctrl+Delete" ContextMenu="Delete"/>
@@ -39,7 +39,7 @@
             <EventHandler Name="exc_onclick" Event="onclick" EventLogMsg="" Function="CallService(excelService,renderCSV)" FunctionType="Popup" ShortcutKey="Ctrl+Shift+X" ContextMenu="Export"/>
         </Element>
         <Element Name="btn_search" Class="Button" Text="Search" CssClass="button_gray_m" Description="Search record">
-            <EventHandler Name="btn_search_onclick" Event="onclick" EventLogMsg="" Function="SwitchForm(ser.acs.acc.form.MissedCallsSearchForm)" ShortcutKey="Ctrl+Shift+S" ContextMenu="Search"/>
+            <EventHandler Name="btn_search_onclick" Event="onclick" EventLogMsg="" Function="SwitchForm(sipadmin.acs.acc.form.MissedCallsSearchForm)" ShortcutKey="Ctrl+Shift+S" ContextMenu="Search"/>
         </Element>
     </ActionPanel> 
     <NavPanel>
@@ -65,7 +65,7 @@
         </Element>
     </NavPanel> 
     <SearchPanel>
-			<Element Name="qry_callid" Class="AutoSuggest" SelectFrom="ser.acs.acc.do.MissedCallsDO[callid],[callid] like '%{@:Elem[qry_callid].Value}%' GROUP BY [callid]" FuzzySearch="Y" FieldName="callid" Label="" cssFocusClass="input_text_search_focus" CssClass="input_text_search"/>
+			<Element Name="qry_callid" Class="AutoSuggest" SelectFrom="sipadmin.acs.acc.do.MissedCallsDO[callid],[callid] like '%{@:Elem[qry_callid].Value}%' GROUP BY [callid]" FuzzySearch="Y" FieldName="callid" Label="" cssFocusClass="input_text_search_focus" CssClass="input_text_search"/>
         <Element Name="btn_dosearch" Class="Button" text="Go" CssClass="button_gray">
             <EventHandler Name="search_onclick" Event="onclick" Function="RunSearch()" ShortcutKey="Enter"/>
         </Element>	

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<EasyForm Name="DbaliasesNewForm" Class="EasyForm" FormType="New" jsClass="jbForm" Title="New Dbaliases" Description="" BizDataObj="ser.sbs.aliasdb.do.DbaliasesDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
+<EasyForm Name="DbaliasesNewForm" Class="EasyForm" FormType="New" jsClass="jbForm" Title="New Dbaliases" Description="" BizDataObj="sipadmin.sbs.aliasdb.do.DbaliasesDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
     <DataPanel>
         <Element Name="fld_alias_username" Class="InputText" FieldName="alias_username" Label="Alias Username" AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
-        <Element Name="fld_alias_domain" Class="Listbox" FieldName="alias_domain" Label="Alias Domain" SelectFrom="ser.srv.domain.do.DomainDO[domain]"/>
-		<Element Name="fld_username" Class="InputPicker" FieldName="username" Label="Username" ValuePicker="ser.sbs.authdb.form.SubscriberPickForm" PickerMap="fld_username:fld_username" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
-		<Element Name="fld_domain" Class="InputPicker" FieldName="domain" Label="Domain" ValuePicker="ser.srv.domain.form.DomainPickForm" PickerMap="fld_domain:fld_domain"/>
+        <Element Name="fld_alias_domain" Class="Listbox" FieldName="alias_domain" Label="Alias Domain" SelectFrom="sipadmin.srv.domain.do.DomainDO[domain]"/>
+		<Element Name="fld_username" Class="InputPicker" FieldName="username" Label="Username" ValuePicker="sipadmin.sbs.authdb.form.SubscriberPickForm" PickerMap="fld_username:fld_username" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_domain" Class="InputPicker" FieldName="domain" Label="Domain" ValuePicker="sipadmin.srv.domain.form.DomainPickForm" PickerMap="fld_domain:fld_domain"/>
         </DataPanel>
     <ActionPanel>
         <Element Name="btn_save" Class="Button" Text="Save" CssClass="button_gray_m">
-            <EventHandler Name="save_onclick" EventLogMsg="" Event="onclick" Function="InsertRecord()" RedirectPage="form=ser.sbs.aliasdb.form.DbaliasesDetailForm&amp;fld:Id={@ser.sbs.aliasdb.do.DbaliasesDO:Field[Id].Value}" ShortcutKey="Ctrl+Enter" ContextMenu="Save"/>
+            <EventHandler Name="save_onclick" EventLogMsg="" Event="onclick" Function="InsertRecord()" RedirectPage="form=sipadmin.sbs.aliasdb.form.DbaliasesDetailForm&amp;fld:Id={@sipadmin.sbs.aliasdb.do.DbaliasesDO:Field[Id].Value}" ShortcutKey="Ctrl+Enter" ContextMenu="Save"/>
         </Element>
         <Element Name="btn_cancel" Class="Button" Text="Cancel" CssClass="button_gray_m">
-            <EventHandler Name="cancel_onclick" Event="onclick" Function="SwitchForm(ser.sbs.aliasdb.form.DbaliasesListForm)" ShortcutKey="Escape" ContextMenu="Cancel"/>
+            <EventHandler Name="cancel_onclick" Event="onclick" Function="SwitchForm(sipadmin.sbs.aliasdb.form.DbaliasesListForm)" ShortcutKey="Escape" ContextMenu="Cancel"/>
         </Element>
     </ActionPanel> 
     <NavPanel>

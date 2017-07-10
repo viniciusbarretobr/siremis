@@ -10,7 +10,7 @@ class RegisterForm extends UserForm
      */
     public function CreateUser()
 	{
-		include_once(MODULE_PATH."/ser/config/common.Main.php");
+		include_once(MODULE_PATH."/sipadmin/config/common.Main.php");
 		if($cfg_siremis_public_registrations == false) {
 			$errorMessage = "Public registration is not enabled!";
 			$errors['fld_username'] = $errorMessage;
@@ -80,7 +80,7 @@ class RegisterForm extends UserForm
         $profile = $g_BizSystem->InituserProfile($userinfo['username']);
         
 
-		$serUserObj = BizSystem::getObject('ser.sbs.authdb.do.SubscriberDO');
+		$serUserObj = BizSystem::getObject('sipadmin.sbs.authdb.do.SubscriberDO');
 		$serUserArr = array(
 							"username"=>$recArr['username'],
 							"domain"=>$recArr['domain'],

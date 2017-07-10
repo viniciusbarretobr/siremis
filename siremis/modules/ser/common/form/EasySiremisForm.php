@@ -7,7 +7,7 @@ class EasySiremisForm extends EasyForm
 	public function GetSiremisCmdPage()
 	{
 		/* load config file */
-		include_once (MODULE_PATH.'/ser/config/common.Main.php');
+		include_once (MODULE_PATH.'/sipadmin/config/common.Main.php');
 		$this->x_SiremisCmdPage = $cfg_siremis_cmd_page;
 		$this->cancel();
 	}

@@ -1,13 +1,13 @@
 <?xml version="1.0" standalone="no"?>
-<EasyView Name="DialogVarsListView" Description="ser.srv.dialog" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SERAdmin.Administer_Modules" TemplateFile="view.tpl">
+<EasyView Name="DialogVarsListView" Description="sipadmin.srv.dialog" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SIPAdmin.Administer_Modules" TemplateFile="view.tpl">
    <FormReferences>
-   		<Reference Name="ser.srv.dialog.form.DialogVarsListForm"/>
+   		<Reference Name="sipadmin.srv.dialog.form.DialogVarsListForm"/>
    </FormReferences>
    <FormReferenceLibs>
-   		<Reference Name="ser.srv.dialog.form.DialogVarsListForm"/>
-   		<Reference Name="ser.srv.dialog.form.DialogVarsEditForm"/>
-   		<Reference Name="ser.srv.dialog.form.DialogVarsCopyForm"/>
-   		<Reference Name="ser.srv.dialog.form.DialogVarsNewForm"/>
-   		<Reference Name="ser.srv.dialog.form.DialogVarsDetailForm"/>
+   		<Reference Name="sipadmin.srv.dialog.form.DialogVarsListForm"/>
+   		<Reference Name="sipadmin.srv.dialog.form.DialogVarsEditForm"/>
+   		<Reference Name="sipadmin.srv.dialog.form.DialogVarsCopyForm"/>
+   		<Reference Name="sipadmin.srv.dialog.form.DialogVarsNewForm"/>
+   		<Reference Name="sipadmin.srv.dialog.form.DialogVarsDetailForm"/>
    </FormReferenceLibs>    
 </EasyView>

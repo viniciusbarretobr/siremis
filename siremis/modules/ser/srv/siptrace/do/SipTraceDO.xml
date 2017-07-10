@@ -17,6 +17,6 @@
     <TableJoins>
     </TableJoins>
     <ObjReferences>
-        <Object Name="ser.srv.siptrace.do.SipTraceDetailXDO" Relationship="1-1" Table="sip_trace" Column="id" FieldRef="Id" CascadeDelete="Y"/>
+        <Object Name="sipadmin.srv.siptrace.do.SipTraceDetailXDO" Relationship="1-1" Table="sip_trace" Column="id" FieldRef="Id" CascadeDelete="Y"/>
     </ObjReferences>
 </BizDataObj>

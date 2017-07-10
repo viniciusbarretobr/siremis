@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<EasyForm Name="RtpproxyCopyForm" Class="EasyForm" FormType="Edit" jsClass="jbForm" Title="Copy Rtpproxy" Description="" BizDataObj="ser.srv.rtpproxy.do.RtpproxyDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
+<EasyForm Name="RtpproxyCopyForm" Class="EasyForm" FormType="Edit" jsClass="jbForm" Title="Copy Rtpproxy" Description="" BizDataObj="sipadmin.srv.rtpproxy.do.RtpproxyDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
     <DataPanel>
         <Element Name="fld_Id" Class="Hidden" FieldName="Id" Label="Id" AllowURLParam="Y"/>	
 		<Element Name="fld_setid" Class="InputText" FieldName="setid" Label="Setid"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
@@ -10,10 +10,10 @@
     </DataPanel>
     <ActionPanel>
         <Element Name="btn_save" Class="Button" Text="Save" CssClass="button_gray_m">
-            <EventHandler Name="save_onclick" EventLogMsg="" Event="onclick" Function="InsertRecord()" RedirectPage="form=ser.srv.rtpproxy.form.RtpproxyDetailForm&amp;fld:Id={@ser.srv.rtpproxy.do.RtpproxyDO:Field[Id].Value}"  ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
+            <EventHandler Name="save_onclick" EventLogMsg="" Event="onclick" Function="InsertRecord()" RedirectPage="form=sipadmin.srv.rtpproxy.form.RtpproxyDetailForm&amp;fld:Id={@sipadmin.srv.rtpproxy.do.RtpproxyDO:Field[Id].Value}"  ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
         </Element>
         <Element Name="btn_cancel" Class="Button" Text="Cancel" CssClass="button_gray_m">
-            <EventHandler Name="cancel_onclick" Event="onclick" Function="SwitchForm(ser.srv.rtpproxy.form.RtpproxyListForm)"  ShortcutKey="Escape" ContextMenu="Cancel"/>
+            <EventHandler Name="cancel_onclick" Event="onclick" Function="SwitchForm(sipadmin.srv.rtpproxy.form.RtpproxyListForm)"  ShortcutKey="Escape" ContextMenu="Cancel"/>
         </Element>
     </ActionPanel> 
     <NavPanel>

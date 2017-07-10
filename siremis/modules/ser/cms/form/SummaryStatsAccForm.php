@@ -1,16 +1,16 @@
 <?php
-include_once (MODULE_PATH.'/ser/service/siremisCharts.php');
+include_once (MODULE_PATH.'/sipadmin/service/siremisCharts.php');
 
 class SummaryStatsAccForm extends EasyForm 
 { 
-   	protected $localService = "ser.service.siremisCharts";
+   	protected $localService = "sipadmin.service.siremisCharts";
 
    	protected function renderHTML()
 	{
 		global $g_BizSystem;
 
 		/* load config file */
-		include_once (MODULE_PATH.'/ser/config/cms.SummaryStatsAccCfg.php');
+		include_once (MODULE_PATH.'/sipadmin/config/cms.SummaryStatsAccCfg.php');
 
 		$db = $g_BizSystem->GetDBConnection("Serdb");
 

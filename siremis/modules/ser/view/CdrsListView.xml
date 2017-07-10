@@ -1,13 +1,13 @@
 <?xml version="1.0" standalone="no"?>
-<EasyView Name="CdrsListView" Description="ser.acs.cdrs" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SERAdmin.Administer_Modules" TemplateFile="view.tpl">
+<EasyView Name="CdrsListView" Description="sipadmin.acs.cdrs" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SIPAdmin.Administer_Modules" TemplateFile="view.tpl">
    <FormReferences>
-   		<Reference Name="ser.acs.cdrs.form.CdrsListForm"/>
+   		<Reference Name="sipadmin.acs.cdrs.form.CdrsListForm"/>
    </FormReferences>
    <FormReferenceLibs>
-   		<Reference Name="ser.acs.cdrs.form.CdrsListForm"/>
-   		<Reference Name="ser.acs.cdrs.form.CdrsEditForm"/>
-   		<Reference Name="ser.acs.cdrs.form.CdrsCopyForm"/>
-   		<Reference Name="ser.acs.cdrs.form.CdrsNewForm"/>
-   		<Reference Name="ser.acs.cdrs.form.CdrsDetailForm"/>
+   		<Reference Name="sipadmin.acs.cdrs.form.CdrsListForm"/>
+   		<Reference Name="sipadmin.acs.cdrs.form.CdrsEditForm"/>
+   		<Reference Name="sipadmin.acs.cdrs.form.CdrsCopyForm"/>
+   		<Reference Name="sipadmin.acs.cdrs.form.CdrsNewForm"/>
+   		<Reference Name="sipadmin.acs.cdrs.form.CdrsDetailForm"/>
    </FormReferenceLibs>    
 </EasyView>

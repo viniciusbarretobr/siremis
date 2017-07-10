@@ -13,7 +13,7 @@
     <TableJoins>
     </TableJoins>
     <ObjReferences>
-        <Object Name="ser.sbs.aliasdb.do.DbaliasesDO" Relationship="1-M" Table="dbaliases" Column="username" FieldRef="username" CascadeDelete="Y"/>
-        <Object Name="ser.sbs.usrloc.do.LocationDO" Relationship="1-M" Table="location" Column="username" FieldRef="username" CascadeDelete="Y"/>
+        <Object Name="sipadmin.sbs.aliasdb.do.DbaliasesDO" Relationship="1-M" Table="dbaliases" Column="username" FieldRef="username" CascadeDelete="Y"/>
+        <Object Name="sipadmin.sbs.usrloc.do.LocationDO" Relationship="1-M" Table="location" Column="username" FieldRef="username" CascadeDelete="Y"/>
     </ObjReferences>
 </BizDataObj>

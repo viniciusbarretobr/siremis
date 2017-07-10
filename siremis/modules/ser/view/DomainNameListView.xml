@@ -1,13 +1,13 @@
 <?xml version="1.0" standalone="no"?>
-<EasyView Name="DomainNameListView" Description="ser.rtg.carrierroute" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SERAdmin.Administer_Modules" TemplateFile="view.tpl">
+<EasyView Name="DomainNameListView" Description="sipadmin.rtg.carrierroute" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SIPAdmin.Administer_Modules" TemplateFile="view.tpl">
    <FormReferences>
-   		<Reference Name="ser.rtg.carrierroute.form.DomainNameListForm"/>
+   		<Reference Name="sipadmin.rtg.carrierroute.form.DomainNameListForm"/>
    </FormReferences>
    <FormReferenceLibs>
-   		<Reference Name="ser.rtg.carrierroute.form.DomainNameListForm"/>
-   		<Reference Name="ser.rtg.carrierroute.form.DomainNameEditForm"/>
-   		<Reference Name="ser.rtg.carrierroute.form.DomainNameCopyForm"/>
-   		<Reference Name="ser.rtg.carrierroute.form.DomainNameNewForm"/>
-   		<Reference Name="ser.rtg.carrierroute.form.DomainNameDetailForm"/>
+   		<Reference Name="sipadmin.rtg.carrierroute.form.DomainNameListForm"/>
+   		<Reference Name="sipadmin.rtg.carrierroute.form.DomainNameEditForm"/>
+   		<Reference Name="sipadmin.rtg.carrierroute.form.DomainNameCopyForm"/>
+   		<Reference Name="sipadmin.rtg.carrierroute.form.DomainNameNewForm"/>
+   		<Reference Name="sipadmin.rtg.carrierroute.form.DomainNameDetailForm"/>
    </FormReferenceLibs>    
 </EasyView>

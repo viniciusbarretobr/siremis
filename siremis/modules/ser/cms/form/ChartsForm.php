@@ -1,10 +1,10 @@
 <?php
-include_once (MODULE_PATH.'/ser/service/siremisCharts.php');
-include_once (MODULE_PATH.'/ser/service/asipto/charts/charts-lib.php');
+include_once (MODULE_PATH.'/sipadmin/service/siremisCharts.php');
+include_once (MODULE_PATH.'/sipadmin/service/asipto/charts/charts-lib.php');
 
 class ChartsForm extends EasyForm 
 { 
-   	protected $localService = "ser.service.siremisCharts";
+   	protected $localService = "sipadmin.service.siremisCharts";
    	
    	protected function renderHTML()
    	{
@@ -41,7 +41,7 @@ class ChartsForm extends EasyForm
 
 		$sHTML .= 
 			'
-			<script type="text/javascript" src="'.APP_URL.'/modules/ser/pages/echarts.min.js"></script>
+			<script type="text/javascript" src="'.APP_URL.'/modules/sipadmin/pages/echarts.min.js"></script>
 			<script type="text/javascript">
 			';
 

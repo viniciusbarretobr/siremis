@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<EasyForm Name="UsrPreferencesNewForm" Class="EasyForm" FormType="New" jsClass="jbForm" Title="New Usr Preferences" Description="" BizDataObj="ser.sbs.avpops.do.UsrPreferencesDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
+<EasyForm Name="UsrPreferencesNewForm" Class="EasyForm" FormType="New" jsClass="jbForm" Title="New Usr Preferences" Description="" BizDataObj="sipadmin.sbs.avpops.do.UsrPreferencesDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
     <DataPanel>
         <Element Name="fld_uuid" Class="InputText" FieldName="uuid" Label="Uuid" CssClass="input_text"/>
-		<Element Name="fld_username" Class="InputPicker" FieldName="username" Label="Username" ValuePicker="ser.sbs.authdb.form.SubscriberPickForm" PickerMap="fld_username:fld_username" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
-        <Element Name="fld_domain" Class="Listbox" FieldName="domain" Label="Domain" SelectFrom="ser.srv.domain.do.DomainDO[domain]"/>
-        <Element Name="fld_attribute" Class="EditCombobox" SelectFrom="ser.config.select.SbsAvpops(AttrName)" FieldName="attribute" Label="Attribute" AllowURLParam="N"/>
-        <Element Name="fld_type" Class="Listbox" FieldName="type" Label="Type" AllowURLParam="N" SelectFrom="ser.common.select.values(avpDBType)"/>
+		<Element Name="fld_username" Class="InputPicker" FieldName="username" Label="Username" ValuePicker="sipadmin.sbs.authdb.form.SubscriberPickForm" PickerMap="fld_username:fld_username" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+        <Element Name="fld_domain" Class="Listbox" FieldName="domain" Label="Domain" SelectFrom="sipadmin.srv.domain.do.DomainDO[domain]"/>
+        <Element Name="fld_attribute" Class="EditCombobox" SelectFrom="sipadmin.config.select.SbsAvpops(AttrName)" FieldName="attribute" Label="Attribute" AllowURLParam="N"/>
+        <Element Name="fld_type" Class="Listbox" FieldName="type" Label="Type" AllowURLParam="N" SelectFrom="sipadmin.common.select.values(avpDBType)"/>
         <Element Name="fld_value" Class="InputText" FieldName="value" Label="Value" AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
     			<Element Name="fld_last_modified" Class="InputDatetime" DateFormat="%Y-%m-%d %H:%M:%S" FieldName="last_modified" Label="Last Modified" DefaultValue="1900-01-01 00:00:01" Sortable="Y" AllowURLParam="N" Translatable="N" OnEventLog="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
         </DataPanel>
     <ActionPanel>
         <Element Name="btn_save" Class="Button" Text="Save" CssClass="button_gray_m">
-            <EventHandler Name="save_onclick" EventLogMsg="" Event="onclick" Function="InsertRecord()" RedirectPage="form=ser.sbs.avpops.form.UsrPreferencesDetailForm&amp;fld:Id={@ser.sbs.avpops.do.UsrPreferencesDO:Field[Id].Value}" ShortcutKey="Ctrl+Enter" ContextMenu="Save"/>
+            <EventHandler Name="save_onclick" EventLogMsg="" Event="onclick" Function="InsertRecord()" RedirectPage="form=sipadmin.sbs.avpops.form.UsrPreferencesDetailForm&amp;fld:Id={@sipadmin.sbs.avpops.do.UsrPreferencesDO:Field[Id].Value}" ShortcutKey="Ctrl+Enter" ContextMenu="Save"/>
         </Element>
         <Element Name="btn_cancel" Class="Button" Text="Cancel" CssClass="button_gray_m">
-            <EventHandler Name="cancel_onclick" Event="onclick" Function="SwitchForm(ser.sbs.avpops.form.UsrPreferencesListForm)" ShortcutKey="Escape" ContextMenu="Cancel"/>
+            <EventHandler Name="cancel_onclick" Event="onclick" Function="SwitchForm(sipadmin.sbs.avpops.form.UsrPreferencesListForm)" ShortcutKey="Escape" ContextMenu="Cancel"/>
         </Element>
     </ActionPanel> 
     <NavPanel>

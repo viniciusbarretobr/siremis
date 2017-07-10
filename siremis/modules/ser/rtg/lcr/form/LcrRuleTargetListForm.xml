@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<EasyForm Name="LcrRuleTargetListForm" Class="EasyForm" FormType="List" jsClass="jbForm" Title="Lcr Rule Target Management" Description="" BizDataObj="ser.rtg.lcr.do.LcrRuleTargetDO" PageSize="10" DefaultForm="Y" TemplateEngine="Smarty" TemplateFile="grid.tpl" EventName="" MessageFile="">
+<EasyForm Name="LcrRuleTargetListForm" Class="EasyForm" FormType="List" jsClass="jbForm" Title="Lcr Rule Target Management" Description="" BizDataObj="sipadmin.rtg.lcr.do.LcrRuleTargetDO" PageSize="10" DefaultForm="Y" TemplateEngine="Smarty" TemplateFile="grid.tpl" EventName="" MessageFile="">
     <DataPanel>
         <Element Name="row_selections" Class="RowCheckbox"  Label="" FieldName="Id"/>
         <Element Name="fld_Id" Class="ColumnText" FieldName="Id" Label="Id" Sortable="Y" AllowURLParam="N" Link="javascript:">         
-         	<EventHandler Name="fld_Id_onclick" Event="onclick" Function="SwitchForm(ser.rtg.lcr.form.LcrRuleTargetDetailForm,{@:Elem[fld_Id].Value})"   />
+         	<EventHandler Name="fld_Id_onclick" Event="onclick" Function="SwitchForm(sipadmin.rtg.lcr.form.LcrRuleTargetDetailForm,{@:Elem[fld_Id].Value})"   />
         </Element>
                 <Element Name="fld_lcr_id" Class="ColumnText" FieldName="lcr_id" Label="Lcr Id"  Sortable="Y" Link="javascript:">
-         		<EventHandler Name="fld_lcr_id_onclick" Event="onclick" Function="SwitchForm(ser.rtg.lcr.form.LcrRuleTargetDetailForm,{@:Elem[fld_Id].Value})"   />
+         		<EventHandler Name="fld_lcr_id_onclick" Event="onclick" Function="SwitchForm(sipadmin.rtg.lcr.form.LcrRuleTargetDetailForm,{@:Elem[fld_Id].Value})"   />
         </Element>
                 <Element Name="fld_rule_id" Class="ColumnText" FieldName="rule_id" Label="Rule Id"  Sortable="Y"/>
                 <Element Name="fld_gw_id" Class="ColumnText" FieldName="gw_id" Label="Gw Id"  Sortable="Y"/>
@@ -15,13 +15,13 @@
     </DataPanel>
     <ActionPanel>
         <Element Name="lnk_new" Class="Button" Text="Add" CssClass="button_gray_add" Description="new record (Insert)" >
-            <EventHandler Name="lnk_new_onclick" Event="onclick" EventLogMsg="" Function="SwitchForm(ser.rtg.lcr.form.LcrRuleTargetNewForm)"  ShortcutKey="Insert" ContextMenu="New"/>
+            <EventHandler Name="lnk_new_onclick" Event="onclick" EventLogMsg="" Function="SwitchForm(sipadmin.rtg.lcr.form.LcrRuleTargetNewForm)"  ShortcutKey="Insert" ContextMenu="New"/>
         </Element>
         <Element Name="btn_edit" Class="Button" Text="Edit" CssClass="button_gray_m" Description="edit record (Ctrl+E)">
-            <EventHandler Name="btn_edit_onclick" Event="onclick" EventLogMsg="" Function="EditRecord()" RedirectPage="form=ser.rtg.lcr.form.LcrRuleTargetEditForm&amp;fld:Id={@:Elem[fld_Id].Value}" ShortcutKey="Ctrl+E" ContextMenu="Edit" />
+            <EventHandler Name="btn_edit_onclick" Event="onclick" EventLogMsg="" Function="EditRecord()" RedirectPage="form=sipadmin.rtg.lcr.form.LcrRuleTargetEditForm&amp;fld:Id={@:Elem[fld_Id].Value}" ShortcutKey="Ctrl+E" ContextMenu="Edit" />
         </Element>
         <Element Name="btn_copy" Class="Button" Text="Copy" CssClass="button_gray_m" Description="copy record (Ctrl+C)" >
-            <EventHandler Name="btn_copy_onclick" Event="onclick" EventLogMsg="" Function="CopyRecord()" RedirectPage="form=ser.rtg.lcr.form.LcrRuleTargetCopyForm&amp;fld:Id={@:Elem[fld_Id].Value}" ShortcutKey="Ctrl+C" ContextMenu="Copy"/>
+            <EventHandler Name="btn_copy_onclick" Event="onclick" EventLogMsg="" Function="CopyRecord()" RedirectPage="form=sipadmin.rtg.lcr.form.LcrRuleTargetCopyForm&amp;fld:Id={@:Elem[fld_Id].Value}" ShortcutKey="Ctrl+C" ContextMenu="Copy"/>
         </Element>
         <Element Name="btn_delete" Class="Button" Text="Delete" CssClass="button_gray_m" >
             <EventHandler Name="del_onclick" Event="onclick" EventLogMsg="" Function="DeleteRecord()" ShortcutKey="Ctrl+Delete" ContextMenu="Delete"/>
@@ -30,7 +30,7 @@
             <EventHandler Name="exc_onclick" Event="onclick" EventLogMsg="" Function="CallService(excelService,renderCSV)" FunctionType="Popup" ShortcutKey="Ctrl+Shift+X" ContextMenu="Export"/>
         </Element>
         <Element Name="btn_search" Class="Button" Text="Search" CssClass="button_gray_m" Description="Search record" >
-            <EventHandler Name="btn_search_onclick" Event="onclick" EventLogMsg="" Function="SwitchForm(ser.rtg.lcr.form.LcrRuleTargetSearchForm)"  ShortcutKey="Ctrl+Shift+S" ContextMenu="Search"/>
+            <EventHandler Name="btn_search_onclick" Event="onclick" EventLogMsg="" Function="SwitchForm(sipadmin.rtg.lcr.form.LcrRuleTargetSearchForm)"  ShortcutKey="Ctrl+Shift+S" ContextMenu="Search"/>
         </Element>
     </ActionPanel> 
     <NavPanel>
@@ -56,7 +56,7 @@
         </Element>
     </NavPanel> 
     <SearchPanel>
-			<Element Name="qry_rule_id" Class="AutoSuggest" SelectFrom="ser.rtg.lcr.do.LcrRuleTargetDO[rule_id],[rule_id] like '%{@:Elem[qry_rule_id].Value}%' GROUP BY [rule_id]" FuzzySearch="Y" FieldName="rule_id" Label="" cssFocusClass="input_text_search_focus" CssClass="input_text_search" />
+			<Element Name="qry_rule_id" Class="AutoSuggest" SelectFrom="sipadmin.rtg.lcr.do.LcrRuleTargetDO[rule_id],[rule_id] like '%{@:Elem[qry_rule_id].Value}%' GROUP BY [rule_id]" FuzzySearch="Y" FieldName="rule_id" Label="" cssFocusClass="input_text_search_focus" CssClass="input_text_search" />
         <Element Name="btn_dosearch" Class="Button" text="Go" CssClass="button_gray">
             <EventHandler Name="search_onclick" Event="onclick" Function="RunSearch()" ShortcutKey="Enter"/>
         </Element>	

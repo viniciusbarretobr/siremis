@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<EasyForm Name="DomainNameEditForm" Class="EasyForm" FormType="Edit" jsClass="jbForm" Title="Edit Domain Name" Description="" BizDataObj="ser.rtg.carrierroute.do.DomainNameDO" DefaultForm="Y" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
+<EasyForm Name="DomainNameEditForm" Class="EasyForm" FormType="Edit" jsClass="jbForm" Title="Edit Domain Name" Description="" BizDataObj="sipadmin.rtg.carrierroute.do.DomainNameDO" DefaultForm="Y" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
     <DataPanel>
 		<Element Name="fld_Id" Class="Hidden" FieldName="Id" Label="Id" AllowURLParam="Y" Translatable="N" OnEventLog="N" CssClass="input" CssErrorClass="input_error"/>
 		<Element Name="fld_domain" Class="InputText" FieldName="domain" Label="Domain"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
     </DataPanel>
     <ActionPanel>
         <Element Name="btn_save" Class="Button" Text="Save" CssClass="button_gray_m">
-            <EventHandler Name="save_onclick" Event="onclick" EventLogMsg=""  Function="UpdateRecord()" RedirectPage="form=ser.rtg.carrierroute.form.DomainNameDetailForm&amp;fld:Id={@ser.rtg.carrierroute.do.DomainNameDO:Field[Id].Value}" ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
+            <EventHandler Name="save_onclick" Event="onclick" EventLogMsg=""  Function="UpdateRecord()" RedirectPage="form=sipadmin.rtg.carrierroute.form.DomainNameDetailForm&amp;fld:Id={@sipadmin.rtg.carrierroute.do.DomainNameDO:Field[Id].Value}" ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
         </Element>
         <Element Name="btn_cancel" Class="Button" Text="Cancel" CssClass="button_gray_m">
-            <EventHandler Name="btn_cancel_onclick" Event="onclick" Function="SwitchForm(ser.rtg.carrierroute.form.DomainNameListForm)"  ShortcutKey="Escape" ContextMenu="Cancel" />
+            <EventHandler Name="btn_cancel_onclick" Event="onclick" Function="SwitchForm(sipadmin.rtg.carrierroute.form.DomainNameListForm)"  ShortcutKey="Escape" ContextMenu="Cancel" />
         </Element>
     </ActionPanel> 
     <NavPanel>

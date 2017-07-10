@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<EasyForm Name="PdtNewForm" Class="EasyForm" FormType="New" jsClass="jbForm" Title="New Pdt" Description="" BizDataObj="ser.rtg.pdt.do.PdtDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
+<EasyForm Name="PdtNewForm" Class="EasyForm" FormType="New" jsClass="jbForm" Title="New Pdt" Description="" BizDataObj="sipadmin.rtg.pdt.do.PdtDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
     <DataPanel>
-        <Element Name="fld_sdomain" Class="InputPicker" FieldName="sdomain" Label="Source Domain" ValuePicker="ser.srv.domain.form.DomainPickForm" PickerMap="fld_sdomain:fld_domain"/>
+        <Element Name="fld_sdomain" Class="InputPicker" FieldName="sdomain" Label="Source Domain" ValuePicker="sipadmin.srv.domain.form.DomainPickForm" PickerMap="fld_sdomain:fld_domain"/>
         <Element Name="fld_prefix" Class="InputText" FieldName="prefix" Label="Prefix"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
         <Element Name="fld_domain" Class="InputText" FieldName="domain" Label="Target Domain"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
         </DataPanel>
     <ActionPanel>
         <Element Name="btn_save" Class="Button" Text="Save" CssClass="button_gray_m">
-            <EventHandler Name="save_onclick" EventLogMsg="" Event="onclick" Function="InsertRecord()" RedirectPage="form=ser.rtg.pdt.form.PdtDetailForm&amp;fld:Id={@ser.rtg.pdt.do.PdtDO:Field[Id].Value}"  ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
+            <EventHandler Name="save_onclick" EventLogMsg="" Event="onclick" Function="InsertRecord()" RedirectPage="form=sipadmin.rtg.pdt.form.PdtDetailForm&amp;fld:Id={@sipadmin.rtg.pdt.do.PdtDO:Field[Id].Value}"  ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
         </Element>
         <Element Name="btn_cancel" Class="Button" Text="Cancel" CssClass="button_gray_m">
-            <EventHandler Name="cancel_onclick" Event="onclick" Function="SwitchForm(ser.rtg.pdt.form.PdtListForm)"  ShortcutKey="Escape" ContextMenu="Cancel"/>
+            <EventHandler Name="cancel_onclick" Event="onclick" Function="SwitchForm(sipadmin.rtg.pdt.form.PdtListForm)"  ShortcutKey="Escape" ContextMenu="Cancel"/>
         </Element>
     </ActionPanel> 
     <NavPanel>

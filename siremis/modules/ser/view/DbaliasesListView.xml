@@ -1,13 +1,13 @@
 <?xml version="1.0" standalone="no"?>
-<EasyView Name="DbaliasesListView" Description="ser.sbs.aliasdb" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SERAdmin.Administer_Modules" TemplateFile="view.tpl">
+<EasyView Name="DbaliasesListView" Description="sipadmin.sbs.aliasdb" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SIPAdmin.Administer_Modules" TemplateFile="view.tpl">
    <FormReferences>
-   		<Reference Name="ser.sbs.aliasdb.form.DbaliasesListForm"/>
+   		<Reference Name="sipadmin.sbs.aliasdb.form.DbaliasesListForm"/>
    </FormReferences>
    <FormReferenceLibs>
-   		<Reference Name="ser.sbs.aliasdb.form.DbaliasesListForm"/>
-   		<Reference Name="ser.sbs.aliasdb.form.DbaliasesEditForm"/>
-   		<Reference Name="ser.sbs.aliasdb.form.DbaliasesCopyForm"/>
-   		<Reference Name="ser.sbs.aliasdb.form.DbaliasesNewForm"/>
-   		<Reference Name="ser.sbs.aliasdb.form.DbaliasesDetailForm"/>
+   		<Reference Name="sipadmin.sbs.aliasdb.form.DbaliasesListForm"/>
+   		<Reference Name="sipadmin.sbs.aliasdb.form.DbaliasesEditForm"/>
+   		<Reference Name="sipadmin.sbs.aliasdb.form.DbaliasesCopyForm"/>
+   		<Reference Name="sipadmin.sbs.aliasdb.form.DbaliasesNewForm"/>
+   		<Reference Name="sipadmin.sbs.aliasdb.form.DbaliasesDetailForm"/>
    </FormReferenceLibs>    
 </EasyView>

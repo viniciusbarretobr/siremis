@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<EasyForm Name="DispatcherCopyForm" Class="EasyForm" FormType="Edit" jsClass="jbForm" Title="Copy Dispatcher" Description="" BizDataObj="ser.rtg.dispatcher.do.DispatcherDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
+<EasyForm Name="DispatcherCopyForm" Class="EasyForm" FormType="Edit" jsClass="jbForm" Title="Copy Dispatcher" Description="" BizDataObj="sipadmin.rtg.dispatcher.do.DispatcherDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
     <DataPanel>
         <Element Name="fld_Id" Class="Hidden" FieldName="Id" Label="Id" AllowURLParam="Y"/>	
 		<Element Name="fld_setid" Class="InputText" FieldName="setid" Label="Setid"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
 		<Element Name="fld_destination" Class="InputText" FieldName="destination" Label="Destination"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
-        <Element Name="fld_flags" Class="Listbox" FieldName="flags" Label="Flags"  AllowURLParam="N"  DefaultValue="0" SelectFrom="ser.common.select.values(dispatcherFlags)"/>
+        <Element Name="fld_flags" Class="Listbox" FieldName="flags" Label="Flags"  AllowURLParam="N"  DefaultValue="0" SelectFrom="sipadmin.common.select.values(dispatcherFlags)"/>
 		<Element Name="fld_priority" Class="InputText" FieldName="priority" Label="Priority"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus" DefaultValue="0"/>
 		<Element Name="fld_attrs" Class="InputText" FieldName="attrs" Label="Attrs"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
 		<Element Name="fld_description" Class="InputText" FieldName="description" Label="Description"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
     </DataPanel>
     <ActionPanel>
         <Element Name="btn_save" Class="Button" Text="Save" CssClass="button_gray_m">
-            <EventHandler Name="save_onclick" EventLogMsg="" Event="onclick" Function="InsertRecord()" RedirectPage="form=ser.rtg.dispatcher.form.DispatcherDetailForm&amp;fld:Id={@ser.rtg.dispatcher.do.DispatcherDO:Field[Id].Value}"  ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
+            <EventHandler Name="save_onclick" EventLogMsg="" Event="onclick" Function="InsertRecord()" RedirectPage="form=sipadmin.rtg.dispatcher.form.DispatcherDetailForm&amp;fld:Id={@sipadmin.rtg.dispatcher.do.DispatcherDO:Field[Id].Value}"  ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
         </Element>
         <Element Name="btn_cancel" Class="Button" Text="Cancel" CssClass="button_gray_m">
-            <EventHandler Name="cancel_onclick" Event="onclick" Function="SwitchForm(ser.rtg.dispatcher.form.DispatcherListForm)"  ShortcutKey="Escape" ContextMenu="Cancel"/>
+            <EventHandler Name="cancel_onclick" Event="onclick" Function="SwitchForm(sipadmin.rtg.dispatcher.form.DispatcherListForm)"  ShortcutKey="Escape" ContextMenu="Cancel"/>
         </Element>
     </ActionPanel> 
     <NavPanel>

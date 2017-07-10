@@ -158,7 +158,7 @@ function fillDB()
 	giveActionAccess("", 1);
    	
 	// sipadmin to access siremis user profile and sip admin pages
-	giveActionAccess("module='user' OR module='ser'", 2);
+	giveActionAccess("module='user' OR module='sipadmin'", 2);
 
 	// sipuser to access siremis user profile and sip user pages
 	giveActionAccess("module='user' OR module='sipuser'", 3);

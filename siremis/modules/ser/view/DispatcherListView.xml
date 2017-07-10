@@ -1,13 +1,13 @@
 <?xml version="1.0" standalone="no"?>
-<EasyView Name="DispatcherListView" Description="ser.rtg.dispatcher" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SERAdmin.Administer_Modules" TemplateFile="view.tpl">
+<EasyView Name="DispatcherListView" Description="sipadmin.rtg.dispatcher" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SIPAdmin.Administer_Modules" TemplateFile="view.tpl">
    <FormReferences>
-   		<Reference Name="ser.rtg.dispatcher.form.DispatcherListForm"/>
+   		<Reference Name="sipadmin.rtg.dispatcher.form.DispatcherListForm"/>
    </FormReferences>
    <FormReferenceLibs>
-   		<Reference Name="ser.rtg.dispatcher.form.DispatcherListForm"/>
-   		<Reference Name="ser.rtg.dispatcher.form.DispatcherEditForm"/>
-   		<Reference Name="ser.rtg.dispatcher.form.DispatcherCopyForm"/>
-   		<Reference Name="ser.rtg.dispatcher.form.DispatcherNewForm"/>
-   		<Reference Name="ser.rtg.dispatcher.form.DispatcherDetailForm"/>
+   		<Reference Name="sipadmin.rtg.dispatcher.form.DispatcherListForm"/>
+   		<Reference Name="sipadmin.rtg.dispatcher.form.DispatcherEditForm"/>
+   		<Reference Name="sipadmin.rtg.dispatcher.form.DispatcherCopyForm"/>
+   		<Reference Name="sipadmin.rtg.dispatcher.form.DispatcherNewForm"/>
+   		<Reference Name="sipadmin.rtg.dispatcher.form.DispatcherDetailForm"/>
    </FormReferenceLibs>    
 </EasyView>

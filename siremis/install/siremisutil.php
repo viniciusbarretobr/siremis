@@ -33,9 +33,9 @@ function siremisFillDB()
     siremisReplaceDbConfig();
 	BizSystem::log(LOG_DEBUG, "SIREMIS", "install module siremis sql - " . $_REQUEST['db1type']);
 	if($_REQUEST['db1type']=="Pdo_Pgsql" || $_REQUEST['db1type']=="pdo_pgsql") {
-		$sqlfile = MODULE_PATH."/ser/mod.install.siremis.pgsql.sql";
+		$sqlfile = MODULE_PATH."/sipadmin/mod.install.siremis.pgsql.sql";
 	} else {
-		$sqlfile = MODULE_PATH."/ser/mod.install.siremis.sql";
+		$sqlfile = MODULE_PATH."/sipadmin/mod.install.siremis.sql";
 	}
     if (!file_exists($sqlfile))
        	return true;

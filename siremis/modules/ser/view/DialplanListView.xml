@@ -1,13 +1,13 @@
 <?xml version="1.0" standalone="no"?>
-<EasyView Name="DialplanListView" Description="ser.srv.dialplan" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SERAdmin.Administer_Modules" TemplateFile="view.tpl">
+<EasyView Name="DialplanListView" Description="sipadmin.srv.dialplan" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SIPAdmin.Administer_Modules" TemplateFile="view.tpl">
    <FormReferences>
-   		<Reference Name="ser.srv.dialplan.form.DialplanListForm"/>
+   		<Reference Name="sipadmin.srv.dialplan.form.DialplanListForm"/>
    </FormReferences>
    <FormReferenceLibs>
-   		<Reference Name="ser.srv.dialplan.form.DialplanListForm"/>
-   		<Reference Name="ser.srv.dialplan.form.DialplanEditForm"/>
-   		<Reference Name="ser.srv.dialplan.form.DialplanCopyForm"/>
-   		<Reference Name="ser.srv.dialplan.form.DialplanNewForm"/>
-   		<Reference Name="ser.srv.dialplan.form.DialplanDetailForm"/>
+   		<Reference Name="sipadmin.srv.dialplan.form.DialplanListForm"/>
+   		<Reference Name="sipadmin.srv.dialplan.form.DialplanEditForm"/>
+   		<Reference Name="sipadmin.srv.dialplan.form.DialplanCopyForm"/>
+   		<Reference Name="sipadmin.srv.dialplan.form.DialplanNewForm"/>
+   		<Reference Name="sipadmin.srv.dialplan.form.DialplanDetailForm"/>
    </FormReferenceLibs>    
 </EasyView>

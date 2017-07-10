@@ -1,6 +1,6 @@
 <?xml version="1.0" standalone="no"?>
-<EasyView Name="ChartsSysView" Description="Charts" class="EasyView" Tab="" TemplateEngine="Smarty" Access="SERAdmin.Administer_Modules" TemplateFile="view.tpl">
+<EasyView Name="ChartsSysView" Description="Charts" class="EasyView" Tab="" TemplateEngine="Smarty" Access="SIPAdmin.Administer_Modules" TemplateFile="view.tpl">
     <FormReferences>
-        <Reference Name="ser.cms.form.ChartsForm"/>
+        <Reference Name="sipadmin.cms.form.ChartsForm"/>
     </FormReferences>
 </EasyView>

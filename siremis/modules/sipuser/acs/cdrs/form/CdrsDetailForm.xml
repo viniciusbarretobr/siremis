@@ -10,7 +10,7 @@
        	<Element Name="fld_call_start_time" ElementSet="General" Class="LabelText" FieldName="call_start_time" Label="Call Start Time" AllowURLParam="N"/>
        	<Element Name="fld_duration" ElementSet="General" Class="LabelText" FieldName="duration" Label="Duration" AllowURLParam="N"/>
 		<Element Name="fld_sip_call_id" ElementSet="General" Class="LabelText" FieldName="sip_call_id" Label="Sip Call Id" AllowURLParam="N"
-			Link="{@home:url}/ser/acc_list/fld:callid={@:Elem[fld_sip_call_id].Value}"/>
+			Link="{@home:url}/sipadmin/acc_list/fld:callid={@:Elem[fld_sip_call_id].Value}"/>
        	<Element Name="fld_sip_from_tag" ElementSet="General" Class="LabelText" FieldName="sip_from_tag" Label="Sip From Tag" AllowURLParam="N"/>
        	<Element Name="fld_sip_to_tag" ElementSet="General" Class="LabelText" FieldName="sip_to_tag" Label="Sip To Tag" AllowURLParam="N"/>
        	<Element Name="fld_src_ip" ElementSet="General" Class="LabelText" FieldName="src_ip" Label="Src Ip" AllowURLParam="N"/>

@@ -1,13 +1,13 @@
 <?xml version="1.0" standalone="no"?>
-<EasyView Name="MissedCallsListView" Description="ser.acs.acc" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SERAdmin.Administer_Modules" TemplateFile="view.tpl">
+<EasyView Name="MissedCallsListView" Description="sipadmin.acs.acc" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SIPAdmin.Administer_Modules" TemplateFile="view.tpl">
    <FormReferences>
-   		<Reference Name="ser.acs.acc.form.MissedCallsListForm"/>
+   		<Reference Name="sipadmin.acs.acc.form.MissedCallsListForm"/>
    </FormReferences>
    <FormReferenceLibs>
-   		<Reference Name="ser.acs.acc.form.MissedCallsListForm"/>
-   		<Reference Name="ser.acs.acc.form.MissedCallsEditForm"/>
-   		<Reference Name="ser.acs.acc.form.MissedCallsCopyForm"/>
-   		<Reference Name="ser.acs.acc.form.MissedCallsNewForm"/>
-   		<Reference Name="ser.acs.acc.form.MissedCallsDetailForm"/>
+   		<Reference Name="sipadmin.acs.acc.form.MissedCallsListForm"/>
+   		<Reference Name="sipadmin.acs.acc.form.MissedCallsEditForm"/>
+   		<Reference Name="sipadmin.acs.acc.form.MissedCallsCopyForm"/>
+   		<Reference Name="sipadmin.acs.acc.form.MissedCallsNewForm"/>
+   		<Reference Name="sipadmin.acs.acc.form.MissedCallsDetailForm"/>
    </FormReferenceLibs>    
 </EasyView>

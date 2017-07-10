@@ -1,13 +1,13 @@
 <?xml version="1.0" standalone="no"?>
-<EasyView Name="UacregListView" Description="ser.srv.uacreg" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SERAdmin.Administer_Modules" TemplateFile="view.tpl">
+<EasyView Name="UacregListView" Description="sipadmin.srv.uacreg" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SIPAdmin.Administer_Modules" TemplateFile="view.tpl">
    <FormReferences>
-   		<Reference Name="ser.srv.uacreg.form.UacregListForm"/>
+   		<Reference Name="sipadmin.srv.uacreg.form.UacregListForm"/>
    </FormReferences>
    <FormReferenceLibs>
-   		<Reference Name="ser.srv.uacreg.form.UacregListForm"/>
-   		<Reference Name="ser.srv.uacreg.form.UacregEditForm"/>
-   		<Reference Name="ser.srv.uacreg.form.UacregCopyForm"/>
-   		<Reference Name="ser.srv.uacreg.form.UacregNewForm"/>
-   		<Reference Name="ser.srv.uacreg.form.UacregDetailForm"/>
+   		<Reference Name="sipadmin.srv.uacreg.form.UacregListForm"/>
+   		<Reference Name="sipadmin.srv.uacreg.form.UacregEditForm"/>
+   		<Reference Name="sipadmin.srv.uacreg.form.UacregCopyForm"/>
+   		<Reference Name="sipadmin.srv.uacreg.form.UacregNewForm"/>
+   		<Reference Name="sipadmin.srv.uacreg.form.UacregDetailForm"/>
    </FormReferenceLibs>    
 </EasyView>

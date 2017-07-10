@@ -2,7 +2,7 @@
    function siremis_get_chart_data($groupId, $chartId, $debug=0)
    {
 		global $g_BizSystem;
-		$cgobj = $g_BizSystem->GetService("ser.service.siremisCharts");
+		$cgobj = $g_BizSystem->GetService("sipadmin.service.siremisCharts");
 		$cgrp = $cgobj->GetChartGroup($groupId);
 		if($debug==1)
 			echo "Chart found $id :: ".$cgobj->GetChartGroupCount()." ::: ";

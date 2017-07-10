@@ -1,16 +1,16 @@
 <?xml version="1.0" standalone="no"?>
-<EasyView Name="SubscriberListView" Description="ser.sbs.authdb" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SERAdmin.Administer_Modules" TemplateFile="view_tabs.tpl">
+<EasyView Name="SubscriberListView" Description="sipadmin.sbs.authdb" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SIPAdmin.Administer_Modules" TemplateFile="view_tabs.tpl">
    <FormReferences>
-		<Reference Name="ser.sbs.authdb.form.SubscriberListForm"
-				SubForms="ser.sbs.aliasdb.form.DbaliasesListForm;ser.sbs.usrloc.form.LocationListForm" Description="Subscribers"/>
-   		<Reference Name="ser.sbs.aliasdb.form.DbaliasesListForm" Description="Aliases DB"/>   		
-   		<Reference Name="ser.sbs.usrloc.form.LocationListForm" Description="Location"/>   		
+		<Reference Name="sipadmin.sbs.authdb.form.SubscriberListForm"
+				SubForms="sipadmin.sbs.aliasdb.form.DbaliasesListForm;sipadmin.sbs.usrloc.form.LocationListForm" Description="Subscribers"/>
+   		<Reference Name="sipadmin.sbs.aliasdb.form.DbaliasesListForm" Description="Aliases DB"/>   		
+   		<Reference Name="sipadmin.sbs.usrloc.form.LocationListForm" Description="Location"/>   		
    </FormReferences>
    <FormReferenceLibs>
-   		<Reference Name="ser.sbs.authdb.form.SubscriberListForm"/>
-   		<Reference Name="ser.sbs.authdb.form.SubscriberEditForm"/>
-   		<Reference Name="ser.sbs.authdb.form.SubscriberCopyForm"/>
-   		<Reference Name="ser.sbs.authdb.form.SubscriberNewForm"/>
-   		<Reference Name="ser.sbs.authdb.form.SubscriberDetailForm"/>
+   		<Reference Name="sipadmin.sbs.authdb.form.SubscriberListForm"/>
+   		<Reference Name="sipadmin.sbs.authdb.form.SubscriberEditForm"/>
+   		<Reference Name="sipadmin.sbs.authdb.form.SubscriberCopyForm"/>
+   		<Reference Name="sipadmin.sbs.authdb.form.SubscriberNewForm"/>
+   		<Reference Name="sipadmin.sbs.authdb.form.SubscriberDetailForm"/>
    </FormReferenceLibs>    
 </EasyView>

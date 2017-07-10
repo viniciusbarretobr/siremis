@@ -1,13 +1,13 @@
 <?xml version="1.0" standalone="no"?>
-<EasyView Name="MohqcallsListView" Description="ser.msc.mohqcalls" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SERAdmin.Administer_Modules" TemplateFile="view.tpl">
+<EasyView Name="MohqcallsListView" Description="sipadmin.msc.mohqcalls" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SIPAdmin.Administer_Modules" TemplateFile="view.tpl">
    <FormReferences>
-   		<Reference Name="ser.msc.mohqcalls.form.MohqcallsListForm"/>
+   		<Reference Name="sipadmin.msc.mohqcalls.form.MohqcallsListForm"/>
    </FormReferences>
    <FormReferenceLibs>
-   		<Reference Name="ser.msc.mohqcalls.form.MohqcallsListForm"/>
-   		<Reference Name="ser.msc.mohqcalls.form.MohqcallsEditForm"/>
-   		<Reference Name="ser.msc.mohqcalls.form.MohqcallsCopyForm"/>
-   		<Reference Name="ser.msc.mohqcalls.form.MohqcallsNewForm"/>
-   		<Reference Name="ser.msc.mohqcalls.form.MohqcallsDetailForm"/>
+   		<Reference Name="sipadmin.msc.mohqcalls.form.MohqcallsListForm"/>
+   		<Reference Name="sipadmin.msc.mohqcalls.form.MohqcallsEditForm"/>
+   		<Reference Name="sipadmin.msc.mohqcalls.form.MohqcallsCopyForm"/>
+   		<Reference Name="sipadmin.msc.mohqcalls.form.MohqcallsNewForm"/>
+   		<Reference Name="sipadmin.msc.mohqcalls.form.MohqcallsDetailForm"/>
    </FormReferenceLibs>    
 </EasyView>

@@ -1,2 +1,2 @@
-<MenuWidget Name="SerAdminMenu" Title="SIP Admin" Class="menu.widget.MenuWidget" CssCLass="system" BizDataObj="menu.do.MenuTreeDO" SearchRule="[PId]='System.Ser'" GlobalSearchRule="[published] = 1" MenuDeep="3" TemplateEngine="Smarty" TemplateFile="vertical_menu.tpl" CacheLifeTime="0">
+<MenuWidget Name="SIPAdminMenu" Title="SIP Admin" Class="menu.widget.MenuWidget" CssCLass="system" BizDataObj="menu.do.MenuTreeDO" SearchRule="[PId]='System.Sipadmin'" GlobalSearchRule="[published] = 1" MenuDeep="3" TemplateEngine="Smarty" TemplateFile="vertical_menu.tpl" CacheLifeTime="0">
 </MenuWidget>

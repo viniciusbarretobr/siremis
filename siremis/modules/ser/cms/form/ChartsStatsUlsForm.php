@@ -1,9 +1,9 @@
 <?php
-include_once (MODULE_PATH.'/ser/service/siremisCharts.php');
+include_once (MODULE_PATH.'/sipadmin/service/siremisCharts.php');
 
 class ChartsStatsUlsForm extends EasyForm 
 { 
-   	protected $localService = "ser.service.siremisCharts";
+   	protected $localService = "sipadmin.service.siremisCharts";
    	
    	protected function renderHTML()
 	{
@@ -572,7 +572,7 @@ class ChartsStatsUlsForm extends EasyForm
 		if($yidx>0) {
 			$sHTML .=
 				'
-				<script type="text/javascript" src="'.APP_URL.'/modules/ser/pages/echarts.min.js"></script>
+				<script type="text/javascript" src="'.APP_URL.'/modules/sipadmin/pages/echarts.min.js"></script>
 				<script type="text/javascript">
 				';
 			$sHTML .=

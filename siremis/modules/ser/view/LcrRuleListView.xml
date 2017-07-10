@@ -1,13 +1,13 @@
 <?xml version="1.0" standalone="no"?>
-<EasyView Name="LcrRuleListView" Description="ser.rtg.lcr" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SERAdmin.Administer_Modules" TemplateFile="view.tpl">
+<EasyView Name="LcrRuleListView" Description="sipadmin.rtg.lcr" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SIPAdmin.Administer_Modules" TemplateFile="view.tpl">
    <FormReferences>
-   		<Reference Name="ser.rtg.lcr.form.LcrRuleListForm"/>
+   		<Reference Name="sipadmin.rtg.lcr.form.LcrRuleListForm"/>
    </FormReferences>
    <FormReferenceLibs>
-   		<Reference Name="ser.rtg.lcr.form.LcrRuleListForm"/>
-   		<Reference Name="ser.rtg.lcr.form.LcrRuleEditForm"/>
-   		<Reference Name="ser.rtg.lcr.form.LcrRuleCopyForm"/>
-   		<Reference Name="ser.rtg.lcr.form.LcrRuleNewForm"/>
-   		<Reference Name="ser.rtg.lcr.form.LcrRuleDetailForm"/>
+   		<Reference Name="sipadmin.rtg.lcr.form.LcrRuleListForm"/>
+   		<Reference Name="sipadmin.rtg.lcr.form.LcrRuleEditForm"/>
+   		<Reference Name="sipadmin.rtg.lcr.form.LcrRuleCopyForm"/>
+   		<Reference Name="sipadmin.rtg.lcr.form.LcrRuleNewForm"/>
+   		<Reference Name="sipadmin.rtg.lcr.form.LcrRuleDetailForm"/>
    </FormReferenceLibs>    
 </EasyView>

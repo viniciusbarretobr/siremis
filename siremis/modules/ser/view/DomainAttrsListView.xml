@@ -1,13 +1,13 @@
 <?xml version="1.0" standalone="no"?>
-<EasyView Name="DomainAttrsListView" Description="ser.srv.domain" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SERAdmin.Administer_Modules" TemplateFile="view.tpl">
+<EasyView Name="DomainAttrsListView" Description="sipadmin.srv.domain" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SIPAdmin.Administer_Modules" TemplateFile="view.tpl">
    <FormReferences>
-   		<Reference Name="ser.srv.domain.form.DomainAttrsListForm"/>
+   		<Reference Name="sipadmin.srv.domain.form.DomainAttrsListForm"/>
    </FormReferences>
    <FormReferenceLibs>
-   		<Reference Name="ser.srv.domain.form.DomainAttrsListForm"/>
-   		<Reference Name="ser.srv.domain.form.DomainAttrsEditForm"/>
-   		<Reference Name="ser.srv.domain.form.DomainAttrsCopyForm"/>
-   		<Reference Name="ser.srv.domain.form.DomainAttrsNewForm"/>
-   		<Reference Name="ser.srv.domain.form.DomainAttrsDetailForm"/>
+   		<Reference Name="sipadmin.srv.domain.form.DomainAttrsListForm"/>
+   		<Reference Name="sipadmin.srv.domain.form.DomainAttrsEditForm"/>
+   		<Reference Name="sipadmin.srv.domain.form.DomainAttrsCopyForm"/>
+   		<Reference Name="sipadmin.srv.domain.form.DomainAttrsNewForm"/>
+   		<Reference Name="sipadmin.srv.domain.form.DomainAttrsDetailForm"/>
    </FormReferenceLibs>    
 </EasyView>

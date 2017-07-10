@@ -1,13 +1,13 @@
 <?xml version="1.0" standalone="no"?>
-<EasyView Name="AccListView" Description="ser.acs.acc" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SERAdmin.Administer_Modules" TemplateFile="view.tpl">
+<EasyView Name="AccListView" Description="sipadmin.acs.acc" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SIPAdmin.Administer_Modules" TemplateFile="view.tpl">
    <FormReferences>
-   		<Reference Name="ser.acs.acc.form.AccListForm"/>
+   		<Reference Name="sipadmin.acs.acc.form.AccListForm"/>
    </FormReferences>
    <FormReferenceLibs>
-   		<Reference Name="ser.acs.acc.form.AccListForm"/>
-   		<Reference Name="ser.acs.acc.form.AccEditForm"/>
-   		<Reference Name="ser.acs.acc.form.AccCopyForm"/>
-   		<Reference Name="ser.acs.acc.form.AccNewForm"/>
-   		<Reference Name="ser.acs.acc.form.AccDetailForm"/>
+   		<Reference Name="sipadmin.acs.acc.form.AccListForm"/>
+   		<Reference Name="sipadmin.acs.acc.form.AccEditForm"/>
+   		<Reference Name="sipadmin.acs.acc.form.AccCopyForm"/>
+   		<Reference Name="sipadmin.acs.acc.form.AccNewForm"/>
+   		<Reference Name="sipadmin.acs.acc.form.AccDetailForm"/>
    </FormReferenceLibs>    
 </EasyView>

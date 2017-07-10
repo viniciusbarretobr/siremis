@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<EasyForm Name="SipTraceSearchForm" Class="ser.srv.siptrace.form.SipTraceSearchForm" FormType="Search" jsClass="jbForm" Title="Search Sip Trace" Description="" BizDataObj="ser.srv.siptrace.do.SipTraceDO" TemplateEngine="Smarty" TemplateFile="form_search.tpl" EventName="" MessageFile="">
+<EasyForm Name="SipTraceSearchForm" Class="sipadmin.srv.siptrace.form.SipTraceSearchForm" FormType="Search" jsClass="jbForm" Title="Search Sip Trace" Description="" BizDataObj="sipadmin.srv.siptrace.do.SipTraceDO" TemplateEngine="Smarty" TemplateFile="form_search.tpl" EventName="" MessageFile="">
     <DataPanel>
 		<Element Name="fld_time_stamp" ElementSet="General" Class="InputDatetime" DateFormat="%Y-%m-%d %H:%M:%S" FieldName="time_stamp" Label="Time Stamp" Sortable="Y" AllowURLParam="N" Translatable="N" OnEventLog="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
         <Element Name="fld_callid" ElementSet="General" Class="InputText" FieldName="callid" Label="Callid" AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
@@ -10,14 +10,14 @@
         <Element Name="fld_fromip" ElementSet="General" Class="InputText" FieldName="fromip" Label="Fromip" AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
         <Element Name="fld_toip" ElementSet="General" Class="InputText" FieldName="toip" Label="Toip" AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
         <Element Name="fld_fromtag" ElementSet="General" Class="InputText" FieldName="fromtag" Label="Fromtag" AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
-		<Element Name="fld_direction" ElementSet="General" Class="Listbox" FieldName="direction" Label="Direction" SelectFrom="ser.common.select.values(SipTraceDirection)" BlankOption="---"/>
+		<Element Name="fld_direction" ElementSet="General" Class="Listbox" FieldName="direction" Label="Direction" SelectFrom="sipadmin.common.select.values(SipTraceDirection)" BlankOption="---"/>
         </DataPanel>
     <ActionPanel>
         <Element Name="btn_search" Class="Button" Text="Search" CssClass="button_gray_m">
-			<EventHandler Name="search_onclick" EventLogMsg="" Event="onclick" Function="SearchSipTrace(ser.srv.siptrace.form.SipTraceListForm)" RedirectPage="" ShortcutKey="Ctrl+Enter" ContextMenu="Save"/>
+			<EventHandler Name="search_onclick" EventLogMsg="" Event="onclick" Function="SearchSipTrace(sipadmin.srv.siptrace.form.SipTraceListForm)" RedirectPage="" ShortcutKey="Ctrl+Enter" ContextMenu="Save"/>
         </Element>
         <Element Name="btn_cancel" Class="Button" Text="Cancel" CssClass="button_gray_m">
-            <EventHandler Name="cancel_onclick" Event="onclick" Function="js:$('ser.srv.siptrace.form.SipTraceSearchForm').reset()" ShortcutKey="Escape" ContextMenu="Cancel"/>
+            <EventHandler Name="cancel_onclick" Event="onclick" Function="js:$('sipadmin.srv.siptrace.form.SipTraceSearchForm').reset()" ShortcutKey="Escape" ContextMenu="Cancel"/>
         </Element>
     </ActionPanel> 
     <NavPanel>

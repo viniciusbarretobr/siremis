@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<EasyForm Name="SubscriberPickForm" Class="PickerForm" FormType="List" jsClass="jbForm" Title="Subscriber Pick List" Description="" BizDataObj="ser.sbs.authdb.do.SubscriberPickDO" PageSize="10" DefaultForm="Y" TemplateEngine="Smarty" TemplateFile="system_pickform.tpl.html" EventName="" MessageFile="">
+<EasyForm Name="SubscriberPickForm" Class="PickerForm" FormType="List" jsClass="jbForm" Title="Subscriber Pick List" Description="" BizDataObj="sipadmin.sbs.authdb.do.SubscriberPickDO" PageSize="10" DefaultForm="Y" TemplateEngine="Smarty" TemplateFile="system_pickform.tpl.html" EventName="" MessageFile="">
     <DataPanel>
 		<Element Name="fld_Id" Class="ColumnText" FieldName="Id" Label="Id" Sortable="Y" AllowURLParam="N"/>         
 		<Element Name="fld_username" Class="ColumnText" FieldName="username" Label="Username" Sortable="Y" AllowURLParam="N"/>
@@ -30,7 +30,7 @@
         </Element>
     </NavPanel> 
     <SearchPanel>
-			<Element Name="qry_username" Class="AutoSuggest" SelectFrom="ser.sbs.authdb.do.SubscriberDO[username],[username] like '%{@:Elem[qry_username].Value}%' GROUP BY [username]" FuzzySearch="Y" FieldName="username" Label="" cssFocusClass="input_text_search_focus" CssClass="input_text_search" />
+			<Element Name="qry_username" Class="AutoSuggest" SelectFrom="sipadmin.sbs.authdb.do.SubscriberDO[username],[username] like '%{@:Elem[qry_username].Value}%' GROUP BY [username]" FuzzySearch="Y" FieldName="username" Label="" cssFocusClass="input_text_search_focus" CssClass="input_text_search" />
         <Element Name="btn_dosearch" Class="Button" text="Go" CssClass="button_gray">
             <EventHandler Name="search_onclick" Event="onclick" Function="RunSearch()" ShortcutKey="Enter"/>
         </Element>	

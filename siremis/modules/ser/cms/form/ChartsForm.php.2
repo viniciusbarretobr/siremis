@@ -1,9 +1,9 @@
 <?php
-include_once (MODULE_PATH.'/ser/service/siremisCharts.php');
+include_once (MODULE_PATH.'/sipadmin/service/siremisCharts.php');
 
 class ChartsForm2 extends EasyForm 
 { 
-   	protected $localService = "ser.service.siremisCharts";
+   	protected $localService = "sipadmin.service.siremisCharts";
    	
    	protected function renderHTML()
    	{
@@ -41,11 +41,11 @@ class ChartsForm2 extends EasyForm
 
 			$sHTML .= 
 				'swfobject.embedSWF(
-					"'.APP_URL.'/modules/ser/pages/open-flash-chart.swf",
+					"'.APP_URL.'/modules/sipadmin/pages/open-flash-chart.swf",
 					"div_chart_' . $chartobj->GetName() .'",
 					"640", "300",
 					"9.0.0", "expressInstall.swf",
-				{"data-file":"'.APP_URL.'/modules/ser/service/asipto/charts/data-get.php?cid='.$_GET["cg"].'.'.$chartobj->GetName().'"} );';
+				{"data-file":"'.APP_URL.'/modules/sipadmin/service/asipto/charts/data-get.php?cid='.$_GET["cg"].'.'.$chartobj->GetName().'"} );';
 
 		}
 		$sHTML .= 

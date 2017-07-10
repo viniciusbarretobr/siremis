@@ -2,7 +2,7 @@
 
 class SipTraceSearchForm extends EasyForm 
 { 
-   	protected $localListForm = "ser.srv.siptrace.form.SipTraceListForm";
+   	protected $localListForm = "sipadmin.srv.siptrace.form.SipTraceListForm";
 	
 	public function searchSipTrace($id=null)
    	{

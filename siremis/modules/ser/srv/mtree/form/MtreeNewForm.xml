@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<EasyForm Name="MtreeNewForm" Class="EasyForm" FormType="New" jsClass="jbForm" Title="New Mtree" Description="" BizDataObj="ser.srv.mtree.do.MtreeDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
+<EasyForm Name="MtreeNewForm" Class="EasyForm" FormType="New" jsClass="jbForm" Title="New Mtree" Description="" BizDataObj="sipadmin.srv.mtree.do.MtreeDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
     <DataPanel>
         <Element Name="fld_tprefix" Class="InputText" FieldName="tprefix" Label="Tprefix"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
         <Element Name="fld_tvalue" Class="InputText" FieldName="tvalue" Label="Tvalue"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
         </DataPanel>
     <ActionPanel>
         <Element Name="btn_save" Class="Button" Text="Save" CssClass="button_gray_m">
-            <EventHandler Name="save_onclick" EventLogMsg="" Event="onclick" Function="InsertRecord()" RedirectPage="form=ser.srv.mtree.form.MtreeDetailForm&amp;fld:Id={@ser.srv.mtree.do.MtreeDO:Field[Id].Value}"  ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
+            <EventHandler Name="save_onclick" EventLogMsg="" Event="onclick" Function="InsertRecord()" RedirectPage="form=sipadmin.srv.mtree.form.MtreeDetailForm&amp;fld:Id={@sipadmin.srv.mtree.do.MtreeDO:Field[Id].Value}"  ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
         </Element>
         <Element Name="btn_cancel" Class="Button" Text="Cancel" CssClass="button_gray_m">
-            <EventHandler Name="cancel_onclick" Event="onclick" Function="SwitchForm(ser.srv.mtree.form.MtreeListForm)"  ShortcutKey="Escape" ContextMenu="Cancel"/>
+            <EventHandler Name="cancel_onclick" Event="onclick" Function="SwitchForm(sipadmin.srv.mtree.form.MtreeListForm)"  ShortcutKey="Escape" ContextMenu="Cancel"/>
         </Element>
     </ActionPanel> 
     <NavPanel>

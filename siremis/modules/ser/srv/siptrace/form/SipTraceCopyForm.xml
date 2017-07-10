@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<EasyForm Name="SipTraceCopyForm" Class="EasyForm" FormType="Edit" jsClass="jbForm" Title="Copy Sip Trace" Description="" BizDataObj="ser.srv.siptrace.do.SipTraceDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
+<EasyForm Name="SipTraceCopyForm" Class="EasyForm" FormType="Edit" jsClass="jbForm" Title="Copy Sip Trace" Description="" BizDataObj="sipadmin.srv.siptrace.do.SipTraceDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
     <DataPanel>
         <Element Name="fld_Id" Class="Hidden" FieldName="Id" Label="Id" AllowURLParam="Y"/>	
 		<Element Name="fld_time_stamp" Class="InputDatetime" DateFormat="%Y-%m-%d %H:%M:%S" FieldName="time_stamp" Label="Time Stamp" DefaultValue="1900-01-01 00:00:01" Sortable="Y" AllowURLParam="N" Translatable="N" OnEventLog="N"  CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
@@ -15,10 +15,10 @@
     </DataPanel>
     <ActionPanel>
         <Element Name="btn_save" Class="Button" Text="Save" CssClass="button_gray_m">
-            <EventHandler Name="save_onclick" EventLogMsg="" Event="onclick" Function="InsertRecord()" RedirectPage="form=ser.srv.siptrace.form.SipTraceDetailForm&amp;fld:Id={@ser.srv.siptrace.do.SipTraceDO:Field[Id].Value}"  ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
+            <EventHandler Name="save_onclick" EventLogMsg="" Event="onclick" Function="InsertRecord()" RedirectPage="form=sipadmin.srv.siptrace.form.SipTraceDetailForm&amp;fld:Id={@sipadmin.srv.siptrace.do.SipTraceDO:Field[Id].Value}"  ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
         </Element>
         <Element Name="btn_cancel" Class="Button" Text="Cancel" CssClass="button_gray_m">
-            <EventHandler Name="cancel_onclick" Event="onclick" Function="SwitchForm(ser.srv.siptrace.form.SipTraceListForm)"  ShortcutKey="Escape" ContextMenu="Cancel"/>
+            <EventHandler Name="cancel_onclick" Event="onclick" Function="SwitchForm(sipadmin.srv.siptrace.form.SipTraceListForm)"  ShortcutKey="Escape" ContextMenu="Cancel"/>
         </Element>
     </ActionPanel> 
     <NavPanel>

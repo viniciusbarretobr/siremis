@@ -1,13 +1,13 @@
 <?xml version="1.0" standalone="no"?>
-<EasyView Name="CarrierrouteListView" Description="ser.rtg.carrierroute" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SERAdmin.Administer_Modules" TemplateFile="view.tpl">
+<EasyView Name="CarrierrouteListView" Description="sipadmin.rtg.carrierroute" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SIPAdmin.Administer_Modules" TemplateFile="view.tpl">
    <FormReferences>
-   		<Reference Name="ser.rtg.carrierroute.form.CarrierrouteListForm"/>
+   		<Reference Name="sipadmin.rtg.carrierroute.form.CarrierrouteListForm"/>
    </FormReferences>
    <FormReferenceLibs>
-   		<Reference Name="ser.rtg.carrierroute.form.CarrierrouteListForm"/>
-   		<Reference Name="ser.rtg.carrierroute.form.CarrierrouteEditForm"/>
-   		<Reference Name="ser.rtg.carrierroute.form.CarrierrouteCopyForm"/>
-   		<Reference Name="ser.rtg.carrierroute.form.CarrierrouteNewForm"/>
-   		<Reference Name="ser.rtg.carrierroute.form.CarrierrouteDetailForm"/>
+   		<Reference Name="sipadmin.rtg.carrierroute.form.CarrierrouteListForm"/>
+   		<Reference Name="sipadmin.rtg.carrierroute.form.CarrierrouteEditForm"/>
+   		<Reference Name="sipadmin.rtg.carrierroute.form.CarrierrouteCopyForm"/>
+   		<Reference Name="sipadmin.rtg.carrierroute.form.CarrierrouteNewForm"/>
+   		<Reference Name="sipadmin.rtg.carrierroute.form.CarrierrouteDetailForm"/>
    </FormReferenceLibs>    
 </EasyView>

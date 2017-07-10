@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<EasyForm Name="DomainAttrsDetailForm" Class="EasyForm" FormType="" jsClass="jbForm" Title="Domain Attrs Detail" Description="" BizDataObj="ser.srv.domain.do.DomainAttrsDO" TemplateEngine="Smarty" TemplateFile="detail_elementset.tpl" EventName="" MessageFile="">
+<EasyForm Name="DomainAttrsDetailForm" Class="EasyForm" FormType="" jsClass="jbForm" Title="Domain Attrs Detail" Description="" BizDataObj="sipadmin.srv.domain.do.DomainAttrsDO" TemplateEngine="Smarty" TemplateFile="detail_elementset.tpl" EventName="" MessageFile="">
     <DataPanel>
 		<Element Name="fld_Id" ElementSet="General" Hidden="Y" Class="LabelText" FieldName="Id" Label="Id" AllowURLParam="Y"/>
        	<Element Name="fld_did" ElementSet="General" Class="LabelText" FieldName="did" Label="Did" AllowURLParam="N"/>
@@ -10,19 +10,19 @@
     </DataPanel>
     <ActionPanel>       
         <Element Name="btn_new" Class="Button" Text="Add" CssClass="button_gray_add" Description="new record (Insert)">
-			<EventHandler Name="btn_new_onclick" Event="onclick" Function="SwitchForm(ser.srv.domain.form.DomainAttrsNewForm)"  ShortcutKey="Insert" ContextMenu="New" />
+			<EventHandler Name="btn_new_onclick" Event="onclick" Function="SwitchForm(sipadmin.srv.domain.form.DomainAttrsNewForm)"  ShortcutKey="Insert" ContextMenu="New" />
         </Element>          
         <Element Name="btn_edit" Class="Button" Text="Edit" CssClass="button_gray_m" Description="edit record (Ctrl+E)">
-			<EventHandler Name="btn_new_onclick" Event="onclick" Function="SwitchForm(ser.srv.domain.form.DomainAttrsEditForm,{@:Elem[fld_Id].Value})"  ShortcutKey="Ctrl+E" ContextMenu="Edit" />
+			<EventHandler Name="btn_new_onclick" Event="onclick" Function="SwitchForm(sipadmin.srv.domain.form.DomainAttrsEditForm,{@:Elem[fld_Id].Value})"  ShortcutKey="Ctrl+E" ContextMenu="Edit" />
         </Element>
 		<Element Name="btn_copy" Class="Button" Text="Copy" CssClass="button_gray_m" Description="copy record (Ctrl+C)">
-            <EventHandler Name="onclick" Event="onclick" EventLogMsg="" Function="CopyRecord({@:Elem[fld_Id].Value})" RedirectPage="form=ser.srv.domain.form.DomainAttrsCopyForm&amp;fld:Id={@:Elem[fld_Id].Value}" ShortcutKey="Ctrl+C" ContextMenu="Copy"/>
+            <EventHandler Name="onclick" Event="onclick" EventLogMsg="" Function="CopyRecord({@:Elem[fld_Id].Value})" RedirectPage="form=sipadmin.srv.domain.form.DomainAttrsCopyForm&amp;fld:Id={@:Elem[fld_Id].Value}" ShortcutKey="Ctrl+C" ContextMenu="Copy"/>
         </Element> 
         <Element Name="btn_delete" Class="Button" Text="Delete" CssClass="button_gray_m" Description="delete record (Delete)">
-            <EventHandler Name="del_onclick" Event="onclick" EventLogMsg="" Function="DeleteRecord({@:Elem[fld_Id].Value})"  RedirectPage="form=ser.srv.domain.form.DomainAttrsListForm" ShortcutKey="Ctrl+Delete" ContextMenu="Delete" />
+            <EventHandler Name="del_onclick" Event="onclick" EventLogMsg="" Function="DeleteRecord({@:Elem[fld_Id].Value})"  RedirectPage="form=sipadmin.srv.domain.form.DomainAttrsListForm" ShortcutKey="Ctrl+Delete" ContextMenu="Delete" />
         </Element>
         <Element Name="btn_cancel" Class="Button" Text="Back" CssClass="button_gray_m">
-            <EventHandler Name="btn_cancel_onclick" Event="onclick" Function="SwitchForm(ser.srv.domain.form.DomainAttrsListForm)"  ShortcutKey="Escape" ContextMenu="Cancel" />
+            <EventHandler Name="btn_cancel_onclick" Event="onclick" Function="SwitchForm(sipadmin.srv.domain.form.DomainAttrsListForm)"  ShortcutKey="Escape" ContextMenu="Cancel" />
         </Element>         
     </ActionPanel> 
     <NavPanel>

@@ -1,13 +1,13 @@
 <?xml version="1.0" standalone="no"?>
-<EasyView Name="UsrPreferencesListView" Description="ser.sbs.avpops" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SERAdmin.Administer_Modules" TemplateFile="view.tpl">
+<EasyView Name="UsrPreferencesListView" Description="sipadmin.sbs.avpops" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SIPAdmin.Administer_Modules" TemplateFile="view.tpl">
    <FormReferences>
-   		<Reference Name="ser.sbs.avpops.form.UsrPreferencesListForm"/>
+   		<Reference Name="sipadmin.sbs.avpops.form.UsrPreferencesListForm"/>
    </FormReferences>
    <FormReferenceLibs>
-   		<Reference Name="ser.sbs.avpops.form.UsrPreferencesListForm"/>
-   		<Reference Name="ser.sbs.avpops.form.UsrPreferencesEditForm"/>
-   		<Reference Name="ser.sbs.avpops.form.UsrPreferencesCopyForm"/>
-   		<Reference Name="ser.sbs.avpops.form.UsrPreferencesNewForm"/>
-   		<Reference Name="ser.sbs.avpops.form.UsrPreferencesDetailForm"/>
+   		<Reference Name="sipadmin.sbs.avpops.form.UsrPreferencesListForm"/>
+   		<Reference Name="sipadmin.sbs.avpops.form.UsrPreferencesEditForm"/>
+   		<Reference Name="sipadmin.sbs.avpops.form.UsrPreferencesCopyForm"/>
+   		<Reference Name="sipadmin.sbs.avpops.form.UsrPreferencesNewForm"/>
+   		<Reference Name="sipadmin.sbs.avpops.form.UsrPreferencesDetailForm"/>
    </FormReferenceLibs>    
 </EasyView>

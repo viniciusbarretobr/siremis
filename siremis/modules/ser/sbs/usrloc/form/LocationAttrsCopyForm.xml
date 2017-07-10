@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<EasyForm Name="LocationAttrsCopyForm" Class="EasyForm" FormType="Edit" jsClass="jbForm" Title="Copy Location Attrs" Description="" BizDataObj="ser.sbs.usrloc.do.LocationAttrsDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
+<EasyForm Name="LocationAttrsCopyForm" Class="EasyForm" FormType="Edit" jsClass="jbForm" Title="Copy Location Attrs" Description="" BizDataObj="sipadmin.sbs.usrloc.do.LocationAttrsDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
     <DataPanel>
         <Element Name="fld_Id" Class="Hidden" FieldName="Id" Label="Id" AllowURLParam="Y"/>	
 		<Element Name="fld_ruid" Class="InputText" FieldName="ruid" Label="RUID"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
@@ -12,10 +12,10 @@
     </DataPanel>
     <ActionPanel>
         <Element Name="btn_save" Class="Button" Text="Save" CssClass="button_gray_m">
-            <EventHandler Name="save_onclick" EventLogMsg="" Event="onclick" Function="InsertRecord()" RedirectPage="form=ser.sbs.usrloc.form.LocationAttrsDetailForm&amp;fld:Id={@ser.sbs.usrloc.do.LocationAttrsDO:Field[Id].Value}"  ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
+            <EventHandler Name="save_onclick" EventLogMsg="" Event="onclick" Function="InsertRecord()" RedirectPage="form=sipadmin.sbs.usrloc.form.LocationAttrsDetailForm&amp;fld:Id={@sipadmin.sbs.usrloc.do.LocationAttrsDO:Field[Id].Value}"  ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
         </Element>
         <Element Name="btn_cancel" Class="Button" Text="Cancel" CssClass="button_gray_m">
-            <EventHandler Name="cancel_onclick" Event="onclick" Function="SwitchForm(ser.sbs.usrloc.form.LocationAttrsListForm)"  ShortcutKey="Escape" ContextMenu="Cancel"/>
+            <EventHandler Name="cancel_onclick" Event="onclick" Function="SwitchForm(sipadmin.sbs.usrloc.form.LocationAttrsListForm)"  ShortcutKey="Escape" ContextMenu="Cancel"/>
         </Element>
     </ActionPanel> 
     <NavPanel>

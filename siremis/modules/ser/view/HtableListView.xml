@@ -1,13 +1,13 @@
 <?xml version="1.0" standalone="no"?>
-<EasyView Name="HtableListView" Description="ser.srv.htable" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SERAdmin.Administer_Modules" TemplateFile="view.tpl">
+<EasyView Name="HtableListView" Description="sipadmin.srv.htable" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SIPAdmin.Administer_Modules" TemplateFile="view.tpl">
    <FormReferences>
-   		<Reference Name="ser.srv.htable.form.HtableListForm"/>
+   		<Reference Name="sipadmin.srv.htable.form.HtableListForm"/>
    </FormReferences>
    <FormReferenceLibs>
-   		<Reference Name="ser.srv.htable.form.HtableListForm"/>
-   		<Reference Name="ser.srv.htable.form.HtableEditForm"/>
-   		<Reference Name="ser.srv.htable.form.HtableCopyForm"/>
-   		<Reference Name="ser.srv.htable.form.HtableNewForm"/>
-   		<Reference Name="ser.srv.htable.form.HtableDetailForm"/>
+   		<Reference Name="sipadmin.srv.htable.form.HtableListForm"/>
+   		<Reference Name="sipadmin.srv.htable.form.HtableEditForm"/>
+   		<Reference Name="sipadmin.srv.htable.form.HtableCopyForm"/>
+   		<Reference Name="sipadmin.srv.htable.form.HtableNewForm"/>
+   		<Reference Name="sipadmin.srv.htable.form.HtableDetailForm"/>
    </FormReferenceLibs>    
 </EasyView>
