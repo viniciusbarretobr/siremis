@@ -1,0 +1,15 @@
+<?xml version="1.0" standalone="no"?>
+<BizDataObj Name="RtpengineDO" Description="" Class="BizDataObj" DBName="Sipdb" Table="rtpengine" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="setid,url;" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+	<BizFieldList>
+        <BizField Name="Id" Column="id"     Type="Number"/>
+        <BizField Name="setid" Column="setid"    Required="Y" Type="Number"/>
+        <BizField Name="url" Column="url" Length="64"   Required="Y" Type="Text"/>
+        <BizField Name="weight" Column="weight"  DefaultValue="1"  Required="Y" Type="Number"/>
+        <BizField Name="disabled" Column="disabled"    Required="Y" Type="Number"/>
+        <BizField Name="stamp" Column="stamp"  DefaultValue="1900-01-01 00:00:01"  Required="Y" Type="Datetime"/>
+	</BizFieldList>
+    <TableJoins>
+    </TableJoins>
+    <ObjReferences>
+    </ObjReferences>
+</BizDataObj>

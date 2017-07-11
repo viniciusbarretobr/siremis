@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<EasyView Name="RtpengineListView" Description="sipadmin.msc.rtpengine" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SIPAdmin.Administer_Modules" TemplateFile="view.tpl">
+   <FormReferences>
+   		<Reference Name="sipadmin.msc.rtpengine.form.RtpengineListForm"/>
+   </FormReferences>
+   <FormReferenceLibs>
+   		<Reference Name="sipadmin.msc.rtpengine.form.RtpengineListForm"/>
+   		<Reference Name="sipadmin.msc.rtpengine.form.RtpengineEditForm"/>
+   		<Reference Name="sipadmin.msc.rtpengine.form.RtpengineCopyForm"/>
+   		<Reference Name="sipadmin.msc.rtpengine.form.RtpengineNewForm"/>
+   		<Reference Name="sipadmin.msc.rtpengine.form.RtpengineDetailForm"/>
+   </FormReferenceLibs>    
+</EasyView>

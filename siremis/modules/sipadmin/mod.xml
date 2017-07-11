@@ -149,10 +149,12 @@
 					URL="{@home:url}/sipadmin/sca_subscriptions_list" Order="80"/>
 			</MenuItem>
 			<MenuItem Name="System.Sipadmin.Msc" Title="Misc Services" Parent="System.Sipadmin" Order="70">
+				<MenuItem Name="System.Sipadmin.Srv.Rtpengine.List" Title="RTPEngine List" Description=""
+					URL="{@home:url}/sipadmin/rtpengine_list" Order="10"/>
 				<MenuItem Name="System.Sipadmin.Srv.Rtpproxy.List" Title="RTPProxy List" Description=""
-					URL="{@home:url}/sipadmin/rtpproxy_list" Order="10"/>
+					URL="{@home:url}/sipadmin/rtpproxy_list" Order="20"/>
 				<MenuItem Name="System.Sipadmin.Msc.Moh.Management" Title="MoH Management" Description=""
-							URL="{@home:url}/sipadmin/mohqueues_list" Order="20">
+							URL="{@home:url}/sipadmin/mohqueues_list" Order="30">
 					<MenuItem Name="System.Sipadmin.Msc.Mohqueues.List" Title="MoH Queues List" Description=""
 						URL="{@home:url}/sipadmin/mohqueues_list" Order="10"/>
 					<MenuItem Name="System.Sipadmin.Msc.Mohqcalls.List" Title="MoH QCalls List" Description=""
