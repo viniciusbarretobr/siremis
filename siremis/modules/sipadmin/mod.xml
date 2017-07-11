@@ -160,14 +160,12 @@
 				</MenuItem>
 			</MenuItem>
 			<MenuItem Name="System.Sipadmin.Cms" Title="Command Services" Parent="System.Sipadmin" Order="80">
-				<MenuItem Name="System.Sipadmin.Cms.Micmds" Title="MI Commands" Description=""
-					URL="{@home:url}/sipadmin/micmds" Order="10"/>
 				<MenuItem Name="System.Sipadmin.Cms.Jrcmds" Title="JSONRPC Commands" Description=""
-					URL="{@home:url}/sipadmin/jrcmds" Order="20"/>
+					URL="{@home:url}/sipadmin/jrcmds" Order="10"/>
 				<MenuItem Name="System.Sipadmin.Cms.Xrcmds" Title="XMLRPC Commands" Description=""
-					URL="{@home:url}/sipadmin/xrcmds" Order="30"/>
+					URL="{@home:url}/sipadmin/xrcmds" Order="20"/>
 				<MenuItem Name="System.Sipadmin.Cms.Fscmds" Title="FSwitch Commands" Description=""
-					URL="{@home:url}/sipadmin/fscmds" Order="40"/>
+					URL="{@home:url}/sipadmin/fscmds" Order="30"/>
 			</MenuItem>
 			<MenuItem Name="System.Sipadmin.Charts" Title="Chart Services" Parent="System.Sipadmin" Order="90">
 				<MenuItem Name="System.Sipadmin.Charts.Shm" Title="SHM Charts" Description=""

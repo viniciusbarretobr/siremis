@@ -1,6 +1,0 @@
-<?xml version="1.0" standalone="no"?>
-<EasyView Name="MicmdsView" Description="MI Commands" class="EasyView" Tab="" TemplateEngine="Smarty" Access="SIPAdmin.Administer_Modules" TemplateFile="view.tpl">
-    <FormReferences>
-        <Reference Name="sipadmin.cms.form.MicmdsForm"/>
-    </FormReferences>
-</EasyView>
