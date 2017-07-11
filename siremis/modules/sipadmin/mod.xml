@@ -1,8 +1,8 @@
 <?xml version="1.0" standalone="no"?>
-<Module Name="sipadmin" Description="SIP Admin Modules" Version="4.1" OpenbizVersion="2.4">
+<Module Name="sipadmin" Description="SIP Admin Modules" Version="5.0" OpenbizVersion="2.4">
 	<ACL>
 		<Resource Name="SIPAdmin">
-			<Action Name="Administer_Modules" Description="Can manage all SIP settings"/>
+			<Action Name="Administer_Modules" Description="Allowed To Manage All SIP Settings"/>
 		</Resource>
 	</ACL>
     <Menu>
