@@ -40,7 +40,7 @@ class XMLParser {
 
 	// Read in XML on object creation.
 	// We can take raw XML data, a stream, a filename, or a url.
-	function XMLParser($data_source, $data_source_type='raw', $collapse_dups=0, $index_numeric=0) {
+	function __construct($data_source, $data_source_type='raw', $collapse_dups=0, $index_numeric=0) {
 		$this->collapse_dups = $collapse_dups;
 		$this->index_numeric = $index_numeric;
 		$this->data = '';
@@ -53,7 +53,7 @@ class XMLParser {
 
 		// try filename, then if that fails...
 		} elseif (file_exists($data_source)) {
-			$this->data = implode('', file($data_source)); 
+			$this->data = implode('', file($data_source));
         }
 		// try url
 		else {
@@ -62,6 +62,10 @@ class XMLParser {
 				$this->data .= fread($fp, 1000);
 			fclose($fp);
 		}
+	}
+
+	function XMLParser($data_source, $data_source_type='raw', $collapse_dups=0, $index_numeric=0) {
+		self::__construct($data_source, $data_source_type, $collapse_dups, $index_numeric);
 	}
 
 	// Parse the XML file into a verbose, flat array struct.
