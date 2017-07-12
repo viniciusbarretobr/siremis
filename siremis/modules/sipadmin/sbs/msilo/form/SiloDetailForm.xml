@@ -11,6 +11,9 @@
        	<Element Name="fld_snd_time" ElementSet="General" Class="LabelText" FieldName="snd_time" Label="Snd Time" AllowURLParam="N"/>
        	<Element Name="fld_ctype" ElementSet="General" Class="LabelText" FieldName="ctype" Label="Ctype" AllowURLParam="N"/>
        	<Element Name="fld_body" ElementSet="General" Class="LabelText" FieldName="body" Label="Body" AllowURLParam="N"/>
+       	<Element Name="fld_extra_hdrs" ElementSet="General" Class="LabelText" FieldName="extra_hdrs" Label="Extra Hdrs" AllowURLParam="N"/>
+       	<Element Name="fld_callid" ElementSet="General" Class="LabelText" FieldName="callid" Label="CallId" AllowURLParam="N"/>
+       	<Element Name="fld_status" ElementSet="General" Class="LabelText" FieldName="status" Label="Status" AllowURLParam="N"/>
     </DataPanel>
     <ActionPanel>       
         <Element Name="btn_new" Class="Button" Text="Add" CssClass="button_gray_add" Description="new record (Insert)">

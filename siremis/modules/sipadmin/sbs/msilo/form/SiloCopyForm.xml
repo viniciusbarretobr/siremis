@@ -11,6 +11,9 @@
 		<Element Name="fld_snd_time" Class="InputText" FieldName="snd_time" Label="Snd Time"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
 		<Element Name="fld_ctype" Class="InputText" FieldName="ctype" Label="Ctype"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
 		<Element Name="fld_body" Class="InputText" FieldName="body" Label="Body"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_extra_hdrs" Class="InputText" FieldName="extra_hdrs" Label="Extra Hdrs"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_callid" Class="InputText" FieldName="callid" Label="CallId"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
+		<Element Name="fld_status" Class="InputText" FieldName="status" Label="Status"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
     </DataPanel>
     <ActionPanel>
         <Element Name="btn_save" Class="Button" Text="Save" CssClass="button_gray_m">
@@ -21,7 +24,7 @@
         </Element>
     </ActionPanel> 
     <NavPanel>
-    </NavPanel> 
+    </NavPanel>
     <SearchPanel>
     </SearchPanel>
 </EasyForm>

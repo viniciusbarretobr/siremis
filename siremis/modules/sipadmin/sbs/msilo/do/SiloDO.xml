@@ -11,6 +11,9 @@
         <BizField Name="snd_time" Column="snd_time"    Required="Y" Type="Number"/>
         <BizField Name="ctype" Column="ctype" Length="32" DefaultValue="text/plain"  Required="Y" Type="Text"/>
         <BizField Name="body" Column="body"    Required="Y" Type="Text"/>
+        <BizField Name="extra_hdrs" Column="extra_hdrs"    Required="N" Type="Text"/>
+        <BizField Name="callid" Column="callid" Length="128"   Required="N" Type="Text"/>
+        <BizField Name="status" Column="status"    Required="N" Type="Number"/>
 	</BizFieldList>
     <TableJoins>
     </TableJoins>
