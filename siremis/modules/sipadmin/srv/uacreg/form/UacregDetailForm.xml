@@ -10,8 +10,11 @@
        	<Element Name="fld_realm" ElementSet="General" Class="LabelText" FieldName="realm" Label="Realm" AllowURLParam="N"/>
        	<Element Name="fld_auth_username" ElementSet="General" Class="LabelText" FieldName="auth_username" Label="Auth Username" AllowURLParam="N"/>
        	<Element Name="fld_auth_password" ElementSet="General" Class="LabelText" FieldName="auth_password" Label="Auth Password" AllowURLParam="N"/>
+       	<Element Name="fld_auth_ha1" ElementSet="General" Class="LabelText" FieldName="auth_ha1" Label="Auth Ha1" AllowURLParam="N"/>
        	<Element Name="fld_auth_proxy" ElementSet="General" Class="LabelText" FieldName="auth_proxy" Label="Auth Proxy" AllowURLParam="N"/>
        	<Element Name="fld_expires" ElementSet="General" Class="LabelText" FieldName="expires" Label="Expires" AllowURLParam="N"/>
+       	<Element Name="fld_flags" ElementSet="General" Class="LabelText" FieldName="flags" Label="Flags" AllowURLParam="N"/>
+       	<Element Name="fld_reg_delay" ElementSet="General" Class="LabelText" FieldName="reg_delay" Label="Reg Delay" AllowURLParam="N"/>
     </DataPanel>
     <ActionPanel>       
         <Element Name="btn_new" Class="Button" Text="Add" CssClass="button_gray_add" Description="new record (Insert)">

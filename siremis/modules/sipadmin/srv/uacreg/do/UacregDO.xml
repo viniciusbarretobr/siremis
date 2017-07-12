@@ -10,8 +10,11 @@
         <BizField Name="realm" Column="realm" Length="64"   Required="Y" Type="Text"/>
         <BizField Name="auth_username" Column="auth_username" Length="64"   Required="Y" Type="Text"/>
         <BizField Name="auth_password" Column="auth_password" Length="64"   Required="Y" Type="Text"/>
-        <BizField Name="auth_proxy" Column="auth_proxy" Length="64"   Required="Y" Type="Text"/>
+        <BizField Name="auth_ha1" Column="auth_ha1" Length="128"   Required="Y" Type="Text"/>
+        <BizField Name="auth_proxy" Column="auth_proxy" Length="128"   Required="Y" Type="Text"/>
         <BizField Name="expires" Column="expires"    Required="Y" Type="Number"/>
+        <BizField Name="flags" Column="flags"    Required="Y" Type="Number"/>
+        <BizField Name="reg_delay" Column="reg_delay"    Required="Y" Type="Number"/>
 	</BizFieldList>
     <TableJoins>
     </TableJoins>
