@@ -8,16 +8,17 @@
 	<h2>Installation Completed</h2>
     <p>
     Congratulations for completing Siremis Setup Wizard. <br />
-    For security reason, we strongly recommend you to delete this install folder now.<br />
+	For security reasons, we strongly recommend to delete or properly restrict
+	the access to the install folder now (path: siremis/install).<br />
     And also please change default login info before use.
     </p>
     <h4>Default Login Info</h4>
-    <p>    
+    <p>
      Username : <strong>admin</strong><br />
      Password : <strong>admin</strong><br />
-    </p>    
+    </p>
     <h4>User Reference Doucments</h4>
-    
+
     <ul class="list">
     <li><a href="http://siremis.asipto.com">Siremis Web Page</a></li>
     <li><a href="http://www.asipto.com">Asipto Web Page</a></li>
