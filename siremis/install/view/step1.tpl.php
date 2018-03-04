@@ -6,8 +6,8 @@
 
 	<div class="right right_style_b">
         <p>
-        Please make sure the status of all necessary system component have installed before you click "Next" button,
-        otherwise the application might would not work properly.
+        Please make sure the necessary system components are installed before you click "Next" button,
+        otherwise the application might not work properly.
         </p>
         <table class="form_table" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:20px;">
         <tr>
@@ -25,9 +25,9 @@
             }else{
                 $default_style="odd";
             }
-            
+
             if (strpos($s['status'],'OK') === 0) {
-                $flag_icon="flag_y.gif";        
+                $flag_icon="flag_y.gif";
             }else{
                 $flag_icon="flag_n.gif";
 				$hasError = true;
@@ -36,8 +36,8 @@
         ?>
         <tr
             class="<?php echo $default_style;?>"
-            onmouseover="if(this.className!='selected')this.className='hover'" 
-            onmouseout="if(this.className!='selected')this.className='<?php echo $default_style;?>'" 
+            onmouseover="if(this.className!='selected')this.className='hover'"
+            onmouseout="if(this.className!='selected')this.className='<?php echo $default_style;?>'"
         >
             <td><?php echo $s['item'];?></td>
             <td><?php echo $s['value'];?></td>
@@ -47,9 +47,9 @@
         }
         ?>
         </table>
-        
+
         <a href="index.php?step=0" class="button">&lt; Back</a>
-        <?php 
+        <?php
 		if (!$hasError){
 		?>
     	    <a href="index.php?step=2" class="button_highlight">Next &gt;</a>
