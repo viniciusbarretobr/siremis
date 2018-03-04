@@ -48,7 +48,7 @@ class AccountEditForm extends UserForm
         return parent::render();
     }
     
-    public function rerender()
+    public function rerender($redrawForm = true, $hasRecordChange = true)
     {
         // clean active record to force query again
         $this->m_ActiveRecord = null;
