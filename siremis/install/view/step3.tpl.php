@@ -8,7 +8,7 @@
 <div class="right right_style_b" style="padding-top:30px;">
 
 
-<h4>Check Writable Directories:</h4>
+<h4>Check of directories with write access:</h4>
 <table class="form_table"  cellpadding="0" cellspacing="0" border="0" style="margin-bottom:20px;">
 <tr>
 	<th>Item</th>
@@ -25,9 +25,9 @@ foreach ($status as $s) {
     }else{
         $default_style="odd";
     }
-    
+
     if (strpos($s['status'],'OK') === 0) {
-        $flag_icon="flag_y.gif";        
+        $flag_icon="flag_y.gif";
     }else{
         $flag_icon="flag_n.gif";
 		$hasError = true;
@@ -48,7 +48,7 @@ foreach ($status as $s) {
 ?>
 </table>
 
-<h4>Default Database in <?php echo APP_HOME.DIRECTORY_SEPARATOR;?>Config.xml</h4>
+<h4>Database options in <?php echo APP_HOME.DIRECTORY_SEPARATOR;?>Config.xml</h4>
 <?php
 $db = getDefaultDB();
 $db1 = getSiremisDB();
@@ -108,6 +108,4 @@ $db1 = getSiremisDB();
 <div id="error_message" class="popup_dialog" onclick="this.style.display='none';"></div>
 </div>
 </div>
-
-
 
