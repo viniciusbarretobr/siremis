@@ -133,7 +133,7 @@ class UserForm extends EasyForm
      *
      * @return boolean
      */
-    public function validateForm()
+    public function validateForm($cleanError = true)
     {	
     	// disable password validation if they are empty
     	$password = BizSystem::ClientProxy()->GetFormInputs("fld_password");
