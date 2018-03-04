@@ -8,10 +8,12 @@
 	<div class="right right_style_b" style="padding-top:30px;">
         <p>Please enter your database configuration information below.</p>
 		<p>If you select to create Siremis database, then the user set
-		 to access it must have privileges to create it.</p>
+		 to access it must have privileges to create it. Importing the
+		default data inserts the records required by Siremis administration.</p>
 		<p>Siremis database is for internal use while SIP database is the
-		 one used by Kamailio (OpenSER). - you have to create it separately
-		 (i.e., kamdbctl create).</p>
+		 one used by Kamailio - it has to be created separately
+		 (i.e., kamdbctl create). Attention: Update SIP DB is removing
+		and recreating acc and missed_calls tables in Kamailio database.</p>
 <form id="setupform" name="setupform" method="post" action="install.php" >
 <table class="input_row">
 <tr>
@@ -95,20 +97,20 @@
 	<td> </td>
 </tr>
 <tr>
-	<td><label>Create Siremis DB &gt;</label>
+	<td style="text-align:right;vertical-align:middle;padding-right:20px;"><label style="text-align:right;">Create Siremis DB &#8658;</label>
 		<input  type="checkbox" name="create_db" id="create_db" />
 	</td>
-	<td><label>Import Default Data &gt;</label>
+	<td style="text-align:left;vertical-align:middle;padding-right:20px;"><label style="text-align:right;">Import Default Data &#8658;</label>
 		<input type="checkbox" name="load_db" id="load_db" />
 	</td>
 </tr>
 <tr>
-	<td><label>Update SIP DB &gt;</label>
+	<td style="text-align:right;vertical-align:middle;padding-right:20px;"><label style="text-align:right;">Update SIP DB &#8658;</label>
 		<input type="checkbox" name="loadsip_db" id="loadsip_db" />
 	</td>
-	<td><label>Replace DB Config &gt;</label>
+	<td style="text-align:left;vertical-align:middle;padding-right:20px;"><label style="text-align:right;">Replace DB Config &#8658;</label>
 		<input  type="checkbox" checked="checked" name="replace_db" id="replace_db" />
-	</td>	
+	</td>
 </tr>
 <tr>
 	<td colspan=2>
