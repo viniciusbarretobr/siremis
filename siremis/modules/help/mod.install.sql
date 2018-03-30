@@ -16,7 +16,7 @@ CREATE TABLE `help` (
   PRIMARY KEY  (`id`),
   KEY `create_by` (`create_by`),
   KEY `update_by` (`update_by`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `help` */
 
@@ -47,7 +47,7 @@ CREATE TABLE `help_category` (
   `update_time` datetime NOT NULL,
   PRIMARY KEY  (`id`),
   KEY `parent_id` (`parent_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `help_category` */
 
@@ -71,6 +71,6 @@ CREATE TABLE `help_category_mapping` (
   PRIMARY KEY  (`id`),
   KEY `url` (`url`),
   KEY `cat_id` (`cat_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `help_category_mapping` */

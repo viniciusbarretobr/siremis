@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `contact` (
   `update_time` timestamp NOT NULL DEFAULT '2000-01-01 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `type_id` (`type_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 
 INSERT INTO `contact` (`id`, `first_name`, `last_name`, `display_name`, `company`, `department`, `position`, `fast_index`, `photo`, `phone`, `mobile`, `fax`, `zipcode`, `province`, `city`, `street`, `country`, `email`, `webpage`, `qq`, `icq`, `skype`, `yahoo`, `misc`, `type_id`, `sortorder`, `user_id`, `published`, `default`, `access`, `params`, `create_by`, `create_time`, `update_by`, `update_time`) VALUES
@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `contact_type` (
   `update_by` int(11) NOT NULL,
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 
 INSERT INTO `contact_type` (`id`, `name`, `description`, `sortorder`, `published`, `create_by`, `create_time`, `update_by`, `update_time`) VALUES

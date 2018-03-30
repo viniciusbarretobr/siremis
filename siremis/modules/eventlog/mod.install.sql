@@ -13,5 +13,5 @@ CREATE TABLE `event_log` (
      PRIMARY KEY  (`id`),                                                                                                                        
      KEY `UserID` (`user_id`,`ipaddr`,`event`),                                                                                                  
      KEY `Message` (`message`)                                                                                                                   
-   ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+   ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
