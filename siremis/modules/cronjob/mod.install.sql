@@ -27,6 +27,6 @@ CREATE TABLE `cronjob` (
   KEY `weekday` (`day`),
   KEY `month` (`month`),
   KEY `week` (`weekday`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `cronjob` */

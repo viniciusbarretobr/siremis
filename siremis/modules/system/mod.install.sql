@@ -9,7 +9,7 @@ CREATE TABLE `acl_action` (
   `action` varchar(64) NOT NULL default '',
   `description` varchar(255) default NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Table structure for table `acl_role_action` */
 
@@ -23,7 +23,7 @@ CREATE TABLE `acl_role_action` (
   PRIMARY KEY  (`id`),
   KEY `role_id` (`role_id`),
   KEY `action_id` (`action_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Table structure for table `meta_do` */
 
@@ -38,7 +38,7 @@ CREATE TABLE `meta_do` (
   `data` text,
   `fields` text,
   PRIMARY KEY  (`name`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Table structure for table `meta_form` */
 
@@ -53,7 +53,7 @@ CREATE TABLE `meta_form` (
   `data` text,
   `elements` text,
   PRIMARY KEY  (`name`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Table structure for table `meta_view` */
 
@@ -67,7 +67,7 @@ CREATE TABLE `meta_view` (
   `data` text,
   `forms` text,
   PRIMARY KEY  (`name`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Table structure for table `module` */
 
@@ -84,7 +84,7 @@ CREATE TABLE `module` (
   `depend_on` varchar(255) default NULL,
   PRIMARY KEY  (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Table structure for table `role` */
 
@@ -101,7 +101,7 @@ CREATE TABLE `role` (
   UNIQUE KEY `name` (`name`),
   INDEX (  `default` ),
   INDEX (  `status` )
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `role` */
 
@@ -129,7 +129,7 @@ CREATE TABLE `user` (
   PRIMARY KEY  (`id`),
   UNIQUE KEY `username` (`username`),
   KEY `email` (`email`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `user` */
 
@@ -148,7 +148,7 @@ CREATE TABLE `user_role` (
   PRIMARY KEY  (`id`),
   KEY `user_id` (`user_id`),
   KEY `role_id` (`role_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `user_role` */
 
@@ -166,7 +166,7 @@ CREATE TABLE `group` (
   `description` varchar(255) default NULL,
   PRIMARY KEY  (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Table structure for table `group_role` */
 
@@ -179,7 +179,7 @@ CREATE TABLE `user_group` (
   PRIMARY KEY  (`id`),
   KEY `user_id` (`user_id`),
   KEY `group_id` (`group_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 DROP TABLE IF EXISTS `pass_token`;
@@ -191,7 +191,7 @@ CREATE TABLE IF NOT EXISTS `pass_token` (
   `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `token` (`token`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 /*Table structure for table `menu` */
 
@@ -217,7 +217,7 @@ CREATE TABLE `menu` (
   `update_by` int(10) default 1,
   `update_time` datetime default NULL,
   PRIMARY KEY  (`name`)                         
-) ENGINE=MyISAM DEFAULT CHARSET=utf8   
+) ENGINE=InnoDB DEFAULT CHARSET=utf8   
   
 /*Data for the table `menu` */
 
