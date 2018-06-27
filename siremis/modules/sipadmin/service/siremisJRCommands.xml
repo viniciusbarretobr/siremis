@@ -9,6 +9,8 @@
 		<UDPRemote name="udpremote" address="127.0.0.1" port="8033" timeout="3.0"/>
 		<!-- used for type="unixsock" *** note: avoid sockets in /tmp/ if you haven't reconfigured systemd -->
 		<UnixSockLocal name="unixsocklocal" address="/var/run/siremis/siremis_rpc.sock" timeout="3.0"/>
+	    	<!-- kamailio.cfg: modparam("jsonrpcs", "dgram_socket", "/var/run/kamailio/kamailio_rpc.sock") -->
+		<!-- kamailio.cfg: modparam("jsonrpcs", "dgram_mode", 0666) -->
 		<UnixSockRemote name="unixsockremote" address="/var/run/kamailio/kamailio_rpc.sock" timeout="3.0"/>
         <JRCommands>
 			<cmd name="help" title="List RPC Commands" command="system.listMethods"/>
