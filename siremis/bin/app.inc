@@ -31,6 +31,9 @@ define('APP_INDEX',APP_URL.$indexScript);
 /* define modules path */
 define('MODULE_PATH',APP_HOME.DIRECTORY_SEPARATOR."modules");
 
+/* define metadata path */
+define('META_PATH',APP_HOME.DIRECTORY_SEPARATOR."metadata");
+
 /* define messages files path */
 define('MESSAGE_PATH',APP_HOME.DIRECTORY_SEPARATOR."messages");
 
