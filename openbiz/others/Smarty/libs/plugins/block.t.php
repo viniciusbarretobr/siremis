@@ -106,7 +106,7 @@ function smarty_block_t($params, $text, &$smarty)
 	//fin modif lolo
 
 	// run strarg if there are parameters
-	if (count($params)) {
+	if (is_array($params) && count($params)) {
 		$text = smarty_gettext_strarg($text, $params);
 	}
 
