@@ -10,6 +10,7 @@
 		<a onclick="show_submenu(this)" class="{$menu_class}" href="{if $item->m_URL}{$item->m_URL}{else}javascript:{/if}">
 			<img class="{$item->m_IconCSSClass}" src="{$image_url}/{if $item->m_IconImage!=''}{$item->m_IconImage}{else}spacer.gif{/if}" />{$item->m_Name}
 		</a>	
+				{if is_array($item->m_ChildNodes)}
 				{if $item->m_ChildNodes|@count > 0}
 				<ul class="secondlevel module" {if $menu_class eq 'current'}style="display:block;"{/if}>
 				{foreach item=subitem from=$item->m_ChildNodes}
@@ -21,6 +22,7 @@
 						<li><a class="{$submenu_class}" href="{if $subitem->m_URL}{$subitem->m_URL}{else}javascript:{/if}">{$subitem->m_Name}</a></li>						
 				{/foreach}	
 				</ul>
+				{/if}
 				{/if}
 	</li>
 	{/foreach}	

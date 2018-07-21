@@ -24,18 +24,22 @@
 	  		<div class="{$item->m_IconCSSClass}">
 				<h3>{$item->m_Name}</h3>
 				<p>{$item->m_Description}</p>	
+				{if is_array($item->m_ChildNodes)}
 				{if $item->m_ChildNodes|@count > 0}
 				<ul>
 				{foreach item=subitem from=$item->m_ChildNodes}													
 					<li><a href="{if $subitem->m_URL}{$subitem->m_URL}{else}javascript:{/if}">{$subitem->m_Name}</a></li>					
+					{if is_array($subitem->m_ChildNodes)}
 					{if $subitem->m_ChildNodes|@count > 0}
 						{foreach item=thirditem from=$subitem->m_ChildNodes}													
 							<li><a href="{if $thirditem->m_URL}{$thirditem->m_URL}{else}javascript:{/if}"> &raquo; {$thirditem->m_Name}</a></li>					
 						{/foreach}	
 					{/if}
+					{/if}
 				{/foreach}	
 				</ul>
 				{assign var='i' value=$i+1}	
+				{/if}
 				{/if}
 			</div>
 	  	</td>
