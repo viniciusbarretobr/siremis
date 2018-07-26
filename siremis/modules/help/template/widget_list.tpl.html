@@ -3,18 +3,20 @@
 <div class="title">
 	<h2>{$form.title}</h2>
 	<p>
-	<span><a href="javascript:">Help Center</a></span> 
+	<span><a href="javascript:">Help Center</a></span>
 	<a onclick="switch_help_content()" href="javascript:"><img id="switch_help_content_btn" class="btn_max"  src="{$image_url}/spacer.gif" border="0" /></a>	</p>
 </div>
 <div id="help_content" style="display:none">
 <ul>
+	{if is_array($dataPanel.data)}
 	{if $dataPanel.data|@count > 0}
-	    {foreach item=row from=$dataPanel.data}
-	    	<li>{$row.fld_title}</li>
-	    {/foreach}	
-    {else}
-    	<li>{t}No help tips for this module.{/t}</li>    
-    {/if}	
+		{foreach item=row from=$dataPanel.data}
+			<li>{$row.fld_title}</li>
+		{/foreach}
+	{else}
+		<li>{t}No help tips for this module.{/t}</li>
+	{/if}
+	{/if}
 </ul>
 </div>
 <div style="padding-left:10px; padding-top:10px; height:30px;">
