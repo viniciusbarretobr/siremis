@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no"?>
-<BizDataObj Name="SiloDO" Description="" Class="sipuser.sbs.msilo.do.SiloDO" DBName="Sipdb" Table="silo" SearchRule="" SortRule="" AccessRule="[username]='{@profile:username}'" OtherSQLRule="" Uniqueness="" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+<BizDataObj Name="SiloDO" Description="" Class="sipuser.sbs.msilo.do.SiloDO" DBName="Sipdb" Table="silo" SearchRule="" SortRule="" AccessRule="'[username]'=='{@profile:username}'" OtherSQLRule="" Uniqueness="" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
 	<BizFieldList>
         <BizField Name="Id" Column="id"     Type="Number"/>
         <BizField Name="src_addr" Column="src_addr" Length="128"   Required="Y" Type="Text"/>
