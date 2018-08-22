@@ -233,14 +233,14 @@ class Resource
         if(defined('TARGET_APP_HOME'))
         {
         	if (file_exists(TARGET_APP_HOME . $xmlFile))
-            return TARGET_APP_HOME . $xmlFile;
+                return TARGET_APP_HOME . $xmlFile;
         }
         if (file_exists(MODULE_PATH . $xmlFile))
             return MODULE_PATH . $xmlFile;
         if (file_exists(APP_HOME . $xmlFile))
             return APP_HOME . $xmlFile;
-        if (file_exists(META_PATH . $xmlFile))
-            return META_PATH . $xmlFile;
+        // if (file_exists(META_PATH . $xmlFile))
+        //    return META_PATH . $xmlFile;
         if (file_exists(OPENBIZ_META . $xmlFile))
             return OPENBIZ_META . $xmlFile;
 
