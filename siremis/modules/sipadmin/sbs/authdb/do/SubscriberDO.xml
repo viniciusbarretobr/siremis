@@ -5,10 +5,8 @@
         <BizField Name="username" Column="username" Length="64"   Required="Y" Type="Text"/>
         <BizField Name="domain" Column="domain" Length="64"   Required="Y" Type="Text"/>
         <BizField Name="password" Column="password" Length="25"   Required="Y" Type="Text"/>
-        <BizField Name="email_address" Column="email_address" Length="64"   Required="N" Type="Text"/>
         <BizField Name="ha1" Column="ha1" Length="64"   Required="Y" Type="Text"/>
         <BizField Name="ha1b" Column="ha1b" Length="64"   Required="Y" Type="Text"/>
-        <BizField Name="rpid" Column="rpid" Length="64"   Required="N" Type="Text"/>
 	</BizFieldList>
     <TableJoins>
     </TableJoins>
