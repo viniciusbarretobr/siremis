@@ -10,10 +10,8 @@
         </Element>
                 <Element Name="fld_domain" Class="ColumnText" FieldName="domain" Label="Domain" Sortable="Y" AllowURLParam="N"/>
                 <Element Name="fld_password" Class="ColumnText" FieldName="password" Label="Password" Sortable="Y" Hidden="Y"/>
-                <Element Name="fld_email_address" Class="ColumnText" FieldName="email_address" Label="Email Address" Sortable="Y"/>
                 <Element Name="fld_ha1" Class="ColumnText" FieldName="ha1" Label="ha1" Sortable="Y" Hidden="Y"/>
                 <Element Name="fld_ha1b" Class="ColumnText" FieldName="ha1b" Label="ha1b" Sortable="Y" Hidden="Y"/>
-                <Element Name="fld_rpid" Class="ColumnText" FieldName="rpid" Label="Rpid" Sortable="Y"/>
     </DataPanel>
     <ActionPanel>
         <Element Name="btn_edit" Class="Button" Text="Edit" CssClass="button_gray_m" Description="edit record (Ctrl+E)">

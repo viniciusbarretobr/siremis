@@ -5,10 +5,8 @@
        	<Element Name="fld_username" ElementSet="General" Class="LabelText" FieldName="username" Label="Username" AllowURLParam="N"/>
        	<Element Name="fld_domain" ElementSet="General" Class="LabelText" FieldName="domain" Label="Domain" AllowURLParam="N"/>
        	<Element Name="fld_password" ElementSet="General" Class="LabelText" FieldName="password" Label="Password" AllowURLParam="N"/>
-       	<Element Name="fld_email_address" ElementSet="General" Class="LabelText" FieldName="email_address" Label="Email Address" AllowURLParam="N"/>
        	<Element Name="fld_ha1" ElementSet="General" Class="LabelText" FieldName="ha1" Label="ha1" AllowURLParam="N"/>
        	<Element Name="fld_ha1b" ElementSet="General" Class="LabelText" FieldName="ha1b" Label="ha1b" AllowURLParam="N"/>
-       	<Element Name="fld_rpid" ElementSet="General" Class="LabelText" FieldName="rpid" Label="Rpid" AllowURLParam="N"/>
     </DataPanel>
     <ActionPanel>       
         <Element Name="btn_edit" Class="Button" Text="Edit" CssClass="button_gray_m" Description="edit record (Ctrl+E)">
