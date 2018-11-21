@@ -288,6 +288,7 @@ class Expression
         $script = "";
         $start = 0;
 
+		// echo "=== expression: [" . $expression . "] ";
         if (strpos($expression, "{", $start) === false)    // do nothing if no { symbol
             return $expression;
 
@@ -321,9 +322,15 @@ class Expression
                 {
                     //      added by shyokou in 'Expression.php'    {
                     //
-                    if( is_string( $section ) && ( strpos( $section , APP_URL ? APP_URL : '/' ) === 0 ) )   $section = "'" . $section . "'" ;
+					if( is_string( $section ) && ( strpos( $section , APP_URL ? APP_URL : '/' ) === 0 ) ) {
+						$section = "'" . $section . "'" ;
+					}
+					if (Expression::one_token($section)) {
+						$section = "'" . $section . "'" ;
+					}
                     //
                     //      added by shyokou in 'Expression.php'    }
+					//echo "=== section: [" . $section . "]  === expression: [" . $expression . "] ";
                     if (Expression::eval_syntax("\$ret = $section;"))
                     {
                         eval ("\$ret = $section;");
@@ -393,6 +400,43 @@ class Expression
         }
     }
 
+   /**
+     * Check if the parameter is a single token, not enclosed in quotes or parenthesis
+     *
+     * @param string $val - input
+     * @return boolean
+     **/
+
+    public static function one_token($val)
+	{
+		$sval = trim($val);
+		$slen = strlen($sval);
+		if($slen==0) {
+			return false;
+		}
+		if($sval[0]=='\'' && $sval[$slen - 1]=='\'') {
+			return false;
+		}
+		if($sval[0]=='"' && $sval[$slen - 1]=='"') {
+			return false;
+		}
+		if($sval[0]=='(' && $sval[$slen - 1]==')') {
+			return false;
+		}
+		if($sval[0]=='{' && $sval[$slen - 1]=='}') {
+			return false;
+		}
+		if(is_numeric($sval)) {
+			return false;
+		}
+		if(! ctype_alnum ($sval) ) {
+			return false;
+		}
+		if(defined($sval)) {
+			return false;
+		}
+		return true;
+	}
 }
 
 ?>
