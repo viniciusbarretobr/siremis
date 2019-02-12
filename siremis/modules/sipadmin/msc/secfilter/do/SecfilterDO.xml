@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<BizDataObj Name="SecfilterDO" Description="" Class="BizDataObj" DBName="Sipdb" Table="secfilter" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+	<BizFieldList>
+        <BizField Name="Id" Column="id"     Type="Number"/>
+        <BizField Name="action" Column="action"    Required="Y" Type="Number"/>
+        <BizField Name="type" Column="type"    Required="Y" Type="Number"/>
+        <BizField Name="data" Column="data" Length="64"   Required="Y" Type="Text"/>
+	</BizFieldList>
+    <TableJoins>
+    </TableJoins>
+    <ObjReferences>
+    </ObjReferences>
+</BizDataObj>

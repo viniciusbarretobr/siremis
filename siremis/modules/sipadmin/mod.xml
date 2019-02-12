@@ -153,6 +153,8 @@
 					URL="{@home:url}/sipadmin/rtpengine_list" Order="10"/>
 				<MenuItem Name="System.Sipadmin.Srv.Rtpproxy.List" Title="RTPProxy List" Description=""
 					URL="{@home:url}/sipadmin/rtpproxy_list" Order="20"/>
+				<MenuItem Name="System.Sipadmin.Msc.Secfilter.List" Title="SecFilter List" Description=""
+					URL="{@home:url}/sipadmin/secfilter_list" Order="25"/>
 				<MenuItem Name="System.Sipadmin.Msc.Moh.Management" Title="MoH Management" Description=""
 							URL="{@home:url}/sipadmin/mohqueues_list" Order="30">
 					<MenuItem Name="System.Sipadmin.Msc.Mohqueues.List" Title="MoH Queues List" Description=""
