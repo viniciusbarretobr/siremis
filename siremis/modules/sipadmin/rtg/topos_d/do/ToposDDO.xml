@@ -1,0 +1,33 @@
+<?xml version="1.0" standalone="no"?>
+<BizDataObj Name="ToposDDO" Description="" Class="BizDataObj" DBName="Sipdb" Table="topos_d" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+	<BizFieldList>
+        <BizField Name="Id" Column="id"     Type="Number"/>
+        <BizField Name="rectime" Column="rectime"    Required="Y" Type="Datetime"/>
+        <BizField Name="s_method" Column="s_method" Length="64"   Required="Y" Type="Text"/>
+        <BizField Name="s_cseq" Column="s_cseq" Length="64"   Required="Y" Type="Text"/>
+        <BizField Name="a_callid" Column="a_callid" Length="255"   Required="Y" Type="Text"/>
+        <BizField Name="a_uuid" Column="a_uuid" Length="255"   Required="Y" Type="Text"/>
+        <BizField Name="b_uuid" Column="b_uuid" Length="255"   Required="Y" Type="Text"/>
+        <BizField Name="a_contact" Column="a_contact" Length="128"   Required="Y" Type="Text"/>
+        <BizField Name="b_contact" Column="b_contact" Length="128"   Required="Y" Type="Text"/>
+        <BizField Name="as_contact" Column="as_contact" Length="128"   Required="Y" Type="Text"/>
+        <BizField Name="bs_contact" Column="bs_contact" Length="128"   Required="Y" Type="Text"/>
+        <BizField Name="a_tag" Column="a_tag" Length="255"   Required="Y" Type="Text"/>
+        <BizField Name="b_tag" Column="b_tag" Length="255"   Required="Y" Type="Text"/>
+        <BizField Name="a_rr" Column="a_rr"    Required="N" Type="Text"/>
+        <BizField Name="b_rr" Column="b_rr"    Required="N" Type="Text"/>
+        <BizField Name="s_rr" Column="s_rr"    Required="N" Type="Text"/>
+        <BizField Name="iflags" Column="iflags"    Required="Y" Type="Number"/>
+        <BizField Name="a_uri" Column="a_uri" Length="128"   Required="Y" Type="Text"/>
+        <BizField Name="b_uri" Column="b_uri" Length="128"   Required="Y" Type="Text"/>
+        <BizField Name="r_uri" Column="r_uri" Length="128"   Required="Y" Type="Text"/>
+        <BizField Name="a_srcaddr" Column="a_srcaddr" Length="128"   Required="Y" Type="Text"/>
+        <BizField Name="b_srcaddr" Column="b_srcaddr" Length="128"   Required="Y" Type="Text"/>
+        <BizField Name="a_socket" Column="a_socket" Length="128"   Required="Y" Type="Text"/>
+        <BizField Name="b_socket" Column="b_socket" Length="128"   Required="Y" Type="Text"/>
+	</BizFieldList>
+    <TableJoins>
+    </TableJoins>
+    <ObjReferences>
+    </ObjReferences>
+</BizDataObj>

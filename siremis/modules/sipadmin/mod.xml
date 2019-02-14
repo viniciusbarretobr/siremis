@@ -65,6 +65,11 @@
 					<MenuItem Name="System.Sipadmin.Srv.Mtree.List" Title="MTree List" Description=""
 						URL="{@home:url}/sipadmin/mtree_list" Order="20"/>
 				</MenuItem>
+				<MenuItem Name="System.Sipadmin.Srv.Tropos.Management" Title="Tropos Management" Description=""
+							URL="" Order="90">
+					<MenuItem Name="System.Sipadmin.Srv.TroposD.List" Title="TroposD List" Description=""
+						URL="{@home:url}/sipadmin/tropos_d_list" Order="10"/>
+				</MenuItem>
 			</MenuItem>
 			<MenuItem Name="System.Sipadmin.Acl" Title="ACL Services" Parent="System.Sipadmin" Order="30">
 				<MenuItem Name="System.Sipadmin.Acl.Grp.Management" Title="Group Management" Description=""
