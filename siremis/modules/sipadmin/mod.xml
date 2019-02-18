@@ -65,6 +65,13 @@
 					<MenuItem Name="System.Sipadmin.Srv.Mtree.List" Title="MTree List" Description=""
 						URL="{@home:url}/sipadmin/mtree_list" Order="20"/>
 				</MenuItem>
+				<MenuItem Name="System.Sipadmin.Srv.Topos.Management" Title="Topos Management" Description=""
+							URL="" Order="90">
+					<MenuItem Name="System.Sipadmin.Srv.ToposD.List" Title="ToposD List" Description=""
+						URL="{@home:url}/sipadmin/topos_d_list" Order="10"/>
+					<MenuItem Name="System.Sipadmin.Srv.ToposT.List" Title="ToposT List" Description=""
+						URL="{@home:url}/sipadmin/topos_t_list" Order="20"/>
+				</MenuItem>
 			</MenuItem>
 			<MenuItem Name="System.Sipadmin.Acl" Title="ACL Services" Parent="System.Sipadmin" Order="30">
 				<MenuItem Name="System.Sipadmin.Acl.Grp.Management" Title="Group Management" Description=""
@@ -106,6 +113,17 @@
 						URL="{@home:url}/sipadmin/carrier_name_list" Order="30"/>
 					<MenuItem Name="System.Sipadmin.Rtg.CRDomainName.List" Title="CR Domain List" Description=""
 						URL="{@home:url}/sipadmin/domain_name_list" Order="40"/>
+				</MenuItem>
+				<MenuItem Name="System.Sipadmin.Rtg.Drouting.Management" Title="Drouting Management" Description=""
+							URL="" Order="70">
+					<MenuItem Name="System.Sipadmin.Rtg.DrGateways.List" Title="Dr Gateways List" Description=""
+						URL="{@home:url}/sipadmin/dr_gateways_list" Order="10"/>
+					<MenuItem Name="System.Sipadmin.Rtg.DrGroups.List" Title="Dr Groups List" Description=""
+						URL="{@home:url}/sipadmin/dr_groups_list" Order="20"/>
+					<MenuItem Name="System.Sipadmin.Rtg.DrGwLists.List" Title="Dr Gateways Ways Lists List" Description=""
+						URL="{@home:url}/sipadmin/dr_gw_lists_list" Order="30"/>
+					<MenuItem Name="System.Sipadmin.Rtg.DrRules.List" Title="Dr Rules List" Description=""
+						URL="{@home:url}/sipadmin/dr_rules_list" Order="40"/>
 				</MenuItem>
 			</MenuItem>
 			<MenuItem Name="System.Sipadmin.Acs" Title="Accounting Services" Parent="System.Sipadmin" Order="50">

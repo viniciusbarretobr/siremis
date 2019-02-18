@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="no"?>
+<BizDataObj Name="DrGatewaysDO" Description="" Class="BizDataObj" DBName="Sipdb" Table="dr_gateways" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+	<BizFieldList>
+        <BizField Name="Id" Column="gwid"     Type="Number"/>
+        <BizField Name="type" Column="type"    Required="Y" Type="Number"/>
+        <BizField Name="address" Column="address" Length="128"   Required="Y" Type="Text"/>
+        <BizField Name="strip" Column="strip"    Required="Y" Type="Number"/>
+        <BizField Name="pri_prefix" Column="pri_prefix" Length="64"   Required="N" Type="Text"/>
+        <BizField Name="attrs" Column="attrs" Length="255"   Required="N" Type="Text"/>
+        <BizField Name="description" Column="description" Length="128"   Required="Y" Type="Text"/>
+	</BizFieldList>
+    <TableJoins>
+    </TableJoins>
+    <ObjReferences>
+    </ObjReferences>
+</BizDataObj>

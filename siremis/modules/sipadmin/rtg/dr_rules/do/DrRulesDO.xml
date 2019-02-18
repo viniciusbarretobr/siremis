@@ -1,0 +1,17 @@
+<?xml version="1.0" standalone="no"?>
+<BizDataObj Name="DrRulesDO" Description="" Class="BizDataObj" DBName="Sipdb" Table="dr_rules" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+	<BizFieldList>
+        <BizField Name="Id" Column="ruleid"     Type="Number"/>
+        <BizField Name="groupid" Column="groupid" Length="255"   Required="Y" Type="Text"/>
+        <BizField Name="prefix" Column="prefix" Length="64"   Required="Y" Type="Text"/>
+        <BizField Name="timerec" Column="timerec" Length="255"   Required="Y" Type="Text"/>
+        <BizField Name="priority" Column="priority"    Required="Y" Type="Number"/>
+        <BizField Name="routeid" Column="routeid" Length="64"   Required="Y" Type="Text"/>
+        <BizField Name="gwlist" Column="gwlist" Length="255"   Required="Y" Type="Text"/>
+        <BizField Name="description" Column="description" Length="128"   Required="Y" Type="Text"/>
+	</BizFieldList>
+    <TableJoins>
+    </TableJoins>
+    <ObjReferences>
+    </ObjReferences>
+</BizDataObj>

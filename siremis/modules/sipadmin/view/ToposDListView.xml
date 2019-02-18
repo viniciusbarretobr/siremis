@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<EasyView Name="ToposDListView" Description="sipadmin.srv.topos_d" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SIPAdmin.Administer_Modules" TemplateFile="view.tpl">
+   <FormReferences>
+   		<Reference Name="sipadmin.srv.topos_d.form.ToposDListForm"/>
+   </FormReferences>
+   <FormReferenceLibs>
+   		<Reference Name="sipadmin.srv.topos_d.form.ToposDListForm"/>
+   		<Reference Name="sipadmin.srv.topos_d.form.ToposDEditForm"/>
+   		<Reference Name="sipadmin.srv.topos_d.form.ToposDCopyForm"/>
+   		<Reference Name="sipadmin.srv.topos_d.form.ToposDNewForm"/>
+   		<Reference Name="sipadmin.srv.topos_d.form.ToposDDetailForm"/>
+   </FormReferenceLibs>    
+</EasyView>
