@@ -9,5 +9,5 @@
    		<Reference Name="sipadmin.srv.topos_d.form.ToposDCopyForm"/>
    		<Reference Name="sipadmin.srv.topos_d.form.ToposDNewForm"/>
    		<Reference Name="sipadmin.srv.topos_d.form.ToposDDetailForm"/>
-   </FormReferenceLibs>    
+   </FormReferenceLibs>
 </EasyView>
