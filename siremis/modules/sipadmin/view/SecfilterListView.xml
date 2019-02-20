@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<EasyView Name="SecfilterListView" Description="sipadmin.msc.secfilter" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SIPAdmin.Administer_Modules" TemplateFile="view.tpl">
+   <FormReferences>
+   		<Reference Name="sipadmin.msc.secfilter.form.SecfilterListForm"/>
+   </FormReferences>
+   <FormReferenceLibs>
+   		<Reference Name="sipadmin.msc.secfilter.form.SecfilterListForm"/>
+   		<Reference Name="sipadmin.msc.secfilter.form.SecfilterEditForm"/>
+   		<Reference Name="sipadmin.msc.secfilter.form.SecfilterCopyForm"/>
+   		<Reference Name="sipadmin.msc.secfilter.form.SecfilterNewForm"/>
+   		<Reference Name="sipadmin.msc.secfilter.form.SecfilterDetailForm"/>
+   </FormReferenceLibs>    
+</EasyView>

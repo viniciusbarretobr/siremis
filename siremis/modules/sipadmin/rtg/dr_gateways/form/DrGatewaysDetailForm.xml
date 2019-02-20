@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EasyForm Name="DrGatewaysDetailForm" Class="EasyForm" FormType="" jsClass="jbForm" Title="Dr Gateways Detail" Description="" BizDataObj="sipadmin.rtg.dr_gateways.do.DrGatewaysDO" TemplateEngine="Smarty" TemplateFile="detail_elementset.tpl" EventName="" MessageFile="">
+    <DataPanel>
+		<Element Name="fld_Id" ElementSet="General" Hidden="Y" Class="LabelText" FieldName="Id" Label="Id" AllowURLParam="Y"/>
+       	<Element Name="fld_type" ElementSet="General" Class="LabelText" FieldName="type" Label="Type" AllowURLParam="N"/>
+       	<Element Name="fld_address" ElementSet="General" Class="LabelText" FieldName="address" Label="Address" AllowURLParam="N"/>
+       	<Element Name="fld_strip" ElementSet="General" Class="LabelText" FieldName="strip" Label="Strip" AllowURLParam="N"/>
+       	<Element Name="fld_pri_prefix" ElementSet="General" Class="LabelText" FieldName="pri_prefix" Label="Pri Prefix" AllowURLParam="N"/>
+       	<Element Name="fld_attrs" ElementSet="General" Class="LabelText" FieldName="attrs" Label="Attrs" AllowURLParam="N"/>
+       	<Element Name="fld_description" ElementSet="General" Class="LabelText" FieldName="description" Label="Description" AllowURLParam="N"/>
+    </DataPanel>
+    <ActionPanel>       
+        <Element Name="btn_new" Class="Button" Text="Add" CssClass="button_gray_add" Description="new record (Insert)">
+			<EventHandler Name="btn_new_onclick" Event="onclick" Function="SwitchForm(sipadmin.rtg.dr_gateways.form.DrGatewaysNewForm)"  ShortcutKey="Insert" ContextMenu="New" />
+        </Element>          
+        <Element Name="btn_edit" Class="Button" Text="Edit" CssClass="button_gray_m" Description="edit record (Ctrl+E)">
+			<EventHandler Name="btn_new_onclick" Event="onclick" Function="SwitchForm(sipadmin.rtg.dr_gateways.form.DrGatewaysEditForm,{@:Elem[fld_Id].Value})"  ShortcutKey="Ctrl+E" ContextMenu="Edit" />
+        </Element>
+		<Element Name="btn_copy" Class="Button" Text="Copy" CssClass="button_gray_m" Description="copy record (Ctrl+C)">
+            <EventHandler Name="onclick" Event="onclick" EventLogMsg="" Function="CopyRecord({@:Elem[fld_Id].Value})" RedirectPage="form=sipadmin.rtg.dr_gateways.form.DrGatewaysCopyForm&amp;fld:Id={@:Elem[fld_Id].Value}" ShortcutKey="Ctrl+C" ContextMenu="Copy"/>
+        </Element> 
+        <Element Name="btn_delete" Class="Button" Text="Delete" CssClass="button_gray_m" Description="delete record (Delete)">
+            <EventHandler Name="del_onclick" Event="onclick" EventLogMsg="" Function="DeleteRecord({@:Elem[fld_Id].Value})"  RedirectPage="form=sipadmin.rtg.dr_gateways.form.DrGatewaysListForm" ShortcutKey="Ctrl+Delete" ContextMenu="Delete" />
+        </Element>
+        <Element Name="btn_cancel" Class="Button" Text="Back" CssClass="button_gray_m">
+            <EventHandler Name="btn_cancel_onclick" Event="onclick" Function="SwitchForm(sipadmin.rtg.dr_gateways.form.DrGatewaysListForm)"  ShortcutKey="Escape" ContextMenu="Cancel" />
+        </Element>         
+    </ActionPanel> 
+    <NavPanel>
+    </NavPanel> 
+    <SearchPanel>
+    </SearchPanel>
+</EasyForm>

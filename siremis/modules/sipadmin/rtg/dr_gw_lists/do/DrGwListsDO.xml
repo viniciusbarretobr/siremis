@@ -1,0 +1,12 @@
+<?xml version="1.0" standalone="no"?>
+<BizDataObj Name="DrGwListsDO" Description="" Class="BizDataObj" DBName="Sipdb" Table="dr_gw_lists" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+	<BizFieldList>
+        <BizField Name="Id" Column="id"     Type="Number"/>
+        <BizField Name="gwlist" Column="gwlist" Length="255"   Required="Y" Type="Text"/>
+        <BizField Name="description" Column="description" Length="128"   Required="Y" Type="Text"/>
+	</BizFieldList>
+    <TableJoins>
+    </TableJoins>
+    <ObjReferences>
+    </ObjReferences>
+</BizDataObj>

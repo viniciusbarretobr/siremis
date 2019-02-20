@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<EasyView Name="DrRulesListView" Description="sipadmin.rtg.dr_rules" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SIPAdmin.Administer_Modules" TemplateFile="view.tpl">
+   <FormReferences>
+   		<Reference Name="sipadmin.rtg.dr_rules.form.DrRulesListForm"/>
+   </FormReferences>
+   <FormReferenceLibs>
+   		<Reference Name="sipadmin.rtg.dr_rules.form.DrRulesListForm"/>
+   		<Reference Name="sipadmin.rtg.dr_rules.form.DrRulesEditForm"/>
+   		<Reference Name="sipadmin.rtg.dr_rules.form.DrRulesCopyForm"/>
+   		<Reference Name="sipadmin.rtg.dr_rules.form.DrRulesNewForm"/>
+   		<Reference Name="sipadmin.rtg.dr_rules.form.DrRulesDetailForm"/>
+   </FormReferenceLibs>    
+</EasyView>
