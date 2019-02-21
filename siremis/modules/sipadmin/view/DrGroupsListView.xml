@@ -1,13 +1,13 @@
 <?xml version="1.0" standalone="no"?>
 <EasyView Name="DrGroupsListView" Description="sipadmin.rtg.dr_groups" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SIPAdmin.Administer_Modules" TemplateFile="view.tpl">
    <FormReferences>
-   		<Reference Name="sipadmin.rtg.dr_groups.form.DrGroupsListForm"/>
+   		<Reference Name="sipadmin.rtg.drouting.form.DrGroupsListForm"/>
    </FormReferences>
    <FormReferenceLibs>
-   		<Reference Name="sipadmin.rtg.dr_groups.form.DrGroupsListForm"/>
-   		<Reference Name="sipadmin.rtg.dr_groups.form.DrGroupsEditForm"/>
-   		<Reference Name="sipadmin.rtg.dr_groups.form.DrGroupsCopyForm"/>
-   		<Reference Name="sipadmin.rtg.dr_groups.form.DrGroupsNewForm"/>
-   		<Reference Name="sipadmin.rtg.dr_groups.form.DrGroupsDetailForm"/>
+   		<Reference Name="sipadmin.rtg.drouting.form.DrGroupsListForm"/>
+   		<Reference Name="sipadmin.rtg.drouting.form.DrGroupsEditForm"/>
+   		<Reference Name="sipadmin.rtg.drouting.form.DrGroupsCopyForm"/>
+   		<Reference Name="sipadmin.rtg.drouting.form.DrGroupsNewForm"/>
+   		<Reference Name="sipadmin.rtg.drouting.form.DrGroupsDetailForm"/>
    </FormReferenceLibs>    
 </EasyView>

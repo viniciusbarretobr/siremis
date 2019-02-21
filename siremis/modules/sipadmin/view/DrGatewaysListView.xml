@@ -1,13 +1,13 @@
 <?xml version="1.0" standalone="no"?>
 <EasyView Name="DrGatewaysListView" Description="sipadmin.rtg.dr_gateways" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SIPAdmin.Administer_Modules" TemplateFile="view.tpl">
    <FormReferences>
-   		<Reference Name="sipadmin.rtg.dr_gateways.form.DrGatewaysListForm"/>
+   		<Reference Name="sipadmin.rtg.drouting.form.DrGatewaysListForm"/>
    </FormReferences>
    <FormReferenceLibs>
-   		<Reference Name="sipadmin.rtg.dr_gateways.form.DrGatewaysListForm"/>
-   		<Reference Name="sipadmin.rtg.dr_gateways.form.DrGatewaysEditForm"/>
-   		<Reference Name="sipadmin.rtg.dr_gateways.form.DrGatewaysCopyForm"/>
-   		<Reference Name="sipadmin.rtg.dr_gateways.form.DrGatewaysNewForm"/>
-   		<Reference Name="sipadmin.rtg.dr_gateways.form.DrGatewaysDetailForm"/>
+   		<Reference Name="sipadmin.rtg.drouting.form.DrGatewaysListForm"/>
+   		<Reference Name="sipadmin.rtg.drouting.form.DrGatewaysEditForm"/>
+   		<Reference Name="sipadmin.rtg.drouting.form.DrGatewaysCopyForm"/>
+   		<Reference Name="sipadmin.rtg.drouting.form.DrGatewaysNewForm"/>
+   		<Reference Name="sipadmin.rtg.drouting.form.DrGatewaysDetailForm"/>
    </FormReferenceLibs>    
 </EasyView>
