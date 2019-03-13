@@ -1,6 +1,6 @@
 <?php
 
-class SubscriberDO extends BizDataObj 
+class SubscriberDO extends BizDataObj
 {
 	public function InsertRecord($recArr)
 	{

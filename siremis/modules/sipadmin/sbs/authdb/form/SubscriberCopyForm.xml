@@ -15,9 +15,9 @@
         <Element Name="btn_cancel" Class="Button" Text="Cancel" CssClass="button_gray_m">
             <EventHandler Name="cancel_onclick" Event="onclick" Function="SwitchForm(sipadmin.sbs.authdb.form.SubscriberListForm)"  ShortcutKey="Escape" ContextMenu="Cancel"/>
         </Element>
-    </ActionPanel> 
+    </ActionPanel>
     <NavPanel>
-    </NavPanel> 
+    </NavPanel>
     <SearchPanel>
     </SearchPanel>
 </EasyForm>

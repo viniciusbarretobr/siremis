@@ -8,25 +8,25 @@
        	<Element Name="fld_ha1" ElementSet="General" Class="LabelText" FieldName="ha1" Label="ha1" AllowURLParam="N"/>
        	<Element Name="fld_ha1b" ElementSet="General" Class="LabelText" FieldName="ha1b" Label="ha1b" AllowURLParam="N"/>
     </DataPanel>
-    <ActionPanel>       
+    <ActionPanel>
         <Element Name="btn_new" Class="Button" Text="Add" CssClass="button_gray_add" Description="new record (Insert)">
 			<EventHandler Name="btn_new_onclick" Event="onclick" Function="SwitchForm(sipadmin.sbs.authdb.form.SubscriberNewForm)"  ShortcutKey="Insert" ContextMenu="New" />
-        </Element>          
+        </Element>
         <Element Name="btn_edit" Class="Button" Text="Edit" CssClass="button_gray_m" Description="edit record (Ctrl+E)">
 			<EventHandler Name="btn_new_onclick" Event="onclick" Function="SwitchForm(sipadmin.sbs.authdb.form.SubscriberEditForm,{@:Elem[fld_Id].Value})"  ShortcutKey="Ctrl+E" ContextMenu="Edit" />
         </Element>
 		<Element Name="btn_copy" Class="Button" Text="Copy" CssClass="button_gray_m" Description="copy record (Ctrl+C)">
             <EventHandler Name="onclick" Event="onclick" EventLogMsg="" Function="CopyRecord({@:Elem[fld_Id].Value})" RedirectPage="form=sipadmin.sbs.authdb.form.SubscriberCopyForm&amp;fld:Id={@:Elem[fld_Id].Value}" ShortcutKey="Ctrl+C" ContextMenu="Copy"/>
-        </Element> 
+        </Element>
         <Element Name="btn_delete" Class="Button" Text="Delete" CssClass="button_gray_m" Description="delete record (Delete)">
             <EventHandler Name="del_onclick" Event="onclick" EventLogMsg="" Function="DeleteRecord({@:Elem[fld_Id].Value})"  RedirectPage="form=sipadmin.sbs.authdb.form.SubscriberListForm" ShortcutKey="Ctrl+Delete" ContextMenu="Delete" />
         </Element>
         <Element Name="btn_cancel" Class="Button" Text="Back" CssClass="button_gray_m">
             <EventHandler Name="btn_cancel_onclick" Event="onclick" Function="SwitchForm(sipadmin.sbs.authdb.form.SubscriberListForm)"  ShortcutKey="Escape" ContextMenu="Cancel" />
-        </Element>         
-    </ActionPanel> 
+        </Element>
+    </ActionPanel>
     <NavPanel>
-    </NavPanel> 
+    </NavPanel>
     <SearchPanel>
     </SearchPanel>
 </EasyForm>
