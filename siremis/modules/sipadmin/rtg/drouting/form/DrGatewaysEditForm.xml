@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<EasyForm Name="DrGatewaysEditForm" Class="EasyForm" FormType="Edit" jsClass="jbForm" Title="Edit Dr Gateways" Description="" BizDataObj="sipadmin.rtg.dr_gateways.do.DrGatewaysDO" DefaultForm="Y" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
+<EasyForm Name="DrGatewaysEditForm" Class="EasyForm" FormType="Edit" jsClass="jbForm" Title="Edit Dr Gateways" Description="" BizDataObj="sipadmin.rtg.drouting.do.DrGatewaysDO" DefaultForm="Y" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
     <DataPanel>
 		<Element Name="fld_Id" Class="Hidden" FieldName="Id" Label="Id" AllowURLParam="Y" Translatable="N" OnEventLog="N" CssClass="input" CssErrorClass="input_error"/>
 		<Element Name="fld_type" Class="InputText" FieldName="type" Label="Type"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
@@ -11,10 +11,10 @@
     </DataPanel>
     <ActionPanel>
         <Element Name="btn_save" Class="Button" Text="Save" CssClass="button_gray_m">
-            <EventHandler Name="save_onclick" Event="onclick" EventLogMsg=""  Function="UpdateRecord()" RedirectPage="form=sipadmin.rtg.dr_gateways.form.DrGatewaysDetailForm&amp;fld:Id={@sipadmin.rtg.dr_gateways.do.DrGatewaysDO:Field[Id].Value}" ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
+            <EventHandler Name="save_onclick" Event="onclick" EventLogMsg=""  Function="UpdateRecord()" RedirectPage="form=sipadmin.rtg.drouting.form.DrGatewaysDetailForm&amp;fld:Id={@sipadmin.rtg.drouting.do.DrGatewaysDO:Field[Id].Value}" ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
         </Element>
         <Element Name="btn_cancel" Class="Button" Text="Cancel" CssClass="button_gray_m">
-            <EventHandler Name="btn_cancel_onclick" Event="onclick" Function="SwitchForm(sipadmin.rtg.dr_gateways.form.DrGatewaysListForm)"  ShortcutKey="Escape" ContextMenu="Cancel" />
+            <EventHandler Name="btn_cancel_onclick" Event="onclick" Function="SwitchForm(sipadmin.rtg.drouting.form.DrGatewaysListForm)"  ShortcutKey="Escape" ContextMenu="Cancel" />
         </Element>
     </ActionPanel> 
     <NavPanel>

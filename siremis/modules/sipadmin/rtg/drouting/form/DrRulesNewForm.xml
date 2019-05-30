@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<EasyForm Name="DrRulesNewForm" Class="EasyForm" FormType="New" jsClass="jbForm" Title="New Dr Rules" Description="" BizDataObj="sipadmin.rtg.dr_rules.do.DrRulesDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
+<EasyForm Name="DrRulesNewForm" Class="EasyForm" FormType="New" jsClass="jbForm" Title="New Dr Rules" Description="" BizDataObj="sipadmin.rtg.drouting.do.DrRulesDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
     <DataPanel>
         <Element Name="fld_groupid" Class="InputText" FieldName="groupid" Label="Groupid"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
         <Element Name="fld_prefix" Class="InputText" FieldName="prefix" Label="Prefix"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
@@ -11,10 +11,10 @@
         </DataPanel>
     <ActionPanel>
         <Element Name="btn_save" Class="Button" Text="Save" CssClass="button_gray_m">
-            <EventHandler Name="save_onclick" EventLogMsg="" Event="onclick" Function="InsertRecord()" RedirectPage="form=sipadmin.rtg.dr_rules.form.DrRulesDetailForm&amp;fld:Id={@sipadmin.rtg.dr_rules.do.DrRulesDO:Field[Id].Value}"  ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
+            <EventHandler Name="save_onclick" EventLogMsg="" Event="onclick" Function="InsertRecord()" RedirectPage="form=sipadmin.rtg.drouting.form.DrRulesDetailForm&amp;fld:Id={@sipadmin.rtg.drouting.do.DrRulesDO:Field[Id].Value}"  ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
         </Element>
         <Element Name="btn_cancel" Class="Button" Text="Cancel" CssClass="button_gray_m">
-            <EventHandler Name="cancel_onclick" Event="onclick" Function="SwitchForm(sipadmin.rtg.dr_rules.form.DrRulesListForm)"  ShortcutKey="Escape" ContextMenu="Cancel"/>
+            <EventHandler Name="cancel_onclick" Event="onclick" Function="SwitchForm(sipadmin.rtg.drouting.form.DrRulesListForm)"  ShortcutKey="Escape" ContextMenu="Cancel"/>
         </Element>
     </ActionPanel> 
     <NavPanel>

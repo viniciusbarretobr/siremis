@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<EasyForm Name="DrGwListsSearchForm" Class="sipadmin.common.form.EasySearchForm" FormType="Search" jsClass="jbForm" Title="Search Dr Gw Lists" Description="" BizDataObj="sipadmin.rtg.dr_gw_lists.do.DrGwListsDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
+<EasyForm Name="DrGwListsSearchForm" Class="sipadmin.common.form.EasySearchForm" FormType="Search" jsClass="jbForm" Title="Search Dr Gw Lists" Description="" BizDataObj="sipadmin.rtg.drouting.do.DrGwListsDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
     <DataPanel>
         <Element Name="fld_gwlist" Class="InputText" FieldName="gwlist" Label="Gwlist"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
         <Element Name="fld_description" Class="InputText" FieldName="description" Label="Description"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
         </DataPanel>
     <ActionPanel>
         <Element Name="btn_search" Class="Button" Text="Search" CssClass="button_gray_m">
-			<EventHandler Name="search_onclick" EventLogMsg="" Event="onclick" Function="SwitchSearchForm(sipadmin.rtg.dr_gw_lists.form.DrGwListsListForm)" RedirectPage=""  ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
+			<EventHandler Name="search_onclick" EventLogMsg="" Event="onclick" Function="SwitchSearchForm(sipadmin.rtg.drouting.form.DrGwListsListForm)" RedirectPage=""  ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
         </Element>
         <Element Name="btn_cancel" Class="Button" Text="Cancel" CssClass="button_gray_m">
-            <EventHandler Name="cancel_onclick" Event="onclick" Function="SwitchForm(sipadmin.rtg.dr_gw_lists.form.DrGwListsListForm)"  ShortcutKey="Escape" ContextMenu="Cancel"/>
+            <EventHandler Name="cancel_onclick" Event="onclick" Function="SwitchForm(sipadmin.rtg.drouting.form.DrGwListsListForm)"  ShortcutKey="Escape" ContextMenu="Cancel"/>
         </Element>
     </ActionPanel> 
     <NavPanel>

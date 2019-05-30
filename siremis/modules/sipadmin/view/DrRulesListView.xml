@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no"?>
-<EasyView Name="DrRulesListView" Description="sipadmin.rtg.dr_rules" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SIPAdmin.Administer_Modules" TemplateFile="view.tpl">
+<EasyView Name="DrRulesListView" Description="sipadmin.rtg.drouting" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SIPAdmin.Administer_Modules" TemplateFile="view.tpl">
    <FormReferences>
    		<Reference Name="sipadmin.rtg.drouting.form.DrRulesListForm"/>
    </FormReferences>
