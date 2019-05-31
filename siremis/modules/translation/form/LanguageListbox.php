@@ -1,7 +1,7 @@
 <?php 
 require_once(OPENBIZ_BIN."easy/element/Listbox.php");
 class LanguageListbox extends EditCombobox{
-	public function getFromList(&$list)
+	public function getFromList(&$list, $selectFrom = NULL)
     {    	
    	    $current_locale = I18n::getInstance()->getCurrentLanguage();
     	
