@@ -31,8 +31,8 @@ class ColumnBar extends ColumnText
         $width = $this->m_Width;
         $max_value = $this->m_MaxValue;
         
-        
-        $width_rate = ($value/$max_value);
+        $width_rate=1;
+        if(is_int($value)) { $width_rate = ($value/$max_value); }
         
         if($width_rate>1){
         	$width_rate=1;
