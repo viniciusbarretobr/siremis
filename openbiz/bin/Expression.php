@@ -143,6 +143,10 @@ class Expression
     protected static function replaceVarExpr($expression, $object)
     {
         /* @var $g_BizSystem BizSystem */
+        $ismath = 1;
+        if((strpos($expression, "+") === false) && (strpos($expression, "-") === false)) {
+            $ismath = 0;
+        }
 
         // replace @objname:property to GetObject()->getProperty(property)
         while (true)
@@ -220,18 +224,22 @@ class Expression
                 	$propertyObj = $obj->getDataObj()->getProperty($property1);
                     if($propertyObj == null){
                     	throw new Exception("Wrong expression syntax ".$expression.", cannot get property object ".$property1." of object ".$objName);
-                    }else{
-                    	$val = $propertyObj->getProperty($property2);
-                		
-                    }
-                }
+                    }                }
                 $val = $propertyObj->getProperty($property2);
+	    } else {
+		// in case of @objname:property
+		$val = $obj->getProperty($propExpr);
             }
-            else // in case of @objname:property
-                $val = $obj->getProperty($propExpr);
-            if ($val === null) $val = "";
-            if (is_string($val))
+	    if ($val === null) {
+                if ($ismath==1) {
+                    $val = "0";
+	        } else {
+                    $val = "";
+                }
+            }
+            if ($ismath==0 && is_string($val)) {
                 $val = "'$val'";
+            }
             $expression = str_replace($macro, $val, $expression);
         }
         return $expression;
@@ -308,14 +316,16 @@ class Expression
                 $script .= substr($expression, $start, $pos0 - $start);
                 $start = $pos1 + 1;
                 $section = substr($expression, $pos0 + 1, $pos1 - $pos0-1);
-                //echo "<br>###expression 1: ".$section."<br>";
+		// echo "=== section0: [" . $section . "] <br />";
                 $section = Expression::replaceVarExpr($section, $object);  // replace variable expr;
-                //echo "<br>###expression 2: ".$section."<br>";
+		// echo "=== section1: [" . $section . "] <br />";
                 if ((is_subclass_of($object, "BizDataObj") || get_class($object)=="BizDataObj") AND strstr($section, '['))
                     $section = Expression::replaceFieldsExpr($section, $object);  // replace [field] with its value
+		// echo "=== section2: [" . $section . "] <br />";
 
                 if ((is_subclass_of($object, "EasyForm")|| get_class($object)=="EasyForm") AND strstr($section, '['))
                     $section = Expression::replaceElementsExpr($section, $object);  // replace [field] with its value
+		// echo "=== section3: [" . $section . "] <br />";
                 if ($section === false)
                     $script = ($script == '') ? $section : ($script . $section);
                 if ($section != null AND trim($section) != "" AND $section != false)
@@ -330,9 +340,9 @@ class Expression
 					}
                     //
                     //      added by shyokou in 'Expression.php'    }
-					//echo "=== section: [" . $section . "]  === expression: [" . $expression . "] ";
-                    if (Expression::eval_syntax("\$ret = $section;"))
-                    {
+		    $ret = null;
+                    // echo "=== section: [" . $section . "]  === expression: [" . $expression . "] === eval(\$ret = " . $section . ";) <br />";
+                    if (Expression::eval_syntax("\$ret = $section;")) {
                         eval ("\$ret = $section;");
                     }
                     if ($ret === null)
