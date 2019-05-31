@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no"?>
-<EasyView Name="ToposTListView" Description="sipadmin.srv.topos_t" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SIPAdmin.Administer_Modules" TemplateFile="view.tpl">
+<EasyView Name="ToposTListView" Description="sipadmin.srv.topos" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SIPAdmin.Administer_Modules" TemplateFile="view.tpl">
    <FormReferences>
    		<Reference Name="sipadmin.srv.topos.form.ToposTListForm"/>
    </FormReferences>

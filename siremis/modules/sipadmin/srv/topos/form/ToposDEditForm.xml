@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<EasyForm Name="ToposDEditForm" Class="EasyForm" FormType="Edit" jsClass="jbForm" Title="Edit Topos D" Description="" BizDataObj="sipadmin.srv.topos_d.do.ToposDDO" DefaultForm="Y" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
+<EasyForm Name="ToposDEditForm" Class="EasyForm" FormType="Edit" jsClass="jbForm" Title="Edit Topos D" Description="" BizDataObj="sipadmin.srv.topos.do.ToposDDO" DefaultForm="Y" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
     <DataPanel>
 		<Element Name="fld_Id" Class="Hidden" FieldName="Id" Label="Id" AllowURLParam="Y" Translatable="N" OnEventLog="N" CssClass="input" CssErrorClass="input_error"/>
 		<Element Name="fld_rectime" Class="InputDatetime" DateFormat="%Y-%m-%d %H:%M:%S" FieldName="rectime" Label="Rectime"  Sortable="Y" AllowURLParam="N" Translatable="N" OnEventLog="N"  CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
@@ -28,10 +28,10 @@
     </DataPanel>
     <ActionPanel>
         <Element Name="btn_save" Class="Button" Text="Save" CssClass="button_gray_m">
-            <EventHandler Name="save_onclick" Event="onclick" EventLogMsg=""  Function="UpdateRecord()" RedirectPage="form=sipadmin.srv.topos_d.form.ToposDDetailForm&amp;fld:Id={@sipadmin.srv.topos_d.do.ToposDDO:Field[Id].Value}" ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
+            <EventHandler Name="save_onclick" Event="onclick" EventLogMsg=""  Function="UpdateRecord()" RedirectPage="form=sipadmin.srv.topos.form.ToposDDetailForm&amp;fld:Id={@sipadmin.srv.topos.do.ToposDDO:Field[Id].Value}" ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
         </Element>
         <Element Name="btn_cancel" Class="Button" Text="Cancel" CssClass="button_gray_m">
-            <EventHandler Name="btn_cancel_onclick" Event="onclick" Function="SwitchForm(sipadmin.srv.topos_d.form.ToposDListForm)"  ShortcutKey="Escape" ContextMenu="Cancel" />
+            <EventHandler Name="btn_cancel_onclick" Event="onclick" Function="SwitchForm(sipadmin.srv.topos.form.ToposDListForm)"  ShortcutKey="Escape" ContextMenu="Cancel" />
         </Element>
     </ActionPanel> 
     <NavPanel>

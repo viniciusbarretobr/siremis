@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<EasyForm Name="ToposTCopyForm" Class="EasyForm" FormType="Edit" jsClass="jbForm" Title="Copy Topos T" Description="" BizDataObj="sipadmin.srv.topos_t.do.ToposTDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
+<EasyForm Name="ToposTCopyForm" Class="EasyForm" FormType="Edit" jsClass="jbForm" Title="Copy Topos T" Description="" BizDataObj="sipadmin.srv.topos.do.ToposTDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
     <DataPanel>
         <Element Name="fld_Id" Class="Hidden" FieldName="Id" Label="Id" AllowURLParam="Y"/>	
 		<Element Name="fld_rectime" Class="InputDatetime" DateFormat="%Y-%m-%d %H:%M:%S" FieldName="rectime" Label="Rectime"  Sortable="Y" AllowURLParam="N" Translatable="N" OnEventLog="N"  CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
@@ -29,10 +29,10 @@
     </DataPanel>
     <ActionPanel>
         <Element Name="btn_save" Class="Button" Text="Save" CssClass="button_gray_m">
-            <EventHandler Name="save_onclick" EventLogMsg="" Event="onclick" Function="InsertRecord()" RedirectPage="form=sipadmin.srv.topos_t.form.ToposTDetailForm&amp;fld:Id={@sipadmin.srv.topos_t.do.ToposTDO:Field[Id].Value}"  ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
+            <EventHandler Name="save_onclick" EventLogMsg="" Event="onclick" Function="InsertRecord()" RedirectPage="form=sipadmin.srv.topos.form.ToposTDetailForm&amp;fld:Id={@sipadmin.srv.topos.do.ToposTDO:Field[Id].Value}"  ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
         </Element>
         <Element Name="btn_cancel" Class="Button" Text="Cancel" CssClass="button_gray_m">
-            <EventHandler Name="cancel_onclick" Event="onclick" Function="SwitchForm(sipadmin.srv.topos_t.form.ToposTListForm)"  ShortcutKey="Escape" ContextMenu="Cancel"/>
+            <EventHandler Name="cancel_onclick" Event="onclick" Function="SwitchForm(sipadmin.srv.topos.form.ToposTListForm)"  ShortcutKey="Escape" ContextMenu="Cancel"/>
         </Element>
     </ActionPanel> 
     <NavPanel>

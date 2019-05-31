@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<EasyForm Name="ToposTSearchForm" Class="sipadmin.common.form.EasySearchForm" FormType="Search" jsClass="jbForm" Title="Search Topos T" Description="" BizDataObj="sipadmin.srv.topos_t.do.ToposTDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
+<EasyForm Name="ToposTSearchForm" Class="sipadmin.common.form.EasySearchForm" FormType="Search" jsClass="jbForm" Title="Search Topos T" Description="" BizDataObj="sipadmin.srv.topos.do.ToposTDO" TemplateEngine="Smarty" TemplateFile="detail.tpl" EventName="" MessageFile="">
     <DataPanel>
 			<Element Name="fld_rectime" Class="InputDatetime" DateFormat="%Y-%m-%d %H:%M:%S" FieldName="rectime" Label="Rectime" Sortable="Y" AllowURLParam="N" Translatable="N" OnEventLog="N"  CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
         <Element Name="fld_s_method" Class="InputText" FieldName="s_method" Label="S Method"  AllowURLParam="N" CssClass="input_text" CssErrorClass="input_text_error" CssFocusClass="input_text_focus"/>
@@ -28,10 +28,10 @@
         </DataPanel>
     <ActionPanel>
         <Element Name="btn_search" Class="Button" Text="Search" CssClass="button_gray_m">
-			<EventHandler Name="search_onclick" EventLogMsg="" Event="onclick" Function="SwitchSearchForm(sipadmin.srv.topos_t.form.ToposTListForm)" RedirectPage=""  ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
+			<EventHandler Name="search_onclick" EventLogMsg="" Event="onclick" Function="SwitchSearchForm(sipadmin.srv.topos.form.ToposTListForm)" RedirectPage=""  ShortcutKey="Ctrl+Enter" ContextMenu="Save" />
         </Element>
         <Element Name="btn_cancel" Class="Button" Text="Cancel" CssClass="button_gray_m">
-            <EventHandler Name="cancel_onclick" Event="onclick" Function="SwitchForm(sipadmin.srv.topos_t.form.ToposTListForm)"  ShortcutKey="Escape" ContextMenu="Cancel"/>
+            <EventHandler Name="cancel_onclick" Event="onclick" Function="SwitchForm(sipadmin.srv.topos.form.ToposTListForm)"  ShortcutKey="Escape" ContextMenu="Cancel"/>
         </Element>
     </ActionPanel> 
     <NavPanel>
