@@ -239,8 +239,6 @@ class Resource
             return MODULE_PATH . $xmlFile;
         if (file_exists(APP_HOME . $xmlFile))
             return APP_HOME . $xmlFile;
-        // if (file_exists(META_PATH . $xmlFile))
-        //    return META_PATH . $xmlFile;
         if (file_exists(OPENBIZ_META . $xmlFile))
             return OPENBIZ_META . $xmlFile;
 
@@ -371,7 +369,6 @@ class Resource
             . basename($objXmlFileName, "xml") . "cmp";
 
         $xmlArr = null;
-        //$cacheKey = substr($objXmlFileName, strlen(META_PATH)+1);
         $cacheKey = $objXmlFileName;
         $findInCache = false;
         if( file_exists($objCmpFileName)
