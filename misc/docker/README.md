@@ -100,6 +100,13 @@ using `macports`, next `socat` command can be used:
 socat TCP4-LISTEN:3306,reuseaddr,fork,bind=192.168.56.1 UNIX-CONNECT:/opt/local/var/run/mysql57/mysqld.sock
 ```
 
+Then use `__HOST_IP__` in the `DB Host Name` fields, for both Siremis and SIP
+databases, in the 2nd step of Siremis web installation wizard.
+
+Note: using `socat` may affect the performance of interacting with the database
+server, if any slow down is noticed, then it is recommended to configure MySQL
+server to run on an IP socket accessible from inside the Docker container.
+
 ## Contributions ##
 
 Issues can be reported at:
