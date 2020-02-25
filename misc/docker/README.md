@@ -12,7 +12,7 @@ In this folder (`misc/docker`), inspect the **apache2** configuration file
 Then run:
 
 ```
-docker build -t siremisdev-debian10 -f Dockerfile.debian10-gitdev
+docker build -t siremisdev-debian10 -f Dockerfile.debian10-gitdev .
 ```
 
 ## Run Docker Container And Install Siremis ##
