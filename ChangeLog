@@ -5,6 +5,42 @@ Web Management Interface for Kamailio (SER) SIP Server
 
 Release changelogs
 
++++ SIREMIS v5.3.0 :: 2020-02-26
+
+* version number set to match lastest stable verion of Kamailio
+* added support for jsonrpc over udp ip sockets
+* added support for jsonrpc over datagram unix socket files
+* use echarts js library to generate the monitoring graphs
+* track ws and wss for usrloc charts
+* usrloc charts track more user agents
+* module ser renamed to sipadmin
+* serdb database id replaced with sipdb
+* removed mi related files and menu options
+* updated the views for msilo to reflect all columns
+* updated uacreg views to reflect all columns in database
+* updated smarty to latest branch Smarty2 (2.6.31 dev)
+* updated the list of default xmlrpc commands in drop down menu
+* replaced legacy MyISAM database engines with InnoDB
+* support for php 7.x
+* subscriber management - removed deprecated columns email_address and rpid
+* added management for secfilter table
+* added management for topos tables
+* added management for drouting tables
+* added management for version table
+* added files for deployments using Docker
+
++++ SIREMIS v5.2.0 :: 2020-02-25
+
+* unreleased
+
++++ SIREMIS v5.1.0 :: 2018-03-02
+
+* unreleased
+
++++ SIREMIS v5.0.0 :: 2018-01-06
+
+* unreleased
+
 +++ SIREMIS v4.4.0 :: 2017-05-18
 
 * added missing columns when viewing location records
