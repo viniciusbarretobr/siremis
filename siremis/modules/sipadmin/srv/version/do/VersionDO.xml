@@ -1,0 +1,11 @@
+<?xml version="1.0" standalone="no"?>
+<BizDataObj Name="VersionDO" Description="" Class="BizDataObj" DBName="Sipdb" Table="version" SearchRule="" SortRule="" OtherSQLRule="" Uniqueness="table_name;" Stateless="N" IdGeneration="Identity" CacheLifeTime="0">
+	<BizFieldList>
+        <BizField Name="Id" Column="table_name" Length="32"    Type="Text"/>
+        <BizField Name="table_version" Column="table_version"    Required="Y" Type="Number"/>
+	</BizFieldList>
+    <TableJoins>
+    </TableJoins>
+    <ObjReferences>
+    </ObjReferences>
+</BizDataObj>

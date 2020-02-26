@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<EasyView Name="VersionListView" Description="sipadmin.srv.version" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SIPAdmin.Administer_Modules" TemplateFile="view.tpl">
+   <FormReferences>
+   		<Reference Name="sipadmin.srv.version.form.VersionListForm"/>
+   </FormReferences>
+   <FormReferenceLibs>
+   		<Reference Name="sipadmin.srv.version.form.VersionListForm"/>
+   		<Reference Name="sipadmin.srv.version.form.VersionEditForm"/>
+   		<Reference Name="sipadmin.srv.version.form.VersionCopyForm"/>
+   		<Reference Name="sipadmin.srv.version.form.VersionNewForm"/>
+   		<Reference Name="sipadmin.srv.version.form.VersionDetailForm"/>
+   </FormReferenceLibs>    
+</EasyView>
