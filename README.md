@@ -2,11 +2,11 @@
 
 ### Web Management Interface for Kamailio SIP Server
 
-v5.0.0 (under development)
+v5.3.0
 
 Web: https://www.siremis.org
 
-Compatible with Kamailio: v5.0.x and v5.1.x
+Compatible with Kamailio: v5.2.x and v5.3.x
 
   * https://www.kamailio.org
 
