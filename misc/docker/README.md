@@ -105,7 +105,10 @@ databases, in the 2nd step of Siremis web installation wizard.
 
 Note: using `socat` may affect the performance of interacting with the database
 server, if any slow down is noticed, then it is recommended to configure MySQL
-server to run on an IP socket accessible from inside the Docker container.
+server to run on an IP socket accessible from inside the Docker container. Also,
+if `socat` binds to a public IP (or IP reachable from untrusted systems), enable
+firewall and set appropriate security rules so only the Docker container system
+can connect to the `socat` socket.
 
 ## Contributions ##
 
