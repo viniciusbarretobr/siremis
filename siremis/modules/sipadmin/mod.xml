@@ -180,6 +180,8 @@
 					<MenuItem Name="System.Sipadmin.Msc.Mohqcalls.List" Title="MoH QCalls List" Description=""
 						URL="{@home:url}/sipadmin/mohqcalls_list" Order="20"/>
 				</MenuItem>
+				<MenuItem Name="System.Sipadmin.Srv.Version.List" Title="Version List" Description=""
+					URL="{@home:url}/sipadmin/version_list" Order="40"/>
 			</MenuItem>
 			<MenuItem Name="System.Sipadmin.Cms" Title="Command Services" Parent="System.Sipadmin" Order="80">
 				<MenuItem Name="System.Sipadmin.Cms.Jrcmds" Title="JSONRPC Commands" Description=""
