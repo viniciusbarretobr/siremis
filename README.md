@@ -17,6 +17,11 @@ Visit next links for references and guidelines on how to install Siremis:
   * https://kb.asipto.com/siremis:index
   * https://www.siremis.org/install/
 
+To install and deploy Siremis using Docker, see:
+
+  * misc/docker/README.md
+  * on github: https://github.com/asipto/siremis/tree/master/misc/docker
+
 ### Resources
 
 Mailing lists
