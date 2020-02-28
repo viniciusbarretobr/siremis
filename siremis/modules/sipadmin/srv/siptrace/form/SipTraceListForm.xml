@@ -3,10 +3,9 @@
     <DataPanel>
         <Element Name="row_selections" Class="RowCheckbox" Label="" FieldName="Id"/>
         <Element Name="fld_Id" Class="ColumnText" FieldName="Id" Label="Id" Link="javascript:" Sortable="Y">         
-         	
-        </Element><Element Name="fld_direction" Class="ColumnText" FieldName="direction" Label="Direction" Sortable="Y"/>
-                <Element Name="fld_time_stamp" Class="ColumnText" FieldName="time_stamp" Label="Time Stamp" Link="javascript:" Sortable="Y">
-         		
+	</Element>
+	<Element Name="fld_direction" Class="ColumnText" FieldName="direction" Label="Direction" Sortable="Y"/>
+        <Element Name="fld_time_stamp" Class="ColumnText" FieldName="time_stamp" Label="Time Stamp" Link="javascript:" Sortable="Y">
         </Element>
                 <Element Name="fld_callid" Class="ColumnText" FieldName="callid" Label="Callid" Sortable="Y"/>
                 <Element Name="fld_traced_user" Class="ColumnText" FieldName="traced_user" Label="Traced User" Sortable="Y" Hidden="Y"/>
@@ -53,7 +52,7 @@
         </Element>
     </NavPanel> 
     <SearchPanel>
-			<Element Name="qry_traced_user" Class="AutoSuggest" SelectFrom="sipadmin.srv.siptrace.do.SipTraceDO[traced_user],[traced_user] like '%{@:Elem[qry_traced_user].Value}%' GROUP BY [traced_user]" FuzzySearch="Y" FieldName="traced_user" Label="" cssFocusClass="input_text_search_focus" CssClass="input_text_search"/>
+			<Element Name="qry_callid" Class="AutoSuggest" SelectFrom="sipadmin.srv.siptrace.do.SipTraceDO[callid],[callid] like '%{@:Elem[qry_callid].Value}%' GROUP BY [callid]" FuzzySearch="Y" FieldName="callid" Label="" cssFocusClass="input_text_search_focus" CssClass="input_text_search"/>
         <Element Name="btn_dosearch" Class="Button" text="Go" CssClass="button_gray">
             <EventHandler Name="search_onclick" Event="onclick" Function="RunSearch()" ShortcutKey="Enter"/>
         </Element>	
