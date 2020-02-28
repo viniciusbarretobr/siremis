@@ -1747,6 +1747,29 @@ $('".$this->m_Name."').observe('click',Openbiz.Menu.hide);
         $this->_showForm($formName, null, $paramFields);
     }
 
+
+    /**
+     * Switch to other form by matching filed
+     *
+     * @param string $formName to-be-swtiched form name. if empty, then switch to default form
+     * @param string $fldName name of filed to filter in the target form
+     * @param string $fldValue value of field to filter in the target form
+     * @return void
+     * @access remote
+     */
+    public function switchFormMatchField($formName=null, $fldName=null, $fldValue=null, $params=null)
+    {
+    	$paramFields = array();
+    	if($params){
+    		parse_str(urldecode($params),$paramFields);
+    	}
+        if ($fldName!=null && $fldValue!=null) {
+		$paramFields[$fldName] = $fldValue;
+	}
+        $this->_showForm($formName, null, $paramFields);
+    }
+
+
     /**
      * Get the element that issues the call.
      *
