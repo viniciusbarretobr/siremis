@@ -21,6 +21,9 @@
         <Element Name="btn_delete" Class="Button" Text="Delete" CssClass="button_gray_m" Description="delete record (Delete)">
             <EventHandler Name="del_onclick" Event="onclick" EventLogMsg="" Function="DeleteRecord({@:Elem[fld_Id].Value})"  RedirectPage="form=sipadmin.sbs.authdb.form.SubscriberListForm" ShortcutKey="Ctrl+Delete" ContextMenu="Delete" />
         </Element>
+        <Element Name="btn_aliases" Class="Button" Text="Aliases" CssClass="button_gray_m">
+		<EventHandler Name="btn_aliases_onclick" Event="onclick" Function="SwitchFormMatchField(sipadmin.sbs.aliasdb.form.DbaliasesListForm,username,{@:Elem[fld_username].Value})" ContextMenu="Aliases" />
+        </Element>
         <Element Name="btn_cancel" Class="Button" Text="Back" CssClass="button_gray_m">
             <EventHandler Name="btn_cancel_onclick" Event="onclick" Function="SwitchForm(sipadmin.sbs.authdb.form.SubscriberListForm)"  ShortcutKey="Escape" ContextMenu="Cancel" />
         </Element>
