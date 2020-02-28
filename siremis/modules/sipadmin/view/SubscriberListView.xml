@@ -1,10 +1,7 @@
 <?xml version="1.0" standalone="no"?>
-<EasyView Name="SubscriberListView" Description="sipadmin.sbs.authdb" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SIPAdmin.Administer_Modules" TemplateFile="view_tabs.tpl">
+<EasyView Name="SubscriberListView" Description="sipadmin.sbs.authdb" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SIPAdmin.Administer_Modules" TemplateFile="view.tpl">
    <FormReferences>
-		<Reference Name="sipadmin.sbs.authdb.form.SubscriberListForm"
-				SubForms="sipadmin.sbs.aliasdb.form.DbaliasesListForm;sipadmin.sbs.usrloc.form.LocationListForm" Description="Subscribers"/>
-   		<Reference Name="sipadmin.sbs.aliasdb.form.DbaliasesListForm" Description="Aliases DB"/>   		
-   		<Reference Name="sipadmin.sbs.usrloc.form.LocationListForm" Description="Location"/>   		
+		<Reference Name="sipadmin.sbs.authdb.form.SubscriberListForm" Description="Subscribers"/>
    </FormReferences>
    <FormReferenceLibs>
    		<Reference Name="sipadmin.sbs.authdb.form.SubscriberListForm"/>
