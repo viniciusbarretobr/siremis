@@ -2,8 +2,7 @@
 <EasyView Name="SipTraceListView" Description="sipadmin.srv.siptrace" Class="EasyView" Tab="" TemplateEngine="Smarty" Access="SIPAdmin.Administer_Modules" TemplateFile="view.tpl">
    <FormReferences>
    		<Reference Name="sipadmin.srv.siptrace.form.SipTraceSearchForm"/>
-   		<Reference Name="sipadmin.srv.siptrace.form.SipTraceListForm" SubForms="sipadmin.srv.siptrace.form.SipTraceDetailXForm"/>
-   		<Reference Name="sipadmin.srv.siptrace.form.SipTraceDetailXForm"/>
+   		<Reference Name="sipadmin.srv.siptrace.form.SipTraceListForm"/>
    </FormReferences>
    <FormReferenceLibs>
    		<Reference Name="sipadmin.srv.siptrace.form.SipTraceListForm"/>
