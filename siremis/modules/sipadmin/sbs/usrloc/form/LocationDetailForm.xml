@@ -39,6 +39,9 @@
         <Element Name="btn_delete" Class="Button" Text="Delete" CssClass="button_gray_m" Description="delete record (Delete)">
             <EventHandler Name="del_onclick" Event="onclick" EventLogMsg="" Function="DeleteRecord({@:Elem[fld_Id].Value})"  RedirectPage="form=sipadmin.sbs.usrloc.form.LocationListForm" ShortcutKey="Ctrl+Delete" ContextMenu="Delete" />
         </Element>
+        <Element Name="btn_attrs" Class="Button" Text="Attrs" CssClass="button_gray_m">
+		<EventHandler Name="btn_attrs_onclick" Event="onclick" Function="SwitchFormMatchField(sipadmin.sbs.usrloc.form.LocationAttrsListForm,ruid,{@:Elem[fld_ruid].Value})" ContextMenu="Attrs" />
+        </Element>
         <Element Name="btn_cancel" Class="Button" Text="Back" CssClass="button_gray_m">
             <EventHandler Name="btn_cancel_onclick" Event="onclick" Function="SwitchForm(sipadmin.sbs.usrloc.form.LocationListForm)"  ShortcutKey="Escape" ContextMenu="Cancel" />
         </Element>         
