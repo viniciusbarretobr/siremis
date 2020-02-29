@@ -25,7 +25,7 @@
 		<EventHandler Name="btn_aliases_onclick" Event="onclick" Function="SwitchFormMatchField(sipadmin.sbs.aliasdb.form.DbaliasesListForm,username,{@:Elem[fld_username].Value})" ContextMenu="Aliases" />
         </Element>
         <Element Name="btn_contacts" Class="Button" Text="Contacts" CssClass="button_gray_m">
-		<EventHandler Name="btn_contacts_onclick" Event="onclick" Function="SwitchFormMatchField(sipadmin.sbs.usrloc.form.LocationListForm,username,{@:Elem[fld_username].Value})" ContextMenu="Aliases" />
+		<EventHandler Name="btn_contacts_onclick" Event="onclick" Function="SwitchFormMatchField(sipadmin.sbs.usrloc.form.LocationListForm,username,{@:Elem[fld_username].Value})" ContextMenu="Contacts" />
         </Element>
         <Element Name="btn_cancel" Class="Button" Text="Back" CssClass="button_gray_m">
             <EventHandler Name="btn_cancel_onclick" Event="onclick" Function="SwitchForm(sipadmin.sbs.authdb.form.SubscriberListForm)"  ShortcutKey="Escape" ContextMenu="Cancel" />
