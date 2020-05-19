@@ -6,10 +6,10 @@ LABEL version="1.0.0"
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y apt-utils
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive  apt update && apt-get install -y apt-utils && apt-get clean
 
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y autoconf make procps git \
-	vim apache2 php php-mysql php-gd php-curl php-xml libapache2-mod-php php-pear
+RUN DEBIAN_FRONTEND=noninteractive  apt update && apt-get install -y autoconf make procps git \
+	vim apache2 php php-mysql php-gd php-curl php-xml libapache2-mod-php php-pear && apt-get clean
 
 RUN a2enmod rewrite && \
 	a2enmod php7.3 && \
@@ -18,12 +18,11 @@ RUN a2enmod rewrite && \
 WORKDIR /var/www
 RUN git clone https://github.com/asipto/siremis
 
+ADD https://github.com/asipto/siremis/blob/master/misc/docker/files/000-default.conf.debian10 /etc/apache2/sites-available/000-default.conf
+ADD https://github.com/asipto/siremis/blob/master/misc/docker/files/siremisrun.sh /usr/local/bin/siremisrun.sh
+
 WORKDIR /var/www/siremis
 RUN make prepare24 && \
 	make chown
 
-COPY files/000-default.conf.debian10 /etc/apache2/sites-available/000-default.conf
-COPY files/siremisrun.sh /usr/local/bin/siremisrun.sh
-
 ENTRYPOINT ["/usr/local/bin/siremisrun.sh"]
-
